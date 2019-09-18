@@ -18,8 +18,28 @@ export class IntroComponent implements OnInit {
     private stateData: Globals) { }
 
   next: number = 0;
+  photoInterval;
+  videoInterval;
+  scrollingInterval;
+  numPhoto = 8;
+  
   ngOnInit() {
+    //scrolling symbol
    
+    this.scrollingInterval = setInterval(function(){
+      
+      $(".scroll_symbol").animate({
+        height: '60px',
+      }, 
+      {
+        duration: 2000,
+        easing: "linear",
+        complete: function() {
+          $(".scroll_symbol").css({ height: '0px' });
+        }
+      });
+    }, 2100);
+    // mouse scrolling section
     if(this.sunService.getIntroVal() == 0) 
       this.next = 0;
     if(this.sunService.getIntroVal() == 100)
@@ -46,238 +66,139 @@ export class IntroComponent implements OnInit {
         //this.router.navigate(['/intro']);    
       }
     });
+
+    //photo and video are moving by this function.
     this.movePhoto();
-    setInterval(this.movePhoto, 11600);
+    this.moveMovies();
+    this.photoInterval = setInterval(this.movePhoto, 11600);
+    this.videoInterval = setInterval(this.moveMovies, 11600);
   }
 
   ngOnDestroy() {
     if(this.next >= 0 && this.next <= AppConstants.SCROLLING_COUNT) {
       this.sunService.setIntroVal(100);
     }
+    clearInterval(this.photoInterval);
+    clearInterval(this.videoInterval);
+    clearInterval(this.scrollingInterval);
   }
-
+ 
   movePhoto() {
-    if($(".photo span:first-child").hasClass("active")){
-     
-        $(".photo span").css({
-          visibility:'visible'
-        });
-        $(".photo span:nth-child(3)").css({
-          visibility: 'hidden'
-        });
-        $(".photo").animate({
-            top: '-=100%'
-          }, 
-          {
-            duration: 11000,
-            easing: "linear",
-            complete: function() {
-              
-              $(".photo span:nth-child(3)").css({
-                top: '100%'
-              });
-              $(".photo span:nth-child(2)").css({
-                top: '0%'
-              });
-              $(".photo span:nth-child(1)").css({
-                top: '100%'
-              });
-              $(".photo").css({
-                top: '0%'
-              });
-              $(".photo span:first-child").removeClass('active');
-              $(".photo span:nth-child(2)").addClass('active');
-              $(".photo span:nth-child(2)").removeClass('prev');
-              $(".photo span:nth-child(3)").addClass('prev');
-            }
-          });
-          
+    const numPhoto = 8;
+    let n
+    for(let i=1; i<= numPhoto; i++) {
+      if($("span:nth-child("+i+")").hasClass("active")){
+        n = i;
+        break;
+      }
     }
 
-    if($(".photo span:nth-child(2)").hasClass("active")){
-     
-         $(".photo span").css({
-          visibility:'visible'
-          });
-          $(".photo span:nth-child(1)").css({
-            visibility: 'hidden'
-          });
-          $(".photo").animate({
-            top: '-=100%'
-          }, 
-          {
-            duration: 11000,
-            easing: "linear",
-            complete: function() {
-              
-              $(".photo span:nth-child(1)").css({
-                top: '100%'
-              });
-              $(".photo span:nth-child(3)").css({
-                top: '0%'
-              });
-              $(".photo span:nth-child(2)").css({
-                top: '100%'  
-              });
-              $(".photo").css({
-                top: '0%'
-              });
-              $(".photo span:nth-child(2)").removeClass('active');
-              $(".photo span:nth-child(3)").addClass('active');
-              $(".photo span:nth-child(3)").removeClass('prev');
-              $(".photo span:nth-child(1)").addClass('prev');
-            }
-          });
-          
-    }
+    $("span").css({visibility:'hidden'});
+    if( n == numPhoto) {
+      $("span:nth-child(1)").css({visibility: 'visible'});
+      $("span:nth-child("+numPhoto+")").css({visibility: 'visible'});
+    } else {
+      $("span:nth-child("+n+")").css({visibility: 'visible'});
+      let m = n + 1;
+      $("span:nth-child("+m+")").css({visibility: 'visible'});
+    } 
 
-    if($(".photo span:nth-child(3)").hasClass("active")){
-      
-         $(".photo span").css({
-          visibility:'visible'
-          });
-          $(".photo span:nth-child(2)").css({
-            visibility: 'hidden'
-          });
-        $(".photo").animate({
-            top: '-=100%'
-          }, 
-          {
-            duration: 11000,
-            easing: "linear",
-            complete: function() {
-              
-              $(".photo span:nth-child(1)").css({
-                top: '0%'
-              });
-              $(".photo span:nth-child(3)").css({
-                top: '100%'
-              });
-              $(".photo span:nth-child(2)").css({
-                top: '100%'  
-              });
-              $(".photo").css({
-                top: '0%'
-              });
-              $(".photo span:nth-child(3)").removeClass('active');
-              $(".photo span:nth-child(1)").addClass('active');
-              $(".photo span:first-child").removeClass('prev');
-              $(".photo span:nth-child(2)").addClass('prev');
-            }
-          });
-    }
+    $(".photo").animate({
+      top: '-=100%'
+    }, 
+    {
+      duration: 11000,
+      easing: "linear",
+      complete: function() {
+        $(".photo").css({top: '0%'});
+        $("span").css({top:'100%'});
+        let m, k;
+        if( n == numPhoto) {
+          $("span:nth-child(1)").css({top: '0%'});
+        } else {
+          m = n + 1;
+          $("span:nth-child("+m+")").css({top: '0%'});
+        }
+        
+
+        $("span:nth-child("+n+")").removeClass('active');
+        m = n + 1;
+        if(m > numPhoto) {
+          $("span:nth-child(1)").addClass('active');
+          $("span:nth-child(1)").removeClass('prev');
+        } else {
+          $("span:nth-child("+m+")").addClass('active');
+          $("span:nth-child("+m+")").removeClass('prev');
+        }
+        k = n + 2;
+        if(k > numPhoto) {
+          $("span:nth-child(1)").addClass('prev');
+        } else {
+          $("span:nth-child("+k+")").addClass('prev');
+        }
+        
+      }
+    });
+
   }
 
 
-  moveVideo() {
-    if($(".movies span:first-child").hasClass("active")){
-     
-        $(".movies span").css({
-          visibility:'visible'
-        });
-        $(".movies span:nth-child(3)").css({
-          visibility: 'hidden'
-        });
-        $(".movies").animate({
-            top: '-=100%'
-          },
-          {
-            duration: 11000,
-            easing: "linear",
-            complete: function() {
-              
-              $(".movies span:nth-child(3)").css({
-                top: '100%'
-              });
-              $(".movies span:nth-child(2)").css({
-                top: '0%'
-              });
-              $(".movies span:nth-child(1)").css({
-                top: '100%'
-              });
-              $(".movies").css({
-                top: '0%'
-              });
-              $(".movies span:first-child").removeClass('active');
-              $(".movies span:nth-child(2)").addClass('active');
-              $(".movies span:nth-child(2)").removeClass('prev');
-              $(".movies span:nth-child(3)").addClass('prev');
-            }
-          });
-          
+  moveMovies() {
+    const numPhoto = 8;
+    let n
+    for(let i=1; i<= numPhoto; i++) {
+      if($("span:nth-child("+i+")").hasClass("active")){
+        n = i;
+        break;
+      }
     }
 
-    if($(".movies span:nth-child(2)").hasClass("active")){
-     
-         $(".movies span").css({
-          visibility:'visible'
-          });
-          $(".movies span:nth-child(1)").css({
-            visibility: 'hidden'
-          });
-          $(".movies").animate({
-            top: '-=100%'
-          },
-          {
-            duration: 11000,
-            easing: "linear",
-            complete: function() {
-              
-              $(".movies span:nth-child(1)").css({
-                top: '100%'
-              });
-              $(".movies span:nth-child(3)").css({
-                top: '0%'
-              });
-              $(".movies span:nth-child(2)").css({
-                top: '100%'  
-              });
-              $(".movies").css({
-                top: '0%'
-              });
-              $(".movies span:nth-child(2)").removeClass('active');
-              $(".movies span:nth-child(3)").addClass('active');
-              $(".movies span:nth-child(3)").removeClass('prev');
-              $(".movies span:nth-child(1)").addClass('prev');
-            }
-          });
-          
-    }
+    $("span").css({visibility:'hidden'});
+    if( n == numPhoto) {
+      $("span:nth-child(1)").css({visibility: 'visible'});
+      $("span:nth-child("+numPhoto+")").css({visibility: 'visible'});
+    } else {
+      $("span:nth-child("+n+")").css({visibility: 'visible'});
+      let m = n + 1;
+      $("span:nth-child("+m+")").css({visibility: 'visible'});
+    } 
 
-    if($(".movies span:nth-child(3)").hasClass("active")){
-      
-         $(".movies span").css({
-          visibility:'visible'
-          });
-          $(".movies span:nth-child(2)").css({
-            visibility: 'hidden'
-          });
-        $(".movies").animate({
-            top: '-=100%'
-          },
-          {
-            duration: 11000,
-            easing: "linear",
-            complete: function() {
-              
-              $(".movies span:nth-child(1)").css({
-                top: '0%'
-              });
-              $(".movies span:nth-child(3)").css({
-                top: '100%'
-              });
-              $(".movies span:nth-child(2)").css({
-                top: '100%'  
-              });
-              $(".movies").css({
-                top: '0%'
-              });
-              $(".movies span:nth-child(3)").removeClass('active');
-              $(".movies span:nth-child(1)").addClass('active');
-              $(".movies span:first-child").removeClass('prev');
-              $(".movies span:nth-child(2)").addClass('prev');
-            }
-          });
-    }
+    $(".movies").animate({
+      top: '-=100%'
+    }, 
+    {
+      duration: 11000,
+      easing: "linear",
+      complete: function() {
+        $(".movies").css({top: '0%'});
+        $("span").css({top:'100%'});
+        let m, k;
+        if( n == numPhoto) {
+          $("span:nth-child(1)").css({top: '0%'});
+        } else {
+          m = n + 1;
+          $("span:nth-child("+m+")").css({top: '0%'});
+        }
+        
+
+        $("span:nth-child("+n+")").removeClass('active');
+        m = n + 1;
+        if(m > numPhoto) {
+          $("span:nth-child(1)").addClass('active');
+          $("span:nth-child(1)").removeClass('prev');
+        } else {
+          $("span:nth-child("+m+")").addClass('active');
+          $("span:nth-child("+m+")").removeClass('prev');
+        }
+        k = n + 2;
+        if(k > numPhoto) {
+          $("span:nth-child(1)").addClass('prev');
+        } else {
+          $("span:nth-child("+k+")").addClass('prev');
+        }
+        
+      }
+    });
+
   }
 }
