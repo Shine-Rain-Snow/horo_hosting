@@ -77,23 +77,43 @@
 			</div>
 		
 
-			<div class="intro_text">
-				<div class="intro_text_title">
-					 OFER <br /> COHEN 
+			<div class="intro_text" *ngIf="scroll_flag">
+				<div class="intro_text_title" >
+					<div class="ofer" >OFER</div>
+					<div class="cohen" >COHEN</div>  
 				</div>
-				<div class="intro_tex_content">
+				<div class="intro_tex_content" >
 					<p data-text='I help ordinary people caught up in extraordinary situation.'
 					class="method-1">
 						I help ordinary people caught up in extraordinary situation.
 					</p>
 				</div>
 			</div>
-			<div class="scroll_show">
+
+			<div class="intro_detail" *ngIf="!scroll_flag">
+				<div class="intro_detail_text">
+					<p>
+						You use a mirror to see your face, I analyze your birth
+						chart & read cards to see your soul. I will tell you the truth even if it is not what you want to hear.
+						I believe the truth can set you free. My purpose is not only to reveal your future, it is also my way to 
+						to heal and help you find the right path to success. 
+						I believe there are no ordinary people, each one is a start contain 
+						love and light, in my list of clients you will find people 
+						from all walk of life, a house wife who live in a remote village 
+						and need a relationship advice, a movie producer into casing or 
+						banker who seek for a stock market advice.
+					</p>
+				</div>
+			</div>
+
+
+
+			<div  class="scroll_show" *ngIf="scroll_flag">
 				<div class="scroll_symbol">
 				</div>
 			</div>
 			
-			<div class="scroll_text">
+			<div class="scroll_text" *ngIf="scroll_flag">
 				Scroll
 			</div>
 	</div>

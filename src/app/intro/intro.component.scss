@@ -48,8 +48,8 @@
 	width: 80%;
 	height: auto;
 	padding-top: 20%;
- 	opacity: 0.5;
-    filter: alpha(opacity=50); 
+ 	opacity: 0.3;
+    filter: alpha(opacity=30); 
 }
 
 .photo_1  {
@@ -83,8 +83,8 @@
 	height: auto;
 	position: relative;
 	top: 60%;
-	opacity: 0.5;
-    filter: alpha(opacity=50);
+	opacity: 0.3;
+    filter: alpha(opacity=30);
 }
 
 
@@ -116,11 +116,40 @@
 	z-index: 25;
 }
 
+.intro_detail {
+	width: 35%;
+	height: auto;
+	position: absolute;
+	top: 26%;
+	left: 13%;
+	color: white;
+	z-index: 25;
+}
+
+.intro_detail_text {
+	white-space: normal;
+	font-size: 26px;
+	position: relative;
+	line-height: 40px;
+}
+
 .intro_text_title {
 	color: white;
 	font-weight: bold;
 	font-size: 100px;
 	line-height: 120px;
+}
+
+.ofer {
+	position: relative;
+	left: -100px;
+	opacity: 0.0;
+}
+
+.cohen {
+	position: relative;
+	left: 100px;
+	opacity: 0.0;
 }
 
 .intro_tex_content {
@@ -136,7 +165,7 @@
 .scroll_show {
 	position: absolute;
 	width: 1px;
-	height: 60px;
+	height: 50px;
 	background-color: white;
 	left: 50%;
 	bottom:	80px;
@@ -147,7 +176,7 @@
 .scroll_symbol {
 	position: absolute;
 	width: 1px;
-	height: 60px;
+	height: 50px;
 	background-color: rgb(133, 127, 126);
 	left: 49%;
 	z-index: 100;

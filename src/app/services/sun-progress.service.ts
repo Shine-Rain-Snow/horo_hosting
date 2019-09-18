@@ -13,6 +13,36 @@ export class SunProgressService {
   mIntro;
   mAst;
   mAbout;
+
+  mProgressShow: boolean = false;
+  mIntroTitleShow: boolean = true;
+  mCurrentPage: number = 0;
+  setProgressShow(value) {
+    this.mProgressShow = value;
+  }
+
+  getProgressShow() {
+    return this.mProgressShow;
+  }
+
+
+  setIntroTitleShow(value) {
+    this.mIntroTitleShow = value;
+  }
+
+  getIntroTitleShow() {
+    return this.mIntroTitleShow;
+  }
+
+  setCurrentPage(value) {
+    this.mCurrentPage = value;
+  }
+
+  getCurrentPage() {
+    return this.mCurrentPage;
+  }
+
+
   setIntroVal(value) {
     this.globals.gIntro =  value;
     this.mIntro = value;

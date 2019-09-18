@@ -7,4 +7,7 @@ export class Globals {
   gContact: number = 0;
   gAbout: number = 0;
   gCounseling: number = 0;
+  gProgressShow: boolean = false;
+  gIntroTitleShow: boolean = false;
+  gCurrentPage: number = 0;
 }

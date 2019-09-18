@@ -20,6 +20,9 @@ export class AstrologyComponent implements OnInit {
   
   next: number = 0;
   ngOnInit() {
+    this.sunService.setProgressShow(true);
+    this.sunService.setAstVal(0);
+    this.sunService.setCurrentPage(2);
     var astVal = this.sunService.getAstVal();
     if(astVal == 0) 
       this.next = 0;

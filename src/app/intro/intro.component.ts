@@ -22,8 +22,18 @@ export class IntroComponent implements OnInit {
   videoInterval;
   scrollingInterval;
   numPhoto = 8;
-  
+  scroll_flag: boolean;
   ngOnInit() {
+    
+    let self = this;
+    this.scroll_flag = this.sunService.getIntroTitleShow();
+    this.sunService.setCurrentPage(1);
+    //title moving 
+    setTimeout(() => {
+      $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
+      $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+    }, 100);
+    
     //scrolling symbol
    
     this.scrollingInterval = setInterval(function(){
@@ -44,7 +54,16 @@ export class IntroComponent implements OnInit {
       this.next = 0;
     if(this.sunService.getIntroVal() == 100)
       this.next = AppConstants.SCROLLING_COUNT;
-    $(".intro").bind("DOMMouseScroll mousewheel", (event) => {  
+    $(".intro").bind("DOMMouseScroll mousewheel", (event) => {
+      if(this.scroll_flag) {
+        this.scroll_flag = false;
+        this.next = 4;
+        this.sunService.setIntroVal(this.next * 10);
+      }
+      
+      this.sunService.setIntroTitleShow(false);
+      this.sunService.setProgressShow(true);
+      
       if(event.originalEvent.detail > 0) {
         //scroll down
         this.next++;
@@ -70,8 +89,8 @@ export class IntroComponent implements OnInit {
     //photo and video are moving by this function.
     this.movePhoto();
     this.moveMovies();
-    this.photoInterval = setInterval(this.movePhoto, 11600);
-    this.videoInterval = setInterval(this.moveMovies, 11600);
+    this.photoInterval = setInterval(this.movePhoto, 90100);
+    this.videoInterval = setInterval(this.moveMovies, 90100);
   }
 
   ngOnDestroy() {
@@ -93,48 +112,48 @@ export class IntroComponent implements OnInit {
       }
     }
 
-    $("span").css({visibility:'hidden'});
+    $(".photo span").css({visibility:'hidden'});
     if( n == numPhoto) {
-      $("span:nth-child(1)").css({visibility: 'visible'});
-      $("span:nth-child("+numPhoto+")").css({visibility: 'visible'});
+      $(".photo span:nth-child(1)").css({visibility: 'visible'});
+      $(".photo span:nth-child("+numPhoto+")").css({visibility: 'visible'});
     } else {
-      $("span:nth-child("+n+")").css({visibility: 'visible'});
+      $(".photo span:nth-child("+n+")").css({visibility: 'visible'});
       let m = n + 1;
-      $("span:nth-child("+m+")").css({visibility: 'visible'});
+      $(".photo span:nth-child("+m+")").css({visibility: 'visible'});
     } 
 
     $(".photo").animate({
       top: '-=100%'
     }, 
     {
-      duration: 11000,
+      duration: 90000,
       easing: "linear",
       complete: function() {
         $(".photo").css({top: '0%'});
-        $("span").css({top:'100%'});
+        $(".photo span").css({top:'100%'});
         let m, k;
         if( n == numPhoto) {
-          $("span:nth-child(1)").css({top: '0%'});
+          $(".photo span:nth-child(1)").css({top: '0%'});
         } else {
           m = n + 1;
-          $("span:nth-child("+m+")").css({top: '0%'});
+          $(".photo span:nth-child("+m+")").css({top: '0%'});
         }
         
 
-        $("span:nth-child("+n+")").removeClass('active');
+        $(".photo span:nth-child("+n+")").removeClass('active');
         m = n + 1;
         if(m > numPhoto) {
-          $("span:nth-child(1)").addClass('active');
-          $("span:nth-child(1)").removeClass('prev');
+          $(".photo span:nth-child(1)").addClass('active');
+          $(".photo span:nth-child(1)").removeClass('prev');
         } else {
-          $("span:nth-child("+m+")").addClass('active');
-          $("span:nth-child("+m+")").removeClass('prev');
+          $(".photo span:nth-child("+m+")").addClass('active');
+          $(".photo span:nth-child("+m+")").removeClass('prev');
         }
         k = n + 2;
         if(k > numPhoto) {
-          $("span:nth-child(1)").addClass('prev');
+          $(".photo span:nth-child(1)").addClass('prev');
         } else {
-          $("span:nth-child("+k+")").addClass('prev');
+          $(".photo span:nth-child("+k+")").addClass('prev');
         }
         
       }
@@ -147,54 +166,54 @@ export class IntroComponent implements OnInit {
     const numPhoto = 8;
     let n
     for(let i=1; i<= numPhoto; i++) {
-      if($("span:nth-child("+i+")").hasClass("active")){
+      if($(".movies span:nth-child("+i+")").hasClass("active")){
         n = i;
         break;
       }
     }
 
-    $("span").css({visibility:'hidden'});
+    $(".movies span").css({visibility:'hidden'});
     if( n == numPhoto) {
-      $("span:nth-child(1)").css({visibility: 'visible'});
-      $("span:nth-child("+numPhoto+")").css({visibility: 'visible'});
+      $(".movies span:nth-child(1)").css({visibility: 'visible'});
+      $(".movies span:nth-child("+numPhoto+")").css({visibility: 'visible'});
     } else {
-      $("span:nth-child("+n+")").css({visibility: 'visible'});
+      $(".movies span:nth-child("+n+")").css({visibility: 'visible'});
       let m = n + 1;
-      $("span:nth-child("+m+")").css({visibility: 'visible'});
+      $(".movies span:nth-child("+m+")").css({visibility: 'visible'});
     } 
 
     $(".movies").animate({
       top: '-=100%'
     }, 
     {
-      duration: 11000,
+      duration: 90000,
       easing: "linear",
       complete: function() {
         $(".movies").css({top: '0%'});
-        $("span").css({top:'100%'});
+        $(".movies span").css({top:'100%'});
         let m, k;
         if( n == numPhoto) {
-          $("span:nth-child(1)").css({top: '0%'});
+          $(".movies span:nth-child(1)").css({top: '0%'});
         } else {
           m = n + 1;
-          $("span:nth-child("+m+")").css({top: '0%'});
+          $(".movies span:nth-child("+m+")").css({top: '0%'});
         }
         
 
-        $("span:nth-child("+n+")").removeClass('active');
+        $(".movies span:nth-child("+n+")").removeClass('active');
         m = n + 1;
         if(m > numPhoto) {
-          $("span:nth-child(1)").addClass('active');
-          $("span:nth-child(1)").removeClass('prev');
+          $(".movies span:nth-child(1)").addClass('active');
+          $(".movies span:nth-child(1)").removeClass('prev');
         } else {
-          $("span:nth-child("+m+")").addClass('active');
-          $("span:nth-child("+m+")").removeClass('prev');
+          $(".movies span:nth-child("+m+")").addClass('active');
+          $(".movies span:nth-child("+m+")").removeClass('prev');
         }
         k = n + 2;
         if(k > numPhoto) {
-          $("span:nth-child(1)").addClass('prev');
+          $(".movies span:nth-child(1)").addClass('prev');
         } else {
-          $("span:nth-child("+k+")").addClass('prev');
+          $(".movies span:nth-child("+k+")").addClass('prev');
         }
         
       }
