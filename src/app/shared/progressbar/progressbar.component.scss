@@ -1,0 +1,61 @@
+
+.progress_container {
+	display: flex;	
+  width: 100%;
+  
+}
+
+.progress-section {
+
+  text-align: center;
+  width: 18% !important; 
+  padding: 0 2%;
+}
+
+.bar_text {
+  color: black;
+  font-size: 16px;
+}
+
+
+mat-progress-bar{
+  height: 2px !important;
+
+}
+
+::ng-deep .mat-progress-bar-fill::after {
+    background-color:#000000;
+}
+
+::ng-deep .mat-progress-bar-buffer {
+    background: #ffffff;
+}
+
+.progress-margin {
+  margin: 0 0;
+}
+
+.progressbar {
+  height: 80px;
+}
+
+.progressbar:hover {
+  .bar_text {
+    visibility: visible;
+  }
+}
+
+.progress-section {
+  height: 80px;
+}
+
+.progress-section:hover {
+  .bar_text {
+    visibility: visible;
+  }
+}
+
+.bar_text {
+  visibility: hidden;
+}
+

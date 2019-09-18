@@ -1,0 +1,192 @@
+.ast-inner {
+	height: 100%;
+	width: 100%;
+}
+
+.ast-inner-container {
+	// background-color: rgb(167,194,178);
+	background-color: #F8F6FA;
+	height: 100%;
+	width: 100%;
+	z-index: 20;
+}
+
+.ast-inner-carousel {
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+}
+
+
+.g-scrolling-carousel {
+    position: absolute;
+}
+.g-scrolling-carousel .items {
+    
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    -webkit-overflow-scrolling: touch;
+}
+.g-scrolling-carousel .items::-webkit-scrollbar { 
+    display: none; 
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+}
+.container { margin: 0 auto; max-width: 100%; height: 100%;}
+
+.g-scrolling-carousel .items > div {
+    display: inline-block;
+     /* notice the comments between inline-block items */
+    margin-right: 1px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    text-decoration: none;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+.g-scrolling-carousel, .items {
+  width: 100%;
+  height: 100%;
+}
+
+.items {
+	color: black;
+}
+
+.item_container {
+	padding: 30px;
+	padding-top: 12%;
+}
+
+.clear {
+	clear: both;
+}
+
+.sunsign_title {
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+  	font-size: 20px;
+  	margin-bottom: 10px;
+
+	.left_title {
+		font-weight: bold;
+		text-align: center;
+		width: 30%;
+	}
+	.mid_title {
+		width: 30%;
+	}
+	.right_title {
+		font-weight: bold;
+		text-align: center;
+		width: 30%;
+	}	
+}
+
+.sunsign_text {
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+
+	.left_text {
+		text-align: left;
+		width: 30%;
+		white-space: break-spaces;
+		overflow: hidden;
+		line-height: 30px;
+		text-overflow: ellipsis;
+	}
+	.right_text {
+		text-align: left;
+		width: 30%;
+		white-space: break-spaces;
+		overflow: hidden;
+		line-height: 30px;
+		text-overflow: ellipsis;
+	}	
+	.mid_img {
+		text-align: center;
+		width: 30%;
+		img {
+			width: 200px;
+			height: 200px;
+		}
+	}
+}
+
+.sunsign_img {
+	display: flex;
+	align-items: center;
+  	justify-content: center;
+  	margin-top: 20px;
+	.left_img {
+		width: 30%;
+		position: relative;
+		background-image: url('../../../assets/img/astInner/aries_taurus/aries_hover.jpg');
+		background-position: center;
+ 	 	background-repeat: no-repeat;
+ 	 	background-size: cover;
+		cursor: pointer;
+		z-index: 0;
+		img:first-child {
+			width: 80%;
+			visibility: hidden;
+		}
+		img:last-child {
+			max-width: 20%;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 50%;
+			left: 75%;
+			visibility: hidden;
+		}
+	}
+
+	
+
+	.none_img {
+		width: 30%;
+		height: 200px;
+	}
+	.right_img {
+		width: 30%;
+		position: relative;
+		img:first-child {
+			width: 80%;
+		}
+		img:last-child {
+			max-width: 20%;
+			width: 30px;
+			height: 30px;
+			position: absolute;
+			top: 50%;
+			left: 75%;
+		}
+	}
+}
+
+.ast-inner-title {
+	
+	font-size: 20px;
+	font-weight: bold;
+	position: absolute;
+	top: 15%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	cursor: pointer;
+	z-index: 30;
+}
