@@ -33,8 +33,6 @@ export class ProgressbarComponent implements OnInit {
       this.aboutVal = this.sunService.getAboutVal();
       this.progressShow = this.sunService.getProgressShow();
       this.mCurrentPage = this.sunService.getCurrentPage();
-      
-      
     }, 10);
    
     this.contactVal = this.stateData.gContact;
@@ -47,8 +45,9 @@ export class ProgressbarComponent implements OnInit {
           case 1: {
             this.introVal += 0.1;  
             this.sunService.setIntroVal(this.introVal);
-            if(this.introVal >= 100){
-              this.onAst();
+            if(this.introVal > 100) {
+              this.sunService.setIntroVal(100);
+              break;
             }
             break;
           }
@@ -57,12 +56,14 @@ export class ProgressbarComponent implements OnInit {
             this.astVal += 0.1;
             this.sunService.setAstVal(this.astVal);
             if(this.astVal >= 40) {
-              this.onAstInner();
-            }
-            if(this.astVal >= 100){
-              this.onAbout();
-            }
+              this.sunService.setAstVal(40);
+              break;
+            }         
             break;
+          }
+          //ast-inner page
+          case 3: {
+            
           }
         }
       }, 50);
@@ -76,8 +77,6 @@ export class ProgressbarComponent implements OnInit {
   }
 
   onIntro() {
-   
-    
     this.sunService.setIntroVal(0);
     this.sunService.setAstVal(0);
     this.sunService.setAboutVal(0);

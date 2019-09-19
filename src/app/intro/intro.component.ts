@@ -22,18 +22,24 @@ export class IntroComponent implements OnInit {
   videoInterval;
   scrollingInterval;
   numPhoto = 8;
+  numMovies = 8;
   scroll_flag: boolean;
+  animaFlag;
+  getIntVal;
+ 
+ 
   ngOnInit() {
     
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
+
     //title moving 
+   
     setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
     }, 100);
-    
     //scrolling symbol
    
     this.scrollingInterval = setInterval(function(){
@@ -49,48 +55,84 @@ export class IntroComponent implements OnInit {
         }
       });
     }, 2100);
-    // mouse scrolling section
-    if(this.sunService.getIntroVal() == 0) 
-      this.next = 0;
-    if(this.sunService.getIntroVal() == 100)
-      this.next = AppConstants.SCROLLING_COUNT;
+    let scrollUpCount = 0;
+    let scrollDownCount = 0;
     $(".intro").bind("DOMMouseScroll mousewheel", (event) => {
       if(this.scroll_flag) {
         this.scroll_flag = false;
-        this.next = 4;
-        this.sunService.setIntroVal(this.next * 10);
+        this.next = 40;
+        this.sunService.setIntroVal(40);
       }
       
       this.sunService.setIntroTitleShow(false);
       this.sunService.setProgressShow(true);
       
+      this.next = this.sunService.getIntroVal();
+    
+      
       if(event.originalEvent.detail > 0) {
-        //scroll down
-        this.next++;
-        this.sunService.setIntroVal(this.next * 10); 
-        if(this.next > AppConstants.SCROLLING_COUNT){
-          this.router.navigate(['/astrology']);
-          this.sunService.setIntroVal(100);
+        //scroll up
+        console.log("next"+this.next);
+        scrollUpCount++;
+        scrollDownCount = 0;
+        if(scrollUpCount > 5) {
+          if(this.next >= 40){
+         
+            this.next = AppConstants.SCROLLING_COUNT;
+            this.sunService.setIntroVal(this.next * 10); 
+            this.router.navigate(['/astrology']);
+            scrollUpCount = 0;
+            
+          } else {
+            this.next = 40;
+            this.sunService.setIntroVal(40);
+            this.scroll_flag = false;
+            scrollUpCount = 0;
+            this.textAnimation();
+          }
         }
-          
             
       } else {
-        //scroll up
-        this.next--;
-        if(this.next < 0) {
-          this.next = 0;
-          this.sunService.setIntroVal(0);
+        //scroll down
+        console.log("prev==="+this.next);
+        scrollUpCount = 0;
+        scrollDownCount++;
+        if(scrollDownCount > 3) {
+          if(this.next >= 45) {
+            this.next = 40;
+            scrollDownCount = 0;
+            this.sunService.setIntroVal(40);
+            this.textAnimation();
+          }
+          else if(this.next>40 && this.next<45) {
+            this.next = 0;
+            scrollDownCount = 0;
+            this.sunService.setIntroVal(0);
+            
+            // setTimeout(() => {
+            //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
+            //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+            
+            // }, 100);
+          } else {
+            // this.scroll_flag = true;
+            // scrollDownCount = 0;
+           
+            // setTimeout(() => {
+            //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
+            //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+            // }, 100);
+          }
         }
-        this.sunService.setIntroVal(this.next * 10);
-        //this.router.navigate(['/intro']);    
+        
       }
     });
 
     //photo and video are moving by this function.
     this.movePhoto();
     this.moveMovies();
-    this.photoInterval = setInterval(this.movePhoto, 90100);
-    this.videoInterval = setInterval(this.moveMovies, 90100);
+    this.photoInterval = setInterval(this.movePhoto, 70100);
+    this.videoInterval = setInterval(this.moveMovies, 70100);
   }
 
   ngOnDestroy() {
@@ -100,6 +142,22 @@ export class IntroComponent implements OnInit {
     clearInterval(this.photoInterval);
     clearInterval(this.videoInterval);
     clearInterval(this.scrollingInterval);
+  }
+
+  textAnimation() {
+    let pText = $(".intro_detail_text p").text();
+    //$(".intro_detail_text p").empty();
+    // let res = pText.split(" ");
+    // console.log(res.length);
+    // for (let i=0; i< res.length; i++) {
+    //   setTimeout(() => {
+    //     $(".intro_detail_text p").append("<span>"+res[i]+"</span>");
+    //     $(".intro_detail_text span").css({color: "white"});
+    //   }, 100 * i);
+      
+    // }
+
+
   }
  
   movePhoto() {
@@ -126,7 +184,7 @@ export class IntroComponent implements OnInit {
       top: '-=100%'
     }, 
     {
-      duration: 90000,
+      duration: 70000,
       easing: "linear",
       complete: function() {
         $(".photo").css({top: '0%'});
@@ -163,9 +221,9 @@ export class IntroComponent implements OnInit {
 
 
   moveMovies() {
-    const numPhoto = 8;
+    const numMovies = 8;
     let n
-    for(let i=1; i<= numPhoto; i++) {
+    for(let i=1; i<= numMovies; i++) {
       if($(".movies span:nth-child("+i+")").hasClass("active")){
         n = i;
         break;
@@ -173,9 +231,9 @@ export class IntroComponent implements OnInit {
     }
 
     $(".movies span").css({visibility:'hidden'});
-    if( n == numPhoto) {
+    if( n == numMovies) {
       $(".movies span:nth-child(1)").css({visibility: 'visible'});
-      $(".movies span:nth-child("+numPhoto+")").css({visibility: 'visible'});
+      $(".movies span:nth-child("+numMovies+")").css({visibility: 'visible'});
     } else {
       $(".movies span:nth-child("+n+")").css({visibility: 'visible'});
       let m = n + 1;
@@ -186,13 +244,13 @@ export class IntroComponent implements OnInit {
       top: '-=100%'
     }, 
     {
-      duration: 90000,
+      duration: 70000,
       easing: "linear",
       complete: function() {
         $(".movies").css({top: '0%'});
         $(".movies span").css({top:'100%'});
         let m, k;
-        if( n == numPhoto) {
+        if( n == numMovies) {
           $(".movies span:nth-child(1)").css({top: '0%'});
         } else {
           m = n + 1;
@@ -202,7 +260,7 @@ export class IntroComponent implements OnInit {
 
         $(".movies span:nth-child("+n+")").removeClass('active');
         m = n + 1;
-        if(m > numPhoto) {
+        if(m > numMovies) {
           $(".movies span:nth-child(1)").addClass('active');
           $(".movies span:nth-child(1)").removeClass('prev');
         } else {
@@ -210,7 +268,7 @@ export class IntroComponent implements OnInit {
           $(".movies span:nth-child("+m+")").removeClass('prev');
         }
         k = n + 2;
-        if(k > numPhoto) {
+        if(k > numMovies) {
           $(".movies span:nth-child(1)").addClass('prev');
         } else {
           $(".movies span:nth-child("+k+")").addClass('prev');

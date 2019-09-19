@@ -90,6 +90,7 @@ export class AstInnerComponent implements OnInit {
   ngOnInit() {
     
    let self = this;
+   this.sunService.setCurrentPage(3);
    this.next = (AppConstants.SCROLLING_COUNT)/2;
    this.sunService.setAstVal((this.next-1) * 10);
    this.scrolling(self, this.next); 
