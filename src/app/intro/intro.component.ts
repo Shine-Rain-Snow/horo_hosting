@@ -77,9 +77,7 @@ export class IntroComponent implements OnInit {
         scrollDownCount = 0;
         if(scrollUpCount > 5) {
           if(this.next >= 40){
-         
-            this.next = AppConstants.SCROLLING_COUNT;
-            this.sunService.setIntroVal(this.next * 10); 
+            this.sunService.setIntroVal(0); 
             this.router.navigate(['/astrology']);
             scrollUpCount = 0;
             
@@ -88,7 +86,6 @@ export class IntroComponent implements OnInit {
             this.sunService.setIntroVal(40);
             this.scroll_flag = false;
             scrollUpCount = 0;
-            this.textAnimation();
           }
         }
             
@@ -102,7 +99,6 @@ export class IntroComponent implements OnInit {
             this.next = 40;
             scrollDownCount = 0;
             this.sunService.setIntroVal(40);
-            this.textAnimation();
           }
           else if(this.next>40 && this.next<45) {
             this.next = 0;
@@ -131,8 +127,8 @@ export class IntroComponent implements OnInit {
     //photo and video are moving by this function.
     this.movePhoto();
     this.moveMovies();
-    this.photoInterval = setInterval(this.movePhoto, 70100);
-    this.videoInterval = setInterval(this.moveMovies, 70100);
+    this.photoInterval = setInterval(this.movePhoto, 60100);
+    this.videoInterval = setInterval(this.moveMovies, 60100);
   }
 
   ngOnDestroy() {
@@ -144,22 +140,6 @@ export class IntroComponent implements OnInit {
     clearInterval(this.scrollingInterval);
   }
 
-  textAnimation() {
-    let pText = $(".intro_detail_text p").text();
-    //$(".intro_detail_text p").empty();
-    // let res = pText.split(" ");
-    // console.log(res.length);
-    // for (let i=0; i< res.length; i++) {
-    //   setTimeout(() => {
-    //     $(".intro_detail_text p").append("<span>"+res[i]+"</span>");
-    //     $(".intro_detail_text span").css({color: "white"});
-    //   }, 100 * i);
-      
-    // }
-
-
-  }
- 
   movePhoto() {
     const numPhoto = 8;
     let n
@@ -184,7 +164,7 @@ export class IntroComponent implements OnInit {
       top: '-=100%'
     }, 
     {
-      duration: 70000,
+      duration: 60000,
       easing: "linear",
       complete: function() {
         $(".photo").css({top: '0%'});
@@ -244,7 +224,7 @@ export class IntroComponent implements OnInit {
       top: '-=100%'
     }, 
     {
-      duration: 70000,
+      duration: 60000,
       easing: "linear",
       complete: function() {
         $(".movies").css({top: '0%'});

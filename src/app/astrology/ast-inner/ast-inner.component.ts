@@ -172,6 +172,7 @@ export class AstInnerComponent implements OnInit {
                 if(next > (AppConstants.SCROLLING_COUNT)) {
                     next = AppConstants.SCROLLING_COUNT;
                     self.sunService.setAboutVal(0);
+                    self.sunService.setAstVal(0);
                     self.goAbout();
                 }
             }

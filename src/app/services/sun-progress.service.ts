@@ -42,6 +42,11 @@ export class SunProgressService {
     return this.mCurrentPage;
   }
 
+  setAllZero() {
+    this.mIntro = 0;
+    this.mAst = 0;
+    this.mAbout = 0;
+  }
 
   setIntroVal(value) {
     this.globals.gIntro =  value;

@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { SunProgressService } from '../../services/sun-progress.service';
 import { Globals } from '../globals';
 import { Router } from '@angular/router';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -15,14 +16,39 @@ export class SidenavListComponent implements OnInit {
     private stateData: Globals) { }
 
   ngOnInit() {
+    
+    let i = 0;
+    let j = 0;
+    $(".nav-list .item_container").hover(function() {
+      i = $(".item_container").index(this); 
+      
+      j = i + 1;
+      $(".item_container:nth-child("+j+") .num").empty().text("-");
+      
+    }, function() {
+      
+      $(".item_container:nth-child("+j+") .num").empty().text("0"+i+".");
+    });
   }
   public onSidenavClose = () => {
     this.sidenavClose.emit();
   }
 
   onIntro() {
-    
+    this.sunService.setAllZero();
     this.router.navigate(['/intro']);
+    this.sidenavClose.emit();
+  }
+
+  onAst() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/astrology']);
+    this.sidenavClose.emit();
+  }
+
+  onAbout() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/about']);
     this.sidenavClose.emit();
   }
 

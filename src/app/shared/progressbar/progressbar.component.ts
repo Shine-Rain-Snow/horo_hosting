@@ -85,7 +85,7 @@ export class ProgressbarComponent implements OnInit {
 
   onAst() {
     this.sunService.setAstVal(0);
-    this.sunService.setIntroVal(100);
+    this.sunService.setIntroVal(0);
     this.router.navigate(['/astrology']);
   }
 
@@ -95,8 +95,8 @@ export class ProgressbarComponent implements OnInit {
   }
 
   onAbout() {
-    this.sunService.setAstVal(100);
-    this.sunService.setIntroVal(100);
+    this.sunService.setAstVal(0);
+    this.sunService.setIntroVal(0);
     this.router.navigate(['/about']);
   }
   

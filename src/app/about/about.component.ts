@@ -18,10 +18,9 @@ export class AboutComponent implements OnInit {
 
   next: number = 0;
   ngOnInit() {
-    if(this.sunService.getAboutVal() == 0) 
-      this.next = 0;
-    if(this.sunService.getAboutVal() == 100)
-      this.next = AppConstants.SCROLLING_COUNT;
+    
+    this.next = 0;
+    this.sunService.setProgressShow(true);
     $(".about_page").bind("DOMMouseScroll mousewheel", (event) => {  
       if(event.originalEvent.detail > 0) {
         //scroll down

@@ -1,4 +1,5 @@
 .nav-list {
+    width: 100%;
     height: 100%;  
     position: absolute;   
     z-index: 100;   
@@ -41,4 +42,11 @@ mat-nav-list span {
     z-index: 50;
     font-size: 16px;
     cursor: pointer;
+}
+
+.num {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    padding-right: 2%;
 }
