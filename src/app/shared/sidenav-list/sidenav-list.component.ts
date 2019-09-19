@@ -52,4 +52,22 @@ export class SidenavListComponent implements OnInit {
     this.sidenavClose.emit();
   }
 
+  onContact() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/contact']);
+    this.sidenavClose.emit();
+  }
+
+  onCounseling() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/counseling']);
+    this.sidenavClose.emit();
+  }
+
+  onTarot() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/tarot']);
+    this.sidenavClose.emit();
+  }
+
 }
