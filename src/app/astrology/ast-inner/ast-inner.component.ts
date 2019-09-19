@@ -91,6 +91,7 @@ export class AstInnerComponent implements OnInit {
     
    let self = this;
    this.sunService.setCurrentPage(3);
+   this.sunService.setProgressShow(true);
    this.next = (AppConstants.SCROLLING_COUNT)/2;
    this.sunService.setAstVal((this.next-1) * 10);
    this.scrolling(self, this.next); 
@@ -128,7 +129,7 @@ export class AstInnerComponent implements OnInit {
     };
     var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,items,element,elements;
   	var element = $(".g-scrolling-carousel .items");
-  	var amount = element.children(":first").outerWidth(true);
+  	var amount = element.children(":first").outerWidth(true)/10;
   	leftElem = $('<span />').addClass('jc-left');
     rightElem = $('<span />').addClass('jc-right');
     element.parent().append(leftElem).append(rightElem);
@@ -167,13 +168,13 @@ export class AstInnerComponent implements OnInit {
         if(event.originalEvent.detail > 0) {
                 //scroll up
             next++;
-            self.sunService.setAstVal(next * 10);
+            self.sunService.setAstVal(next);
             if (curIndex >= 5) {
                 if(next > (AppConstants.SCROLLING_COUNT)) {
                     next = AppConstants.SCROLLING_COUNT;
                     self.sunService.setAboutVal(0);
                     self.sunService.setAstVal(0);
-                    self.goAbout();
+                    // self.goAbout();
                 }
             }
         }
@@ -192,9 +193,11 @@ export class AstInnerComponent implements OnInit {
             rightElem.fadeOut(200);
         } else {
             rightElem.fadeIn(200);
+           
         }
         if(left == 0) {
             leftElem.fadeOut(200);
+            
         } else {
             leftElem.fadeIn(200);
         }
