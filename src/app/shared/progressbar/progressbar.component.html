@@ -26,7 +26,7 @@
       </mat-progress-bar>    
       <div class="bar_text">About</div>    
     </div>
-    <div routerLink="/counseling" class="progress-section">
+    <div (click)="onCounseling()" class="progress-section">
       <mat-progress-bar
           class="progress-margin"          
        
@@ -35,9 +35,9 @@
       </mat-progress-bar>      
       <div class="bar_text">Book a session</div>  
     </div>
-    <div routerLink="/contact" class="progress-section">
+    <div (click)="onContact()" class="progress-section">
       <mat-progress-bar
-          class="progress-margin"          
+          class="progress-margin"    
          
           [value]="contactVal"
           >

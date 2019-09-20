@@ -63,8 +63,14 @@ export class ProgressbarComponent implements OnInit {
           }
           //ast-inner page
           case 3: {
-            this.astVal += 0.1;
-            this.sunService.setAstVal(this.astVal);
+            // this.astVal += 0.01;
+            // this.sunService.setAstVal(this.astVal);
+            // if(this.astVal > 100) {
+            //   this.sunService.setAstVal(100);
+            // }
+            // if(this.astVal < 40) {
+            //   this.onAst();
+            // }
           }
         }
       }, 50);
@@ -78,15 +84,12 @@ export class ProgressbarComponent implements OnInit {
   }
 
   onIntro() {
-    this.sunService.setIntroVal(0);
-    this.sunService.setAstVal(0);
-    this.sunService.setAboutVal(0);
+    this.sunService.setAllZero();
     this.router.navigate(['/intro']);
   }
 
   onAst() {
-    this.sunService.setAstVal(0);
-    this.sunService.setIntroVal(0);
+    this.sunService.setAllZero();
     this.router.navigate(['/astrology']);
   }
 
@@ -96,9 +99,18 @@ export class ProgressbarComponent implements OnInit {
   }
 
   onAbout() {
-    this.sunService.setAstVal(0);
-    this.sunService.setIntroVal(0);
+    this.sunService.setAllZero();
     this.router.navigate(['/about']);
+  }
+
+  onCounseling() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/counseling']);
+  }
+
+  onContact() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/contact']);
   }
   
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-navigation',
@@ -17,5 +18,6 @@ export class NavigationComponent implements OnInit {
 
   public onToggleSidenav = () => {
     this.sidenavToggle.emit();
+  
   }
 }

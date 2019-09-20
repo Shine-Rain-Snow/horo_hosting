@@ -69,9 +69,14 @@
 						<source src="assets/video/intro_7.Ogg" type="video/Ogg">
 					</video>
 				</span>
+				<span class="video_8">
+					<video autoplay muted loop>
+						<source src="assets/video/intro_8.Ogg" type="video/Ogg">
+					</video>
+				</span>
 			</div>
 		
-			<div *ngIf="scroll_flag">
+			<div *ngIf="animaFlag">
 				<div class="intro_text"  >
 					<div class="intro_text_title" >
 						<div class="ofer" >OFER</div>
@@ -84,37 +89,48 @@
 					</div>
 				</div>
 			</div>	
-			<div *ngIf="!scroll_flag">
+			<div *ngIf="!animaFlag">
 				<div class="intro_detail" >
 					<div class="intro_detail_text">
 						<p class="method-1"
-						data-text="You use a mirror to see your face, I analyze your birth" >
-							You use a mirror to see your face, I analyze your birth
-						</p>
+						data-text="You use a mirror to see your face, " >
+						You use a mirror to see your face, 
+						</p> <br />
 						<p class="method-2" 
-						data-text="chart & read cards to see your soul. I will tell you the truth even">
-							chart & read cards to see your soul. I will tell you the truth even
-						</p>
+						data-text="I analyze your birth chart & read cards to see your soul. I will tell you the truth ">
+						I analyze your birth chart & read cards to see your soul. I will tell you the truth 
+						</p> <br />
 						<p class="method-3" 
-						data-text="if it is not what you want to hear.I believe the truth can ">
-							if it is not what you want to hear.I believe the truth can 
-						</p>
+						data-text="even if it is not what you want to hear. I believe the truth can set you free.">
+						even if it is not what you want to hear. I believe the truth can set you free.
+						</p> <br />
 						<p class="method-4" 
-						data-text="set you free. My purpose is not only to reveal">
-						set you free. My purpose is not only to reveal
-						</p>
+						data-text="I do it all my life. My purpose is not only to see your future;">
+						I do it all my life. My purpose is not only to see your future;
+						</p> <br />
 						<p class="method-5" 
-						data-text=" your future, it is also my way to to heal and help you ">
-						your future, it is also my way to to heal and help you 
-						</p>
+						data-text=" this is also my way to heal and help you find the right path to success">
+						this is also my way to heal and help you find the right path to success
+						</p> <br />
 						<p class="method-6" 
-						data-text="find the right path to success.">
-						find the right path to success.
-						</p>
+						data-text="I believe there are no ordinary people in this world, each soul comes with unique purpose">
+						I believe there are no ordinary people in this world, each soul comes with unique purpose
+						</p> <br />
+						<p class="method-7" 
+						data-text="in my list of clients you will find people from all walk of life,">
+						in my list of clients you will find people from all walk of life,
+						</p> <br />
+						<p class="method-8" 
+						data-text="a house wife who need a relationship advice, a movie producer who is in the process of">
+						a house wife who need a relationship advice, a movie producer who is in the process of
+						</p> <br />
+						<p class="method-9" 
+						data-text="casting or a banker who seek for a reliable stock market prediction.">
+						casting or a banker who seek for a reliable stock market prediction.
+						</p> 
 					</div>
 				</div>
 			</div>	
-
 
 			<div  class="scroll_show" *ngIf="scroll_flag">
 				<div class="scroll_symbol">

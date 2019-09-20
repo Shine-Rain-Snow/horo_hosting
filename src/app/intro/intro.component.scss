@@ -37,7 +37,7 @@
 	width: 30%;
 	height: 100%;
 	position: absolute;
-	right: 0%;
+	right: 1%;
 	top: 0%;
 }
 
@@ -47,7 +47,7 @@
 
 .photo img {
 	width: 80%;
-	height: auto;
+	height: 60%;
 	padding-top: 20%;
  	opacity: 0.3;
     filter: alpha(opacity=30); 
@@ -105,8 +105,6 @@
 	cursor: pointer;
 }
 
-
-
 .intro_text {
 	width: 30%;
 	height: auto;
@@ -118,7 +116,7 @@
 }
 
 .intro_detail {
-	width: 35%;
+	width: 70%;
 	height: auto;
 	position: absolute;
 	top: 30%;
@@ -129,7 +127,7 @@
 
 .intro_detail_text {
 	white-space: normal;
-	font-size: 26px;
+	font-size: 22px;
 	position: relative;
     color: rgb(133, 127, 126);
 }
@@ -143,13 +141,12 @@
 	100%  { width: 100%; }
 }
 
-// @keyframes fill-2 {
-// 	100% { color: white; }
-// }
+$times: 4s;
 
 .method-1 {
 	position: relative;
 	display: inline-block;
+	font-size: 28px;
 	&:before {
 	  content: attr(data-text);
 	  position: absolute;
@@ -157,15 +154,10 @@
 	  white-space: nowrap;
 	  width: 0;
 	  color: white;
-	  animation: fill-1 5s;
+	  animation: fill-1 $times;
 	  
 	}	
   }
-
-//   .one {
-// 	  animation: fill-2 0s;
-// 	  animation-delay: 5s;
-//   }
 
   .method-2 {
 	position: relative;
@@ -177,8 +169,8 @@
 	  white-space: nowrap;
 	  width: 0;
 	  color: white;
-	  animation: fill-1 5s;
-	  animation-delay: 5s;
+	  animation: fill-1 $times;
+	  animation-delay: $times*1;
 	}	
   }
 
@@ -192,8 +184,8 @@
 	  white-space: nowrap;
 	  width: 0;
 	  color: white;
-	  animation: fill-1 5s;
-	  animation-delay: 10s;
+	  animation: fill-1 $times;
+	  animation-delay: $times*2;
 	}	
   }
 
@@ -207,8 +199,8 @@
 	  white-space: nowrap;
 	  width: 0;
 	  color: white;
-	  animation: fill-1 5s;
-	  animation-delay: 15s;
+	  animation: fill-1 $times;
+	  animation-delay: $times*3;
 	}	
   }
 
@@ -222,8 +214,8 @@
 	  white-space: nowrap;
 	  width: 0;
 	  color: white;
-	  animation: fill-1 5s;
-	  animation-delay: 20s;
+	  animation: fill-1 $times;
+	  animation-delay: $times*4;
 	}	
   }
 
@@ -237,8 +229,53 @@
 	  white-space: nowrap;
 	  width: 0;
 	  color: white;
-	  animation: fill-1 5s;
-	  animation-delay: 25s;
+	  animation: fill-1 $times;
+	  animation-delay: $times*5;
+	}	
+  }
+
+  .method-7 {
+	position: relative;
+	display: inline-block;
+	&:before {
+	  content: attr(data-text);
+	  position: absolute;
+	  overflow: hidden;
+	  white-space: nowrap;
+	  width: 0;
+	  color: white;
+	  animation: fill-1 $times;
+	  animation-delay: $times*6;
+	}	
+  }
+
+  .method-8 {
+	position: relative;
+	display: inline-block;
+	&:before {
+	  content: attr(data-text);
+	  position: absolute;
+	  overflow: hidden;
+	  white-space: nowrap;
+	  width: 0;
+	  color: white;
+	  animation: fill-1 $times;
+	  animation-delay: $times*7;
+	}	
+  }
+
+  .method-9 {
+	position: relative;
+	display: inline-block;
+	&:before {
+	  content: attr(data-text);
+	  position: absolute;
+	  overflow: hidden;
+	  white-space: nowrap;
+	  width: 0;
+	  color: white;
+	  animation: fill-1 $times;
+	  animation-delay: $times*8;
 	}	
   }
   

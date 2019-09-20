@@ -5,7 +5,8 @@
 
 .ast-inner-container {
 	// background-color: rgb(167,194,178);
-	background-color: #F8F6FA;
+	// background-color: #F8F6FA;
+	background-color: #fdfaf7;
 	height: 100%;
 	width: 100%;
 	z-index: 20;
@@ -66,8 +67,8 @@ img {
 }
 
 .item_container {
-	padding: 30px;
-	padding-top: 12%;
+	// padding: 30px;
+	padding-top: 7%;
 }
 
 .clear {
@@ -83,7 +84,7 @@ img {
 
 	.left_title {
 		font-weight: bold;
-		text-align: center;
+		text-align: left;
 		width: 30%;
 	}
 	.mid_title {
@@ -91,7 +92,7 @@ img {
 	}
 	.right_title {
 		font-weight: bold;
-		text-align: center;
+		text-align: left;
 		width: 30%;
 	}	
 }
@@ -100,30 +101,74 @@ img {
 	display: flex;
 	align-items: center;
   	justify-content: center;
-
+	
 	.left_text {
 		text-align: left;
 		width: 30%;
 		white-space: break-spaces;
 		overflow: hidden;
-		line-height: 30px;
+		font-size: 14px;
+		line-height: 20px;
 		text-overflow: ellipsis;
+		
+		.left_text_career, .left_text_love {
+			font-size: 14px;
+			font-weight: bold;
+			text-align: left;
+			text-indent: initial; 
+		}
+		.left_text_career p, .left_text_love p {
+			margin: 0;
+		}
+		.des {
+			margin-top: 0;
+		}
 	}
 	.right_text {
 		text-align: left;
 		width: 30%;
 		white-space: break-spaces;
 		overflow: hidden;
-		line-height: 30px;
+		font-size: 14px;
+		line-height: 20px;
 		text-overflow: ellipsis;
+
+		.right_text_career, .right_text_love {
+			font-size: 14px;
+			font-weight: bold;
+			padding-top: 10px;
+			text-align: left;
+		}
+		.right_text_career p, .right_text_love p {
+			margin: 0;
+		}
+		.des {
+			margin-top: 0;
+		}
 	}	
 	.mid_img {
 		text-align: center;
 		width: 30%;
+		.helper {
+			display: inline-block;
+    		height: 100%;
+    		vertical-align: middle;
+		}
+		
 		img {
 			width: 200px;
 			height: 200px;
+			vertical-align: middle;
+
 		}
+	}
+	.divide {
+		width: 2px;
+		height: 250px !important;
+		background: black;
+		position: relative;
+		left: 5%;
+		
 	}
 }
 
@@ -135,7 +180,6 @@ img {
 	.left_img {
 		width: 30%;
 		position: relative;
-		background-image: url('../../../assets/img/astInner/aries_taurus/aries_hover.jpg');
 		background-position: center;
  	 	background-repeat: no-repeat;
  	 	background-size: cover;
@@ -165,8 +209,14 @@ img {
 	.right_img {
 		width: 30%;
 		position: relative;
+		background-position: center;
+ 	 	background-repeat: no-repeat;
+ 	 	background-size: cover;
+		cursor: pointer;
+		z-index: 0;
 		img:first-child {
 			width: 80%;
+			visibility: hidden;
 		}
 		img:last-child {
 			max-width: 20%;
@@ -175,7 +225,9 @@ img {
 			position: absolute;
 			top: 50%;
 			left: 75%;
+			visibility: hidden;
 		}
+		
 	}
 }
 
@@ -184,7 +236,7 @@ img {
 	font-size: 20px;
 	font-weight: bold;
 	position: absolute;
-	top: 15%;
+	top: 8%;
 	left: 50%;
 	transform: translate(-50%, -50%);
 	cursor: pointer;

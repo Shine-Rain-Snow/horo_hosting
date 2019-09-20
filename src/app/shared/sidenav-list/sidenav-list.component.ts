@@ -19,15 +19,16 @@ export class SidenavListComponent implements OnInit {
     
     let i = 0;
     let j = 0;
+    let k = 0;
     $(".nav-list .item_container").hover(function() {
       i = $(".item_container").index(this); 
       
       j = i + 1;
-      $(".item_container:nth-child("+j+") .num").empty().text("-");
+      $(".item_container:nth-child("+j+") .num").empty().text("―");
       
     }, function() {
-      
-      $(".item_container:nth-child("+j+") .num").empty().text("0"+i+".");
+      k = i + 1;
+      $(".item_container:nth-child("+j+") .num").empty().text("0"+k+".");
     });
   }
   public onSidenavClose = () => {

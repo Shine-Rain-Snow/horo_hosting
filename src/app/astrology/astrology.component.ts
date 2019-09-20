@@ -19,6 +19,8 @@ export class AstrologyComponent implements OnInit {
     private sunService: SunProgressService) {  }
   
   next: number = 0;
+  nDownScrolling = 0;
+  nUpScrollling = 0;
   ngOnInit() {
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);
@@ -37,9 +39,13 @@ export class AstrologyComponent implements OnInit {
           
           this.sunService.setAstVal(this.next * 10); 
           if(this.next > AppConstants.SCROLLING_COUNT*0.4) {
-            this.next = AppConstants.SCROLLING_COUNT*0.4;
-            this.sunService.setAstVal(this.next * 10 * 0.4);
-            this.router.navigate(['/astrology/ast-inner']);
+            this.nUpScrollling++;
+            if(this.nUpScrollling > 5) {
+              this.nUpScrollling = 0;
+              this.next = 40;
+              this.sunService.setAstVal(40);
+              this.router.navigate(['/astrology/ast-inner']);
+            }
           }
             
         }else {
@@ -48,10 +54,16 @@ export class AstrologyComponent implements OnInit {
             this.next--;
             this.sunService.setAstVal(this.next * 10);
             if(this.next < 0) {
-              this.next = 0;
-              this.sunService.setAstVal(0);
-              this.sunService.setIntroVal(100);
-              this.router.navigate(['/intro']);   
+              this.nDownScrolling++;
+              if(this.nDownScrolling > 5) {
+                this.next = 0;
+                this.nDownScrolling = 0;
+                this.sunService.setAstVal(0);
+                this.sunService.setIntroVal(100);
+                this.router.navigate(['/intro']); 
+                 
+              }
+               
             } 
         }
     });

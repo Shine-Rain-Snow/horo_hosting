@@ -24,16 +24,20 @@ export class IntroComponent implements OnInit {
   numPhoto = 8;
   numMovies = 8;
   scroll_flag: boolean;
-  animaFlag;
-  getIntVal;
- 
+  animaFlag: boolean = true;
+  
+  
  
   ngOnInit() {
     
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
-
+    
+    if(!this.scroll_flag) {
+      this.animaFlag = false;
+      this.sunService.setIntroVal(40);
+    }
     //title moving 
    
     setTimeout(() => {
@@ -77,10 +81,9 @@ export class IntroComponent implements OnInit {
         scrollDownCount = 0;
         if(scrollUpCount > 5) {
           if(this.next >= 40){
-            this.sunService.setIntroVal(0); 
+            this.sunService.setIntroVal(0);
             this.router.navigate(['/astrology']);
             scrollUpCount = 0;
-            
           } else {
             this.next = 40;
             this.sunService.setIntroVal(40);
@@ -127,18 +130,20 @@ export class IntroComponent implements OnInit {
     //photo and video are moving by this function.
     this.movePhoto();
     this.moveMovies();
-    this.photoInterval = setInterval(this.movePhoto, 60100);
-    this.videoInterval = setInterval(this.moveMovies, 60100);
+    this.photoInterval = setInterval(this.movePhoto, 30100);
+    this.videoInterval = setInterval(this.moveMovies, 30100);
+    setTimeout(()=> {
+      this.animaFlag = false;
+      this.sunService.setIntroVal(40);
+    }, 31000*7);
   }
 
   ngOnDestroy() {
-    if(this.next >= 0 && this.next <= AppConstants.SCROLLING_COUNT) {
-      this.sunService.setIntroVal(100);
-    }
     clearInterval(this.photoInterval);
     clearInterval(this.videoInterval);
     clearInterval(this.scrollingInterval);
   }
+
 
   movePhoto() {
     const numPhoto = 8;
@@ -164,7 +169,7 @@ export class IntroComponent implements OnInit {
       top: '-=100%'
     }, 
     {
-      duration: 60000,
+      duration: 30000,
       easing: "linear",
       complete: function() {
         $(".photo").css({top: '0%'});
@@ -224,7 +229,7 @@ export class IntroComponent implements OnInit {
       top: '-=100%'
     }, 
     {
-      duration: 60000,
+      duration: 30000,
       easing: "linear",
       complete: function() {
         $(".movies").css({top: '0%'});
