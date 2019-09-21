@@ -22,6 +22,10 @@ export class AstrologyComponent implements OnInit {
   nDownScrolling = 0;
   nUpScrollling = 0;
   ngOnInit() {
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
+
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);
     this.sunService.setCurrentPage(2);
@@ -59,7 +63,7 @@ export class AstrologyComponent implements OnInit {
                 this.next = 0;
                 this.nDownScrolling = 0;
                 this.sunService.setAstVal(0);
-                this.sunService.setIntroVal(100);
+                this.sunService.setIntroVal(0);
                 this.router.navigate(['/intro']); 
                  
               }

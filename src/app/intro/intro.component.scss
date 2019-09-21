@@ -53,6 +53,10 @@
     filter: alpha(opacity=30); 
 }
 
+.photo_2 img, .photo_4 img {
+	height: auto !important;
+}
+
 .photo_1  {
 	width: 100%;
 	height: 100%;
@@ -127,7 +131,7 @@
 
 .intro_detail_text {
 	white-space: normal;
-	font-size: 22px;
+	font-size: 26px;
 	position: relative;
     color: rgb(133, 127, 126);
 }
@@ -138,26 +142,30 @@
 
 @keyframes fill-1 {
 	50%   { width: 50%; }
-	100%  { width: 100%; }
+	100%  { width: 100%;
+	        }
 }
 
-$times: 4s;
+$times: 8s;
+
 
 .method-1 {
 	position: relative;
 	display: inline-block;
-	font-size: 28px;
+	font-size: 30px;
+	
 	&:before {
 	  content: attr(data-text);
 	  position: absolute;
 	  overflow: hidden;
 	  white-space: nowrap;
-	  width: 0;
+	  width: 0%;
 	  color: white;
 	  animation: fill-1 $times;
-	  
 	}	
+	
   }
+
 
   .method-2 {
 	position: relative;
@@ -279,7 +287,55 @@ $times: 4s;
 	}	
   }
   
+@keyframes greyscale {
+    0%   { filter: grayscale(1); color: white; /* Google Chrome & Webkit Nightlies */}
+    100% { filter: grayscale(0); color: white;/* Google Chrome & Webkit Nightlies */ }
+}
 
+.one {
+    filter: color;
+    animation: greyscale 1000s 1 $times;
+}
+
+.two {
+	filter: color;
+    animation: greyscale 1000s 1 $times*2;
+}
+
+.three {
+    filter: color;
+    animation: greyscale 1000s 1 $times*3;
+}
+
+.four {
+	filter: color;
+    animation: greyscale 1000s 1 $times*4;
+}
+
+.five {
+    filter: color;
+    animation: greyscale 1000s 1 $times*5;
+}
+
+.six {
+	filter: color;
+    animation: greyscale 1000s 1 $times*6;
+}
+
+.seven {
+    filter: color;
+    animation: greyscale 1000s 1 $times*7;
+}
+
+.eight {
+	filter: color;
+    animation: greyscale 1000s 1 $times*8;
+}
+
+.nine {
+	filter: color;
+    animation: greyscale 1000s 1 $times*9;
+}
 
 .intro_text_title {
 	color: white;

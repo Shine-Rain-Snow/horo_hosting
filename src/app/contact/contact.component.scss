@@ -1,8 +1,148 @@
 .contact {
 	// background-image: url("../../assets/img/temp.jpg");
-	background-color: rgb(64,66,105);
+	// background-color: gray;
+	width: 100%;
 	height: 100%; 
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
+}
+
+.clear {
+	clear: both;
+}
+
+.first_contact {
+	width: 100%;
+	height: 100%;
+	.first_detail {
+		width: 30%;
+		height: 100%;
+		float: left;
+		
+		.first_detail_data {
+			width: 50%;
+			height: 50%;
+			// background: red;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.first_video {
+		width: 70%;
+		height: 100%;
+		// background: yellow;
+		float: right;
+
+		.first_video_zone {
+			width: 90%;
+			height: 80%;
+			// background: blue;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			video {
+				width: 100%;
+				height: 100%;
+			}
+			
+		}
+	}
+}
+
+
+.second_contact {
+	width: 100%;
+	height: 50%;
+	.second_detail {
+		width: 50%;
+		height: 100%;
+		float: right;
+		// background: blue;
+		.second_detail_data {
+			width: 50%;
+			height: 50%;
+			// background: red;
+			position: relative;
+			top: 50%;
+			// left: 50%;
+			transform: translate(0%, -50%);
+		}
+	}
+
+	.second_video {
+		width: 50%;
+		height: 100%;
+		// background: yellow;
+		float: left;
+
+		.second_video_zone {
+			width: 90%;
+			height: 80%;
+			// background: blue;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			video {
+				// width: 100%;
+				height: 100%;
+				position: relative;
+				left: 10%
+			}
+			
+		}
+	}
+}
+
+
+.third_contact {
+	width: 100%;
+	height: 50%;
+	.third_detail {
+		width: 50%;
+		height: 100%;
+		float: left;
+		
+		.third_detail_data {
+			width: 50%;
+			height: 50%;
+			// background: red;
+			position: relative;
+			// left: -10%;
+			top: 50%;
+			left: 50%;
+			
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	.third_video {
+		width: 50%;
+		height: 100%;
+		// background: yellow;
+		float: right;
+
+		.third_video_zone {
+			width: 90%;
+			height: 80%;
+			// background: blue;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+
+			video {
+				width: 100%;
+				height: 100%;
+			}
+			
+		}
+	}
 }

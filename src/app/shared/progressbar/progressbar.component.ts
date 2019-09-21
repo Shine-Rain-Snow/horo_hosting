@@ -85,7 +85,9 @@ export class ProgressbarComponent implements OnInit {
 
   onIntro() {
     this.sunService.setAllZero();
+    //location.path('home');
     this.router.navigate(['/intro']);
+    //this.router.navigateByUrl('/intro');
   }
 
   onAst() {

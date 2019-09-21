@@ -21,7 +21,7 @@ export class MainComponent implements OnInit {
   	setTimeout(() => {
       this.router.navigate(['/intro']);
       this.sunService.setIntroTitleShow(true);
-	  }, 4800);
+	  }, 4600);
   }
 
 }

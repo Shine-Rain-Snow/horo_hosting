@@ -8,7 +8,9 @@ const routes: Routes = [
   },
   {
     path: 'intro',
-    loadChildren: () => import('./intro/intro.module').then(mod => mod.IntroModule)
+    loadChildren: () => import('./intro/intro.module').then(mod => mod.IntroModule),
+    //canActivate: [AuthenticationGuard],
+    //runGuardsAndResolvers: 'always',
   },
   {
     path: 'tarot',
@@ -34,12 +36,14 @@ const routes: Routes = [
     path: '',
     redirectTo: 'main',
     pathMatch: 'full'
-  }
+  },
+  
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  // imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {onSameUrlNavigation: 'reload'})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -182,7 +182,7 @@ export class AstInnerComponent implements OnInit {
         
         if(event.originalEvent.detail > 0) {
             //scroll up
-            next = next + 0.5;
+            next = next + 0.3;
             self.sunService.setAstVal(next);
            
             if(next > 100) {
