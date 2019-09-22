@@ -26,8 +26,8 @@ export class IntroComponent implements OnInit {
   scroll_flag: boolean;
   animaFlag: boolean = true;
   failFlag: boolean = false;
-  
  
+
   ngOnInit() {
     // this.router.routeReuseStrategy.shouldReuseRoute = function () {
     //   return false;
@@ -47,10 +47,15 @@ export class IntroComponent implements OnInit {
     //   this.sunService.setIntroVal(40);
     // }
     //title moving 
+
+    //video play
+
+    // 
    
     setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+      $(".playV").play();
     }, 100);
     //scrolling symbol
    
