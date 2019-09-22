@@ -42,8 +42,9 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
     if(this.sunService.getIntroRefresh()) {
+      console.log('this is lreload');
       location.reload();
-      this.sunService.setIntroRefrsh(true);
+      this.sunService.setIntroRefrsh(false);
     }
     
     
