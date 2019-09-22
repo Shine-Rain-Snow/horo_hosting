@@ -47,7 +47,7 @@ export class IntroComponent implements OnInit {
       this.sunService.setIntroRefrsh(false);
     }
     
-    
+    $("#playV")[0].play();
     //$(".playV")[0].autoplay = true;
     // if(!this.scroll_flag) {
     //   this.animaFlag = false;
