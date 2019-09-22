@@ -41,8 +41,12 @@ export class IntroComponent implements OnInit {
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
+    if(this.sunService.getIntroRefresh()) {
+      location.reload();
+      this.sunService.setIntroRefrsh(true);
+    }
     
-   
+    
     //$(".playV")[0].autoplay = true;
     // if(!this.scroll_flag) {
     //   this.animaFlag = false;
@@ -57,8 +61,9 @@ export class IntroComponent implements OnInit {
     setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
-      $(".playV")[0].autoplay = true;
-      $(".playV")[0].play();
+      // $(".playV")[0].autoplay = true;
+      // $(".playV")[0].play();
+      // $("#playV").play();
     }, 100);
     //scrolling symbol
    
@@ -78,7 +83,7 @@ export class IntroComponent implements OnInit {
     let scrollUpCount = 0;
     let scrollDownCount = 0;
     this.sunService.setIntroVal(0);
-    $(".intro").bind("DOMMouseScroll mousewheel", (event) => {
+    $(".intro").bind("wheel", (event) => {
       if(this.scroll_flag) {
         this.scroll_flag = false;
         this.next = 0;
@@ -91,9 +96,9 @@ export class IntroComponent implements OnInit {
       
     
       
-      if(event.originalEvent.detail > 0) {
+      if(event.originalEvent.deltaY > 0) {
         //scroll up
-        
+        console.log("scroll up works now");
         //scrollUpCount++;
         //scrollDownCount = 0;
         // if(scrollUpCount > 5) {
@@ -118,7 +123,7 @@ export class IntroComponent implements OnInit {
             
       } else {
         //scroll down
-       
+        console.log("scroll down works now");
         //scrollUpCount = 0;
         //scrollDownCount++;
         this.next--;
@@ -224,7 +229,7 @@ export class IntroComponent implements OnInit {
         break;
       }
     }
-    console.log("animation started! with number = "+ n);
+    
     $(".photo span").css({visibility:'hidden'});
       if( n == numPhoto) {
         
@@ -244,7 +249,7 @@ export class IntroComponent implements OnInit {
       duration: 10000,
       easing: "linear",
       complete: function() {
-        console.log("animation succssfulylly finished=this is n="+n);
+        
         $(".photo").css({top: '0%'});
         $(".photo span").css({top:'100%'});
         let m, k;
@@ -262,7 +267,7 @@ export class IntroComponent implements OnInit {
           $(".photo span:nth-child(1)").addClass('active');
           $(".photo span:nth-child(1)").removeClass('prev');
         } else {
-          console.log('which is active ='+ m);
+          
           $(".photo span:nth-child("+m+")").addClass('active');
           $(".photo span:nth-child("+m+")").removeClass('prev');
           m = 0;

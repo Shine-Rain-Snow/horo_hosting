@@ -17,6 +17,8 @@ export class SunProgressService {
   mProgressShow: boolean = false;
   mIntroTitleShow: boolean = true;
   mCurrentPage: number = 0;
+
+  mIntroRefresh: boolean = false;
   setProgressShow(value) {
     this.mProgressShow = value;
   }
@@ -32,6 +34,14 @@ export class SunProgressService {
 
   getIntroTitleShow() {
     return this.mIntroTitleShow;
+  }
+
+  setIntroRefrsh(value) {
+    this.mIntroRefresh = value;
+  }
+
+  getIntroRefresh() {
+    return this.mIntroRefresh;
   }
 
   setCurrentPage(value) {

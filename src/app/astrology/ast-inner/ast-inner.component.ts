@@ -164,7 +164,7 @@ export class AstInnerComponent implements OnInit {
     let nDownScrolling = 0;
   	element.bind("DOMMouseScroll mousewheel", function (event) {    
         
-        if(event.originalEvent.detail < 0) {
+        if(event.originalEvent.deltaY < 0) {
             //scroll down
             next = next - 0.5;
             self.sunService.setAstVal(next);
@@ -180,7 +180,7 @@ export class AstInnerComponent implements OnInit {
             }
         }
         
-        if(event.originalEvent.detail > 0) {
+        if(event.originalEvent.deltaY > 0) {
             //scroll up
             next = next + 0.3;
             self.sunService.setAstVal(next);

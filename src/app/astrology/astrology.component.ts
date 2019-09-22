@@ -37,7 +37,7 @@ export class AstrologyComponent implements OnInit {
     if(astVal > 0 && astVal < 100)
       this.next = astVal / 10;
     $(".astrology").bind("DOMMouseScroll mousewheel", (event) => {  
-        if(event.originalEvent.detail > 0) {
+        if(event.originalEvent.deltaY > 0) {
           //scroll down
           this.next++;
           
