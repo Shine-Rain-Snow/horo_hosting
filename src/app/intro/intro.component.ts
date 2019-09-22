@@ -47,10 +47,10 @@ export class IntroComponent implements OnInit {
     //   this.sunService.setIntroRefrsh(false);
     // }
     //$("#playV")[0].autoplay = true;
-    // setTimeout(() => {
-    //   $("#playV")[0].play();
-    //   // $("#playV")[0].autoplay = true;
-    // }, 1);
+    setTimeout(() => {
+      $("#playV")[0].play();
+      // $("#playV")[0].autoplay = true;
+    }, 1);
 
     // let playPromise = $("#playV")[0].play();
     // // $("#playV")[0].autoplay = true;
