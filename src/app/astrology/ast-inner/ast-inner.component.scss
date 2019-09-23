@@ -190,9 +190,6 @@ img {
 	.bottom_left {
 		width: 30%;
 		position: relative;
-		
-		
-			
 		// background: red;
 			
 		.left_img {
@@ -207,6 +204,7 @@ img {
 			z-index: 0;
 			
 			img:first-child {
+				// background: yellow;
 				width:100%;
 				visibility: hidden;
 			}
@@ -233,13 +231,13 @@ img {
 	.bottom_right {
 		width: 30%;
 		position: relative;
-			
 		// background: blue;
 		.right_img {
+		// background: pink;
 		position: relative;
 		top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
+		left: 50%;
+		transform: translate(-50%, -50%);
 		background-position: center;
  	 	background-repeat: no-repeat;
 		background-size: cover;
