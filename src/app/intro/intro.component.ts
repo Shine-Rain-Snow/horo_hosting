@@ -82,22 +82,24 @@ export class IntroComponent implements OnInit {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
       $(".intro_tex_content").animate({opacity: '1'}, 9000);
+      
+      this.scrollingInterval = setInterval(function(){
+      
+        $(".scroll_symbol").animate({
+          height: '60px',
+        }, 
+        {
+          duration: 2000,
+          easing: "linear",
+          complete: function() {
+            $(".scroll_symbol").css({ height: '0px' });
+          }
+        });
+      }, 2100);
     }, 100);
     //scrolling symbol
    
-    this.scrollingInterval = setInterval(function(){
-      
-      $(".scroll_symbol").animate({
-        height: '60px',
-      }, 
-      {
-        duration: 2000,
-        easing: "linear",
-        complete: function() {
-          $(".scroll_symbol").css({ height: '0px' });
-        }
-      });
-    }, 2100);
+    
     let scrollUpCount = 0;
     let scrollDownCount = 0;
     //this.sunService.setIntroVal(0);
