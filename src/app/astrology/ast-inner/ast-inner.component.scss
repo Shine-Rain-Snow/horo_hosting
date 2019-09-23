@@ -205,7 +205,11 @@ img {
 			
 			img:first-child {
 				// background: yellow;
-				width:100%;
+				// width:100%;
+				position: relative;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
 				visibility: hidden;
 			}
 			img:last-child {
@@ -246,8 +250,12 @@ img {
 		cursor: pointer;
 		z-index: 0;
 		img:first-child {
-			width: 100%;
+			max-width: 100%;
 			visibility: hidden;
+			position: relative;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 		img:last-child {
 			max-width: 20%;

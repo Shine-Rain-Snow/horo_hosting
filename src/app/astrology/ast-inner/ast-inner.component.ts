@@ -72,135 +72,18 @@ export class AstInnerComponent implements OnInit {
    	height: hei*0.3+'px'	
    });
 
-   //insert hover image
+   $(".sunsign_img .left_img img:nth-child(1)").css({
+    background: 'green',
+    width: hei*0.3 * 592/392 +'px',
+    height: hei*0.3 + 'px',	
+  });
+  $(".sunsign_img .right_img img:nth-child(1)").css({
+    background: 'blue',
+    width: hei*0.3 * 592/392 +'px',
+    height: hei*0.3 + 'px',	
+  });
 
-   let lmg, rmg;
-   let lWidth, lHeight, rWidth, rHeight;
-   $(".item_container:nth-child(1) .left_img").
-   css("background-image", "url('../../../assets/img/astInner/aries_taurus/aries_back.jpg')");
-   $(".item_container:nth-child(1) .right_img").
-   css("background-image", "url('../../../assets/img/astInner/aries_taurus/taurus_back.jpg')");
-   lmg = new Image;
-   lmg.src = $(".item_container:nth-child(1) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   lWidth = lmg.width;
-   lHeight = lmg.height;
-   rmg = new Image;
-   rmg.src = $(".item_container:nth-child(1) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   rWidth = rmg.width;
-   rHeight = rmg.height;
-   $(".item_container:nth-child(1) .left_img").css({
-       width: lWidth*hei*0.3/lHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(1) .right_img").css({
-       width: hei*0.3*rWidth/rHeight+'px',
-       height: hei*0.3+'px',
-   });
-
-   $(".item_container:nth-child(2) .left_img").
-   css("background-image", "url('../../../assets/img/astInner/gemini-cancer/gemini_back.jpg')");
-   $(".item_container:nth-child(2) .right_img").
-   css("background-image", "url('../../../assets/img/astInner/gemini-cancer/cancer_back.jpg')");
-
-   lmg = new Image;
-   lmg.src = $(".item_container:nth-child(2) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   lWidth = lmg.width;
-   lHeight = lmg.height;
-   rmg = new Image;
-   rmg.src = $(".item_container:nth-child(2) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   rWidth = rmg.width;
-   rHeight = rmg.height;
-   $(".item_container:nth-child(2) .left_img").css({
-       width: lWidth*hei*0.3/lHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(2) .right_img").css({
-       width: hei*0.3*rWidth/rHeight+'px',
-       height: hei*0.3+'px',
-   });
-
-   $(".item_container:nth-child(3) .left_img").
-   css("background-image", "url('../../../assets/img/astInner/leo-virgo/leo_back.jpg')");
-   $(".item_container:nth-child(3) .right_img").
-   css("background-image", "url('../../../assets/img/astInner/leo-virgo/virgo_back.jpg')");
-   lmg = new Image;
-   lmg.src = $(".item_container:nth-child(3) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   lWidth = lmg.width;
-   lHeight = lmg.height;
-   rmg = new Image;
-   rmg.src = $(".item_container:nth-child(3) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   rWidth = rmg.width;
-   rHeight = rmg.height;
-   $(".item_container:nth-child(3) .left_img").css({
-       width: lWidth*hei*0.3/lHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(3) .right_img").css({
-       width: hei*0.3*rWidth/rHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(4) .left_img").
-   css("background-image", "url('../../../assets/img/astInner/libra-scorpio/libra_back.jpg')");
-   $(".item_container:nth-child(4) .right_img").
-   css("background-image", "url('../../../assets/img/astInner/libra-scorpio/scorpio_back.jpg')");
-   lmg = new Image;
-   lmg.src = $(".item_container:nth-child(4) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   lWidth = lmg.width;
-   lHeight = lmg.height;
-   rmg = new Image;
-   rmg.src = $(".item_container:nth-child(4) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   rWidth = rmg.width;
-   rHeight = rmg.height;
-   $(".item_container:nth-child(4) .left_img").css({
-       width: lWidth*hei*0.3/lHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(4) .right_img").css({
-       width: hei*0.3*rWidth/rHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(5) .left_img").
-   css("background-image", "url('../../../assets/img/astInner/sagi-capricorn/sagi_back.jpg')");
-   $(".item_container:nth-child(5) .right_img").
-   css("background-image", "url('../../../assets/img/astInner/sagi-capricorn/capricorn_back.jpg')");
-   lmg = new Image;
-   lmg.src = $(".item_container:nth-child(5) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   lWidth = lmg.width;
-   lHeight = lmg.height;
-   rmg = new Image;
-   rmg.src = $(".item_container:nth-child(5) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   rWidth = rmg.width;
-   rHeight = rmg.height;
-   $(".item_container:nth-child(51) .left_img").css({
-       width: lWidth*hei*0.3/lHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(5) .right_img").css({
-       width: hei*0.3*rWidth/rHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(6) .left_img").
-   css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/aquarius_back.jpg')");
-   $(".item_container:nth-child(6) .right_img").
-   css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/pisces_back.jpg')");
-   lmg = new Image;
-   lmg.src = $(".item_container:nth-child(6) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   lWidth = lmg.width;
-   lHeight = lmg.height;
-   rmg = new Image;
-   rmg.src = $(".item_container:nth-child(6) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-   rWidth = rmg.width;
-   rHeight = rmg.height;
-   $(".item_container:nth-child(6) .left_img").css({
-       width: lWidth*hei*0.3/lHeight+'px',
-       height: hei*0.3+'px',
-   });
-   $(".item_container:nth-child(6) .right_img").css({
-       width: hei*0.3*rWidth/rHeight+'px',
-       height: hei*0.3+'px',
-   });
-
-   setTimeout(function() {
+  setTimeout(function() {
     let lWidth, lHeight, rWidth, rHeight;
    
     for(let i=1; i<7; i++) {
@@ -225,6 +108,154 @@ export class AstInnerComponent implements OnInit {
         });
     }
    }, 100);
+   //insert hover image
+
+   let lmg, rmg;
+   let lWidth, lHeight, rWidth, rHeight;
+   $(".item_container:nth-child(1) .left_img").
+   css("background-image", "url('../../../assets/img/astInner/aries_taurus/aries_back.jpg')");
+   $(".item_container:nth-child(1) .right_img").
+   css("background-image", "url('../../../assets/img/astInner/aries_taurus/taurus_back.jpg')");
+   setTimeout(() => {
+    lmg = new Image;
+    lmg.src = $(".item_container:nth-child(1) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    lWidth = lmg.width;
+    lHeight = lmg.height;
+    rmg = new Image;
+    rmg.src = $(".item_container:nth-child(1) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    rWidth = rmg.width;
+    rHeight = rmg.height;
+    $(".item_container:nth-child(1) .left_img").css({
+        width: lWidth*hei*0.3/lHeight+'px',
+        height: hei*0.3+'px',
+    });
+    $(".item_container:nth-child(1) .right_img").css({
+        width: hei*0.3*rWidth/rHeight+'px',
+        height: hei*0.3+'px',
+    });
+   }, 10);
+   
+
+   $(".item_container:nth-child(2) .left_img").
+   css("background-image", "url('../../../assets/img/astInner/gemini-cancer/gemini_back.jpg')");
+   $(".item_container:nth-child(2) .right_img").
+   css("background-image", "url('../../../assets/img/astInner/gemini-cancer/cancer_back.jpg')");
+   setTimeout(() => {
+    lmg = new Image;
+    lmg.src = $(".item_container:nth-child(2) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    lWidth = lmg.width;
+    lHeight = lmg.height;
+    rmg = new Image;
+    rmg.src = $(".item_container:nth-child(2) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    rWidth = rmg.width;
+    rHeight = rmg.height;
+    $(".item_container:nth-child(2) .left_img").css({
+        width: lWidth*hei*0.3/lHeight+'px',
+        height: hei*0.3+'px',
+    });
+    $(".item_container:nth-child(2) .right_img").css({
+        width: hei*0.3*rWidth/rHeight+'px',
+        height: hei*0.3+'px',
+    });
+   }, 10);
+
+
+   $(".item_container:nth-child(3) .left_img").
+   css("background-image", "url('../../../assets/img/astInner/leo-virgo/leo_back.jpg')");
+   $(".item_container:nth-child(3) .right_img").
+   css("background-image", "url('../../../assets/img/astInner/leo-virgo/virgo_back.jpg')");
+   setTimeout(() => {
+    lmg = new Image;
+    lmg.src = $(".item_container:nth-child(3) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    lWidth = lmg.width;
+    lHeight = lmg.height;
+    rmg = new Image;
+    rmg.src = $(".item_container:nth-child(3) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    rWidth = rmg.width;
+    rHeight = rmg.height;
+    $(".item_container:nth-child(3) .left_img").css({
+        width: lWidth*hei*0.3/lHeight+'px',
+        height: hei*0.3+'px',
+    });
+    $(".item_container:nth-child(3) .right_img").css({
+        width: hei*0.3*rWidth/rHeight+'px',
+        height: hei*0.3+'px',
+    });
+   }, 10);
+  
+   $(".item_container:nth-child(4) .left_img").
+   css("background-image", "url('../../../assets/img/astInner/libra-scorpio/libra_back.jpg')");
+   $(".item_container:nth-child(4) .right_img").
+   css("background-image", "url('../../../assets/img/astInner/libra-scorpio/scorpio_back.jpg')");
+   setTimeout(() => {
+    lmg = new Image;
+   lmg.src = $(".item_container:nth-child(4) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+   lWidth = lmg.width;
+   lHeight = lmg.height;
+   rmg = new Image;
+   rmg.src = $(".item_container:nth-child(4) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+   rWidth = rmg.width;
+   rHeight = rmg.height;
+   $(".item_container:nth-child(4) .left_img").css({
+       width: lWidth*hei*0.3/lHeight+'px',
+       height: hei*0.3+'px',
+   });
+   $(".item_container:nth-child(4) .right_img").css({
+       width: hei*0.3*rWidth/rHeight+'px',
+       height: hei*0.3+'px',
+   });   
+   }, 10);
+   
+   $(".item_container:nth-child(5) .left_img").
+   css("background-image", "url('../../../assets/img/astInner/sagi-capricorn/sagi_back.jpg')");
+   $(".item_container:nth-child(5) .right_img").
+   css("background-image", "url('../../../assets/img/astInner/sagi-capricorn/capricorn_back.jpg')");
+   setTimeout(() => {
+    lmg = new Image;
+    lmg.src = $(".item_container:nth-child(5) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    lWidth = lmg.width;
+    lHeight = lmg.height;
+    rmg = new Image;
+    rmg.src = $(".item_container:nth-child(5) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    rWidth = rmg.width;
+    rHeight = rmg.height;
+    $(".item_container:nth-child(51) .left_img").css({
+        width: lWidth*hei*0.3/lHeight+'px',
+        height: hei*0.3+'px',
+    });
+    $(".item_container:nth-child(5) .right_img").css({
+        width: hei*0.3*rWidth/rHeight+'px',
+        height: hei*0.3+'px',
+    });
+   }, 10);
+
+   
+   $(".item_container:nth-child(6) .left_img").
+   css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/aquarius_back.jpg')");
+   $(".item_container:nth-child(6) .right_img").
+   css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/pisces_back.jpg')");
+   setTimeout(() => {
+    lmg = new Image;
+    lmg.src = $(".item_container:nth-child(6) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    lWidth = lmg.width;
+    lHeight = lmg.height;
+    rmg = new Image;
+    rmg.src = $(".item_container:nth-child(6) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+    rWidth = rmg.width;
+    rHeight = rmg.height;
+    $(".item_container:nth-child(6) .left_img").css({
+        width: lWidth*hei*0.3/lHeight+'px',
+        height: hei*0.3+'px',
+    });
+    $(".item_container:nth-child(6) .right_img").css({
+        width: hei*0.3*rWidth/rHeight+'px',
+        height: hei*0.3+'px',
+    });
+   }, 10);
+   
+   
+
+
 
     
 
