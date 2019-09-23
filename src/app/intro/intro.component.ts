@@ -49,6 +49,7 @@ export class IntroComponent implements OnInit {
     }
     // $("#playV")[0].autoplay = true;
     setTimeout(() => {
+      $('#playV')[0].load();
       $("#playV")[0].play();
       $("#playV")[0].autoplay = true;
     }, 10);
