@@ -25,6 +25,7 @@ export class ProgressbarComponent implements OnInit {
   myVar;
   barMove;
   mCurrentPage = 0;
+  colorPreference;
   ngOnInit() {
   
     this.myVar = setInterval(() => {
@@ -45,6 +46,7 @@ export class ProgressbarComponent implements OnInit {
           case 1: {
             this.introVal += 0.1;  
             this.sunService.setIntroVal(this.introVal);
+            this.colorPreference = 'white';
             if(this.introVal > 100) {
               this.sunService.setIntroVal(100);
               break;
@@ -55,6 +57,7 @@ export class ProgressbarComponent implements OnInit {
           case 2: {
             this.astVal += 0.1;
             this.sunService.setAstVal(this.astVal);
+            this.colorPreference = 'white';
             if(this.astVal >= 40) {
               this.sunService.setAstVal(40);
               break;
@@ -63,6 +66,7 @@ export class ProgressbarComponent implements OnInit {
           }
           //ast-inner page
           case 3: {
+            this.colorPreference = 'black';
             // this.astVal += 0.01;
             // this.sunService.setAstVal(this.astVal);
             // if(this.astVal > 100) {

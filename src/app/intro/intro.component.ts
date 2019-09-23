@@ -29,9 +29,9 @@ export class IntroComponent implements OnInit {
   
 
   ngOnInit() {
-    // this.router.routeReuseStrategy.shouldReuseRoute = function () {
-    //   return false;
-    // };
+    this.router.routeReuseStrategy.shouldReuseRoute = function () {
+      return false;
+    };
     // console.log(this.router.url);
     // if(this.router.url == '/intro') {
     //   this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -41,16 +41,17 @@ export class IntroComponent implements OnInit {
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
+    //page reload section
     if(this.sunService.getIntroRefresh()) {
       
       location.reload();
       this.sunService.setIntroRefrsh(false);
     }
-    //$("#playV")[0].autoplay = true;
+    // $("#playV")[0].autoplay = true;
     // setTimeout(() => {
     //   $("#playV")[0].play();
-    //   // $("#playV")[0].autoplay = true;
-    // }, 1);
+    //   $("#playV")[0].autoplay = true;
+    // }, 10);
 
     // let playPromise = $("#playV")[0].play();
     // // $("#playV")[0].autoplay = true;
@@ -79,9 +80,7 @@ export class IntroComponent implements OnInit {
     setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
-      // $(".playV")[0].autoplay = true;
-      // $(".playV")[0].play();
-      // $("#playV").play();
+      $(".intro_tex_content").animate({opacity: '1'}, 9000);
     }, 100);
     //scrolling symbol
    
@@ -100,7 +99,7 @@ export class IntroComponent implements OnInit {
     }, 2100);
     let scrollUpCount = 0;
     let scrollDownCount = 0;
-    this.sunService.setIntroVal(0);
+    //this.sunService.setIntroVal(0);
     $(".intro").bind("wheel", (event) => {
       if(this.scroll_flag) {
         this.scroll_flag = false;
@@ -113,70 +112,71 @@ export class IntroComponent implements OnInit {
       
       
     
-      
+      this.next = this.sunService.getIntroVal();
       if(event.originalEvent.deltaY > 0) {
         //scroll up
         console.log("scroll up works now");
-        //scrollUpCount++;
-        //scrollDownCount = 0;
-        // if(scrollUpCount > 5) {
-        //   if(this.next >= 40){
-        //     this.sunService.setIntroVal(0);
-        //     this.router.navigate(['/astrology']);
-        //     scrollUpCount = 0;
-        //   } else {
-        //     this.next = 40;
-        //     this.sunService.setIntroVal(40);
-        //     this.scroll_flag = false;
-        //     scrollUpCount = 0;
-        //   }
-        // }
-        this.next++;
-        this.sunService.setIntroVal(this.next);
-        if(this.next > 100) {
-          this.next = 100;
-          this.sunService.setIntroVal(0);
-          this.router.navigate(['/astrology']);
+        scrollUpCount++;
+        scrollDownCount = 0;
+        if(scrollUpCount > 5) {
+          if(this.next >= 40){
+            this.sunService.setIntroVal(0);
+            this.router.navigate(['/astrology']);
+            scrollUpCount = 0;
+          } else {
+            this.next = 40;
+            this.sunService.setIntroVal(40);
+            this.animaFlag = false;
+            scrollUpCount = 0;
+          }
         }
+        // this.next++;
+        // this.sunService.setIntroVal(this.next);
+        // if(this.next > 100) {
+        //   this.next = 100;
+        //   this.sunService.setIntroVal(0);
+        //   this.router.navigate(['/astrology']);
+        // }
             
-      } else {
+      } else if(event.originalEvent.deltaY < 0) {
         //scroll down
         console.log("scroll down works now");
-        //scrollUpCount = 0;
-        //scrollDownCount++;
-        this.next--;
-        this.sunService.setIntroVal(this.next);
-        if(this.next < 0) {
-          this.next = 0;
-          this.sunService.setIntroVal(0);
-          this.router.navigate(['/intro']);
-        }
-        // if(scrollDownCount > 3) {
-        //   if(this.next >= 45) {
-        //     this.next = 40;
-        //     scrollDownCount = 0;
-        //     this.sunService.setIntroVal(40);
-        //   }
-        //   else if(this.next>40 && this.next<45) {
-        //     this.next = 0;
-        //     scrollDownCount = 0;
-        //     this.sunService.setIntroVal(0);
-            
-        //     // setTimeout(() => {
-        //     //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
-        //     //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
-            
-        //     // }, 100);
-        //   } else {
-        //     // this.scroll_flag = true;
-        //     // scrollDownCount = 0;
-           
-        //     // setTimeout(() => {
-        //     //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
-        //     //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
-        //     // }, 100);
-        //   }
+        scrollUpCount = 0;
+        scrollDownCount++;
+        // this.next--;
+        // this.sunService.setIntroVal(this.next);
+        // if(this.next < 0) {
+        //   this.next = 0;
+        //   this.sunService.setIntroVal(0);
+        //   this.router.navigate(['/intro']);
         // }
+        if(scrollDownCount > 5) {
+          if(this.next >= 45) {
+            console.log("thos"+scrollDownCount);
+            this.next = 40;
+            scrollDownCount = 0;
+            this.sunService.setIntroVal(40);
+          }
+          else if(this.next>40 && this.next<45) {
+            this.next = 0;
+            scrollDownCount = 0;
+            this.sunService.setIntroVal(0);
+            this.router.navigate(['/intro']);
+            // setTimeout(() => {
+            //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
+            //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+            
+            // }, 100);
+          } else {
+            // this.scroll_flag = true;
+            // scrollDownCount = 0;
+            this.router.navigate(['/intro']);
+            // setTimeout(() => {
+            //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
+            //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+            // }, 100);
+          }
+        }
         
       }
     });

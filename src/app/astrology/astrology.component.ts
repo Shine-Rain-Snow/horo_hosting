@@ -22,53 +22,60 @@ export class AstrologyComponent implements OnInit {
   nDownScrolling = 0;
   nUpScrollling = 0;
   ngOnInit() {
-    this.router.routeReuseStrategy.shouldReuseRoute = function () {
-      return false;
-    };
+    // this.router.routeReuseStrategy.shouldReuseRoute = function () {
+    //   return false;
+    // };
 
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);
     this.sunService.setCurrentPage(2);
     var astVal = this.sunService.getAstVal();
-    if(astVal == 0) 
-      this.next = 0;
-    if(astVal == 100)
-      this.next = AppConstants.SCROLLING_COUNT;
-    if(astVal > 0 && astVal < 100)
-      this.next = astVal / 10;
-    $(".astrology").bind("DOMMouseScroll mousewheel", (event) => {  
+    // if(astVal == 0) 
+    //   this.next = 0;
+    // if(astVal == 100)
+    //   this.next = AppConstants.SCROLLING_COUNT;
+    // if(astVal > 0 && astVal < 100)
+    //   this.next = astVal / 10;
+    this.next = 0;
+    $(".astrology").bind("wheel", (event) => {  
         if(event.originalEvent.deltaY > 0) {
-          //scroll down
-          this.next++;
+          //scroll up
+          //this.next++;
           
-          this.sunService.setAstVal(this.next * 10); 
-          if(this.next > AppConstants.SCROLLING_COUNT*0.4) {
-            this.nUpScrollling++;
-            if(this.nUpScrollling > 5) {
-              this.nUpScrollling = 0;
-              this.next = 40;
-              this.sunService.setAstVal(40);
-              this.router.navigate(['/astrology/ast-inner']);
-            }
-          }
+          //this.sunService.setAstVal(this.next); 
+          this.next += 5;
+          this.sunService.setAstVal(this.next);
+          console.log('up'+this.next);
+          
+             this.nUpScrollling++;
+             if(this.nUpScrollling > 6) {
+               this.nUpScrollling = 0;
+               this.next = 40;
+               this.sunService.setAstVal(40);
+               this.router.navigate(['/astrology/ast-inner']);
+             }
+         
             
         }else {
-            //scroll up
+            //scroll down
 
-            this.next--;
-            this.sunService.setAstVal(this.next * 10);
-            if(this.next < 0) {
+            //this.next--;
+            //this.sunService.setAstVal(this.next);
+            this.next = this.sunService.getAstVal();
+            console.log('down'+this.next);
+            
               this.nDownScrolling++;
               if(this.nDownScrolling > 5) {
+             
                 this.next = 0;
                 this.nDownScrolling = 0;
                 this.sunService.setAstVal(0);
-                this.sunService.setIntroVal(0);
+                this.sunService.setIntroVal(40);
                 this.router.navigate(['/intro']); 
                  
               }
                
-            } 
+            
         }
     });
   } 

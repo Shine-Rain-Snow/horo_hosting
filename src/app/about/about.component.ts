@@ -21,8 +21,8 @@ export class AboutComponent implements OnInit {
     
     this.next = 0;
     this.sunService.setProgressShow(true);
-    $(".about_page").bind("DOMMouseScroll mousewheel", (event) => {  
-      if(event.originalEvent.detail > 0) {
+    $(".about_page").bind("wheel", (event) => {  
+      if(event.originalEvent.deltaY > 0) {
         //scroll down
         this.next++;
         this.sunService.setAboutVal(this.next * 10); 

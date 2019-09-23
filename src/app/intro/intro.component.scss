@@ -131,7 +131,7 @@
 
 .intro_detail_text {
 	white-space: normal;
-	font-size: 26px;
+	font-size: 30px;
 	position: relative;
     color: rgb(133, 127, 126);
 }
@@ -152,7 +152,7 @@ $times: 8s;
 .method-1 {
 	position: relative;
 	display: inline-block;
-	font-size: 30px;
+	font-size: 34px;
 	
 	&:before {
 	  content: attr(data-text);
@@ -359,11 +359,12 @@ $times: 8s;
 .intro_tex_content {
 	color: white;
 	white-space: normal;
-	font-size: 20px;
+	font-size: 30px;
 	padding-top: 20px;
 	white-space: nowrap;
 	position: relative;
 	padding-left: 20%;
+	opacity: 0;
 }
 
 .scroll_show {

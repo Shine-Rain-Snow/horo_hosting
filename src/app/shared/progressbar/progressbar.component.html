@@ -1,12 +1,12 @@
 <div class="progressbar" *ngIf="progressShow"  >
-  <div class="progress_container">
+  <div class="progress_container" [ngStyle]="{'color': colorPreference}">
     <div (click)="onIntro()" class="progress-section">
       <mat-progress-bar
           class="progress-margin"
           [value]="introVal"
           >
       </mat-progress-bar>   
-      <div class="bar_text">Home</div>   
+      <div class="bar_text" >Home</div>   
     </div>
     <div (click)="onAst()"  class="progress-section">
       <mat-progress-bar

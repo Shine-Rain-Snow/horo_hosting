@@ -64,7 +64,7 @@ export class AstInnerComponent implements OnInit {
    this.sunService.setAstVal(40);
 
    this.scrolling(self, this.next); 
-   var hei = $("body").height();
+   let hei = $("body").height();
    $(".sunsign_text").children().css({
    	height: hei*0.45+'px'	
    });
@@ -73,36 +73,160 @@ export class AstInnerComponent implements OnInit {
    });
 
    //insert hover image
+
+   let lmg, rmg;
+   let lWidth, lHeight, rWidth, rHeight;
    $(".item_container:nth-child(1) .left_img").
    css("background-image", "url('../../../assets/img/astInner/aries_taurus/aries_back.jpg')");
    $(".item_container:nth-child(1) .right_img").
    css("background-image", "url('../../../assets/img/astInner/aries_taurus/taurus_back.jpg')");
+//    lmg = new Image;
+//    lmg.src = $(".item_container:nth-child(1) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    lWidth = lmg.width;
+//    lHeight = lmg.height;
+//    rmg = new Image;
+//    rmg.src = $(".item_container:nth-child(1) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    rWidth = rmg.width;
+//    rHeight = rmg.height;
+//    $(".item_container:nth-child(1) .left_img").css({
+//        width: lWidth*hei*0.3/lHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+//    $(".item_container:nth-child(1) .right_img").css({
+//        width: hei*0.3*rWidth/rHeight+'px',
+//        height: hei*0.3+'px',
+//    });
 
    $(".item_container:nth-child(2) .left_img").
    css("background-image", "url('../../../assets/img/astInner/gemini-cancer/gemini_back.jpg')");
    $(".item_container:nth-child(2) .right_img").
    css("background-image", "url('../../../assets/img/astInner/gemini-cancer/cancer_back.jpg')");
 
+//    lmg = new Image;
+//    lmg.src = $(".item_container:nth-child(2) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    lWidth = lmg.width;
+//    lHeight = lmg.height;
+//    rmg = new Image;
+//    rmg.src = $(".item_container:nth-child(2) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    rWidth = rmg.width;
+//    rHeight = rmg.height;
+//    $(".item_container:nth-child(2) .left_img").css({
+//        width: lWidth*hei*0.3/lHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+//    $(".item_container:nth-child(2) .right_img").css({
+//        width: hei*0.3*rWidth/rHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+
    $(".item_container:nth-child(3) .left_img").
    css("background-image", "url('../../../assets/img/astInner/leo-virgo/leo_back.jpg')");
    $(".item_container:nth-child(3) .right_img").
    css("background-image", "url('../../../assets/img/astInner/leo-virgo/virgo_back.jpg')");
-
+//    lmg = new Image;
+//    lmg.src = $(".item_container:nth-child(3) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    lWidth = lmg.width;
+//    lHeight = lmg.height;
+//    rmg = new Image;
+//    rmg.src = $(".item_container:nth-child(3) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    rWidth = rmg.width;
+//    rHeight = rmg.height;
+//    $(".item_container:nth-child(3) .left_img").css({
+//        width: lWidth*hei*0.3/lHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+//    $(".item_container:nth-child(3) .right_img").css({
+//        width: hei*0.3*rWidth/rHeight+'px',
+//        height: hei*0.3+'px',
+//    });
    $(".item_container:nth-child(4) .left_img").
    css("background-image", "url('../../../assets/img/astInner/libra-scorpio/libra_back.jpg')");
    $(".item_container:nth-child(4) .right_img").
    css("background-image", "url('../../../assets/img/astInner/libra-scorpio/scorpio_back.jpg')");
-
+//    lmg = new Image;
+//    lmg.src = $(".item_container:nth-child(4) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    lWidth = lmg.width;
+//    lHeight = lmg.height;
+//    rmg = new Image;
+//    rmg.src = $(".item_container:nth-child(4) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    rWidth = rmg.width;
+//    rHeight = rmg.height;
+//    $(".item_container:nth-child(4) .left_img").css({
+//        width: lWidth*hei*0.3/lHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+//    $(".item_container:nth-child(4) .right_img").css({
+//        width: hei*0.3*rWidth/rHeight+'px',
+//        height: hei*0.3+'px',
+//    });
    $(".item_container:nth-child(5) .left_img").
    css("background-image", "url('../../../assets/img/astInner/sagi-capricorn/sagi_back.jpg')");
    $(".item_container:nth-child(5) .right_img").
    css("background-image", "url('../../../assets/img/astInner/sagi-capricorn/capricorn_back.jpg')");
-
+//    lmg = new Image;
+//    lmg.src = $(".item_container:nth-child(5) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    lWidth = lmg.width;
+//    lHeight = lmg.height;
+//    rmg = new Image;
+//    rmg.src = $(".item_container:nth-child(5) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    rWidth = rmg.width;
+//    rHeight = rmg.height;
+//    $(".item_container:nth-child(51) .left_img").css({
+//        width: lWidth*hei*0.3/lHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+//    $(".item_container:nth-child(5) .right_img").css({
+//        width: hei*0.3*rWidth/rHeight+'px',
+//        height: hei*0.3+'px',
+//    });
    $(".item_container:nth-child(6) .left_img").
    css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/aquarius_back.jpg')");
    $(".item_container:nth-child(6) .right_img").
    css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/pisces_back.jpg')");
+//    lmg = new Image;
+//    lmg.src = $(".item_container:nth-child(6) .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    lWidth = lmg.width;
+//    lHeight = lmg.height;
+//    rmg = new Image;
+//    rmg.src = $(".item_container:nth-child(6) .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//    rWidth = rmg.width;
+//    rHeight = rmg.height;
+//    $(".item_container:nth-child(6) .left_img").css({
+//        width: lWidth*hei*0.3/lHeight+'px',
+//        height: hei*0.3+'px',
+//    });
+//    $(".item_container:nth-child(6) .right_img").css({
+//        width: hei*0.3*rWidth/rHeight+'px',
+//        height: hei*0.3+'px',
+//    });
 
+   setTimeout(function() {
+    let lWidth, lHeight, rWidth, rHeight;
+   
+    for(let i=1; i<7; i++) {
+        let lmg = new Image;
+        lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+        lWidth = lmg.width;
+        lHeight = lmg.height;
+        let rmg = new Image;
+        rmg.src = $(".item_container:nth-child("+i+") .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+
+        rWidth = rmg.width;
+        rHeight = rmg.height;
+        // console.log("left="+rWidth);
+        // console.log("right="+rHeight);
+        $(".item_container:nth-child("+i+") .left_img").css({
+            width: lWidth*hei*0.3/lHeight+'px',
+            height: hei*0.3+'px',
+        });
+        $(".item_container:nth-child("+i+") .right_img").css({
+            width: hei*0.3*rWidth/rHeight+'px',
+            height: hei*0.3+'px',
+        });
+    }
+   }, 100);
+
+    
 
     $(".left_img img").css("visibility", "visible");
     $(".left_img").css("background-size", "0 0");
@@ -143,7 +267,8 @@ export class AstInnerComponent implements OnInit {
     };
     var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,items,element,elements;
   	var element = $(".g-scrolling-carousel .items");
-  	var amount = element.children(":first").outerWidth(true)/50;
+      var amount = element.children(":first").outerWidth(true)/10;
+      
   	leftElem = $('<span />').addClass('jc-left');
     rightElem = $('<span />').addClass('jc-right');
     element.parent().append(leftElem).append(rightElem);
@@ -162,32 +287,32 @@ export class AstInnerComponent implements OnInit {
     }
     let curIndex = 0;
     let nDownScrolling = 0;
-  	element.bind("DOMMouseScroll mousewheel", function (event) {    
+  	element.bind("wheel", function (event) {    
         
         if(event.originalEvent.deltaY < 0) {
             //scroll down
-            next = next - 0.5;
+            next = next - 1;
             self.sunService.setAstVal(next);
             if(next < 40) {
-                nDownScrolling++; {
-                    if (nDownScrolling > 5) {
-                        next = 40;
-                        self.sunService.setAstVal(next);
-                        self.goAstrology();
-                    }
-                }
-                
+                nDownScrolling++; 
+                    
+                next = 40;
+                self.sunService.setAstVal(next);
+                nDownScrolling = 0;
+                self.goAstrology();
             }
         }
         
         if(event.originalEvent.deltaY > 0) {
             //scroll up
-            next = next + 0.3;
+            next = next + 1;
+            console.log(next);
             self.sunService.setAstVal(next);
            
             if(next > 100) {
                 next = 100;
-                // self.goAbout();
+                self.sunService.setAstVal(0);
+                self.goAbout();
             }
         }
         var oEvent = event.originalEvent, 
