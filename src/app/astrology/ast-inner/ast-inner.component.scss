@@ -110,13 +110,13 @@ img {
 		width: 30%;
 		white-space: break-spaces;
 		overflow: hidden;
-		font-size: 20px;
-		line-height: 24px;
+		font-size: 18px;
+		line-height: 22px;
 		text-overflow: ellipsis;
 		// background: red;
 		padding-left: 10%;
 		.left_text_career, .left_text_love {
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: bold;
 			text-align: left;
 			text-indent: initial; 
@@ -133,14 +133,15 @@ img {
 		width: 30%;
 		white-space: break-spaces;
 		overflow: hidden;
-		font-size: 20px;
-		line-height: 24px;
+		font-size: 18px;
+		line-height: 22px;
 		text-overflow: ellipsis;
 		// background: blue;
 		padding-right: 10%;
-		border-right: 2px solid black;
+		
+		// border-right: 2px solid red;
 		.right_text_career, .right_text_love {
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: bold;
 			padding-top: 10px;
 			text-align: left;
@@ -163,18 +164,18 @@ img {
 		}
 		
 		img {
-			width: 80%;
-			height: 80%;
+			width: 60%;
+			height: 60%;
 			vertical-align: middle;
 
 		}
 	}
 	.divide {
-		width: 2px;
-		height: 250px !important;
+		width: 1px;
+		height: 300px !important;
 		background: black;
 		position: relative;
-		left: 5%;
+		// left: 1%;
 		
 	}
 }
