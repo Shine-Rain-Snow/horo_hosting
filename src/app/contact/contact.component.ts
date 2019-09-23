@@ -17,7 +17,8 @@ export class ContactComponent implements OnInit {
     private sunService: SunProgressService) { }
 
   ngOnInit() {
-    
+    this.sunService.setProgressShow(false);
+    this.sunService.setCurrentPage(6);
   }
 
 }

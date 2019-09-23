@@ -36,7 +36,14 @@ export class NavigationComponent implements OnInit {
           this.colorPreference = 'white';
           break;
         }
+        // astrology inner page
         case 3: {
+        
+          this.colorPreference = 'black';
+          break;
+        }
+        // contact page
+        case 6: {
         
           this.colorPreference = 'black';
           break;
