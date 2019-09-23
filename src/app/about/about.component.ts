@@ -21,28 +21,28 @@ export class AboutComponent implements OnInit {
     
     this.next = 0;
     this.sunService.setProgressShow(true);
+    this.sunService.setCurrentPage(4);
     $(".about_page").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next++;
-        this.sunService.setAboutVal(this.next * 10); 
-        if(this.next > AppConstants.SCROLLING_COUNT){
-          //this.router.navigate(['/counseling']);
-          this.next = AppConstants.SCROLLING_COUNT;
-          this.sunService.setAboutVal(100);
+        this.next += 5;
+        this.sunService.setAboutVal(this.next); 
+        if(this.next > 100){
+          this.router.navigate(['/counseling']);
+          this.sunService.setAboutVal(0);
         }
           
             
       } else {
         //scroll up
-        this.next--;
+        this.next -= 5;
+        this.sunService.setAboutVal(this.next); 
         if(this.next < 0) {
           this.next = 0;
           this.sunService.setAboutVal(0);
-          this.sunService.setAstVal(100);
-          this.router.navigate(['/astrology/ast-inner']);    
+          this.sunService.setAstVal(0);
+          this.router.navigate(['/astrology']);    
         }
-        this.sunService.setAboutVal(this.next * 10);
         
       }
     });

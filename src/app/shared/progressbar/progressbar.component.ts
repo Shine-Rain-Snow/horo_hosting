@@ -67,6 +67,7 @@ export class ProgressbarComponent implements OnInit {
           //ast-inner page
           case 3: {
             this.colorPreference = 'black';
+            break;
             // this.astVal += 0.01;
             // this.sunService.setAstVal(this.astVal);
             // if(this.astVal > 100) {
@@ -75,6 +76,13 @@ export class ProgressbarComponent implements OnInit {
             // if(this.astVal < 40) {
             //   this.onAst();
             // }
+          }
+          // about page
+          case 4: {
+            this.aboutVal += 0.1;
+            this.sunService.setAboutVal(this.aboutVal);
+            this.colorPreference = 'black';
+            break;
           }
         }
       }, 50);
