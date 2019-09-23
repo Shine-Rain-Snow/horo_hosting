@@ -42,11 +42,11 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
     //page reload section
-    // if(this.sunService.getIntroRefresh()) {
+    if(this.sunService.getIntroRefresh()) {
       
-    //   location.reload();
-    //   this.sunService.setIntroRefrsh(false);
-    // }
+      location.reload();
+      this.sunService.setIntroRefrsh(false);
+    }
     // $("#playV")[0].autoplay = true;
     
 
