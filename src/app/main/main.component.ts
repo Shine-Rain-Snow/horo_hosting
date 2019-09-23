@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AppConstants } from '../shared/constants';
 import { SunProgressService } from '../services/sun-progress.service';
-import * as $ from 'jquery'; 
+import { Globals } from '../shared/globals';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-main',
@@ -10,8 +12,9 @@ import * as $ from 'jquery';
 })
 export class MainComponent implements OnInit {
 
-  constructor(private router: Router,
-    private sunService: SunProgressService) { 
+  constructor(private router: Router, 
+    private sunService: SunProgressService,
+    private stateData: Globals) { 
   	
   }
 
