@@ -42,11 +42,11 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setCurrentPage(1);
     //page reload section
-    if(this.sunService.getIntroRefresh()) {
+    // if(this.sunService.getIntroRefresh()) {
       
-      location.reload();
-      this.sunService.setIntroRefrsh(false);
-    }
+    //   location.reload();
+    //   this.sunService.setIntroRefrsh(false);
+    // }
     // $("#playV")[0].autoplay = true;
     
 
@@ -217,11 +217,12 @@ export class IntroComponent implements OnInit {
     // $(".movies span:nth-child(1)").addClass("active").css({top: '0%'});
     // $(".movies span:nth-child(2)").addClass("prev");
     setTimeout(() => {
-      this.movePhoto();
-      this.moveMovies();
       $('#playV')[0].load();
       $("#playV")[0].play();
       $("#playV")[0].autoplay = true;
+      this.movePhoto();
+      this.moveMovies();
+      
     }, 10);
     
     this.photoInterval = setInterval(this.movePhoto, 10100);
