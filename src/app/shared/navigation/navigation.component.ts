@@ -24,20 +24,20 @@ export class NavigationComponent implements OnInit {
     
     this.myVar = setInterval(() => {
       this.curPage = this.sunService.getCurrentPage();
-      console.log("dd"+this.curPage);
+     
       switch(this.curPage) {
         case 1: {
-          console.log("intro");
+         
           this.colorPreference = 'white';
           break;
         }
         case 2: {
-          console.log("ast");
+         
           this.colorPreference = 'white';
           break;
         }
         case 3: {
-          console.log("inner");
+        
           this.colorPreference = 'black';
           break;
         }
