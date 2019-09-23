@@ -202,27 +202,40 @@ img {
 			background-size: cover;
 			cursor: pointer;
 			z-index: 0;
-			
-			img:first-child {
-				// background: yellow;
-				visibility: hidden;
-				position: relative;
-				// top: 50%;
-				// left: 50%;
-				// transform: translate(-50%, -50%);
-				// background-position: center;
-				// background-repeat: no-repeat;
-				// background-size: cover;
-				
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.origin_img {
+				img {
+					// background: yellow;
+					visibility: hidden;
+					position: relative;
+					// top: 50%;
+					// left: 50%;
+					// transform: translate(-50%, -50%);
+					// background-position: center;
+					// background-repeat: no-repeat;
+					// background-size: cover;
+					
+				}
 			}
-			img:last-child {
+
+			.icon_img {
+				img {
 				
-				width: 20%;
-				height: 20%;
-				position: relative;
-				visibility: hidden;
-			
+					width: 120px;
+					height: 120px;
+					
+					visibility: hidden;
+					position: relative;
+					bottom: 0%;
+					left: 0%;
+					transform: translate(-100%, 10%);
+					// right: 20%;
+				
+				}
 			}
+			
 		}
 	}
 
@@ -238,6 +251,7 @@ img {
 		width: 30%;
 		position: relative;
 		// background: blue;
+		
 		.right_img {
 		// background: pink;
 		position: relative;
@@ -251,24 +265,44 @@ img {
 		
 		cursor: pointer;
 		z-index: 0;
-		img:first-child {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.origin_img {	
 			
-			visibility: hidden;
-			position: relative;
-			// top: 50%;
-			// left: 50%;
-			// transform: translate(-50%, -50%);
-			// background-position: center;
-			// background-repeat: no-repeat;
-			// background-size: cover;
-		}
-		img:last-child {
-			width: 20%;
-			height: 20%;
-			position: relative;
-			visibility: hidden;
 
+			img {
+				
+				visibility: hidden;
+				position: relative;
+				// top: 50%;
+				// left: 50%;
+				// transform: translate(-50%, -50%);
+				// background-position: center;
+				// background-repeat: no-repeat;
+				// background-size: cover;
+			}
 		}
+
+		.icon_img {
+			img {
+				// width: 120px;
+				// height: 120px;
+				// position: relative;
+				// visibility: hidden;
+	
+				width: 120px;
+				height: 120px;
+				
+				visibility: hidden;
+				position: relative;
+				bottom: 0%;
+				left: 0%;
+				transform: translate(-100%, 10%);
+	
+			}
+		}
+		
 		
 	}
 	}

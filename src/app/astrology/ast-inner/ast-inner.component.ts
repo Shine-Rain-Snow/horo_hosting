@@ -72,16 +72,16 @@ export class AstInnerComponent implements OnInit {
    	height: hei*0.3+'px'	
    });
 
-   $(".sunsign_img .left_img img:nth-child(1)").css({
-    background: 'green',
+   $(".sunsign_img .left_img .origin_img img").css({
+    // background: 'green',
     width: hei*0.3 * 592/392 +'px',
     height: hei*0.3 + 'px',	
     position: 'relative',
     left: '50%',
     transform: 'translate(-50%, 0%)',
   });
-  $(".sunsign_img .right_img img:nth-child(1)").css({
-    background: 'blue',
+  $(".sunsign_img .right_img .origin_img img").css({
+    // background: 'blue',
     width: hei*0.3 * 592/392 +'px',
     height: hei*0.3 + 'px',	
     position: 'relative',
@@ -90,48 +90,34 @@ export class AstInnerComponent implements OnInit {
     transform: 'translate(-50%, 0%)',
   });
 
-//   $(".sunsign_img .left_img img:nth-child(2)").css({
-//     width: '20%',
-//     height: '20%',
-//     position: 'relative',
-//     visibility: 'hidden',
-//   });
+//   setTimeout(() => {
+//     $(".sunsign_img .left_img img:nth-child(2)").css({
+//         width: '20%',
+//         height: '20%',
+//         position: 'relative',
+//         visibility: 'hidden',
+//         top: '-28%',
+//         right: '74%'
+//       });
+//   }, 10);
 
-  setTimeout(function() {
+//   $(".left_img").css("background-size", "cover");
+//   $(".left_img img").css("visibility", "hidden");
+//   var llWidth; 
+//   var llHeight;
+//   for(let i=1; i<7; i++) {
+//       let lmg = new Image;
+//       lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+//       llWidth = lmg.width;
+//       llHeight = lmg.height;
+      
+//       $(".item_container:nth-child("+i+") .left_img").css({
+//           width: llWidth*hei*0.3/llHeight+'px',
+//           height: hei*0.3+'px',
+//       });
+//   }
 
-    // $(".sunsign_img .left_img img:nth-child(1)").css({
-    //     background: 'green',
-    //     width: hei*0.3 * 592/392 +'px',
-    //     height: hei*0.3 + 'px',	
-    // });
-    // $(".sunsign_img .right_img img:nth-child(1)").css({
-    //     background: 'blue',
-    //     width: hei*0.3 * 592/392 +'px',
-    //     height: hei*0.3 + 'px',	
-    // });
-    // let lWidth, lHeight, rWidth, rHeight;
-    // for(let i=1; i<7; i++) {
-    //     let lmg = new Image;
-    //     lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-    //     lWidth = lmg.width;
-    //     lHeight = lmg.height;
-    //     let rmg = new Image;
-    //     rmg.src = $(".item_container:nth-child("+i+") .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-
-    //     rWidth = rmg.width;
-    //     rHeight = rmg.height;
-    //     // console.log("left="+rWidth);
-    //     // console.log("right="+rHeight);
-    //     $(".item_container:nth-child("+i+") .left_img").css({
-    //         width: lWidth*hei*0.3/lHeight+'px',
-    //         height: hei*0.3+'px',
-    //     });
-    //     $(".item_container:nth-child("+i+") .right_img").css({
-    //         width: hei*0.3*rWidth/rHeight+'px',
-    //         height: hei*0.3+'px',
-    //     });
-    // }
-   }, 100);
+ 
    //insert hover image
 
    let lmg, rmg;
@@ -171,7 +157,35 @@ export class AstInnerComponent implements OnInit {
    $(".item_container:nth-child(6) .right_img").
    css("background-image", "url('../../../assets/img/astInner/aquarius-pisces/pisces_back.jpg')");
 
+   setTimeout(() => {
+    $(this).css("background-size", "cover");
+    // $(".left_img img").css("visibility", "hidden");
+    let llWidth, llHeight, rrWidth, rrHeight;
+    for(let i=1; i<7; i++) {
+        let lmg = new Image;
+        lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+        llWidth = lmg.width;
+        llHeight = lmg.height;
+        
+        $(".item_container:nth-child("+i+") .left_img").css({
+            width: llWidth*hei*0.3/llHeight+'px',
+            height: hei*0.3+'px',
+        });
+ 
+        let rmg = new Image;
+        rmg.src = $(".item_container:nth-child("+i+") .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
+ 
+        rrWidth = rmg.width;
+        rrHeight = rmg.height;
+       
+        $(".item_container:nth-child("+i+") .right_img").css({
+            width: hei*0.3*rrWidth/rrHeight+'px',
+            height: hei*0.3+'px',
+        });
+    }
+   }, 10);
 
+   
     
 
     $(".left_img img").css("visibility", "visible");
@@ -179,46 +193,25 @@ export class AstInnerComponent implements OnInit {
     $(".left_img").hover(function(){
         $(this).css("background-size", "cover");
         $(".left_img img").css("visibility", "hidden");
-        let lWidth, lHeight, rWidth, rHeight;
+        let lWidth, lHeight;
         for(let i=1; i<7; i++) {
             let lmg = new Image;
             lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
             lWidth = lmg.width;
             lHeight = lmg.height;
-            let rmg = new Image;
-            rmg.src = $(".item_container:nth-child("+i+") .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-
-            rWidth = rmg.width;
-            rHeight = rmg.height;
+            
             $(".item_container:nth-child("+i+") .left_img").css({
                 width: lWidth*hei*0.3/lHeight+'px',
                 height: hei*0.3+'px',
             });
-            $(".item_container:nth-child("+i+") .right_img").css({
-                width: hei*0.3*rWidth/rHeight+'px',
-                height: hei*0.3+'px',
-            });
+
+            
         }
     }, function(){
         $(this).css("background-size", "0 0");
         $(".left_img img").css("visibility", "visible");
 
-        // $(".sunsign_img .left_img img:nth-child(2)").css({
-        //     width: '20%',
-		// 	height: '20%',
-		// 	position: 'relative',
-		// 	visibility: 'hidden',
-        // });
-        // $(".sunsign_img .left_img img:nth-child(1)").css({
-        //     background: 'green',
-        //     width: hei*0.3 * 592/392 +'px',
-        //     height: hei*0.3 + 'px',	
-        // });
-        // $(".sunsign_img .right_img img:nth-child(1)").css({
-        //     background: 'blue',
-        //     width: hei*0.3 * 592/392 +'px',
-        //     height: hei*0.3 + 'px',	
-        // });
+        
     });
 
     $(".right_img img").css("visibility", "visible");
@@ -226,21 +219,15 @@ export class AstInnerComponent implements OnInit {
     $(".right_img").hover(function(){
         $(this).css("background-size", "cover");
         $(".right_img img").css("visibility", "hidden");
-        let lWidth, lHeight, rWidth, rHeight;
+        let rWidth, rHeight;
         for(let i=1; i<7; i++) {
-            let lmg = new Image;
-            lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-            lWidth = lmg.width;
-            lHeight = lmg.height;
+            
             let rmg = new Image;
             rmg.src = $(".item_container:nth-child("+i+") .right_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
 
             rWidth = rmg.width;
             rHeight = rmg.height;
-            $(".item_container:nth-child("+i+") .left_img").css({
-                width: lWidth*hei*0.3/lHeight+'px',
-                height: hei*0.3+'px',
-            });
+           
             $(".item_container:nth-child("+i+") .right_img").css({
                 width: hei*0.3*rWidth/rHeight+'px',
                 height: hei*0.3+'px',
@@ -319,11 +306,14 @@ export class AstInnerComponent implements OnInit {
             self.sunService.setAstVal(next);
             if(next < 40) {
                 nDownScrolling++; 
-                    
-                next = 40;
-                self.sunService.setAstVal(next);
-                nDownScrolling = 0;
-                self.goAstrology();
+                console.log("down"+nDownScrolling);
+                if(nDownScrolling > 8) {
+                    next = 40;
+                    self.sunService.setAstVal(next);
+                    nDownScrolling = 0;
+                    self.goAstrology();
+                }    
+                
             }
         }
         

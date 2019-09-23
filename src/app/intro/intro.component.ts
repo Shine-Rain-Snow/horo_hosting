@@ -117,7 +117,7 @@ export class IntroComponent implements OnInit {
         console.log("scroll up works now");
         scrollUpCount++;
         scrollDownCount = 0;
-        if(scrollUpCount > 5) {
+        if(scrollUpCount > 3) {
           if(this.next >= 40){
             this.sunService.setIntroVal(0);
             this.router.navigate(['/astrology']);
@@ -149,7 +149,7 @@ export class IntroComponent implements OnInit {
         //   this.sunService.setIntroVal(0);
         //   this.router.navigate(['/intro']);
         // }
-        if(scrollDownCount > 5) {
+        if(scrollDownCount > 3) {
           if(this.next >= 45) {
             console.log("thos"+scrollDownCount);
             this.next = 40;
@@ -169,6 +169,9 @@ export class IntroComponent implements OnInit {
           } else {
             // this.scroll_flag = true;
             // scrollDownCount = 0;
+            this.next = 0;
+            scrollDownCount = 0;
+            this.sunService.setIntroVal(0);
             this.router.navigate(['/intro']);
             // setTimeout(() => {
             //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);

@@ -43,9 +43,9 @@ export class AstrologyComponent implements OnInit {
           //this.next++;
           
           //this.sunService.setAstVal(this.next); 
-          this.next += 5;
+          this.next += 2;
           this.sunService.setAstVal(this.next);
-          console.log('up'+this.next);
+        
           
              this.nUpScrollling++;
              if(this.nUpScrollling > 6) {
@@ -59,21 +59,18 @@ export class AstrologyComponent implements OnInit {
         }else {
             //scroll down
 
-            //this.next--;
-            //this.sunService.setAstVal(this.next);
-            this.next = this.sunService.getAstVal();
-            console.log('down'+this.next);
+            this.next -= 2;
+            this.sunService.setAstVal(this.next);
+            this.nDownScrolling++;
+            if(this.nDownScrolling > 6) {
             
-              this.nDownScrolling++;
-              if(this.nDownScrolling > 5) {
-             
-                this.next = 0;
-                this.nDownScrolling = 0;
-                this.sunService.setAstVal(0);
-                this.sunService.setIntroVal(40);
-                this.router.navigate(['/intro']); 
-                 
-              }
+              this.next = 0;
+              this.nDownScrolling = 0;
+              this.sunService.setAstVal(0);
+              this.sunService.setIntroVal(0);
+              this.router.navigate(['/intro']); 
+                
+            }
                
             
         }
