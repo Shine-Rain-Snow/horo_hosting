@@ -21,10 +21,17 @@ export class AstrologyComponent implements OnInit {
   next: number = 0;
   nDownScrolling = 0;
   nUpScrollling = 0;
+
+  
+
   ngOnInit() {
     // this.router.routeReuseStrategy.shouldReuseRoute = function () {
     //   return false;
     // };
+   
+   
+
+
 
 
 this.sunService.setProgressShow(true);
