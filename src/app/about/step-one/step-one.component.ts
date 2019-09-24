@@ -18,6 +18,7 @@ export class StepOneComponent implements OnInit {
 
   ngOnInit() {
     this.sunService.setProgressShow(true);
+    this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(20);
   }
 
