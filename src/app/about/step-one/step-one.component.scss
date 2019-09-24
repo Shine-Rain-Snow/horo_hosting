@@ -17,7 +17,18 @@
     .left-side-top {
         width: 100%;
         height: 40%;
-        background: red;
+        // background: red;
+        background: green;
+        
+        .left-side-text {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -20%);
+            background: red;
+            width: 60%;
+            font-size: 32px;
+        }
     }
 
     .left-side-bottom {
@@ -27,7 +38,7 @@
         text-align: center;
         img {
             position: relative;
-            
+            margin-top: 5%;
             width: 70%;
             height: 70%;
         }
@@ -48,6 +59,7 @@
         text-align: center;
         // vertical-align:bottom;
         img {
+            
             position: relative;
             top: 10%;
             width: 40%;
@@ -59,6 +71,15 @@
         width: 100%;
         height: 40%;
         background: green;
+        .right-side-text {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -70%);
+            background: red;
+            width: 60%;
+            font-size: 32px;
+        }
     }
 
 

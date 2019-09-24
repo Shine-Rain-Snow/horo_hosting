@@ -306,7 +306,7 @@ export class AstInnerComponent implements OnInit {
             self.sunService.setAstVal(next);
             if(next < 40) {
                 nDownScrolling++; 
-                console.log("down"+nDownScrolling);
+                // console.log("down"+nDownScrolling);
                 if(nDownScrolling > 8) {
                     next = 40;
                     self.sunService.setAstVal(next);
@@ -320,7 +320,7 @@ export class AstInnerComponent implements OnInit {
         if(event.originalEvent.deltaY > 0) {
             //scroll up
             next = next + 1;
-            console.log(next);
+            // console.log(next);
             self.sunService.setAstVal(next);
            
             if(next > 100) {
