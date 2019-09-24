@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConstants } from '../shared/constants';
 import { SunProgressService } from '../services/sun-progress.service';
@@ -12,7 +12,7 @@ import * as $ from 'jquery';
   providers: [],
 })
 export class IntroComponent implements OnInit {
- 
+  @Output() myEvent = new EventEmitter();
   constructor(private router: Router, 
     private sunService: SunProgressService,
     private stateData: Globals) { }
@@ -27,6 +27,11 @@ export class IntroComponent implements OnInit {
   animaFlag: boolean = true;
   failFlag: boolean = false;
   
+  startPlay() {
+    $("#playV")[0].play();
+    $("#playV")[0].autoplay = true;
+    this.myEvent.emit(null);
+  }
 
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -232,7 +237,7 @@ export class IntroComponent implements OnInit {
       // $('#playV')[0].load();
       $("#playV")[0].play();
       $("#playV")[0].autoplay = true;
-    }, 1000);
+    }, 500);
     
     this.photoInterval = setInterval(this.movePhoto, 10100);
     this.videoInterval = setInterval(this.moveMovies, 10100);
