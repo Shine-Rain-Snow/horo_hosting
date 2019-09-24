@@ -311,6 +311,9 @@ export class AstInnerComponent implements OnInit {
                     next = 40;
                     self.sunService.setAstVal(next);
                     nDownScrolling = 0;
+                    $(".astity-inner").animate({
+                        opacity: "0"
+                    }, 1000);
                     self.goAstrology();
                 }    
                 
