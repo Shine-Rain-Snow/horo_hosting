@@ -2,12 +2,9 @@
 <div class="astrology">
 		<!-- poster="../../assets/img/astrology.jpg" -->
 	
-		<mat-video 
-		[autoplay]="true" [preload]="true" [fullscreen]="true" 
-		[download]="true" [overlay]="false" [loop]="true" [muted]="true">
-			<source matVideoSource src="../../assets/video/astrology.Ogg" type="video/ogg">
-				
-		</mat-video>
+	<video  id="backgroundvid" autoplay loop muted preload="auto">
+		<source src="../../assets/video/astrology.Ogg" type='video/ogg; codecs="theora, vorbis"'>
+	</video> 
 	
 	<div class="ast-title"  routerLink="/astrology/ast-inner">
 		<!-- Astrology -->
@@ -20,9 +17,14 @@
 </div>
 
 
-<!-- <video  id="backgroundvid" autoplay loop muted preload="auto"> -->
-		<!-- <source src="video.webm" type='video/webm; codecs="vp8.0, vorbis"'> -->
-		<!-- <source src="../../assets/video/astrology.Ogg" type='video/ogg; codecs="theora, vorbis"'> -->
-		<!-- <source src="video.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'> -->
+
+
+<!-- <mat-video 
+[autoplay]="true" [preload]="true" [fullscreen]="true" 
+[download]="true" [overlay]="false" [loop]="true" [muted]="true">
+	<source matVideoSource src="../../assets/video/astrology.Ogg" type="video/ogg">
 		
-	<!-- </video>  -->
+</mat-video> -->
+
+<!-- <source src="video.webm" type='video/webm; codecs="vp8.0, vorbis"'>
+	<source src="video.mp4" type='video/mp4; codecs="avc1.4D401E, mp4a.40.2"'> -->

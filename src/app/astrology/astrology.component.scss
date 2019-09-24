@@ -7,16 +7,16 @@
  height: 100%;
  width: 100%;
  overflow: hidden;	
- img {
- 	  position: fixed; 
-	  top: 0; 
-	  left: 0; 
-	  width: 100%;
-	  height: 100%;
-	  /* Preserve aspet ratio */
-	  min-width: 100%;
-	  min-height: 100%;
- }
+//  img {
+//  	  position: fixed; 
+// 	  top: 0; 
+// 	  left: 0; 
+// 	  width: 100%;
+// 	  height: 100%;
+// 	  /* Preserve aspet ratio */
+// 	  min-width: 100%;
+// 	  min-height: 100%;
+//  }
 }
 
 video#backgroundvid { 
@@ -104,3 +104,4 @@ $main-color: #23abd4;
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
+
