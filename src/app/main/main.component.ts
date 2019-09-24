@@ -27,7 +27,13 @@ export class MainComponent implements OnInit {
       this.router.navigate(['/intro']);
       this.sunService.setIntroTitleShow(true);
       this.sunService.setIntroRefrsh(true);
-	  }, 4600);
+    }, 4600);
+    
+    // $(".animate").click(()=>{
+    //   this.router.navigate(['/intro']);
+    //   this.sunService.setIntroTitleShow(true);
+    //   this.sunService.setIntroRefrsh(true);
+    // });
   }
 
   videoAstDownload() {
@@ -40,7 +46,7 @@ export class MainComponent implements OnInit {
       // Onload is triggered even on 404
       // so we need to check the status code
       if (this.status === 200) {
-        console.log("what is it");
+        console.log("Ast");
           var videoBlob = this.response;
           var vid = URL.createObjectURL(videoBlob); // IE10+
           // Video is now downloaded
@@ -50,6 +56,7 @@ export class MainComponent implements OnInit {
     }
     req.onerror = function() {
       // Error
+      console.log("error");
     }
 
     req.send();
@@ -57,7 +64,7 @@ export class MainComponent implements OnInit {
 
   videoIntroDownload() {
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://localhost:4200/assets/video/intro_1.Ogg', true);
+    req.open('GET', 'http://localhost:4200/assets/video/intro_1.ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
@@ -65,7 +72,7 @@ export class MainComponent implements OnInit {
       // Onload is triggered even on 404
       // so we need to check the status code
       if (this.status === 200) {
-        console.log("what is it");
+        console.log("INTRO");
           var videoBlob = this.response;
           var vid = URL.createObjectURL(videoBlob); // IE10+
           // Video is now downloaded
@@ -75,6 +82,7 @@ export class MainComponent implements OnInit {
     }
     req.onerror = function() {
       // Error
+      console.log("error");
     }
 
     req.send();
