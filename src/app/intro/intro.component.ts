@@ -120,7 +120,10 @@ export class IntroComponent implements OnInit {
         if(scrollUpCount > 3) {
           if(this.next >= 40){
             this.sunService.setIntroVal(0);
-            this.router.navigate(['/astrology']);
+            $(".intro").fadeOut(1000);
+            setTimeout(() => {
+            this.router.navigate(['/astrology']); 
+            }, 1000);
             scrollUpCount = 0;
           } else {
             this.next = 40;
@@ -160,7 +163,11 @@ export class IntroComponent implements OnInit {
             this.next = 0;
             scrollDownCount = 0;
             this.sunService.setIntroVal(0);
-            this.router.navigate(['/intro']);
+            $(".intro").fadeOut(1000);
+            setTimeout(() => {
+            this.router.navigate(['/intro']); 
+            }, 1000);
+        
             // setTimeout(() => {
             //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
             //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
@@ -172,7 +179,10 @@ export class IntroComponent implements OnInit {
             this.next = 0;
             scrollDownCount = 0;
             this.sunService.setIntroVal(0);
-            this.router.navigate(['/intro']);
+            $(".intro").fadeOut(1000);
+            setTimeout(() => {
+            this.router.navigate(['/intro']); 
+            }, 1000);
             // setTimeout(() => {
             //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
             //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
@@ -219,7 +229,7 @@ export class IntroComponent implements OnInit {
     this.movePhoto();
     this.moveMovies();
     setTimeout(() => {
-      $('#playV')[0].load();
+      // $('#playV')[0].load();
       $("#playV")[0].play();
       $("#playV")[0].autoplay = true;
     }, 1000);

@@ -57,11 +57,24 @@ export class AstInnerComponent implements OnInit {
   next;
   ngOnInit() {
     
+   
+
    let self = this;
    this.sunService.setCurrentPage(3);
    this.sunService.setProgressShow(true);
    this.next = 40;
    this.sunService.setAstVal(40);
+
+    //moving effect
+    $(".g-scrolling-carousel").css({
+       
+        left: '30%',
+    });
+    $(".g-scrolling-carousel").animate({
+        left: '0%'
+    }, 
+    {duration: 2000,
+    easing: "swing"})
 
    this.scrolling(self, this.next); 
    let hei = $("body").height();
@@ -89,36 +102,6 @@ export class AstInnerComponent implements OnInit {
     left: '50%',
     transform: 'translate(-50%, 0%)',
   });
-
-//   setTimeout(() => {
-//     $(".sunsign_img .left_img img:nth-child(2)").css({
-//         width: '20%',
-//         height: '20%',
-//         position: 'relative',
-//         visibility: 'hidden',
-//         top: '-28%',
-//         right: '74%'
-//       });
-//   }, 10);
-
-//   $(".left_img").css("background-size", "cover");
-//   $(".left_img img").css("visibility", "hidden");
-//   var llWidth; 
-//   var llHeight;
-//   for(let i=1; i<7; i++) {
-//       let lmg = new Image;
-//       lmg.src = $(".item_container:nth-child("+i+") .left_img").css('background-image').replace(/url\(\"|\"\)$/ig, "");
-//       llWidth = lmg.width;
-//       llHeight = lmg.height;
-      
-//       $(".item_container:nth-child("+i+") .left_img").css({
-//           width: llWidth*hei*0.3/llHeight+'px',
-//           height: hei*0.3+'px',
-//       });
-//   }
-
- 
-   //insert hover image
 
    let lmg, rmg;
    let lWidth, lHeight, rWidth, rHeight;
@@ -238,27 +221,8 @@ export class AstInnerComponent implements OnInit {
     }, function(){
         $(this).css("background-size", "0 0");
         $(".right_img img").css("visibility", "visible");
-        
-        // $(".sunsign_img .left_img img:nth-child(1)").css({
-        //     background: 'green',
-        //     width: hei*0.3 * 592/392 +'px',
-        //     height: hei*0.3 + 'px',	
-        //     position: 'relative',
-        //     top: '50%',
-        //     left: '50%',
-        //     transform: 'translate(-50%, -50%)',
-        // });
-        // $(".sunsign_img .right_img img:nth-child(1)").css({
-        //     background: 'blue',
-        //     width: hei*0.3 * 592/392 +'px',
-        //     height: hei*0.3 + 'px',	
-        //     position: 'relative',
-        //     top: '50%',
-        //     left: '50%',
-        //     transform: 'translate(-50%, -50%)',
-        // });
     });
- 
+
   }
 
   goAstrology() {
@@ -307,14 +271,19 @@ export class AstInnerComponent implements OnInit {
             if(next < 40) {
                 nDownScrolling++; 
                 // console.log("down"+nDownScrolling);
-                if(nDownScrolling > 8) {
+                if(nDownScrolling > 5) {
                     next = 40;
                     self.sunService.setAstVal(next);
                     nDownScrolling = 0;
-                    $(".astity-inner").animate({
-                        opacity: "0"
+                   
+                   
+                    $(".ast-inner").fadeOut(1000);
+                    setTimeout(() => {
+                        //self.goAstrology();
+                        self.sunService.setAllZero();
+                        self.router.navigate(['/astrology']);
                     }, 1000);
-                    self.goAstrology();
+
                 }    
                 
             }
@@ -329,15 +298,31 @@ export class AstInnerComponent implements OnInit {
             if(next > 100) {
                 next = 100;
                 self.sunService.setAstVal(0);
-                self.goAbout();
+                $(".ast-inner").fadeOut(1000);
+                setTimeout(() => {
+                    self.goAbout();
+                }, 1000);
+                
             }
         }
         var oEvent = event.originalEvent, 
         direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
         position = element.scrollLeft();
+        let origin_pos = position;
         position += direction > 0 ? -amount : amount;
-        
+        let animation_pos = position;
         element.scrollLeft(position);
+        //element.animate({"scrollLeft": position+'px'}, "slow");
+        // element.animate({
+            
+        // }, 100);
+        //var currentElement = currentElement.next();
+        
+        // element.animate({scrollLeft: position/2}, {
+        //     duration: 50,
+        //     easing: "swing"
+        // });
+
         event.preventDefault();
         maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
         left = element.scrollLeft();

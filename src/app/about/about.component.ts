@@ -28,9 +28,9 @@ export class AboutComponent implements OnInit {
         //scroll down
         this.next += 3;
         this.sunService.setAboutVal(this.next); 
-        if(this.next > 20) {
-          this.router.navigate(['/about/step-one']);
-        } 
+        // if(this.next > 20) {
+        //   this.router.navigate(['/about/step-one']);
+        // } 
         if(this.next > 100){
           this.router.navigate(['/counseling']);
           this.sunService.setAboutVal(0);

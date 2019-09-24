@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
+
+import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import { AstrologyComponent } from './astrology.component';
 import { AstInnerComponent } from './ast-inner/ast-inner.component';
-
+import { MaterialModule } from '../material/material.module';
 const routes: Routes = [
 	{
 		path: '',
@@ -17,6 +19,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations: [AstrologyComponent],
+  declarations: [AstInnerComponent],
 })
 export class AstrologyRoutingModule { }

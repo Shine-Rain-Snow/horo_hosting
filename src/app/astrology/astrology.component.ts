@@ -26,62 +26,119 @@ export class AstrologyComponent implements OnInit {
     //   return false;
     // };
 
-    this.sunService.setProgressShow(true);
-    this.sunService.setAstVal(0);
-    this.sunService.setCurrentPage(2);
-    var astVal = this.sunService.getAstVal();
-    // if(astVal == 0) 
-    //   this.next = 0;
-    // if(astVal == 100)
-    //   this.next = AppConstants.SCROLLING_COUNT;
-    // if(astVal > 0 && astVal < 100)
-    //   this.next = astVal / 10;
-    this.next = 0;
-    $(".astrology").bind("wheel", (event) => {  
-        if(event.originalEvent.deltaY > 0) {
-          //scroll up
-          //this.next++;
-          
-          //this.sunService.setAstVal(this.next); 
-          this.next += 2;
-          this.sunService.setAstVal(this.next);
-        
-          
-             this.nUpScrollling++;
-             if(this.nUpScrollling > 6) {
-               this.nUpScrollling = 0;
-               this.next = 40;
-               this.sunService.setAstVal(40);
-               this.router.navigate(['/astrology/ast-inner']);
-             }
-         
-            
-        }else {
-            //scroll down
 
-            this.next -= 2;
-            this.sunService.setAstVal(this.next);
-            this.nDownScrolling++;
-            if(this.nDownScrolling > 6) {
-            
-              this.next = 0;
-              this.nDownScrolling = 0;
-              this.sunService.setAstVal(0);
-              this.sunService.setIntroVal(0);
-              this.router.navigate(['/intro']); 
-                
-            }
-               
-            
+this.sunService.setProgressShow(true);
+this.sunService.setAstVal(0);
+this.sunService.setCurrentPage(2);
+var astVal = this.sunService.getAstVal();
+// if(astVal == 0) 
+//   this.next = 0;
+// if(astVal == 100)
+//   this.next = AppConstants.SCROLLING_COUNT;
+// if(astVal > 0 && astVal < 100)
+//   this.next = astVal / 10;
+this.next = 0;
+$(".astrology").bind("wheel", (event) => {  
+    if(event.originalEvent.deltaY > 0) {
+      //scroll up
+      //this.next++;
+      
+      //this.sunService.setAstVal(this.next); 
+      this.next += 2;
+      this.sunService.setAstVal(this.next);
+    
+      
+         this.nUpScrollling++;
+         if(this.nUpScrollling > 6) {
+           this.nUpScrollling = 0;
+           this.next = 40;
+           this.sunService.setAstVal(40);
+           $(".astrology").fadeOut(1000);
+           setTimeout(() => {
+            this.router.navigate(['/astrology/ast-inner']);
+           }, 1000);
+         }
+     
+        
+    }else {
+        //scroll down
+
+        this.next -= 2;
+        this.sunService.setAstVal(this.next);
+        this.nDownScrolling++;
+        if(this.nDownScrolling > 6) {
+        
+          this.next = 0;
+          this.nDownScrolling = 0;
+          this.sunService.setAstVal(0);
+          this.sunService.setIntroVal(0);
+          $(".astrology").fadeOut(1000);
+           setTimeout(() => {
+            this.router.navigate(['/intro']); 
+           }, 1000);
         }
-    });
+    }
+  });
+    
   } 
 
   ngOnDestroy() {
     
   }
 
-  goPrev() {
-    this.router.navigate(['/intro']);
-  }
 }
+
+
+
+// this.sunService.setProgressShow(true);
+// this.sunService.setAstVal(0);
+// this.sunService.setCurrentPage(2);
+// var astVal = this.sunService.getAstVal();
+// // if(astVal == 0) 
+// //   this.next = 0;
+// // if(astVal == 100)
+// //   this.next = AppConstants.SCROLLING_COUNT;
+// // if(astVal > 0 && astVal < 100)
+// //   this.next = astVal / 10;
+// this.next = 0;
+// $(".astrology").bind("wheel", (event) => {  
+//     if(event.originalEvent.deltaY > 0) {
+//       //scroll up
+//       //this.next++;
+      
+//       //this.sunService.setAstVal(this.next); 
+//       this.next += 2;
+//       this.sunService.setAstVal(this.next);
+    
+      
+//          this.nUpScrollling++;
+//          if(this.nUpScrollling > 6) {
+//            this.nUpScrollling = 0;
+//            this.next = 40;
+//            this.sunService.setAstVal(40);
+//            $(".astrology").fadeOut(1000);
+//            setTimeout(() => {
+//             this.router.navigate(['/astrology/ast-inner']);
+//            }, 1000);
+//          }
+     
+        
+//     }else {
+//         //scroll down
+
+//         this.next -= 2;
+//         this.sunService.setAstVal(this.next);
+//         this.nDownScrolling++;
+//         if(this.nDownScrolling > 6) {
+        
+//           this.next = 0;
+//           this.nDownScrolling = 0;
+//           this.sunService.setAstVal(0);
+//           this.sunService.setIntroVal(0);
+//           $(".astrology").fadeOut(1000);
+//            setTimeout(() => {
+//             this.router.navigate(['/intro']); 
+//            }, 1000);
+//         }
+//     }
+//   });
