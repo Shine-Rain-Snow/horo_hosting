@@ -1,0 +1,59 @@
+.step-one {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.clear {
+    clear: both;
+}
+
+.left-side {
+    width: 50%;
+    height: 100%;
+    float: left;
+    
+    
+    .left-side-top {
+        width: 100%;
+        height: 40%;
+        background: red;
+    }
+
+    .left-side-bottom {
+        width: 100%;
+        height: 60%;
+        // background: blue;
+        
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+
+}
+
+.right-side {
+    width: 50%;
+    height: 100%;
+    float: right;
+    
+    .right-side-top {
+        width: 100%;
+        height: 60%;
+        // background: yellow;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .right-side-bottom {
+        width: 100%;
+        height: 40%;
+        background: green;
+    }
+
+
+}

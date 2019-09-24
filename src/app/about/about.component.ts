@@ -22,20 +22,22 @@ export class AboutComponent implements OnInit {
     this.next = 0;
     this.sunService.setProgressShow(true);
     this.sunService.setCurrentPage(4);
+
     $(".about_page").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 5;
+        this.next += 3;
         this.sunService.setAboutVal(this.next); 
+        if(this.next > 20) {
+          this.router.navigate(['/about/step-one']);
+        } 
         if(this.next > 100){
           this.router.navigate(['/counseling']);
           this.sunService.setAboutVal(0);
         }
-          
-            
       } else {
         //scroll up
-        this.next -= 5;
+        this.next -= 3;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 0) {
           this.next = 0;

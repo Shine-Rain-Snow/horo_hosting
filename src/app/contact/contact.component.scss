@@ -27,7 +27,8 @@
 			position: relative;
 			top: 50%;
 			left: 50%;
-			transform: translate(-50%, -50%);
+			transform: translate(
+				-5%, -40%);
 		}
 	}
 
@@ -153,7 +154,7 @@
 }
 
 .contact_us {
-	font-size: 20px;
+	font-size: 18px;
 }
 
 .country {
@@ -162,14 +163,52 @@
 }
 
 .city {
-	font-size: 22px;
+	font-size: 40px;
 }
 
 .tel {
-	font-size: 20px;
+	font-size: 16px;
 }
 
 .email_us {
 	font-size: 20px;
 }
 
+.dash {
+	border-bottom: 1px solid black; 
+	width:60px; 
+	float:left; 
+	position: relative; 
+	margin: 14px 0 0 20px;
+}
+
+.clear {
+	clear: both;
+}
+
+.slim {
+	width: 50px;
+	border-bottom: 1px solid black; 
+	margin-top: 40%;
+}
+
+.slim1 {
+	width: 50px;
+	border-bottom: 1px solid black; 
+	margin-top: 10%;
+}
+
+
+.slim2 {
+	width: 50px;
+	border-bottom: 1px solid black; 
+	margin-top: 8%;
+}
+
+.divide-line {
+	width: 80%;
+	position: absolute;
+	bottom: 5%;
+	border-bottom: 1px solid rgb(133, 127, 126);
+	margin-left: 10%;
+}
