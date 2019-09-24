@@ -223,7 +223,7 @@ export class IntroComponent implements OnInit {
       this.movePhoto();
       this.moveMovies();
       
-    }, 10);
+    }, 50);
     
     this.photoInterval = setInterval(this.movePhoto, 10100);
     this.videoInterval = setInterval(this.moveMovies, 10100);
