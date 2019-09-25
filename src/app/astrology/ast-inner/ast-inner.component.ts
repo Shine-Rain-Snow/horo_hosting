@@ -324,13 +324,24 @@ export class AstInnerComponent implements OnInit {
         // });
 
         //animate effecting
-        element.animate({
-            scrollLeft: position+'px'
-        }, 
-        {
-            duration: 10,
-            easing: "easeInOutQuart"
-        });
+        let cou = 0;
+        let gap =(animation_pos - origin_pos)/10;
+        let smoothInterval = setInterval(()=> {
+            cou++;
+            console.log(cou);
+            element.animate({
+                scrollLeft: '+='+gap+'px'
+            }, 
+            {
+                duration: 10,
+                easing: "swing"
+            });
+            if(cou>10) {
+                cou = 0;
+                clearInterval(smoothInterval);
+            }
+        }, 1);
+        
 
         event.preventDefault();
         maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
