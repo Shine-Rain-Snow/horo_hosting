@@ -43,18 +43,42 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
+    setTimeout(() => {
+      let firstV = <HTMLVideoElement>document.querySelector('#playV');
+      let promise = firstV.play();
+
+      if (promise !== undefined) {
+          promise.then(_ => {
+            console.log("played! success");
+            promise = firstV.play();
+          }).catch(error => {
+            console.log("intro video error"+ error);
+            promise = firstV.play();
+            // page reload if video don't autoplay
+            if(this.sunService.getIntroRefresh()) {
+              location.reload();
+              this.sunService.setIntroRefrsh(false);
+            }
+              // Autoplay was prevented.
+              // Show a "Play" button so that user can start playback.
+          });
+      }
+      else {
+        console.log("undefined!");
+      }
+    }, 10); 
 
     
-    const playPromise = $("#playV")[0].play();
-    if (playPromise !== null){
-        playPromise.catch(() => { $("#playV")[0].play(); })
-    }
-    setTimeout(() => {
-      const playPromise = $("#playV")[0].play();
-      if (playPromise !== null){
-          playPromise.catch(() => { $("#playV")[0].play(); })
-      }
-    }, 100);
+    // const playPromise = $("#playV")[0].play();
+    // if (playPromise !== null){
+    //     playPromise.catch(() => { $("#playV")[0].play(); })
+    // }
+    // setTimeout(() => {
+    //   const playPromise = $("#playV")[0].play();
+    //   if (playPromise !== null){
+    //       playPromise.catch(() => { $("#playV")[0].play(); })
+    //   }
+    // }, 100);
     //page reload section
     // if(this.sunService.getIntroRefresh()) {
       
