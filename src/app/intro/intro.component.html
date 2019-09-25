@@ -59,7 +59,11 @@
 					<script>
 					var iframe = document.querySelector('#playVimeo');
 					var player = new Vimeo.Player(iframe);
-
+					player.play();	
+					setTimeout(() => {
+						player.play();	
+					}, 10);
+					
 					</script>
 					
 				</span>
