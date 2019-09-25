@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
     // this.videoIntroDownload();
     this.videoIntroDownload(self);
     this.videoAstDownload(self);
-    this.videoContactDownload(self);
+    //this.videoContactDownload(self);
     
     
     //this.sunService.setAstVideoURL(astURL);
