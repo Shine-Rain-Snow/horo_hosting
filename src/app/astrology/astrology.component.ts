@@ -16,22 +16,30 @@ export class AstrologyComponent implements OnInit {
 
   constructor(private router: Router, 
     public stateData: Globals, 
-    private sunService: SunProgressService) {  }
+    private sunService: SunProgressService,
+    ) {  }
   
   next: number = 0;
   nDownScrolling = 0;
   nUpScrollling = 0;
 
   
-
+  astURL;
+  
+  public getImagePath(): string {
+    if (this.astURL = this.sunService.getAstVideoURL()) {
+      return this.astURL = this.sunService.getAstVideoURL(); //  after get the image from documents service
+    }
+   console.log("Not found video");
+  }
   ngOnInit() {
     // this.router.routeReuseStrategy.shouldReuseRoute = function () {
     //   return false;
     // };
    
-   
-
-
+  //  console.log("url"+this.sunService.getAstVideoURL());
+  //  this.astURL = this.sunService.getAstVideoURL();
+  //  console.log("fixing"+this.astURL);
     setTimeout(() => {
       // $('#playV')[0].load();
       $("#backgroundvid")[0].play();

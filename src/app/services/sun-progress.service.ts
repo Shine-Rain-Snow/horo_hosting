@@ -19,6 +19,17 @@ export class SunProgressService {
   mCurrentPage: number = 0;
 
   mIntroRefresh: boolean = false;
+
+  mAstVideoURL;
+
+  setAstVideoURL(value) {
+    this.mAstVideoURL = value;
+  }
+
+  getAstVideoURL() {
+    return this.mAstVideoURL;
+  }
+
   setProgressShow(value) {
     this.mProgressShow = value;
   }
