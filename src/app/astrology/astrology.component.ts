@@ -43,6 +43,7 @@ export class AstrologyComponent implements OnInit {
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);
     this.sunService.setCurrentPage(2);
+    this.sunService.setShowMenu(true);
     var astVal = this.sunService.getAstVal();
     // if(astVal == 0) 
     //   this.next = 0;

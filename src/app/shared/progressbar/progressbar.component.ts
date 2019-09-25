@@ -79,8 +79,10 @@ export class ProgressbarComponent implements OnInit {
           }
           // about page
           case 4: {
-            this.aboutVal += 0.1;
-            this.sunService.setAboutVal(this.aboutVal);
+            //this.aboutVal += 0.1;
+            //this.sunService.setAboutVal(this.aboutVal);
+           
+            
             this.colorPreference = 'black';
             // if(this.aboutVal > 20) {
             //   this.router.navigate(['/about/step-one']);

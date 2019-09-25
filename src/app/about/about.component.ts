@@ -21,6 +21,7 @@ export class AboutComponent implements OnInit {
     
     this.next = 0;
     this.sunService.setProgressShow(true);
+    this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
 
     $(".about_page").bind("wheel", (event) => {  
@@ -28,13 +29,17 @@ export class AboutComponent implements OnInit {
         //scroll down
         this.next += 3;
         this.sunService.setAboutVal(this.next); 
-        // if(this.next > 20) {
-        //   this.router.navigate(['/about/step-one']);
-        // } 
-        if(this.next > 100){
-          this.router.navigate(['/counseling']);
-          this.sunService.setAboutVal(0);
-        }
+        if(this.next > 20) {
+          $(".about_page").fadeOut(1000);
+          setTimeout(() => {
+            this.router.navigate(['/about/step-one']);
+          }, 1000);
+         
+        } 
+        // if(this.next > 100){
+        //   this.router.navigate(['/counseling']);
+        //   this.sunService.setAboutVal(0);
+        // }
       } else {
         //scroll up
         this.next -= 3;
@@ -43,7 +48,11 @@ export class AboutComponent implements OnInit {
           this.next = 0;
           this.sunService.setAboutVal(0);
           this.sunService.setAstVal(0);
-          this.router.navigate(['/astrology']);    
+          $(".about_page").fadeOut(1000);
+          setTimeout(() => {
+            this.router.navigate(['/astrology']);    
+          }, 1000);
+          
         }
         
       }

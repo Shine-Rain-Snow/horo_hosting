@@ -62,6 +62,7 @@ export class AstInnerComponent implements OnInit {
    let self = this;
    this.sunService.setCurrentPage(3);
    this.sunService.setProgressShow(true);
+   this.sunService.setShowMenu(true);
    this.next = 40;
    this.sunService.setAstVal(40);
 
@@ -311,7 +312,7 @@ export class AstInnerComponent implements OnInit {
         let origin_pos = position;
         position += direction > 0 ? -amount : amount;
         let animation_pos = position;
-        element.scrollLeft(position);
+        //element.scrollLeft(position);
         //element.animate({"scrollLeft": position+'px'}, "slow");
         // element.animate({
             

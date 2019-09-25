@@ -21,11 +21,13 @@ export class NavigationComponent implements OnInit {
   myVar;
   curPage;
   showMenu = false;
+  aboutVal;
   ngOnInit() {
     
     this.myVar = setInterval(() => {
       this.curPage = this.sunService.getCurrentPage();
       this.showMenu = this.sunService.getShowMenu();
+      this.aboutVal = this.sunService.getAboutVal();
       switch(this.curPage) {
         case 1: {
          
@@ -45,8 +47,12 @@ export class NavigationComponent implements OnInit {
         }
         //about page
         case 4: {
-        
-          this.colorPreference = 'black';
+          if(this.aboutVal >= 40 && this.aboutVal < 60) {
+            
+            this.colorPreference = 'white';
+          }
+          else 
+            this.colorPreference = 'black';
           break;
         }
         // contact page

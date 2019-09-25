@@ -41,6 +41,7 @@ export class IntroComponent implements OnInit {
     // }
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
+    this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
     //page reload section
     // if(this.sunService.getIntroRefresh()) {
