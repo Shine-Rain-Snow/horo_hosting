@@ -1,9 +1,11 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConstants } from '../shared/constants';
 import { SunProgressService } from '../services/sun-progress.service';
 import { Globals } from '../shared/globals';
 import * as $ from 'jquery';
+// import * as Vimeo from "@vimeo/player/dist/player.js";
+import Player from "@vimeo/player";
 
 @Component({
   selector: 'app-intro',
@@ -29,6 +31,10 @@ export class IntroComponent implements OnInit {
   introURL;
   playInterval;
 
+  private player: Player;
+
+
+
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -45,6 +51,30 @@ export class IntroComponent implements OnInit {
     this.sunService.setCurrentPage(1);
     
     
+    if (this.introURL = this.sunService.getIntroVideoURL()) {
+      console.log(this.sunService.getIntroVideoURL());
+      this.player = new Player('playVimeo', {
+        url: this.introURL,
+        width: 800,
+      }); //  after get the image from documents service
+      this.player.play().then(function(){
+        console.log("successed vimeo!");
+      }).catch(function(error){
+        console.log("error"+error);
+      });
+    }
+ 
+//var iframe = document.querySelector('#playVimeo');
+//this.player = new Vimeo.Player(iframe);
+// player.play().then(function() {
+//     console.log("success");
+// }).catch(function(error) {
+//     console.log(error);
+// });	
+// setTimeout(() => {
+// 	player.play();	
+// }, 10);
+
     
     // let firstV, promisePlay;
     // this.playInterval = setInterval(()=> {
@@ -435,6 +465,6 @@ export class IntroComponent implements OnInit {
     if (this.introURL = this.sunService.getIntroVideoURL()) {
       return this.introURL = this.sunService.getIntroVideoURL(); //  after get the image from documents service
     }
-   console.log("Not found Intro video");
+   //console.log("Not found Intro video");
   }
 }
