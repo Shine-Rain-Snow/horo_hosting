@@ -53,19 +53,7 @@ export class IntroComponent implements OnInit {
     this.sunService.setCurrentPage(1);
     
     
-    if (this.introURL = this.sunService.getIntroVideoURL()) {
-      console.log(this.sunService.getIntroVideoURL());
-      const urlIntro = this.domSanitizer.bypassSecurityTrustHtml(this.introURL);
-      this.player = new Player('playVimeo', {
-        url: urlIntro,
-        width: 800,
-      }); //  after get the image from documents service
-      this.player.play().then(function(){
-        console.log("successed vimeo!");
-      }).catch(function(error){
-        console.log("error"+error);
-      });
-    }
+    
  
 //var iframe = document.querySelector('#playVimeo');
 //this.player = new Vimeo.Player(iframe);
@@ -79,27 +67,42 @@ export class IntroComponent implements OnInit {
 // }, 10);
 
     
-    // let firstV, promisePlay;
-    // this.playInterval = setInterval(()=> {
+    let firstV, promisePlay;
+    this.playInterval = setInterval(()=> {
       
-    //   firstV = <HTMLVideoElement>document.querySelector('#playV');
-    //   promisePlay = firstV.play();
-    //   $("#playV")[0].play();
-    //   $("#playV")[0].autoplay = true;
-    //   if (promisePlay !== undefined) {
-    //     promisePlay.then(_ => {
-    //         console.log("played! success");
-    //         clearInterval(this.playInterval);
+      firstV = <HTMLVideoElement>document.querySelector('#playV');
+      promisePlay = firstV.play();
+      $("#playV")[0].play();
+      $("#playV")[0].autoplay = true;
+      if (promisePlay !== undefined) {
+        promisePlay.then(_ => {
+            console.log("played! success");
+            clearInterval(this.playInterval);
             
-    //       }).catch(error => {
-    //         console.log("intro video error"+ error);
-    //         promisePlay = firstV.play();
-    //       });
-    //   }
-    //   else {
-    //     console.log("undefined!");
-    //   }
-    // }, 100);
+          }).catch(error => {
+            console.log("intro video error"+ error);
+            if (this.introURL = this.sunService.getIntroVideoURL()) {
+              console.log(this.sunService.getIntroVideoURL());
+              const urlIntro = this.domSanitizer.bypassSecurityTrustHtml(this.introURL);
+              this.player = new Player('playVimeo', {
+                // url: urlIntro,
+                url: 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg',
+                width: 800,
+              }); //  after get the image from documents service
+              this.player.play().then(function(){
+                console.log("successed vimeo!");
+              }).catch(function(error){
+                console.log("error"+error);
+              });
+            }
+
+
+          });
+      }
+      else {
+        console.log("undefined!");
+      }
+    }, 100);
 
    
     //page reload section
