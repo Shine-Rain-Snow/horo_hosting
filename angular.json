@@ -28,10 +28,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/jquery-ui-dist/jquery-ui.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.js",
               "./node_modules/jquery-mousewheel/jquery.mousewheel.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js"
             ]
@@ -97,10 +99,12 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "./node_modules/jquery-ui-dist/jquery-ui.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
+              "./node_modules/jquery-ui-dist/jquery-ui.js",
               "./node_modules/jquery-mousewheel/jquery.mousewheel.js",
               "./node_modules/bootstrap/dist/js/bootstrap.js"
             ]

@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { AppConstants } from '../../shared/constants';
 import { SunProgressService } from '../../services/sun-progress.service';
 import { Globals } from '../../shared/globals';
-import * as $ from 'jquery';
+declare let $: any;
 
 @Component({
   selector: 'app-ast-inner',
@@ -322,6 +322,15 @@ export class AstInnerComponent implements OnInit {
         //     duration: 50,
         //     easing: "swing"
         // });
+
+        //animate effecting
+        element.animate({
+            scrollLeft: position+'px'
+        }, 
+        {
+            duration: 10,
+            easing: "easeInOutQuart"
+        });
 
         event.preventDefault();
         maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;

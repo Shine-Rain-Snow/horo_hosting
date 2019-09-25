@@ -20,11 +20,12 @@ export class NavigationComponent implements OnInit {
   colorPreference = 'white';
   myVar;
   curPage;
+  showMenu = false;
   ngOnInit() {
     
     this.myVar = setInterval(() => {
       this.curPage = this.sunService.getCurrentPage();
-     
+      this.showMenu = this.sunService.getShowMenu();
       switch(this.curPage) {
         case 1: {
          

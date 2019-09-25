@@ -1,12 +1,12 @@
 
   <div class="header">
-  	  <div class="page_logo">
+  	  <div class="page_logo" *ngIf="showMenu">
   	  	this is logo-image
   	  </div>
   	  <div class="page_title">
   	  	
   	  </div>
-      <div class="menu" (click)="onToggleSidenav()" >
+      <div class="menu" *ngIf="showMenu" (click)="onToggleSidenav()" >
       	<span [ngStyle]="{'color': colorPreference}">Menu</span>
       </div>
   </div>
