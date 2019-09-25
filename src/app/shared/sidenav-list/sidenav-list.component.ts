@@ -24,7 +24,8 @@ export class SidenavListComponent implements OnInit {
       i = $(".item_container").index(this); 
       
       j = i + 1;
-      $(".item_container:nth-child("+j+") .num").empty().text("―");
+      $(".item_container:nth-child("+j+") .num").empty()
+      .html("<span style =`width: 10px;height: 1px;border-bottom: 1px solid white;color: red;`></span>");
       
     }, function() {
       k = i + 1;

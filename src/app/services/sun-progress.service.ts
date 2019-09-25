@@ -20,7 +20,17 @@ export class SunProgressService {
 
   mIntroRefresh: boolean = false;
 
+  mIntroVideoURL;
   mAstVideoURL;
+  mContactVideoURL;
+
+  setIntroVideoURL(value) {
+    this.mIntroVideoURL = value;
+  }
+
+  getIntroVideoURL() {
+    return this.mIntroVideoURL;
+  }
 
   setAstVideoURL(value) {
     this.mAstVideoURL = value;
@@ -28,6 +38,14 @@ export class SunProgressService {
 
   getAstVideoURL() {
     return this.mAstVideoURL;
+  }
+
+  setContactVideoURL(value) {
+    this.mContactVideoURL = value;
+  }
+
+  getContactVideoURL() {
+    return this.mContactVideoURL;
   }
 
   setProgressShow(value) {

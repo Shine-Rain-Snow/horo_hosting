@@ -16,9 +16,17 @@ export class ContactComponent implements OnInit {
     public stateData: Globals, 
     private sunService: SunProgressService) { }
 
+  contactURL;
   ngOnInit() {
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(6);
+  }
+
+  public getImagePath(): string {
+    if (this.contactURL = this.sunService.getContactVideoURL()) {
+      return this.contactURL = this.sunService.getContactVideoURL(); //  after get the image from documents service
+    }
+   console.log("Not found Contact video");
   }
 
 }

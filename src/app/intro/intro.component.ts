@@ -26,12 +26,8 @@ export class IntroComponent implements OnInit {
   scroll_flag: boolean;
   animaFlag: boolean = true;
   failFlag: boolean = false;
+  introURL;
   
-  startPlay() {
-    $("#playV")[0].play();
-    $("#playV")[0].autoplay = true;
-    this.myEvent.emit(null);
-  }
 
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -233,11 +229,11 @@ export class IntroComponent implements OnInit {
     // $(".movies span:nth-child(2)").addClass("prev");
     this.movePhoto();
     this.moveMovies();
-    setTimeout(() => {
-      // $('#playV')[0].load();
-      $("#playV")[0].play();
-      $("#playV")[0].autoplay = true;
-    }, 500);
+    // setTimeout(() => {
+    //   // $('#playV')[0].load();
+    //   $("#playV")[0].play();
+    //   $("#playV")[0].autoplay = true;
+    // }, 100);
     
     this.photoInterval = setInterval(this.movePhoto, 10100);
     this.videoInterval = setInterval(this.moveMovies, 10100);
@@ -409,5 +405,13 @@ export class IntroComponent implements OnInit {
       }
     });
 
+  }
+
+  public getImagePath(): string {
+    
+    if (this.introURL = this.sunService.getIntroVideoURL()) {
+      return this.introURL = this.sunService.getIntroVideoURL(); //  after get the image from documents service
+    }
+   console.log("Not found Intro video");
   }
 }
