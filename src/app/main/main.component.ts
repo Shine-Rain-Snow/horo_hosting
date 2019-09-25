@@ -36,16 +36,16 @@ export class MainComponent implements OnInit {
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(0);
   	setTimeout(() => {
-      this.downInterval = setInterval(()=>{
-        if(this.flagIntro && this.flagAst && this.flagContact) {
+      // this.downInterval = setInterval(()=>{
+        // if(this.flagIntro && this.flagAst && this.flagContact) {
           this.router.navigate(['/intro']);
           this.sunService.setIntroTitleShow(true);
           this.sunService.setIntroRefrsh(true);
           this.sunService.setShowMenu(true);
-        }
-      }, 10);
+        // }
+      // }, 10);
       
-    }, 4600);
+    }, 9600);
 
     
     
