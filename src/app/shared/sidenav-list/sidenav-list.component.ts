@@ -20,12 +20,15 @@ export class SidenavListComponent implements OnInit {
     let i = 0;
     let j = 0;
     let k = 0;
+    const htmlText = '<div style="width:80%; border-bottom: 1px solid white;"></div>';
+    // $(".item_container:nth-child(1) .num").empty()
+    // .html(htmlText);
     $(".nav-list .item_container").hover(function() {
       i = $(".item_container").index(this); 
       
       j = i + 1;
       $(".item_container:nth-child("+j+") .num").empty()
-      .html("<span style =`width: 10px;height: 1px;border-bottom: 1px solid white;color: red;`></span>");
+      .html(htmlText);
       
     }, function() {
       k = i + 1;
