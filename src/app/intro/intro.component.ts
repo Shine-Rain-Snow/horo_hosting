@@ -4,6 +4,7 @@ import { AppConstants } from '../shared/constants';
 import { SunProgressService } from '../services/sun-progress.service';
 import { Globals } from '../shared/globals';
 import * as $ from 'jquery';
+import { DomSanitizer } from '@angular/platform-browser';
 // import * as Vimeo from "@vimeo/player/dist/player.js";
 import Player from "@vimeo/player";
 
@@ -17,7 +18,8 @@ export class IntroComponent implements OnInit {
   @Output() myEvent = new EventEmitter();
   constructor(private router: Router, 
     private sunService: SunProgressService,
-    private stateData: Globals) { }
+    private stateData: Globals,
+    private domSanitizer: DomSanitizer) { }
 
   next: number = 0;
   photoInterval;
@@ -53,8 +55,9 @@ export class IntroComponent implements OnInit {
     
     if (this.introURL = this.sunService.getIntroVideoURL()) {
       console.log(this.sunService.getIntroVideoURL());
+      const urlIntro = this.domSanitizer.bypassSecurityTrustHtml(this.introURL);
       this.player = new Player('playVimeo', {
-        url: this.introURL,
+        url: urlIntro,
         width: 800,
       }); //  after get the image from documents service
       this.player.play().then(function(){
