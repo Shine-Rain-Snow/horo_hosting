@@ -80,22 +80,10 @@ export class IntroComponent implements OnInit {
             clearInterval(this.playInterval);
             
           }).catch(error => {
-            console.log("intro video error"+ error);
-            //if (this.introURL = this.sunService.getIntroVideoURL()) {
-              console.log(this.sunService.getIntroVideoURL());
-              const urlIntro = this.domSanitizer.bypassSecurityTrustHtml(this.introURL);
-              this.player = new Player('playVimeo', {
-                // url: urlIntro,
-                url: 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg',
-                
-              }); //  after get the image from documents service
-              this.player.play().then(function(){
-                console.log("successed vimeo!");
-                clearInterval(this.playInterval);
-              }).catch(function(error){
-                console.log("error"+error);
-              });
-            //}
+            if(this.sunService.getIntroRefresh()) {
+              location.reload();
+              this.sunService.setIntroRefrsh(false);
+            }
 
 
           });
