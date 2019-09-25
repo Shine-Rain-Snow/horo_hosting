@@ -70,10 +70,10 @@ export class IntroComponent implements OnInit {
     let firstV, promisePlay;
     this.playInterval = setInterval(()=> {
       
-      firstV = <HTMLVideoElement>document.querySelector('#playV');
+      firstV = <HTMLVideoElement>document.querySelector('#playVimeo');
       promisePlay = firstV.play();
-      $("#playV")[0].play();
-      $("#playV")[0].autoplay = true;
+      $("#playVimeo")[0].play();
+      $("#playVimeo")[0].autoplay = true;
       if (promisePlay !== undefined) {
         promisePlay.then(_ => {
             console.log("played! success");
@@ -81,20 +81,21 @@ export class IntroComponent implements OnInit {
             
           }).catch(error => {
             console.log("intro video error"+ error);
-            if (this.introURL = this.sunService.getIntroVideoURL()) {
+            //if (this.introURL = this.sunService.getIntroVideoURL()) {
               console.log(this.sunService.getIntroVideoURL());
               const urlIntro = this.domSanitizer.bypassSecurityTrustHtml(this.introURL);
               this.player = new Player('playVimeo', {
                 // url: urlIntro,
                 url: 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg',
-                width: 800,
+                
               }); //  after get the image from documents service
               this.player.play().then(function(){
                 console.log("successed vimeo!");
+                clearInterval(this.playInterval);
               }).catch(function(error){
                 console.log("error"+error);
               });
-            }
+            //}
 
 
           });
