@@ -45,9 +45,13 @@ export class IntroComponent implements OnInit {
     this.sunService.setCurrentPage(1);
     let firstV, promisePlay;
     this.playInterval = setInterval(()=> {
+      //var player = document.getElementById('#playV');
+      //var vimeoPlayer = new Vimeo.Player(player);
+      //vimeoPlayer.play();
       firstV = <HTMLVideoElement>document.querySelector('#playV');
       promisePlay = firstV.play();
-
+      $("#playV")[0].play();
+      $("#playV")[0].autoplay = true;
       if (promisePlay !== undefined) {
         promisePlay.then(_ => {
             console.log("played! success");

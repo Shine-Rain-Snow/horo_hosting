@@ -329,7 +329,7 @@ export class AstInnerComponent implements OnInit {
         let gap =(animation_pos - origin_pos)/10;
         let smoothInterval = setInterval(()=> {
             cou++;
-            console.log(cou);
+            //console.log(cou);
             element.animate({
                 scrollLeft: '+='+gap+'px'
             }, 
