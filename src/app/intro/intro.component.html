@@ -3,6 +3,7 @@
 	<!-- <div class="intro-title" >
 		Introduction
 	</div> -->
+	 
 	<div class="flow-bottom-top">
 		<div class="show_window">
 			<div class="photo">
@@ -35,7 +36,7 @@
 			<div class="movies">
 				
 				<span class="video_1 active">
-					<video id="playV" autoplay="true"
+					<!-- <video id="playV" autoplay="true"
 					muted="muted"  loop preload="auto">
 						<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
 						<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
@@ -43,7 +44,24 @@
 						<source  src="assets/video/intro_1.mp4" type='video/mp4;codecs="H264, avc1.42E01E, mp4a.40.2"'>
 						<source  src="assets/video/intro_1.webm" type="video/webm">
 						
+					</video> -->
+
+					<video id="playVimeo"
+						frameborder="0" 
+						allowfullscreen 
+						autoplay = "true"
+						loop = "true"
+						muted = "muted"
+						allow="autoplay; encrypted-media">
+							<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
+							<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 					</video>
+					<script>
+					var iframe = document.querySelector('#playVimeo');
+					var player = new Vimeo.Player(iframe);
+
+					</script>
+					
 				</span>
 				<span class="video_2 prev">
 					<video autoplay muted loop preload="auto">

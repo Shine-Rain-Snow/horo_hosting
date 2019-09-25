@@ -43,40 +43,32 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
-    let firstV, promisePlay;
-    this.playInterval = setInterval(()=> {
-      //var player = document.getElementById('#playV');
-      //var vimeoPlayer = new Vimeo.Player(player);
-      //vimeoPlayer.play();
-      firstV = <HTMLVideoElement>document.querySelector('#playV');
-      promisePlay = firstV.play();
-      $("#playV")[0].play();
-      $("#playV")[0].autoplay = true;
-      if (promisePlay !== undefined) {
-        promisePlay.then(_ => {
-            console.log("played! success");
-            clearInterval(this.playInterval);
+    
+    
+    
+    // let firstV, promisePlay;
+    // this.playInterval = setInterval(()=> {
+      
+    //   firstV = <HTMLVideoElement>document.querySelector('#playV');
+    //   promisePlay = firstV.play();
+    //   $("#playV")[0].play();
+    //   $("#playV")[0].autoplay = true;
+    //   if (promisePlay !== undefined) {
+    //     promisePlay.then(_ => {
+    //         console.log("played! success");
+    //         clearInterval(this.playInterval);
             
-          }).catch(error => {
-            console.log("intro video error"+ error);
-            promisePlay = firstV.play();
-          });
-      }
-      else {
-        console.log("undefined!");
-      }
-    }, 100);
-
-    // const playPromise = $("#playV")[0].play();
-    // if (playPromise !== null){
-    //     playPromise.catch(() => { $("#playV")[0].play(); })
-    // }
-    // setTimeout(() => {
-    //   const playPromise = $("#playV")[0].play();
-    //   if (playPromise !== null){
-    //       playPromise.catch(() => { $("#playV")[0].play(); })
+    //       }).catch(error => {
+    //         console.log("intro video error"+ error);
+    //         promisePlay = firstV.play();
+    //       });
+    //   }
+    //   else {
+    //     console.log("undefined!");
     //   }
     // }, 100);
+
+   
     //page reload section
     // if(this.sunService.getIntroRefresh()) {
       
