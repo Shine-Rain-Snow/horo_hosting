@@ -43,10 +43,17 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
+
+    
+    const playPromise = $("#playV")[0].play();
+    if (playPromise !== null){
+        playPromise.catch(() => { $("#playV")[0].play(); })
+    }
     setTimeout(() => {
-      // $('#playV')[0].load();
-      $("#playV")[0].play();
-      $("#playV")[0].autoplay = true;
+      const playPromise = $("#playV")[0].play();
+      if (playPromise !== null){
+          playPromise.catch(() => { $("#playV")[0].play(); })
+      }
     }, 100);
     //page reload section
     // if(this.sunService.getIntroRefresh()) {

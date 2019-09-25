@@ -4,34 +4,33 @@ import { AppConstants } from '../../shared/constants';
 import { SunProgressService } from '../../services/sun-progress.service';
 import { Globals } from '../../shared/globals';
 import * as $ from 'jquery';
-
 @Component({
-  selector: 'app-step-two',
-  templateUrl: './step-two.component.html',
-  styleUrls: ['./step-two.component.scss']
+  selector: 'app-step-three',
+  templateUrl: './step-three.component.html',
+  styleUrls: ['./step-three.component.scss']
 })
-export class StepTwoComponent implements OnInit {
+export class StepThreeComponent implements OnInit {
 
   constructor(private router: Router, 
     private sunService: SunProgressService,
     private stateData: Globals) { }
-  next: number;
+  next: number = 0;
   ngOnInit() {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
-    this.sunService.setAboutVal(40);
-
-    this.next = 40;
-    $(".step-two").bind("wheel", (event) => {  
+    this.sunService.setAboutVal(60);
+    this.next = 60;
+    $(".step-three").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
         this.next += 3;
         this.sunService.setAboutVal(this.next); 
-        if(this.next > 60) {
-          $(".step-two").fadeOut(1000);
+        if(this.next > 80) {
+          this.sunService.setAboutVal(40);
+          $(".step-three").fadeOut(1000);
           setTimeout(() => {
-            this.router.navigate(['/about/step-three']);
+            this.router.navigate(['/about']);
           }, 1000);
          
         } 
@@ -43,17 +42,19 @@ export class StepTwoComponent implements OnInit {
         //scroll up
         this.next -= 3;
         this.sunService.setAboutVal(this.next); 
-        if(this.next < 40) {
-          this.sunService.setAboutVal(40);
-          $(".step-two").fadeOut(1000);
+        if(this.next < 60) {
+          this.next = 0;
+          $(".step-three").fadeOut(1000);
           setTimeout(() => {
-            this.router.navigate(['/about/step-one']); 
+            this.router.navigate(['/about/step-two']); 
           }, 1000);
              
         }
         
       }
     });
-  }
+
+   }
+  
 
 }

@@ -1,0 +1,86 @@
+.step-three {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.clear {
+    clear: both;
+}
+
+.left-side {
+    width: 50%;
+    height: 96%;
+    float: left;
+    
+    
+    .left-side-top {
+        width: 100%;
+        height: 40%;
+        // background: red;
+        // background: green;
+        
+        .left-side-text {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -20%);
+            // background: red;
+            width: 60%;
+            font-size: 32px;
+        }
+    }
+
+    .left-side-bottom {
+        width: 100%;
+        height: 60%;
+        // background: blue;
+        text-align: center;
+        img {
+            position: relative;
+            margin-top: 5%;
+            width: 70%;
+            height: 70%;
+        }
+    }
+
+
+}
+
+.right-side {
+    width: 50%;
+    height: 92%;
+    float: right;
+    // background: red;
+    .right-side-top {
+        width: 100%;
+        height: 60%;
+        // background: yellow;
+        text-align: center;
+        // vertical-align:bottom;
+        img {
+            
+            position: relative;
+            top: 10%;
+            width: 40%;
+            height: 90%;
+        }
+    }
+
+    .right-side-bottom {
+        width: 100%;
+        height: 40%;
+        // background: green;
+        .right-side-text {
+            position: relative;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -70%);
+            // background: red;
+            width: 60%;
+            font-size: 32px;
+        }
+    }
+
+
+}
