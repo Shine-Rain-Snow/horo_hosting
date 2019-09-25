@@ -36,14 +36,14 @@ export class MainComponent implements OnInit {
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(0);
   	setTimeout(() => {
-      // this.downInterval = setInterval(()=>{
-        // if(this.flagIntro && this.flagAst && this.flagContact) {
+      this.downInterval = setInterval(()=>{
+        // if(this.flagIntro && this.flagAst) {
           this.router.navigate(['/intro']);
           this.sunService.setIntroTitleShow(true);
           this.sunService.setIntroRefrsh(true);
           this.sunService.setShowMenu(true);
         // }
-      // }, 10);
+      }, 10);
       
     }, 9600);
 
@@ -62,7 +62,7 @@ export class MainComponent implements OnInit {
 
   videoIntroDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://oferc.herokuapp.com/assets/video/intro_1.Ogg', true);
+    req.open('GET', 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
@@ -90,7 +90,7 @@ export class MainComponent implements OnInit {
 
   videoAstDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://oferc.herokuapp.com/assets/video/astrology.Ogg', true);
+    req.open('GET', 'https://oferc.herokuapp.com/assets/video/astrology.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function(e) {
@@ -121,7 +121,7 @@ export class MainComponent implements OnInit {
 
   videoContactDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'http://oferc.herokuapp.com/assets/video/contact_thailand.Ogg', true);
+    req.open('GET', 'https://oferc.herokuapp.com/assets/video/contact_thailand.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
