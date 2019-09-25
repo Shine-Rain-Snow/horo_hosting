@@ -230,11 +230,11 @@ export class IntroComponent implements OnInit {
     // $(".movies span:nth-child(2)").addClass("prev");
     this.movePhoto();
     this.moveMovies();
-    // setTimeout(() => {
-    //   // $('#playV')[0].load();
-    //   $("#playV")[0].play();
-    //   $("#playV")[0].autoplay = true;
-    // }, 100);
+    setTimeout(() => {
+      // $('#playV')[0].load();
+      $("#playV")[0].play();
+      $("#playV")[0].autoplay = true;
+    }, 100);
     
     this.photoInterval = setInterval(this.movePhoto, 10100);
     this.videoInterval = setInterval(this.moveMovies, 10100);
