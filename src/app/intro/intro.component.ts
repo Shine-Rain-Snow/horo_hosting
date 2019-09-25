@@ -27,7 +27,7 @@ export class IntroComponent implements OnInit {
   animaFlag: boolean = true;
   failFlag: boolean = false;
   introURL;
-  
+  playInterval;
 
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -43,32 +43,26 @@ export class IntroComponent implements OnInit {
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
-    setTimeout(() => {
-      let firstV = <HTMLVideoElement>document.querySelector('#playV');
-      let promise = firstV.play();
+    let firstV, promisePlay;
+    this.playInterval = setInterval(()=> {
+      firstV = <HTMLVideoElement>document.querySelector('#playV');
+      promisePlay = firstV.play();
 
-      if (promise !== undefined) {
-          promise.then(_ => {
+      if (promisePlay !== undefined) {
+        promisePlay.then(_ => {
             console.log("played! success");
-            promise = firstV.play();
+            clearInterval(this.playInterval);
+            
           }).catch(error => {
             console.log("intro video error"+ error);
-            promise = firstV.play();
-            // page reload if video don't autoplay
-            if(this.sunService.getIntroRefresh()) {
-              location.reload();
-              this.sunService.setIntroRefrsh(false);
-            }
-              // Autoplay was prevented.
-              // Show a "Play" button so that user can start playback.
+            promisePlay = firstV.play();
           });
       }
       else {
         console.log("undefined!");
       }
-    }, 10); 
+    }, 100);
 
-    
     // const playPromise = $("#playV")[0].play();
     // if (playPromise !== null){
     //     playPromise.catch(() => { $("#playV")[0].play(); })
@@ -282,7 +276,7 @@ export class IntroComponent implements OnInit {
     clearInterval(this.photoInterval);
     clearInterval(this.videoInterval);
     clearInterval(this.scrollingInterval);
-    
+    clearInterval(this.playInterval);
     $(".photo").finish();
     $(".movies").finish();
   }
