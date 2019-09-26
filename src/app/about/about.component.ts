@@ -17,27 +17,32 @@ export class AboutComponent implements OnInit {
     private stateData: Globals) { }
 
   next: number = 0;
+  nUpScrollling: number = 0;
+  nDownScrolling = 0;
   ngOnInit() {
     
     this.next = 0;
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
-
+    this.sunService.setAboutVal(0);
     $(".about_page").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
         this.next += 1;
         this.sunService.setAboutVal(this.next); 
-        
-        if(this.next > 30) {
+        this.nUpScrollling++;
+        if(this.nUpScrollling > 6) {
           this.sunService.setAboutVal(30); 
-          $(".about_page").fadeOut(1000);
+          $(".about_page").fadeOut(600);
           setTimeout(() => {
             this.router.navigate(['/about/step-one']);
-          }, 1000);
-         
-        } 
+          }, 600);
+        }
+        //if(this.next > 30) {
+          
+        
+        //} 
         // if(this.next > 100){
         //   this.router.navigate(['/counseling']);
         //   this.sunService.setAboutVal(0);
@@ -46,16 +51,21 @@ export class AboutComponent implements OnInit {
         //scroll up
         this.next -= 1;
         this.sunService.setAboutVal(this.next); 
-        if(this.next < 0) {
+        //if(this.next < 0) {
+        this.nDownScrolling++;
+        if(this.nDownScrolling > 6) {
           this.next = 0;
+          this.nDownScrolling = 0;
           this.sunService.setAboutVal(0);
           this.sunService.setAstVal(0);
           $(".about_page").fadeOut(1000);
           setTimeout(() => {
             this.router.navigate(['/astrology']);    
           }, 1000);
-          
         }
+          
+          
+       // }
         
       }
     });

@@ -29,10 +29,10 @@ export class StepFourComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         if(this.next > 70) {
           this.sunService.setAboutVal(70);
-          $(".step-four").fadeOut(1000);
+          $(".step-four").fadeOut(600);
           setTimeout(() => {
             this.router.navigate(['/about/step-five']);
-          }, 1000);
+          }, 600);
          
         } 
         // if(this.next > 100){
@@ -45,11 +45,11 @@ export class StepFourComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         if(this.next < 60) {
           this.next = 0;
-          $(".step-four").fadeOut(1000);
+          $(".step-four").fadeOut(600);
           this.sunService.setAboutVal(50); 
           setTimeout(() => {
             this.router.navigate(['/about/step-three']); 
-          }, 1000);
+          }, 600);
              
         }
         

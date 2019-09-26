@@ -38,7 +38,7 @@ export class AstrologyComponent implements OnInit {
       
       $("#backgroundvid")[0].play();
       $("#backgroundvid")[0].autoplay = true;
-    }, 100);
+    }, 10);
 
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);

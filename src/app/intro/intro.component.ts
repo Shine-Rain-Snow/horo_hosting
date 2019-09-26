@@ -71,7 +71,7 @@ export class IntroComponent implements OnInit {
       $("#playV7")[0].muted = true;
       $("#playV8")[0].play();
       $("#playV8")[0].muted = true;
-    }, 100);
+    }, 10);
     
      
     if(navigator.userAgent.indexOf("Chrome") != -1 ){

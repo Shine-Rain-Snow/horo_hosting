@@ -31,10 +31,10 @@ export class StepTwoComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         if(this.next > 50) {
           this.sunService.setAboutVal(50); 
-          $(".step-two").fadeOut(1000);
+          $(".step-two").fadeOut(600);
           setTimeout(() => {
             this.router.navigate(['/about/step-three']);
-          }, 1000);
+          }, 600);
          
         } 
       } else {
@@ -43,10 +43,10 @@ export class StepTwoComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         if(this.next < 40) {
           this.sunService.setAboutVal(30);
-          $(".step-two").fadeOut(1000);
+          $(".step-two").fadeOut(600);
           setTimeout(() => {
             this.router.navigate(['/about/step-one']); 
-          }, 1000);
+          }, 600);
              
         }
         
