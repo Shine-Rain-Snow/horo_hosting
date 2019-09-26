@@ -1,11 +1,11 @@
 <div class="intro_opacity">
 <div class="intro">
-		<iframe src="assets/video/intro_1.mp4" 
+		<!-- <iframe src="assets/video/intro_1.mp4" 
 		class="iVideo"
 		allow="autoplay" 
 		
 		id="iframeVideo">
-		</iframe> 
+		</iframe>  -->
 	<div class="flow-bottom-top">
 		<div class="show_window">
 			<div class="photo">
@@ -42,10 +42,11 @@
 						class="iVideo"
 						allow="autoplay" 
 						style="display: none"
+						muted
 						id="iframeVideo">
 						</iframe> 
 						<video id="playV" autoplay="true"
-							muted="muted"  loop preload="auto">
+							muted  loop preload="auto">
 							<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
 							<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 							<source  src="assets/video/intro_1.ogv" type='video/ogg'>
