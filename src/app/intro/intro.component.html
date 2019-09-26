@@ -1,11 +1,11 @@
 <div class="intro_opacity">
 <div class="intro">
-		<!-- <iframe src="assets/video/intro_1.Ogg" 
+		<iframe src="assets/video/intro_1.Ogg" 
+		class="iVideo"
 		allow="autoplay" 
-		style="display:none" 
-		id="iframeAudio">
-		</iframe> -->
-
+		
+		id="iframeVideo">
+		</iframe> 
 	<div class="flow-bottom-top">
 		<div class="show_window">
 			<div class="photo">
@@ -39,8 +39,9 @@
 				
 				<span class="video_1 active">
 						<iframe src="assets/video/intro_1.Ogg" 
+						class="iVideo"
 						allow="autoplay" 
-						style="display:none" 
+						style="display: none"
 						id="iframeVideo">
 						</iframe> 
 						<video id="playV" autoplay="true"
@@ -53,12 +54,16 @@
 								
 						</video>
 						<script>
-							var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+							var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+							//var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 							if(!isChrome){
-								$('#iframeVideo').remove()
+								$('#iframeVideo').remove();
+								console.log("not chrome");
 							}
 							else{
-								$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
+								console.log("chrome");
+								//$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
 							}
 						</script>
 

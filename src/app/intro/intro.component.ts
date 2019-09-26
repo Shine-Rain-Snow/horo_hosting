@@ -52,7 +52,18 @@ export class IntroComponent implements OnInit {
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
     
-    
+    //var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
+
+							//var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+    if(navigator.userAgent.indexOf("Chrome") != -1 ){
+      console.log("chrome");  
+      //$('#playV').remove();
+      }
+      else{
+        //$('#iframeVideo').remove();
+        console.log("not chrome");
+        //$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
+    }
     
     // let firstV, promisePlay;
     // this.playInterval = setInterval(()=> {
