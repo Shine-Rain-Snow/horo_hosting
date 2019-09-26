@@ -1,20 +1,11 @@
 <div class="intro_opacity">
 <div class="intro">
-<div style="width:100px; height:100px; ">
+		<!-- <iframe src="assets/video/intro_1.Ogg" 
+		allow="autoplay" 
+		style="display:none" 
+		id="iframeAudio">
+		</iframe> -->
 
-	<mat-video 
-		[autoplay]="true" 
-		[loop] = "true"
-		[preload]="true" 
-		[download]="true" 
-		[overlay] = "false"
-	 >
-
-		<source [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
-		<source src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
-	
-	  </mat-video>
-	</div>	
 	<div class="flow-bottom-top">
 		<div class="show_window">
 			<div class="photo">
@@ -47,15 +38,29 @@
 			<div class="movies">
 				
 				<span class="video_1 active">
-					<video id="playV" autoplay="true"
-					muted="muted"  loop preload="auto">
-						<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
-						<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
-						<source  src="assets/video/intro_1.ogv" type='video/ogg'>
-						<source  src="assets/video/intro_1.mp4" type='video/mp4;codecs="H264, avc1.42E01E, mp4a.40.2"'>
-						<source  src="assets/video/intro_1.webm" type="video/webm">
-						
-					</video>
+						<iframe src="assets/video/intro_1.Ogg" 
+						allow="autoplay" 
+						style="display:none" 
+						id="iframeAudio">
+						</iframe> 
+						<video id="playV" autoplay="true"
+							muted="muted"  loop preload="auto">
+							<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
+							<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
+							<source  src="assets/video/intro_1.ogv" type='video/ogg'>
+							<source  src="assets/video/intro_1.mp4" type='video/mp4;codecs="H264, avc1.42E01E, mp4a.40.2"'>
+							<source  src="assets/video/intro_1.webm" type="video/webm">
+								
+						</video>
+						<script>
+							var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
+							if(!isChrome){
+								$('#iframeAudio').remove()
+							}
+							else{
+								$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
+							}
+						</script>
 
 					
 					
