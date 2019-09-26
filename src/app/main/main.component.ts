@@ -155,7 +155,7 @@ export class MainComponent implements OnInit {
           // and we can set it as source on the video element
           //video.src = vid;
           let url = self.dom.bypassSecurityTrustUrl(vid);  
-          self.sunService.setContactVideoURL(url); 
+          self.sunService.setAboutVideoURL(url); 
           self.flagAbout = true;
       }
     }
