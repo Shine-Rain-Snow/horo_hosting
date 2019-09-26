@@ -1,12 +1,5 @@
 <div class="intro_opacity">
 <div class="intro">
-		<!-- <iframe src="assets/video/intro_1.Ogg" 
-		class="iVideo"
-		allow="autoplay" 
-		
-		id="iframeVideo">
-		</iframe>  -->
-	
 		
 	<div class="flow-bottom-top">
 		<div class="show_window">
@@ -46,76 +39,60 @@
 						style="display: none"
 						id="iVideo">
 						</iframe>  -->
-						<video id="playV" autoplay="true"
-							muted  loop preload="auto">
-							<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
-							<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
-							<source  src="assets/video/intro_1.ogv" type='video/ogg'>
-							<source  src="assets/video/intro_1.mp4" type='video/mp4;codecs="H264, avc1.42E01E, mp4a.40.2"'>
-							<source  src="assets/video/intro_1.webm" type="video/webm">
-								
-						</video>
-						<script>
-							var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
-							//var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-							if(!isChrome){
-								$('#iframeVideo').remove();
-								console.log("not chrome");
-							}
-							else{
-								console.log("chrome");
-								//$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
-							}
-						</script>
-
-					
-					
+					<video id="playV1" autoplay="true"
+						muted  loop preload="auto">
+						<source  [attr.src]="getImagePath()" type='video/ogg;codecs="theora, vorbis"'>
+						<source  src="assets/video/intro_1.Ogg" type='video/ogg;codecs="theora, vorbis"'>
+						<source  src="assets/video/intro_1.ogv" type='video/ogg'>
+						<source  src="assets/video/intro_1.mp4" type='video/mp4;codecs="H264, avc1.42E01E, mp4a.40.2"'>
+						<source  src="assets/video/intro_1.webm" type="video/webm">
+							
+					</video>
 				</span>
 				<span class="video_2 prev">
-					<video autoplay muted loop preload="auto">
+					<video  id="playV2" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_2.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_2.mp4" type="video/mp4">
 						<source src="assets/video/intro_2.webm" type="video/webm">	
 					</video>
 				</span>
 				<span class="video_3">
-					<video autoplay muted loop preload="auto">
+					<video id="playV3" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_3.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_3.mp4" type="video/mp4">
 						<source src="assets/video/intro_3.webm" type="video/webm">
 					</video>
 				</span>
 				<span class="video_4">
-					<video autoplay muted loop preload="auto">
+					<video id="playV4" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_4.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_4.mp4" type="video/mp4">
 						<source src="assets/video/intro_4.webm" type="video/webm">
 					</video>
 				</span>
 				<span class="video_5">
-					<video autoplay muted loop preload="auto">
+					<video id="playV5" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_5.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_5.mp4" type="video/mp4">
 						<source src="assets/video/intro_5.webm" type="video/webm">
 					</video>
 				</span>
 				<span class="video_6">
-					<video autoplay muted loop preload="auto">
+					<video id="playV6" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_6.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_6.mp4" type="video/mp4">
 						<source src="assets/video/intro_6.webm" type="video/webm">
 					</video>
 				</span>
 				<span class="video_7">
-					<video autoplay muted loop preload="auto">
+					<video id="playV7" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_7.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_7.mp4" type="video/mp4">
 						<source src="assets/video/intro_7.webm" type="video/webm">
 					</video>
 				</span>
 				<span class="video_8">
-					<video autoplay muted loop preload="auto">
+					<video id="playV8" autoplay muted loop preload="auto">
 						<source src="assets/video/intro_8.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_8.mp4" type="video/mp4">
 						<source src="assets/video/intro_8.webm" type="video/webm">

@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
     if (this.contactURL = this.sunService.getContactVideoURL()) {
       return this.contactURL = this.sunService.getContactVideoURL(); //  after get the image from documents service
     }
-   console.log("Not found Contact video");
+   //console.log("Not found Contact video");
   }
 
 }

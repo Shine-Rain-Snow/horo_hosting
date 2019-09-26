@@ -29,7 +29,7 @@ export class MainComponent implements OnInit {
     // this.videoIntroDownload();
     this.videoIntroDownload(self);
     this.videoAstDownload(self);
-    //this.videoContactDownload(self);
+    this.videoContactDownload(self);
     
     
     //this.sunService.setAstVideoURL(astURL);
@@ -64,7 +64,7 @@ export class MainComponent implements OnInit {
     var req = new XMLHttpRequest();
     req.open('GET', 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg', true);
     req.responseType = 'blob';
-    //$("#playV")[0].play();
+    
     const video = document.querySelector('video');
     req.onload = function() {
      
@@ -79,9 +79,7 @@ export class MainComponent implements OnInit {
           self.sunService.setIntroVideoURL(url); 
           self.flagIntro = true;
           console.log("INTRO");
-          //video.src = vid;
-          //video.play();
-          //$("#playV")[0].play();
+         
       } 
     }
     req.onerror = function() {

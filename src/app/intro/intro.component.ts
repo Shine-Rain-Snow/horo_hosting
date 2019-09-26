@@ -41,103 +41,46 @@ export class IntroComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
-    // console.log(this.router.url);
-    // if(this.router.url == '/intro') {
-    //   this.router.routeReuseStrategy.shouldReuseRoute = function () {
-    //     return false;
-    //   };
-    // }
+ 
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
+  
+    // $("#playV").ready(function () {
+    //     window.setTimeout(function(){
+    //         $("#playV")[0].play();
+    //         $("#playV")[0].muted = true;
+    //     }, 1000);
+    // });
+
+    setTimeout(() => {
+      $("#playV1")[0].play();
+      $("#playV1")[0].muted = true;
+      $("#playV2")[0].play();
+      $("#playV2")[0].muted = true;
+      $("#playV3")[0].play();
+      $("#playV3")[0].muted = true;
+      $("#playV4")[0].play();
+      $("#playV4")[0].muted = true;
+      $("#playV5")[0].play();
+      $("#playV5")[0].muted = true;
+      $("#playV6")[0].play();
+      $("#playV6")[0].muted = true;
+      $("#playV7")[0].play();
+      $("#playV7")[0].muted = true;
+      $("#playV8")[0].play();
+      $("#playV8")[0].muted = true;
+    }, 100);
     
-    //var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
-
-							//var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-      let tagV = <HTMLVideoElement>document.getElementById('playV');
-      tagV.play();
-      tagV.muted = true;
-      $("#playV").ready(function () {
-          window.setTimeout(function(){
-              $("#playV")[0].play();
-              tagV.muted = true;
-          }, 1000);
-      });
-
-      //var iframe = <HTMLVideoElement>document.getElementById('iframeVideo');
-      //var innerDoc = iframe.contentDocument || iframe.contentWindow.document;
-      //iframe.muted=true;
-      if(navigator.userAgent.indexOf("Chrome") != -1 ){
+     
+    if(navigator.userAgent.indexOf("Chrome") != -1 ){
       console.log("chrome");  
-      //$('#playV').remove();
-      }
-      else{
-        //$('#iframeVideo').remove();
-        console.log("not chrome");
-        //$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
+    }
+    else{
+      console.log("not chrome");
     }
     
-    // let firstV, promisePlay;
-    // this.playInterval = setInterval(()=> {
-      
-    //   firstV = <HTMLVideoElement>document.querySelector('#playVimeo');
-    //   promisePlay = firstV.play();
-    //   //$("#playVimeo")[0].play();
-    //   //$("#playVimeo")[0].autoplay = true;
-    //   if (promisePlay !== undefined) {
-    //     promisePlay.then(_ => {
-    //         console.log("played! success");
-    //         clearInterval(this.playInterval);
-            
-    //       }).catch(error => {
-    //         console.log("Error"+error);
-
-    //         // if(this.sunService.getIntroRefresh()) {
-    //         //   location.reload();
-    //         //   this.sunService.setIntroRefrsh(false);
-    //         // }
-
-    //       });
-    //   }
-    //   else {
-    //     console.log("undefined!");
-    //   }
-    // }, 100);
-
-   
-    //page reload section
-    // if(this.sunService.getIntroRefresh()) {
-      
-    //   location.reload();
-    //   this.sunService.setIntroRefrsh(false);
-    // }
-    // $("#playV")[0].autoplay = true;
-    
-
-    // let playPromise = $("#playV")[0].play();
-    // // $("#playV")[0].autoplay = true;
-    // if(playPromise !== undefined) {
-    //   playPromise.then(()=>{
-    //     console.log("t;his is succsesfsd");
-    //   })
-    //   .catch(error => {
-    //     console.log(error);
-    //   })
-    // } else {
-    //   console.log("huhu"+playPromise);
-    // }
-   
-    //$(".playV")[0].autoplay = true;
-    // if(!this.scroll_flag) {
-    //   this.animaFlag = false;
-    //   this.sunService.setIntroVal(40);
-    // }
-    //title moving 
-
-    //video play
-
-    // 
    
     setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
@@ -197,26 +140,14 @@ export class IntroComponent implements OnInit {
             scrollUpCount = 0;
           }
         }
-        // this.next++;
-        // this.sunService.setIntroVal(this.next);
-        // if(this.next > 100) {
-        //   this.next = 100;
-        //   this.sunService.setIntroVal(0);
-        //   this.router.navigate(['/astrology']);
-        // }
+      
             
       } else if(event.originalEvent.deltaY < 0) {
         //scroll down
         console.log("scroll down works now");
         scrollUpCount = 0;
         scrollDownCount++;
-        // this.next--;
-        // this.sunService.setIntroVal(this.next);
-        // if(this.next < 0) {
-        //   this.next = 0;
-        //   this.sunService.setIntroVal(0);
-        //   this.router.navigate(['/intro']);
-        // }
+        
         if(scrollDownCount > 3) {
           if(this.next >= 45) {
             console.log("thos"+scrollDownCount);
@@ -233,14 +164,9 @@ export class IntroComponent implements OnInit {
             this.router.navigate(['/intro']); 
             }, 1000);
         
-            // setTimeout(() => {
-            //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
-            //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
             
-            // }, 100);
           } else {
-            // this.scroll_flag = true;
-            // scrollDownCount = 0;
+            
             this.next = 0;
             scrollDownCount = 0;
             this.sunService.setIntroVal(0);
@@ -248,10 +174,7 @@ export class IntroComponent implements OnInit {
             setTimeout(() => {
             this.router.navigate(['/intro']); 
             }, 1000);
-            // setTimeout(() => {
-            //   $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
-            //   $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
-            // }, 100);
+           
           }
         }
         
@@ -286,11 +209,6 @@ export class IntroComponent implements OnInit {
 
     
     
-    // $(".movies").stop();
-    // $(".movies span").removeClass("active").css({top: '100%'});
-    // $(".movies span").removeClass("prev");
-    // $(".movies span:nth-child(1)").addClass("active").css({top: '0%'});
-    // $(".movies span:nth-child(2)").addClass("prev");
     this.movePhoto();
     this.moveMovies();
     
@@ -301,7 +219,7 @@ export class IntroComponent implements OnInit {
     
     setTimeout(()=> {
       this.animaFlag = false;
-      //this.sunService.setIntroVal(40);
+      this.sunService.setIntroVal(40);
     }, 10000*7);
   }
 
@@ -470,7 +388,7 @@ export class IntroComponent implements OnInit {
   public getImagePath(): string {
     
     if (this.introURL = this.sunService.getIntroVideoURL()) {
-      return this.introURL = this.sunService.getIntroVideoURL(); //  after get the image from documents service
+      return this.introURL = this.sunService.getIntroVideoURL(); //  after get the video from documents service
     }
    //console.log("Not found Intro video");
   }
