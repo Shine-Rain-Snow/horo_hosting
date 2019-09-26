@@ -41,7 +41,7 @@
 						<iframe src="assets/video/intro_1.Ogg" 
 						allow="autoplay" 
 						style="display:none" 
-						id="iframeAudio">
+						id="iframeVideo">
 						</iframe> 
 						<video id="playV" autoplay="true"
 							muted="muted"  loop preload="auto">
@@ -55,7 +55,7 @@
 						<script>
 							var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 							if(!isChrome){
-								$('#iframeAudio').remove()
+								$('#iframeVideo').remove()
 							}
 							else{
 								$('#playV').remove() //just to make sure that it will not have 2x audio in the background 
