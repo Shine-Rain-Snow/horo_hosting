@@ -55,7 +55,15 @@ export class IntroComponent implements OnInit {
     //var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.runtime);
 
 							//var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if(navigator.userAgent.indexOf("Chrome") != -1 ){
+      let tagV = <HTMLVideoElement>document.getElementById('playV');
+      tagV.play();
+
+      $("#playV").ready(function () {
+          window.setTimeout(function(){
+              $("#playV")[0].play();
+          }, 1000);
+      });
+      if(navigator.userAgent.indexOf("Chrome") != -1 ){
       console.log("chrome");  
       //$('#playV').remove();
       }
