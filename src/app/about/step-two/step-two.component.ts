@@ -16,6 +16,7 @@ export class StepTwoComponent implements OnInit {
     private sunService: SunProgressService,
     private stateData: Globals) { }
   next: number;
+  aboutURL;
   ngOnInit() {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
@@ -26,25 +27,22 @@ export class StepTwoComponent implements OnInit {
     $(".step-two").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 3;
+        this.next += 1;
         this.sunService.setAboutVal(this.next); 
-        if(this.next > 60) {
+        if(this.next > 50) {
+          this.sunService.setAboutVal(50); 
           $(".step-two").fadeOut(1000);
           setTimeout(() => {
             this.router.navigate(['/about/step-three']);
           }, 1000);
          
         } 
-        // if(this.next > 100){
-        //   this.router.navigate(['/counseling']);
-        //   this.sunService.setAboutVal(0);
-        // }
       } else {
         //scroll up
-        this.next -= 3;
+        this.next -= 1;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 40) {
-          this.sunService.setAboutVal(40);
+          this.sunService.setAboutVal(30);
           $(".step-two").fadeOut(1000);
           setTimeout(() => {
             this.router.navigate(['/about/step-one']); 
@@ -54,6 +52,13 @@ export class StepTwoComponent implements OnInit {
         
       }
     });
+  }
+
+  public getImagePath(): string {
+    if (this.aboutURL = this.sunService.getAboutVideoURL()) {
+      return this.aboutURL = this.sunService.getAboutVideoURL(); //  after get the image from documents service
+    }
+   //console.log("Not found Ast video");
   }
 
 }

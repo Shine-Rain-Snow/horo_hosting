@@ -1,15 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Router } from '@angular/router';
 import { AppConstants } from '../../shared/constants';
 import { SunProgressService } from '../../services/sun-progress.service';
 import { Globals } from '../../shared/globals';
 import * as $ from 'jquery';
 @Component({
-  selector: 'app-step-three',
-  templateUrl: './step-three.component.html',
-  styleUrls: ['./step-three.component.scss']
+  selector: 'app-step-five',
+  templateUrl: './step-five.component.html',
+  styleUrls: ['./step-five.component.scss']
 })
-export class StepThreeComponent implements OnInit {
+export class StepFiveComponent implements OnInit {
+
 
   constructor(private router: Router, 
     private sunService: SunProgressService,
@@ -19,18 +21,18 @@ export class StepThreeComponent implements OnInit {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
-    this.sunService.setAboutVal(50);
-    this.next = 50;
-    $(".step-three").bind("wheel", (event) => {  
+    this.sunService.setAboutVal(70);
+    this.next = 70;
+    $(".step-five").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
         this.next += 1;
         this.sunService.setAboutVal(this.next); 
-        if(this.next > 60) {
-          this.sunService.setAboutVal(60);
-          $(".step-three").fadeOut(1000);
+        if(this.next > 80) {
+          this.sunService.setAboutVal(80);
+          $(".step-five").fadeOut(1000);
           setTimeout(() => {
-            this.router.navigate(['/about/step-four']);
+            this.router.navigate(['/about']);
           }, 1000);
          
         } 
@@ -42,12 +44,12 @@ export class StepThreeComponent implements OnInit {
         //scroll up
         this.next -= 1;
         this.sunService.setAboutVal(this.next); 
-        if(this.next < 50) {
+        if(this.next < 70) {
           this.next = 0;
-          $(".step-three").fadeOut(1000);
-          this.sunService.setAboutVal(40); 
+          $(".step-five").fadeOut(1000);
+          this.sunService.setAboutVal(60); 
           setTimeout(() => {
-            this.router.navigate(['/about/step-two']); 
+            this.router.navigate(['/about/step-four']); 
           }, 1000);
              
         }
@@ -59,3 +61,4 @@ export class StepThreeComponent implements OnInit {
   
 
 }
+

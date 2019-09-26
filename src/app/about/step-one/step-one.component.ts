@@ -20,12 +20,12 @@ export class StepOneComponent implements OnInit {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
-    this.sunService.setAboutVal(20);
-    this.next = 20;
+    this.sunService.setAboutVal(30);
+    this.next = 30;
     $(".step-one").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 3;
+        this.next += 1;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 40) {
           this.sunService.setAboutVal(40);
@@ -41,10 +41,11 @@ export class StepOneComponent implements OnInit {
         // }
       } else {
         //scroll up
-        this.next -= 3;
+        this.next -= 1;
         this.sunService.setAboutVal(this.next); 
-        if(this.next < 20) {
+        if(this.next < 30) {
           this.next = 0;
+          this.sunService.setAboutVal(0); 
           $(".step-one").fadeOut(1000);
           setTimeout(() => {
             this.router.navigate(['/about']); 

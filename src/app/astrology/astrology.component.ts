@@ -100,7 +100,7 @@ export class AstrologyComponent implements OnInit {
     if (this.astURL = this.sunService.getAstVideoURL()) {
       return this.astURL = this.sunService.getAstVideoURL(); //  after get the image from documents service
     }
-   console.log("Not found Ast video");
+   //console.log("Not found Ast video");
   }
 
   ngOnDestroy() {
