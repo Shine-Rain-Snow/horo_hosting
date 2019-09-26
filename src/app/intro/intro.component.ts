@@ -53,50 +53,33 @@ export class IntroComponent implements OnInit {
     this.sunService.setCurrentPage(1);
     
     
-//vimeo part
-// console.log("intro video error"+ error);
-//             //if (this.introURL = this.sunService.getIntroVideoURL()) {
-//               console.log(this.sunService.getIntroVideoURL());
-//               const urlIntro = this.domSanitizer.bypassSecurityTrustHtml(this.introURL);
-//               this.player = new Player('playVimeo', {
-//                 // url: urlIntro,
-//                 url: 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg',
-                
-//               }); //  after get the image from documents service
-//               this.player.play().then(function(){
-//                 console.log("successed vimeo!");
-//                 clearInterval(this.playInterval);
-//               }).catch(function(error){
-//                 console.log("error"+error);
-//               });
-//             //}
-
     
-    let firstV, promisePlay;
-    this.playInterval = setInterval(()=> {
+    // let firstV, promisePlay;
+    // this.playInterval = setInterval(()=> {
       
-      firstV = <HTMLVideoElement>document.querySelector('#playVimeo');
-      promisePlay = firstV.play();
-      $("#playVimeo")[0].play();
-      $("#playVimeo")[0].autoplay = true;
-      if (promisePlay !== undefined) {
-        promisePlay.then(_ => {
-            console.log("played! success");
-            clearInterval(this.playInterval);
+    //   firstV = <HTMLVideoElement>document.querySelector('#playVimeo');
+    //   promisePlay = firstV.play();
+    //   //$("#playVimeo")[0].play();
+    //   //$("#playVimeo")[0].autoplay = true;
+    //   if (promisePlay !== undefined) {
+    //     promisePlay.then(_ => {
+    //         console.log("played! success");
+    //         clearInterval(this.playInterval);
             
-          }).catch(error => {
-            
-            if(this.sunService.getIntroRefresh()) {
-              location.reload();
-              this.sunService.setIntroRefrsh(false);
-            }
-            
-          });
-      }
-      else {
-        console.log("undefined!");
-      }
-    }, 100);
+    //       }).catch(error => {
+    //         console.log("Error"+error);
+
+    //         // if(this.sunService.getIntroRefresh()) {
+    //         //   location.reload();
+    //         //   this.sunService.setIntroRefrsh(false);
+    //         // }
+
+    //       });
+    //   }
+    //   else {
+    //     console.log("undefined!");
+    //   }
+    // }, 100);
 
    
     //page reload section
