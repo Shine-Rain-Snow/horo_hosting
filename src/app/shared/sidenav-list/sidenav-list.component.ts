@@ -75,4 +75,10 @@ export class SidenavListComponent implements OnInit {
     this.sidenavClose.emit();
   }
 
+  onPress() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/press-release']);
+    this.sidenavClose.emit();
+  }
+
 }

@@ -1,6 +1,7 @@
 
-.progressbar {
+.progress-bar-loading {
   height: 200px;
+  font-family: Oswald light;
 }
 
 .progress_container {
@@ -44,7 +45,7 @@ mat-progress-bar{
 }
 
 
-.progressbar:hover {
+.progress-bar-loading:hover {
   .bar_text {
     visibility: visible;
   }

@@ -23,7 +23,8 @@
     width: 100%;
     height: 100%;  
     position: absolute;   
-    z-index: 100;   
+    z-index: 100; 
+    font-family: Oswald light; 
 }
 
 a {
@@ -33,7 +34,7 @@ a {
 }
  
 a:hover, a:active{
-    color: lightgray;   
+   // color: lightgray;   
 }
 
 mat-nav-list {
@@ -57,7 +58,7 @@ mat-nav-list span {
     font-size: 60px;
 }
 
-.close {
+.close-menu {
     position: absolute;
     top: 7%;
     right: 13%;
@@ -65,16 +66,19 @@ mat-nav-list span {
     z-index: 110;
     font-size: 26px;
     cursor: pointer;
+    font-family: Oswald light;
 }
 
 .num {
     color: white;
-    font-size: 40px !important;
+    font-size: 30px !important;
     padding-right: 2%;
     width: 50px;
+    margin-right: 3%;
 }
-.item_container {
-    font-family: Oswald, sans-serif;
+.press-books {
+    display: flex;
+  
 }
 
 .press {
@@ -82,15 +86,17 @@ mat-nav-list span {
     font-size: 30px !important;
     margin-right: 10%;
     margin-left: 10%;
+    margin-top: 6%;
 }
 
 .books {
     color: white;
     font-size: 30px !important;
+    margin-top: 6%;
 }
 
 .dash {
-    width:40%; border-bottom: 1px solid white;
+    width:40%; border: 1px solid white;
     position: relative;
-    transform: translate(-75px, 25px);
+   transform: translate(-75px, 20px);
 }

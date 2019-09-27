@@ -45,10 +45,11 @@
         text-align: center;
         img {
             position: relative;
-            margin-top: 22%;
+            // margin-top: 22%;
+            top: -10%;
             width: 60%;
-            height: 60%;
-            transform: rotate(-30deg);
+            height: 100%;
+            //transform: rotate(-30deg);
         }
     }
 

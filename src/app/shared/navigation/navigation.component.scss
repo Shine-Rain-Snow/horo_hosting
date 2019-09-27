@@ -16,24 +16,17 @@ a:hover, a:active{
 .menu {
     position: absolute;
     right: 8%;
-    //color: #23abd4;
-    // color: white;
-    
     cursor: pointer;
     z-index: 80;
-    // font-weight: bold;
     font-size: 22px;
 }
 
 .menu span {
     z-index: 50;
-    // text-shadow: -1px 1px 0 #fff, 
-    //                       1px 1px 0 #fff, 
-    //                      1px -1px 0 #fff, 
-    //                     -1px -1px 0 #fff; 
+  
 }
 
-.header {
+.header-show {
     position: absolute;
     top: 8%;
     color: white;
@@ -42,6 +35,7 @@ a:hover, a:active{
     justify-content: center;
     align-items: center;
     z-index: 100;
+    font-family: Oswald light;
 }
 
 .page_logo {

@@ -5,7 +5,8 @@
 	height: 100%; 
 	background-position: center;
   	background-repeat: no-repeat;
-  	background-size: cover;
+	  background-size: cover;
+	font-family: Oswald light;
 }
 
 .clear {
@@ -190,6 +191,42 @@
 	width: 50px;
 	border-bottom: 1px solid black; 
 	margin-top: 40%;
+}
+
+.press-slim {
+	
+	margin-top: 40%;
+	width: 80%;
+	display: flex;
+	
+}
+
+.before-dash {
+	width: 20%;
+	//margin-top: 40%;\
+	//position: relative;
+	//top: 50%;
+	border-top: 1px solid black; 
+}
+
+.after-dash {
+	width: 20%;
+	//margin-top: 40%;
+	border-top: 1px solid black; 
+}
+
+.middle-dash {
+	text-align: center;
+	width: 30%;
+	margin: 0 5%;
+	cursor: pointer;
+	p {
+		position: relative;
+		top: -35%;
+		color: red; 
+		font-size: 30px
+	}
+	
 }
 
 .slim1 {

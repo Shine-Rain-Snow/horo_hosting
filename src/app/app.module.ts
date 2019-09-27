@@ -19,6 +19,7 @@ import { MatVideoModule } from 'mat-video';
     NavigationComponent,
     SidenavListComponent,
     ProgressbarComponent,
+    
   ],
   imports: [
     BrowserModule,

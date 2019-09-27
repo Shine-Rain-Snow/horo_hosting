@@ -11,7 +11,7 @@ mat-sidenav {
 	cursor: pointer;
 }
 
-.progress {
+.loading-lines {
 	position: absolute;
 	left: 5%;
 	bottom: 0%;
@@ -24,7 +24,7 @@ mat-sidenav {
 	overflow: hidden;
 }
 
-.progress:hover {
+.loading-lines:hover {
 	cursor: pointer;
 	height: 100px;
 }

@@ -241,9 +241,9 @@ export class AstInnerComponent implements OnInit {
         scrolling: true,
         amount: false
     };
-    var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,items,element,elements;
-  	var element = $(".g-scrolling-carousel .items");
-      var amount = element.children(":first").outerWidth(true)/10;
+    var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,itemsInner,element,elements;
+  	var element = $(".g-scrolling-carousel .items-inner");
+    var amount = element.children(":first").outerWidth(true)/10;
       
   	leftElem = $('<span />').addClass('jc-left');
     rightElem = $('<span />').addClass('jc-right');

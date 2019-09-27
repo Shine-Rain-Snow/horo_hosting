@@ -30,4 +30,10 @@ export class ContactComponent implements OnInit {
    //console.log("Not found Contact video");
   }
 
+  onPress() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/press-release']);
+    
+  }
+
 }

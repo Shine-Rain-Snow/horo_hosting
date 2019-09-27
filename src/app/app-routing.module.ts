@@ -8,8 +8,6 @@ const routes: Routes = [
   {
     path: 'intro',
     loadChildren: () => import('./intro/intro.module').then(mod => mod.IntroModule),
-    //canActivate: [AuthenticationGuard],
-    //runGuardsAndResolvers: 'always',
   },
   {
     path: 'tarot',
@@ -31,6 +29,10 @@ const routes: Routes = [
   {
     path: 'about',
     loadChildren: () => import('./about/about.module').then(mod => mod.AboutModule)
+  },
+  {
+    path: 'press-release',
+    loadChildren: () => import('./press-release/press-release.module').then(mod => mod.PressReleaseModule)
   },
   {
     path: '',

@@ -47,12 +47,6 @@ export class IntroComponent implements OnInit {
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
   
-    // $("#playV").ready(function () {
-    //     window.setTimeout(function(){
-    //         $("#playV")[0].play();
-    //         $("#playV")[0].muted = true;
-    //     }, 1000);
-    // });
 
     setTimeout(() => {
       $("#playV1")[0].play();
@@ -228,6 +222,7 @@ export class IntroComponent implements OnInit {
     clearInterval(this.videoInterval);
     clearInterval(this.scrollingInterval);
     clearInterval(this.playInterval);
+    this.sunService.setIntroVal(0);
     $(".photo").finish();
     $(".movies").finish();
   }
