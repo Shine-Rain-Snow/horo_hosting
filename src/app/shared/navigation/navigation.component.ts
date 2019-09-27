@@ -47,7 +47,7 @@ export class NavigationComponent implements OnInit {
         }
         //about page
         case 4: {
-          if(this.aboutVal >= 40 && this.aboutVal < 60) {
+          if(this.aboutVal >= 40 && this.aboutVal < 50) {
             
             this.colorPreference = 'white';
           }
