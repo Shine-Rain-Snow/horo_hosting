@@ -29,6 +29,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/jquery-ui-dist/jquery-ui.css"
             ],
             "scripts": [
@@ -100,6 +101,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/jquery-ui-dist/jquery-ui.css"
             ],
             "scripts": [

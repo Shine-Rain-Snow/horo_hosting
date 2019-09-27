@@ -80,7 +80,7 @@ export class MainComponent implements OnInit {
 
   videoAstDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.herokuapp.com/assets/video/astrology.Ogg', true);
+    req.open('GET', 'https://oferc.herokuapp.com/assets/video/astrology.mp4', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function(e) {

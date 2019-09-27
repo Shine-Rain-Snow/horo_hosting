@@ -122,7 +122,7 @@ export class IntroComponent implements OnInit {
       this.next = this.sunService.getIntroVal();
       if(event.originalEvent.deltaY > 0) {
         //scroll up
-        console.log("scroll up works now");
+       
         scrollUpCount++;
         scrollDownCount = 0;
         if(scrollUpCount > 3) {

@@ -26,23 +26,19 @@ export class StepFiveComponent implements OnInit {
     $(".step-five").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 1;
+        this.next += 2;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 80) {
           this.sunService.setAboutVal(80);
           $(".step-five").fadeOut(600);
           setTimeout(() => {
-            this.router.navigate(['/about']);
+            this.router.navigate(['/about/step-six']);
           }, 600);
          
         } 
-        // if(this.next > 100){
-        //   this.router.navigate(['/counseling']);
-        //   this.sunService.setAboutVal(0);
-        // }
       } else {
         //scroll up
-        this.next -= 1;
+        this.next -= 2;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 70) {
           this.next = 0;

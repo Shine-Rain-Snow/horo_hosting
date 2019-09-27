@@ -37,6 +37,7 @@ export class AstrologyComponent implements OnInit {
     setTimeout(() => {
       
       $("#backgroundvid")[0].play();
+      $("#backgroundvid")[0].muted = true;
       $("#backgroundvid")[0].autoplay = true;
     }, 10);
 

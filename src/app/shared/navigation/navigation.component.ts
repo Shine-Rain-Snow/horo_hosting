@@ -55,6 +55,10 @@ export class NavigationComponent implements OnInit {
             this.colorPreference = 'black';
           break;
         }
+        //counseling page
+        case 5: {
+          this.colorPreference = 'black';
+        }
         // contact page
         case 6: {
         

@@ -32,7 +32,7 @@ export class AboutComponent implements OnInit {
         this.next += 1;
         this.sunService.setAboutVal(this.next); 
         this.nUpScrollling++;
-        if(this.nUpScrollling > 6) {
+        if(this.nUpScrollling > 3) {
           this.sunService.setAboutVal(30); 
           $(".about_page").fadeOut(600);
           setTimeout(() => {
@@ -53,7 +53,7 @@ export class AboutComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         //if(this.next < 0) {
         this.nDownScrolling++;
-        if(this.nDownScrolling > 6) {
+        if(this.nDownScrolling > 3) {
           this.next = 0;
           this.nDownScrolling = 0;
           this.sunService.setAboutVal(0);

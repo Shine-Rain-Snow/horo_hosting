@@ -1,9 +1,44 @@
 .counseling {
-	// background-image: url("../../assets/img/temp.jpg");
-	background-color: rgb(64,66,105);
-	height: 100%; 
-	background-position: center;
-  	background-repeat: no-repeat;
-  	background-size: cover;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	font-family: Oswald light;
 }
+
+.detail {
+	width: 30%;
+	height: 100%;
+	
+	position: relative;
+	//
+	font-size: 22px;
+	.detail-text  {
+		// width: 80%;
+		
+		margin: 40% 8% 0 8%;
+		// background: red;
+	}
+    p:first-child {
+		font-weight: bold;
+	}
+}
+
+.divide {
+	border-bottom: 1px solid black;
+	margin-top: 25%;
+	width: 60%;
+}
+
+.pay-form {
+	width: 50%;
+	height: 100%;
+	background: yellow;
+}
+
+.time-watch {
+	width: 20%;
+	height: 100%;
+	// background: green;
+}
+
 

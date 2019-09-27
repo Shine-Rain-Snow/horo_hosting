@@ -20,6 +20,7 @@ export class ContactComponent implements OnInit {
   ngOnInit() {
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(6);
+    this.sunService.setShowMenu(true);
   }
 
   public getImagePath(): string {

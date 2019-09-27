@@ -27,7 +27,7 @@ export class StepTwoComponent implements OnInit {
     $(".step-two").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 1;
+        this.next += 2;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 50) {
           this.sunService.setAboutVal(50); 
@@ -39,7 +39,7 @@ export class StepTwoComponent implements OnInit {
         } 
       } else {
         //scroll up
-        this.next -= 1;
+        this.next -= 2;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 40) {
           this.sunService.setAboutVal(30);
