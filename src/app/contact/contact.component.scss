@@ -180,7 +180,7 @@
 	width:60px; 
 	float:left; 
 	position: relative; 
-	margin: 14px 0 0 20px;
+	margin: -2px 0 0 20px;
 }
 
 .clear {
@@ -248,4 +248,25 @@
 	bottom: 5%;
 	border-bottom: 1px solid rgb(133, 127, 126);
 	margin-left: 10%;
+}
+
+.social_icons {
+	display: flex;
+	cursor: pointer;
+	margin-top: 5%;
+	margin-left: -18%;
+	font-size: 22px;
+	a {
+		color: black;
+		text-decoration: none;
+	}
+	.social_facebook {
+		width: 33%;
+	}
+	.social_youtube {
+		width: 33%;
+	}
+	.social_instagram {
+		width: 33%;
+	}
 }

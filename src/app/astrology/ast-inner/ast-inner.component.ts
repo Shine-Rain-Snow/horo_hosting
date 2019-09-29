@@ -313,18 +313,7 @@ export class AstInnerComponent implements OnInit {
         position += direction > 0 ? -amount : amount;
         let animation_pos = position;
         //element.scrollLeft(position);
-        //element.animate({"scrollLeft": position+'px'}, "slow");
-        // element.animate({
-            
-        // }, 100);
-        //var currentElement = currentElement.next();
         
-        // element.animate({scrollLeft: position/2}, {
-        //     duration: 50,
-        //     easing: "swing"
-        // });
-
-        //animate effecting
         let cou = 0;
         let gap =(animation_pos - origin_pos)/10;
         let smoothInterval = setInterval(()=> {

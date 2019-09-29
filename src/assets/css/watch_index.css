@@ -1,0 +1,28 @@
+#divMain{
+    margin:auto;		
+    width:80%;
+}
+
+#bangkok_time{
+    width:50%;
+    margin:0 auto;
+    margin-top: 50%;
+}
+
+#newyork_time{
+    width:50%;
+    margin:0 auto;
+    margin-top: 10%;
+}
+
+#mumbai_time{
+    width:50%;
+    margin:0 auto;
+    margin-top: 10%;
+}
+
+#dubai_time{
+    width:50%;
+    margin:0 auto;
+    margin-top: 10%;
+}
