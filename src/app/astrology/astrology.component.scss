@@ -8,6 +8,54 @@
  
 }
 
+.transition_wall_up {
+	position:absolute;
+	height:100%;
+	//width:30%;
+	background:#E9F4F1;
+	transform: skewX(-5deg) translateX(-0px);
+	transition:2s all ease-in-out;
+	-webkit-transition:2s all ease-in-out;
+	
+}
+
+.transition_wall_down {
+	position:absolute;
+	height:100%;
+	//width:30%;
+	background:#4E4B4F;
+	transform: skewX(-5deg) translateX(-0px);
+	transition:2s all ease-in-out;
+	-webkit-transition:2s all ease-in-out;
+	
+}
+
+.anim-trans-up {
+	animation: animUp 2s ease-in-out;
+	overflow: hidden;
+}
+
+.anim-trans-down {
+	animation: animDown 2s ease-in-out;
+	overflow: hidden;
+}
+
+@keyframes animDown{
+	0% { }
+	20%  { z-index:11;transform: skewX(5deg) translateX(100%); }
+	100%   { transform: skewX(0deg) translateX(0);
+		width:100%; z-index:11; box-shadow: 10px 10px 5px #4E4B4F;}
+
+}
+
+@keyframes animUp{
+	0% { }
+	20%  { z-index:11;transform: skewX(5deg) translateX(-100%); }
+	100%   { transform: skewX(0deg) translateX(0);
+		width:100%; z-index:11; box-shadow: 10px 10px 5px #E9F4F1;}
+
+}
+
 video#backgroundvid { 
   position: fixed; right: 0; bottom: 0;
   min-width: 100%; min-height: 90%;

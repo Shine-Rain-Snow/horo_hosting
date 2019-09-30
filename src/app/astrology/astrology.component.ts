@@ -27,7 +27,7 @@ export class AstrologyComponent implements OnInit {
   astURL;
   
   ngOnInit() {
-    $(".astrology").css({opacity: "0"});
+    $(".astrology").css({opacity: "0.3"});
     $(".astrology").animate({
       opacity: "1"
     },1000);
@@ -57,10 +57,12 @@ export class AstrologyComponent implements OnInit {
               this.nUpScrollling = 0;
               this.next = 40;
               this.sunService.setAstVal(40);
-              $(".astrology").fadeOut(1000);
+              $(".astrology").fadeOut(1800, "swing");
+              $(".transition_wall_up").toggleClass("anim-trans-up");
               setTimeout(() => {
-                this.router.navigate(['/astrology/ast-inner']);
-              }, 1000);
+                this.router.navigate(['/astrology/ast-inner']); 
+              }, 2000);
+            
             }
         
             
@@ -76,10 +78,15 @@ export class AstrologyComponent implements OnInit {
               this.nDownScrolling = 0;
               this.sunService.setAstVal(0);
               this.sunService.setIntroVal(0);
-              $(".astrology").fadeOut(1000);
+
+              
+              $(".astrology").fadeOut(1800, "swing");
+              $(".transition_wall_down").toggleClass("anim-trans-down");
               setTimeout(() => {
                 this.router.navigate(['/intro']); 
-              }, 1000);
+              }, 2000);
+
+            
             }
         }
       });

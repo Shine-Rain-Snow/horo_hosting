@@ -36,6 +36,10 @@ export class IntroComponent implements OnInit {
       return false;
     };
  
+    $(".intro").css({opacity: "0.3"});
+    $(".intro").animate({
+      opacity: "1"
+    },1000);
     let self = this;
     this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
