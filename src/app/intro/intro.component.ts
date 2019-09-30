@@ -110,10 +110,12 @@ export class IntroComponent implements OnInit {
           if(this.next >= 40){
             this.sunService.setIntroVal(0);
             //go to astrology page
-            $(".intro").fadeOut(1000, "swing");
+
+            $(".intro").fadeOut(1800, "swing");
+            $(".transition_wall").toggleClass("anim-trans");
             setTimeout(() => {
-            this.router.navigate(['/astrology']); 
-            }, 1000);
+              this.router.navigate(['/astrology']); 
+            }, 2000);
 
             
             scrollUpCount = 0;

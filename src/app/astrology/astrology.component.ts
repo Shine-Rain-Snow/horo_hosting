@@ -27,7 +27,11 @@ export class AstrologyComponent implements OnInit {
   astURL;
   
   ngOnInit() {
-   
+    $(".astrology").css({opacity: "0"});
+    $(".astrology").animate({
+      opacity: "1"
+    },1000);
+
     setTimeout(() => {
       
       $("#backgroundvid")[0].play();

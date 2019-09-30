@@ -3,7 +3,37 @@
 	opacity: 1;
 	width: 100%;
     height: 100%; 
-    font-family: Oswald;
+	font-family: Oswald;
+	overflow: hidden;
+}
+
+.transition_wall {
+	position:absolute;
+	height:100%;
+	//width:30%;
+	background:#116e85;
+	transform: skewX(-5deg) translateX(-50px);
+	transition:2s all ease-in-out;
+	-webkit-transition:2s all ease-in-out;
+	
+}
+
+.anim-trans {
+	animation: anim 2s ease-in-out;
+	overflow: hidden;
+}
+
+@keyframes anim{
+	0% { }
+	20%  { z-index:11;\transform: skewX(5deg) translateX(-100%); }
+	100%   { transform: skewX(0deg) translateX(0);
+width:98%; z-index:11; box-shadow: 10px 10px 5px #116e85;}
+// 	100%   { transform: skewX(3deg) translateX(0);
+// width:100%;z-index:11; box-shadow: 10px 10px 5px #116e85;}
+// 	100%   { transform: skewX(1deg) translateX(-100%);
+// width:60%;z-index:11; box-shadow: 10px 10px 5px #eaeaea;}
+// 	100%   { transform: skewX(-5deg) translateX(-50px);
+// width:30%;z-index:1; box-shadow: none;}
 }
 
 .intro {
@@ -12,7 +42,9 @@
 	background-position: center;
   	background-repeat: no-repeat;
   	background-size: cover;
-  	z-index: 20;
+	z-index: 20;
+	position: absolute;
+	overflow: hidden;
 }
 
 .flow-bottom-top {
