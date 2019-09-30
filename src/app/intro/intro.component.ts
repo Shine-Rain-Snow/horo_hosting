@@ -5,8 +5,6 @@ import { SunProgressService } from '../services/sun-progress.service';
 import { Globals } from '../shared/globals';
 import * as $ from 'jquery';
 import { DomSanitizer } from '@angular/platform-browser';
-// import * as Vimeo from "@vimeo/player/dist/player.js";
-import Player from "@vimeo/player";
 
 @Component({
   selector: 'app-intro',
@@ -32,10 +30,6 @@ export class IntroComponent implements OnInit {
   failFlag: boolean = false;
   introURL;
   playInterval;
-
-  private player: Player;
-
-
 
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
@@ -74,8 +68,7 @@ export class IntroComponent implements OnInit {
     else{
       console.log("not chrome");
     }
-    
-   
+
     setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
@@ -96,8 +89,6 @@ export class IntroComponent implements OnInit {
       }, 2100);
     }, 100);
     //scrolling symbol
-   
-    
     let scrollUpCount = 0;
     let scrollDownCount = 0;
     //this.sunService.setIntroVal(0);
@@ -107,12 +98,8 @@ export class IntroComponent implements OnInit {
         this.next = 0;
         this.sunService.setIntroVal(0);
       }
-      
       this.sunService.setIntroTitleShow(false);
       this.sunService.setProgressShow(true);
-      
-      
-    
       this.next = this.sunService.getIntroVal();
       if(event.originalEvent.deltaY > 0) {
         //scroll up
@@ -122,10 +109,13 @@ export class IntroComponent implements OnInit {
         if(scrollUpCount > 3) {
           if(this.next >= 40){
             this.sunService.setIntroVal(0);
-            $(".intro").fadeOut(1000);
+            //go to astrology page
+            $(".intro").fadeOut(1000, "swing");
             setTimeout(() => {
             this.router.navigate(['/astrology']); 
             }, 1000);
+
+            
             scrollUpCount = 0;
           } else {
             this.next = 40;
@@ -134,8 +124,6 @@ export class IntroComponent implements OnInit {
             scrollUpCount = 0;
           }
         }
-      
-            
       } else if(event.originalEvent.deltaY < 0) {
         //scroll down
         console.log("scroll down works now");
@@ -157,10 +145,7 @@ export class IntroComponent implements OnInit {
             setTimeout(() => {
             this.router.navigate(['/intro']); 
             }, 1000);
-        
-            
           } else {
-            
             this.next = 0;
             scrollDownCount = 0;
             this.sunService.setIntroVal(0);
@@ -171,7 +156,6 @@ export class IntroComponent implements OnInit {
            
           }
         }
-        
       }
     });
 
@@ -179,7 +163,6 @@ export class IntroComponent implements OnInit {
     clearInterval(this.photoInterval);
     clearInterval(this.videoInterval);
     clearInterval(this.scrollingInterval);
-
     
     $(".photo").finish();
     $(".photo span").removeClass("active");
@@ -200,16 +183,12 @@ export class IntroComponent implements OnInit {
     $(".movies span:nth-child(1)").addClass("active");
     $(".movies span:nth-child(1)").css({top: '0%'});
     $(".movies span:nth-child(2)").addClass("prev");
-
-    
     
     this.movePhoto();
     this.moveMovies();
     
-    
     this.photoInterval = setInterval(this.movePhoto, 10100);
     this.videoInterval = setInterval(this.moveMovies, 10100);
-    
     
     setTimeout(()=> {
       this.animaFlag = false;

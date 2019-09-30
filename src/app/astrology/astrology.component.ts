@@ -27,13 +27,7 @@ export class AstrologyComponent implements OnInit {
   astURL;
   
   ngOnInit() {
-    // this.router.routeReuseStrategy.shouldReuseRoute = function () {
-    //   return false;
-    // };
    
-  //  console.log("url"+this.sunService.getAstVideoURL());
-  //  this.astURL = this.sunService.getAstVideoURL();
-  //  console.log("fixing"+this.astURL);
     setTimeout(() => {
       
       $("#backgroundvid")[0].play();
@@ -45,20 +39,11 @@ export class AstrologyComponent implements OnInit {
     this.sunService.setAstVal(0);
     this.sunService.setCurrentPage(2);
     this.sunService.setShowMenu(true);
-    var astVal = this.sunService.getAstVal();
-    // if(astVal == 0) 
-    //   this.next = 0;
-    // if(astVal == 100)
-    //   this.next = AppConstants.SCROLLING_COUNT;
-    // if(astVal > 0 && astVal < 100)
-    //   this.next = astVal / 10;
+   
     this.next = 0;
     $(".astrology").bind("wheel", (event) => {  
         if(event.originalEvent.deltaY > 0) {
           //scroll up
-          //this.next++;
-          
-          //this.sunService.setAstVal(this.next); 
           this.next += 2;
           this.sunService.setAstVal(this.next);
         
@@ -99,7 +84,7 @@ export class AstrologyComponent implements OnInit {
 
   public getImagePath(): string {
     if (this.astURL = this.sunService.getAstVideoURL()) {
-      return this.astURL = this.sunService.getAstVideoURL(); //  after get the image from documents service
+      return this.astURL = this.sunService.getAstVideoURL(); 
     }
    //console.log("Not found Ast video");
   }
