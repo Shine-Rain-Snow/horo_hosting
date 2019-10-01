@@ -38,42 +38,45 @@
             Ofer
         </p>
 
-        <div class="divide"></div>
+        <!-- <div class="divide"></div> -->
         </div>
     </div>
     <div class="pay-form">
         <p>BOOK YOUR SESSION</p>
         <div class="pay-form-content">
-            <div class="first-name">
+            <div class="first-name form-group">
                 <label>First Name*</label>
-                <input type="text" placeholder="First Name" />
+                <input type="text" class="form-control"  placeholder="First Name" />
             </div>
-            <div class="first-name">
-                <label>Last Name*</label>
-                <input type="text" placeholder="Last Name" />
+            <div class="first-name form-group">
+                <label >Last Name*</label>
+                <input type="text" class="form-control"  placeholder="Last Name" />
             </div>
-            <div class="email-name">
-                <label>E-mail*</label>
-                <input type="text" placeholder="E-mail" />
+            <div class="email-name form-group">
+                <label for="exampleInputEmail1">E-mail*</label>
+                <input type="email" 
+                 class="form-control" 
+                 id="exampleInputEmail1"
+                 placeholder="E-mail" />
             </div>
-            <div class="city-name">
+            <div class="city-name form-group">
                 <label>City</label>
-                <input type="text" placeholder="City" />
+                <input type="text" class="form-control"  placeholder="City" />
             </div>
-            <div class="zip-name">
+            <div class="zip-name form-group">
                 <label>Postal/ZIP Code</label>
-                <input type="text" placeholder="Zip code" />
+                <input type="text" class="form-control" placeholder="Zip code" />
             </div>
-            <div class="country-name">
+            <div class="country-name form-group">
                 <label>Country*</label>
-                <input type="text" placeholder="Country name" />
+                <input type="text" class="form-control" placeholder="Country name" />
             </div>
-            <div class="verification-name">
-                <label>Enter verification number below: 033121</label>
-                <input type="text" placeholder="Verification code" />
+            <div class="verification-name form-group">
+                <label>Enter verification number below: like 033121</label>
+                <input type="text" class="form-control" placeholder="Verification code" />
             </div>
             <div class="pay-btn">
-                <input type="button" value="PayPal" />
+                <input type="button" class="btn btn-primary btn-lg" value="PayPal" />
             </div>
         </div>
     </div> 

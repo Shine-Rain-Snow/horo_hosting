@@ -18,8 +18,6 @@ export class AstrologyComponent implements OnInit {
     public stateData: Globals, 
     private sunService: SunProgressService,
      ) { 
-    
-
     }
   
   next: number = 0;
@@ -30,7 +28,7 @@ export class AstrologyComponent implements OnInit {
   ngOnInit() {
     
 
-    $(".astrology").css({opacity: "0.3"});
+    $(".astrology").css({opacity: "0.5"});
     $(".astrology").animate({
       opacity: "1"
     },1000);

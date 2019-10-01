@@ -35,7 +35,17 @@
 .pay-form {
 	width: 50%;
 	height: 100%;
-	background: yellow;
+	padding: 5% 5% 0 5%;
+	font-size: 22px;
+	p{
+		text-align: center;
+		font-weight: bold;
+		padding-bottom: 5%;
+	}
+	.pay-btn {
+		margin-top: 5%;
+	}
+	//background: yellow;
 }
 
 .time-watch {

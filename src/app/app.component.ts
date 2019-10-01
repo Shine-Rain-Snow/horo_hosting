@@ -16,7 +16,7 @@ export class AppComponent {
             if(event instanceof NavigationStart) {
                 // Navigation started.
                //console.log(event.url);
-               //$(".transition_wall_up").toggleClass("anim-trans-up");
+               //$(".transition_wall_window").toggleClass("anim-trans");
             }
             else if (event instanceof RoutesRecognized) { 
                   // Router parses the URL and the routes are recognized.
@@ -30,10 +30,11 @@ export class AppComponent {
               else if (event instanceof NavigationEnd) {
                   // Navigation Ended Successfully.
                   console.log("navigation finished");
-                  //$(".transition_wall_window").toggleClass("anim-trans");
+                  
               }
               else if (event instanceof NavigationCancel) { 
                   // Navigation is canceled as the Route-Guard returned false during navigation.
+            
               }
               else if (event instanceof NavigationError) {
                   // Navigation fails due to an unexpected error.

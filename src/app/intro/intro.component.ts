@@ -115,7 +115,7 @@ export class IntroComponent implements OnInit {
         
           if(this.next >= 40){
             scrollUpCount++;
-            
+           
             if(scrollUpCount > 4) {
               this.sunService.setIntroVal(100);
               scrollUpCount = 0;
@@ -124,9 +124,12 @@ export class IntroComponent implements OnInit {
               //$(".intro").fadeOut(1800, "swing");
               if(astFlag) {
                 astFlag = false;
+                
                 $(".transition_wall_intro").toggleClass("anim-trans");
+                
                 setTimeout(() => {
                   this.router.navigate(['/astrology']); 
+                  this.sunService.setIntroVal(0);
                 }, 3000);
                 
               }
