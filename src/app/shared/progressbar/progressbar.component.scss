@@ -1,7 +1,10 @@
 
 .progress-bar-loading {
+  width: 100%;
+  //background: red;
   height: 200px;
   font-family: Oswald;
+  cursor: pointer;
 }
 
 .progress_container {

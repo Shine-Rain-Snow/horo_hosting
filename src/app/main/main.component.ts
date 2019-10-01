@@ -35,12 +35,11 @@ export class MainComponent implements OnInit {
     
     //this.sunService.setAstVideoURL(astURL);
     this.sunService.setProgressShow(false);
+    this.sunService.setShowMenu(false);
     this.sunService.setCurrentPage(0);
   	setTimeout(() => {
           this.router.navigate(['/intro']);
           this.sunService.setIntroTitleShow(true);
-          this.sunService.setIntroRefrsh(true);
-          this.sunService.setShowMenu(true);
     }, 9600);
   }
 

@@ -40,12 +40,13 @@ export class IntroComponent implements OnInit {
     $(".intro").animate({
       opacity: "1"
     },1000);
-    let self = this;
-    this.scroll_flag = this.sunService.getIntroTitleShow();
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
-  
-
+    // this.sunService.setProgressShow(false);
+    this.scroll_flag = this.sunService.getIntroTitleShow();
+    let self = this;
+    
+    
     setTimeout(() => {
       $("#playV1")[0].play();
       $("#playV1")[0].muted = true;

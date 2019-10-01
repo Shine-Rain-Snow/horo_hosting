@@ -27,7 +27,7 @@
 	0% { }
 	20%  { z-index:11;transform: skewX(5deg) translateX(-100%); }
 	100%   { transform: skewX(0deg) translateX(0);
-		width:99%; z-index:11; box-shadow: 10px 10px 5px black;}
+		width:100%; z-index:11; box-shadow: 10px 10px 5px black;}
 
 }
 
