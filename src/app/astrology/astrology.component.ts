@@ -17,7 +17,10 @@ export class AstrologyComponent implements OnInit {
   constructor(private router: Router, 
     public stateData: Globals, 
     private sunService: SunProgressService,
-    ) {  }
+     ) { 
+    
+
+    }
   
   next: number = 0;
   nDownScrolling = 0;
@@ -25,6 +28,8 @@ export class AstrologyComponent implements OnInit {
   astURL;
   
   ngOnInit() {
+    
+
     $(".astrology").css({opacity: "0.3"});
     $(".astrology").animate({
       opacity: "1"
@@ -43,6 +48,7 @@ export class AstrologyComponent implements OnInit {
     this.sunService.setShowMenu(true);
    
     this.next = 0;
+    let introFlag = true;
     $(".astrology").bind("wheel", (event) => {  
         if(event.originalEvent.deltaY > 0) {
           //scroll up
@@ -74,12 +80,14 @@ export class AstrologyComponent implements OnInit {
               this.sunService.setIntroVal(0);
               
               //$(".astrology").fadeOut(1800, "swing");
-              $(".transition_wall_up").toggleClass("anim-trans-up");
-              setTimeout(() => {
-                this.router.navigate(['/intro']); 
-              }, 3000);
-              
-            
+              if(introFlag) {
+                console.log("hello");
+                $(".transition_wall").toggleClass("anim-trans");
+                setTimeout(() => {
+                  this.router.navigate(['/intro']); 
+                }, 3000);
+                introFlag = false;
+              }
             }
         }
       });
@@ -93,7 +101,7 @@ export class AstrologyComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    $(".transition_wall_up").toggleClass("anim-trans-up");
+    
   }
 
 }

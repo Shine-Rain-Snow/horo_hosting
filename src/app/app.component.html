@@ -1,16 +1,18 @@
+<div class="horo">
+  <div class="transition_wall_window"></div>
+  <mat-sidenav-container>
+      
+      <mat-sidenav #sidenav position="end" role="navigation">
+        <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <app-navigation (sidenavToggle)="sidenav.toggle()"></app-navigation>
+        <router-outlet></router-outlet>
 
-<mat-sidenav-container>
-    <mat-sidenav #sidenav position="end" role="navigation">
-      <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <app-navigation (sidenavToggle)="sidenav.toggle()"></app-navigation>
-      <router-outlet></router-outlet>
+        <div class="loading-lines">
+          <app-progressbar></app-progressbar>
+        </div>
+      </mat-sidenav-content>
+  </mat-sidenav-container> 
 
-      <div class="loading-lines">
-      	<app-progressbar></app-progressbar>
-      </div>
-    </mat-sidenav-content>
-</mat-sidenav-container> 
-
-
+</div>

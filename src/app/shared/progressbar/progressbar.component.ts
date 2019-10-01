@@ -99,10 +99,10 @@ export class ProgressbarComponent implements OnInit {
   }
 
   onIntro() {
-    setTimeout(() => {
+    
       this.sunService.setAllZero();
       this.router.navigate(['/intro']);
-    }, 3000);
+    
   }
 
   onAst() {

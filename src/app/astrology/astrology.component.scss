@@ -18,7 +18,7 @@
  }
 }
 
-.transition_wall_up {
+.transition_wall {
 	position:absolute;
 	height:100%;
   background:#4E4B4F;
@@ -28,12 +28,12 @@
   z-index: 30;
 }
 
-.anim-trans-up {
-	animation: animUp 3s ease-in-out;
+.anim-trans {
+	animation: anim 3s ease-in-out;
 
 }
 
-@keyframes animUp{
+@keyframes anim {
 	0% { }
 	20%  { z-index:30;transform: skewX(5deg) translateX(-100%); }
 	100%   { transform: skewX(0deg) translateX(0);

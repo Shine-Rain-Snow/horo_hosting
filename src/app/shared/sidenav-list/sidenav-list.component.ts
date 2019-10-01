@@ -21,8 +21,7 @@ export class SidenavListComponent implements OnInit {
     let j = 0;
     let k = 0;
     const htmlText = '<div style="width:80%; border-bottom: 1px solid white;"></div>';
-    // $(".item_container:nth-child(1) .num").empty()
-    // .html(htmlText);
+   
     $(".nav-list .item_container").hover(function() {
       i = $(".item_container").index(this); 
       

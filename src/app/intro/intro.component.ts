@@ -35,7 +35,7 @@ export class IntroComponent implements OnInit {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
- 
+    
     $(".intro").css({opacity: "0.3"});
     $(".intro").animate({
       opacity: "1"
@@ -97,6 +97,7 @@ export class IntroComponent implements OnInit {
     let scrollUpCount = 0;
     let scrollDownCount = 0;
     //this.sunService.setIntroVal(0);
+    let astFlag = true;
     $(".intro").bind("wheel", (event) => {
       if(this.scroll_flag) {
         this.scroll_flag = false;
@@ -109,33 +110,41 @@ export class IntroComponent implements OnInit {
       if(event.originalEvent.deltaY > 0) {
         //scroll up
        
-        scrollUpCount++;
+        
         scrollDownCount = 0;
-        if(scrollUpCount > 4) {
+        
           if(this.next >= 40){
-            this.sunService.setIntroVal(0);
-            //go to astrology page
+            scrollUpCount++;
+            
+            if(scrollUpCount > 4) {
+              this.sunService.setIntroVal(100);
+              scrollUpCount = 0;
+              //go to astrology page
 
-            //$(".intro").fadeOut(1800, "swing");
-            $(".transition_wall").toggleClass("anim-trans");
-            setTimeout(() => {
-              this.router.navigate(['/astrology']); 
-            }, 3000);
-            scrollUpCount = 0;
+              //$(".intro").fadeOut(1800, "swing");
+              if(astFlag) {
+                astFlag = false;
+                $(".transition_wall_intro").toggleClass("anim-trans");
+                setTimeout(() => {
+                  this.router.navigate(['/astrology']); 
+                }, 3000);
+                
+              }
+            }
           } else {
             this.next = 40;
             this.sunService.setIntroVal(40);
             this.animaFlag = false;
             scrollUpCount = 0;
           }
-        }
+        
       } else if(event.originalEvent.deltaY < 0) {
         //scroll down
-        console.log("scroll down works now");
+       
         scrollUpCount = 0;
         scrollDownCount++;
         
-        if(scrollDownCount > 3) {
+        if(scrollDownCount > 4) {
           if(this.next >= 45) {
             console.log("thos"+scrollDownCount);
             this.next = 40;
