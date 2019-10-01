@@ -5,28 +5,31 @@
  font-family: Oswald;
  position: absolute;
  overflow: hidden;
+ z-index: 20;
 }
 
 .transition_wall_up {
 	position:absolute;
 	height:100%;
 	//width:30%;
-	background:#E9F4F1;
+  // background:red;
+  background:#E9F4F1;
 	transform: skewX(-5deg) translateX(-50px);
 	transition:2s all ease-in-out;
 	-webkit-transition:2s all ease-in-out;
-	overflow: hidden;
+  z-index: 21;
 }
 
 .transition_wall_down {
 	position:absolute;
 	height:100%;
 	//width:30%;
-	background:#4E4B4F;
+  background:red;
+  // background:#4E4B4F;
 	transform: skewX(-5deg) translateX(-50px);
 	transition:2s all ease-in-out;
 	-webkit-transition:2s all ease-in-out;
-	overflow: hidden;
+   z-index: 21;
 }
 
 .anim-trans-up {
@@ -41,17 +44,17 @@
 
 @keyframes animDown{
 	0% { }
-	20%  { z-index:11;transform: skewX(5deg) translateX(100%); }
+	20%  { z-index:21;transform: skewX(5deg) translateX(100%); }
 	100%   { transform: skewX(0deg) translateX(0);
-		width:100%; z-index:11; }
+		width:100%; z-index:21; }
 
 }
 
 @keyframes animUp{
 	0% { }
-	20%  { z-index:11;transform: skewX(5deg) translateX(-100%); }
+	20%  { z-index:21;transform: skewX(5deg) translateX(-100%); }
 	100%   { transform: skewX(0deg) translateX(0);
-		width:100%; z-index:11; }
+		width:100%; z-index:21; }
 
 }
 
