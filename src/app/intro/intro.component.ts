@@ -115,25 +115,29 @@ export class IntroComponent implements OnInit {
         
           if(this.next >= 40){
             scrollUpCount++;
-           
-            if(scrollUpCount > 4) {
-              this.sunService.setIntroVal(100);
-              scrollUpCount = 0;
-              //go to astrology page
+            this.next += 3;
+            this.sunService.setIntroVal(this.next);
+            if(this.next > 100) {
+              if(scrollUpCount > 4) {
+                
+                scrollUpCount = 0;
+                //go to astrology page
 
-              //$(".intro").fadeOut(1800, "swing");
-              if(astFlag) {
-                astFlag = false;
-                
-                $(".transition_wall_intro").toggleClass("anim-trans");
-                
-                setTimeout(() => {
-                  this.router.navigate(['/astrology']); 
-                  this.sunService.setIntroVal(0);
-                }, 3000);
-                
+                //$(".intro").fadeOut(1800, "swing");
+                if(astFlag) {
+                  astFlag = false;
+                  
+                  $(".transition_wall_intro").toggleClass("anim-trans");
+                  
+                  setTimeout(() => {
+                    this.router.navigate(['/astrology']); 
+                    this.sunService.setIntroVal(0);
+                  }, 3000);
+                  
+                }
               }
             }
+              
           } else {
             this.next = 40;
             this.sunService.setIntroVal(40);
