@@ -65,14 +65,7 @@ export class ProgressbarComponent implements OnInit {
           case 3: {
             this.colorPreference = 'black';
             break;
-            // this.astVal += 0.01;
-            // this.sunService.setAstVal(this.astVal);
-            // if(this.astVal > 100) {
-            //   this.sunService.setAstVal(100);
-            // }
-            // if(this.astVal < 40) {
-            //   this.onAst();
-            // }
+           
           }
           // about page
           case 4: {
@@ -84,10 +77,6 @@ export class ProgressbarComponent implements OnInit {
               break;
             }
             
-            
-            // if(this.aboutVal > 20) {
-            //   this.router.navigate(['/about/step-one']);
-            // }
             break;
           }
           //counseling page
@@ -108,9 +97,8 @@ export class ProgressbarComponent implements OnInit {
 
   onIntro() {
     this.sunService.setAllZero();
-    //location.path('home');
     this.router.navigate(['/intro']);
-    //this.router.navigateByUrl('/intro');
+    
   }
 
   onAst() {

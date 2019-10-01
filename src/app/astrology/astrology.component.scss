@@ -2,10 +2,9 @@
 
  height: 100%;
  width: 100%;
- overflow: hidden;	
  font-family: Oswald;
  position: absolute;
- 
+ overflow: hidden;
 }
 
 .transition_wall_up {
@@ -13,10 +12,10 @@
 	height:100%;
 	//width:30%;
 	background:#E9F4F1;
-	transform: skewX(-5deg) translateX(-0px);
+	transform: skewX(-5deg) translateX(-50px);
 	transition:2s all ease-in-out;
 	-webkit-transition:2s all ease-in-out;
-	
+	overflow: hidden;
 }
 
 .transition_wall_down {
@@ -24,27 +23,27 @@
 	height:100%;
 	//width:30%;
 	background:#4E4B4F;
-	transform: skewX(-5deg) translateX(-0px);
+	transform: skewX(-5deg) translateX(-50px);
 	transition:2s all ease-in-out;
 	-webkit-transition:2s all ease-in-out;
-	
+	overflow: hidden;
 }
 
 .anim-trans-up {
 	animation: animUp 2s ease-in-out;
-	overflow: hidden;
+
 }
 
 .anim-trans-down {
 	animation: animDown 2s ease-in-out;
-	overflow: hidden;
+
 }
 
 @keyframes animDown{
 	0% { }
 	20%  { z-index:11;transform: skewX(5deg) translateX(100%); }
 	100%   { transform: skewX(0deg) translateX(0);
-		width:100%; z-index:11; box-shadow: 10px 10px 5px #4E4B4F;}
+		width:100%; z-index:11; }
 
 }
 
@@ -52,7 +51,7 @@
 	0% { }
 	20%  { z-index:11;transform: skewX(5deg) translateX(-100%); }
 	100%   { transform: skewX(0deg) translateX(0);
-		width:101%; z-index:11; box-shadow: 10px 10px 5px #E9F4F1;}
+		width:100%; z-index:11; }
 
 }
 
