@@ -24,7 +24,7 @@ export class AstrologyComponent implements OnInit {
   nDownScrolling = 0;
   nUpScrollling = 0;
   astURL;
-  
+  imgFlag = true;
   ngOnInit() {
     
 
@@ -32,7 +32,11 @@ export class AstrologyComponent implements OnInit {
     $(".astrology").animate({
       opacity: "1"
     },1000);
-
+    if (this.astURL = this.sunService.getAstVideoURL()) {
+      this.imgFlag = false;
+    } else {
+      this.imgFlag = true;
+    }
     // setTimeout(() => {
       
     //   $("#backgroundvid")[0].play();
@@ -94,7 +98,10 @@ export class AstrologyComponent implements OnInit {
 
   public getImagePath(): string {
     if (this.astURL = this.sunService.getAstVideoURL()) {
+      this.imgFlag = false;
       return this.astURL = this.sunService.getAstVideoURL(); 
+    } else {
+      this.imgFlag = true;
     }
   }
 

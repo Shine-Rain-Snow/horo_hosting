@@ -6,7 +6,11 @@
 			<source  src="../../assets/video/astrology.mp4" type='video/mp4;codecs="avc1.4D401E, mp4a.40.2"'>
 			<source  src="../../assets/video/astrology.Ogg" type='video/ogg; codecs="theora, vorbis"'>
 		</video>  -->
-		<img [attr.src]="getImagePath()" />
+		<div *ngIf="imgFlag; then thenBlock else elseBlock"></div>
+			<ng-template #thenBlock><img src="../../assets/img/astrology.jpg" /></ng-template>
+			<ng-template #elseBlock><img [attr.src]="getImagePath()" /></ng-template>
+	
+		
 		<!-- <img src="../../assets/img/astrology.jpg" /> -->
 		<div class="ast-title"  routerLink="/astrology/ast-inner">
 			<!-- Astrology -->
