@@ -22,8 +22,6 @@ export class AstrologyComponent implements OnInit {
   next: number = 0;
   nDownScrolling = 0;
   nUpScrollling = 0;
-
-  
   astURL;
   
   ngOnInit() {
@@ -32,12 +30,12 @@ export class AstrologyComponent implements OnInit {
       opacity: "1"
     },1000);
 
-    setTimeout(() => {
+    // setTimeout(() => {
       
-      $("#backgroundvid")[0].play();
-      $("#backgroundvid")[0].muted = true;
-      $("#backgroundvid")[0].autoplay = true;
-    }, 10);
+    //   $("#backgroundvid")[0].play();
+    //   $("#backgroundvid")[0].muted = true;
+    //   $("#backgroundvid")[0].autoplay = true;
+    // }, 10);
 
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);
@@ -50,19 +48,14 @@ export class AstrologyComponent implements OnInit {
           //scroll up
           this.next += 2;
           this.sunService.setAstVal(this.next);
-        
+          this.nDownScrolling = 0;
           
             this.nUpScrollling++;
-            if(this.nUpScrollling > 6) {
-              this.nUpScrollling = 0;
+            if(this.nUpScrollling > 4) {
+              this.nUpScrollling = 0;              
               this.next = 40;
               this.sunService.setAstVal(40);
-              $(".astrology").fadeOut(1800, "swing");
-              $(".transition_wall_up").toggleClass("anim-trans-up");
-              setTimeout(() => {
-                this.router.navigate(['/astrology/ast-inner']); 
-              }, 2000);
-            
+              this.router.navigate(['/astrology/ast-inner']); 
             }
         
             
@@ -72,20 +65,20 @@ export class AstrologyComponent implements OnInit {
             this.next -= 2;
             this.sunService.setAstVal(this.next);
             this.nDownScrolling++;
-            if(this.nDownScrolling > 6) {
+            this.nUpScrollling = 0;
+            if(this.nDownScrolling > 4) {
             
               this.next = 0;
               this.nDownScrolling = 0;
               this.sunService.setAstVal(0);
               this.sunService.setIntroVal(0);
-
               
-              $(".astrology").fadeOut(1800, "swing");
-              $(".transition_wall_down").toggleClass("anim-trans-down");
+              //$(".astrology").fadeOut(1800, "swing");
+              $(".transition_wall_up").toggleClass("anim-trans-up");
               setTimeout(() => {
                 this.router.navigate(['/intro']); 
-              }, 2000);
-
+              }, 3000);
+              
             
             }
         }
@@ -97,13 +90,10 @@ export class AstrologyComponent implements OnInit {
     if (this.astURL = this.sunService.getAstVideoURL()) {
       return this.astURL = this.sunService.getAstVideoURL(); 
     }
-   //console.log("Not found Ast video");
   }
 
   ngOnDestroy() {
-    
+    $(".transition_wall_up").toggleClass("anim-trans-up");
   }
 
 }
-
-

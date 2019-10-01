@@ -111,18 +111,16 @@ export class IntroComponent implements OnInit {
        
         scrollUpCount++;
         scrollDownCount = 0;
-        if(scrollUpCount > 3) {
+        if(scrollUpCount > 4) {
           if(this.next >= 40){
             this.sunService.setIntroVal(0);
             //go to astrology page
 
-            $(".intro").fadeOut(1800, "swing");
+            //$(".intro").fadeOut(1800, "swing");
             $(".transition_wall").toggleClass("anim-trans");
             setTimeout(() => {
               this.router.navigate(['/astrology']); 
-            }, 2000);
-
-            
+            }, 3000);
             scrollUpCount = 0;
           } else {
             this.next = 40;
@@ -371,6 +369,5 @@ export class IntroComponent implements OnInit {
     if (this.introURL = this.sunService.getIntroVideoURL()) {
       return this.introURL = this.sunService.getIntroVideoURL(); //  after get the video from documents service
     }
-   //console.log("Not found Intro video");
   }
 }

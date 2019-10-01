@@ -11,15 +11,15 @@
 	position:absolute;
 	height:100%;
 	//width:30%;
-	background:black;
+	background:#4E4B4F;
 	transform: skewX(-5deg) translateX(-50px);
-	transition:2s all ease-in-out;
-	-webkit-transition:2s all ease-in-out;
+	transition:3s all ease-in-out;
+	-webkit-transition:3s all ease-in-out;
 
 }
 
 .anim-trans {
-	animation: animUp 2s ease-in-out;
+	animation: animUp 3s ease-in-out;
 	
 }
 

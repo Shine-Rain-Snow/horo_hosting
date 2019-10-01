@@ -34,8 +34,8 @@ export class PressReleaseComponent implements OnInit {
       height: 2214
     },
     {//4
-      width: 1,
-      height: 1
+      width: 1000,
+      height: 1370
     },
 
     {//5
@@ -43,12 +43,12 @@ export class PressReleaseComponent implements OnInit {
       height: 2559
     },
     {//6
-      width: 1,
-      height: 1
+      width: 1000,
+      height: 707
     },
     {//7
-      width: 1,
-      height: 1
+      width: 2625,
+      height: 3296
     },
     {//8
       width: 1654,
@@ -76,17 +76,17 @@ export class PressReleaseComponent implements OnInit {
       height: 4181
     },
     {//14
-      width: 1,
-      height: 1
+      width: 1000,
+      height: 615
     },
     {//15
-      width: 1,
-      height: 1
+      width: 1000,
+      height: 694
     },
 
     {//16
-      width: 1,
-      height: 1
+      width: 526,
+      height: 697
     },
 
   ];
@@ -136,7 +136,7 @@ export class PressReleaseComponent implements OnInit {
       
         $(".img_zone img").finish();
         $(".img_zone img").css({
-          opacity: "0.5",
+          opacity: "0.2",
           width: zone_width*1.2,
           height: img_zone_height*1.2,
           top: -zone_width*0.1,
@@ -150,7 +150,7 @@ export class PressReleaseComponent implements OnInit {
           left: "0px",
         }, 
         {
-          duration: 2000,
+          duration: 2600,
           easing: "swing"
         });
 
