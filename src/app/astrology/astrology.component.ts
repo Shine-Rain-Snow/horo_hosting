@@ -28,10 +28,6 @@ export class AstrologyComponent implements OnInit {
   ngOnInit() {
     
 
-    $(".astrology").css({opacity: "0.5"});
-    $(".astrology").animate({
-      opacity: "1"
-    },1000);
     if (this.astURL = this.sunService.getAstVideoURL()) {
       this.imgFlag = false;
     } else {
@@ -51,21 +47,23 @@ export class AstrologyComponent implements OnInit {
    
     this.next = 0;
     let introFlag = true;
+    let astinnerFlag = true;
     $(".astrology").bind("wheel", (event) => {  
         if(event.originalEvent.deltaY > 0) {
           //scroll up
           this.next += 2;
           this.sunService.setAstVal(this.next);
           this.nDownScrolling = 0;
-          
-            this.nUpScrollling++;
-            if(this.nUpScrollling > 4) {
+          this.nUpScrollling++;
+          if(this.nUpScrollling > 3) {
+            if(astinnerFlag) {
               this.nUpScrollling = 0;              
               this.next = 40;
               this.sunService.setAstVal(40);
               this.router.navigate(['/astrology/ast-inner']); 
+              astinnerFlag = false;
             }
-        
+          }
             
         }else {
             //scroll down
@@ -74,14 +72,15 @@ export class AstrologyComponent implements OnInit {
             this.sunService.setAstVal(this.next);
             this.nDownScrolling++;
             this.nUpScrollling = 0;
-            if(this.nDownScrolling > 4) {
-            
-              this.next = 0;
-              this.nDownScrolling = 0;
-              this.sunService.setAstVal(0);
-              this.sunService.setIntroVal(0);
-              
-              this.router.navigate(['/intro']);
+            if(this.nDownScrolling > 3) {
+              if(introFlag) {
+                this.next = 0;
+                this.nDownScrolling = 0;
+                this.sunService.setAstVal(0);
+                this.sunService.setIntroVal(0);
+                this.router.navigate(['/intro']);
+                introFlag = false;
+              }
             }
         }
       });

@@ -24,6 +24,7 @@ export class StepTwoComponent implements OnInit {
     this.sunService.setAboutVal(40);
 
     this.next = 40;
+    let oneFlag = true;
     $(".step-two").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
@@ -42,11 +43,15 @@ export class StepTwoComponent implements OnInit {
         this.next -= 2;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 40) {
-          this.sunService.setAboutVal(30);
-          $(".step-two").fadeOut(600);
-          setTimeout(() => {
-            this.router.navigate(['/about/step-one']); 
-          }, 600);
+          if(oneFlag) {
+            this.sunService.setAboutVal(30);
+            $(".step-two").fadeOut(600);
+            setTimeout(() => {
+              this.router.navigate(['/about/step-one']); 
+            }, 600);
+            oneFlag = false;
+          }
+          
              
         }
         

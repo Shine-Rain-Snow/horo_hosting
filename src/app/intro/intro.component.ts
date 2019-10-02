@@ -30,7 +30,6 @@ export class IntroComponent implements OnInit {
   failFlag: boolean = false;
   introURL;
   playInterval;
-
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -106,23 +105,32 @@ export class IntroComponent implements OnInit {
       if(event.originalEvent.deltaY > 0) {
         //scroll up
         scrollDownCount = 0;
-        
-          if(this.next >= 40){
-            scrollUpCount++;
-            if(scrollUpCount > 3) {
-              this.sunService.setIntroVal(100);
-              scrollUpCount = 0;
-              //go to astrology page
-              this.router.navigate(['/astrology']); 
-            }
-          
+        scrollUpCount++;
+        this.next += 5;
+        if(astFlag)
+          this.sunService.setIntroVal(this.next);
+        if(scrollUpCount > 3) {
+
+          if(this.next > 43){
+            
+              if(astFlag) {
+                this.sunService.setIntroVal(0);
+                scrollUpCount = 0;
+                this.router.navigate(['/astrology']); 
+                astFlag = false;
+              }
               
-          } else {
-            this.next = 40;
-            this.sunService.setIntroVal(40);
-            this.animaFlag = false;
-            scrollUpCount = 0;
+          } 
+          if(this.next < 40) {
+            if(astFlag) {
+              this.next = 40;
+              this.sunService.setIntroVal(40);
+              this.animaFlag = false;
+              scrollUpCount = 0;
+            }
+            
           }
+        }
         
       } else if(event.originalEvent.deltaY < 0) {
         //scroll down
@@ -130,11 +138,12 @@ export class IntroComponent implements OnInit {
         scrollUpCount = 0;
         scrollDownCount++;
         
-        if(scrollDownCount > 4) {
+        if(scrollDownCount > 2) {
           if(this.next >= 45) {
             
             this.next = 40;
             scrollDownCount = 0;
+            console.log("22222");
             this.sunService.setIntroVal(40);
           }
           else if(this.next>40 && this.next<45) {

@@ -1,5 +1,4 @@
-<div class="horo">
-  <div class="transition_wall_window"></div>
+<div class="horo" >
   <mat-sidenav-container>
       
       <mat-sidenav #sidenav position="end" role="navigation">
@@ -7,8 +6,9 @@
       </mat-sidenav>
       <mat-sidenav-content>
         <app-navigation (sidenavToggle)="sidenav.toggle()"></app-navigation>
-        <router-outlet></router-outlet>
-
+        <div [@routerTransition]="getState(o)" >
+          <router-outlet #o="outlet"></router-outlet>
+        </div>
         <div class="loading-lines">
           <app-progressbar></app-progressbar>
         </div>

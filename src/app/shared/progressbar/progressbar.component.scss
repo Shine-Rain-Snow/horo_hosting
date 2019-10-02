@@ -1,10 +1,11 @@
 
 .progress-bar-loading {
   width: 100%;
-  //background: red;
-  height: 200px;
+  //background: yellow;
+  //height: 4%;
   font-family: Oswald;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .progress_container {

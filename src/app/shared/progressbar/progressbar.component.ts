@@ -67,6 +67,7 @@ export class ProgressbarComponent implements OnInit {
           //ast-inner page
           case 3: {
             this.colorPreference = 'black';
+            this.sunService.setAstVal(this.astVal);
             break;
            
           }

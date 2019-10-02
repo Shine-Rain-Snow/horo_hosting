@@ -6,6 +6,7 @@ const routes: Routes = [
 	{
 		path: '',
 		component: ContactComponent,
+		data: { state: 'contact' }
 	}
 ];
 

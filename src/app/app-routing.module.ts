@@ -35,21 +35,24 @@ const routes: Routes = [
     loadChildren: () => import('./press-release/press-release.module').then(mod => mod.PressReleaseModule)
   },
   {
+    path: 'books',
+    loadChildren: () => import('./books/books.module').then(mod => mod.BooksModule)
+  },
+  {
     path: '',
     redirectTo: 'main',
     pathMatch: 'full'
+    
   },
   
 ];
 
 
 @NgModule({
-  // imports: [RouterModule.forRoot(routes)],
+ 
   imports: [RouterModule.forRoot(routes, 
     {onSameUrlNavigation: 'reload'},
     )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-//, initialNavigation: false

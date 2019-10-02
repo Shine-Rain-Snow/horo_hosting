@@ -1,0 +1,35 @@
+.books {
+	width: 100%;
+	height: 100%;
+	//position: absolute;
+	img {
+		width: 100%;
+		height: 100vh;
+	}
+	z-index: 1;
+}
+
+.light {
+	position: absolute;
+	top: 16%;
+	left: 40%;
+	width: 60%;
+	height: 80%;
+	z-index: 10;
+	img {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.book_detail {
+	position: absolute;
+	color: black;
+	font-family: Oswald extra light;
+	font-size: 26px;
+	top: 50%;
+	left: 10%;
+	width: 35%;
+	height: 30%;
+	
+}

@@ -74,8 +74,8 @@ export class AstInnerComponent implements OnInit {
     $(".g-scrolling-carousel").animate({
         left: '0%'
     }, 
-    {duration: 2000,
-    easing: "swing"})
+    {duration: 2500,
+    easing: "swing"});
 
    this.scrolling(self, this.next); 
    let hei = $("body").height();
@@ -263,45 +263,43 @@ export class AstInnerComponent implements OnInit {
     }
     let curIndex = 0;
     let nDownScrolling = 0;
+    let astFlag = true;
+    let aboutFlag = true;
   	element.bind("wheel", function (event) {    
         
         if(event.originalEvent.deltaY < 0) {
             //scroll down
-            next = next - 5;
+            next = next - 8;
             self.sunService.setAstVal(next);
             if(next < 40) {
                 nDownScrolling++; 
                 // console.log("down"+nDownScrolling);
                 //if(nDownScrolling > 5) {
-                    next = 40;
-                    self.sunService.setAstVal(next);
-                    nDownScrolling = 0;                   
-                    $(".ast-inner").fadeOut(1000);
-                    setTimeout(() => {
-                        //self.goAstrology();
-                        self.sunService.setAllZero();
-                        self.router.navigate(['/astrology']);
-                    }, 1000);
 
-                //}    
-                
+                if(astFlag) {
+                  next = 40;
+                  nDownScrolling = 0;   
+                  self.sunService.setAllZero();
+                  self.router.navigate(['/astrology']);
+                  astFlag = false;
+                }
             }
         }
         
         if(event.originalEvent.deltaY > 0) {
             //scroll up
-            next = next + 5;
+            next = next + 8;
             // console.log(next);
+            
             self.sunService.setAstVal(next);
            
             if(next > 100) {
+              if (aboutFlag) {
                 next = 100;
                 self.sunService.setAstVal(0);
-                $(".ast-inner").fadeOut(1000);
-                setTimeout(() => {
-                    self.goAbout();
-                }, 1000);
-                
+                self.router.navigate(['/about']);
+                aboutFlag = false;
+              }
             }
         }
         var oEvent = event.originalEvent, 
@@ -310,8 +308,14 @@ export class AstInnerComponent implements OnInit {
         //let origin_pos = position;
         position += direction > 0 ? -amount : amount;
         //let animation_pos = position;
-        element.scrollLeft(position);
-        
+        //element.scrollLeft(position);
+        element.animate({
+            scrollLeft: position+'px'
+        }, 
+        {
+            duration: 1000,
+            easing: "swing"
+        });
         //mouse scrolling part
         // let cou = 0;
         // let gap =(animation_pos - origin_pos)/10;

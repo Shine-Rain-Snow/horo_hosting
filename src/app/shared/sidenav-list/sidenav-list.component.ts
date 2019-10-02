@@ -80,4 +80,10 @@ export class SidenavListComponent implements OnInit {
     this.sidenavClose.emit();
   }
 
+  onBooks() {
+    this.sunService.setAllZero();
+    this.router.navigate(['/books']);
+    this.sidenavClose.emit();
+  }
+
 }

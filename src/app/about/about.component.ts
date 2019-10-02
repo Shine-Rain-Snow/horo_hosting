@@ -26,6 +26,8 @@ export class AboutComponent implements OnInit {
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(0);
+    let oneFlag = true;
+    let astFlag = true;
     $(".about_page").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
@@ -33,11 +35,12 @@ export class AboutComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         this.nUpScrollling++;
         if(this.nUpScrollling > 3) {
-          this.sunService.setAboutVal(30); 
-          $(".about_page").fadeOut(600);
-          setTimeout(() => {
+          if(oneFlag) {
+            this.sunService.setAboutVal(30); 
             this.router.navigate(['/about/step-one']);
-          }, 600);
+            oneFlag = false;
+          }
+          
         }
         //if(this.next > 30) {
           
@@ -53,15 +56,16 @@ export class AboutComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         //if(this.next < 0) {
         this.nDownScrolling++;
-        if(this.nDownScrolling > 3) {
-          this.next = 0;
-          this.nDownScrolling = 0;
-          this.sunService.setAboutVal(0);
-          this.sunService.setAstVal(0);
-          $(".about_page").fadeOut(1000);
-          setTimeout(() => {
-            this.router.navigate(['/astrology']);    
-          }, 1000);
+        if(this.nDownScrolling > 2) {
+          if(astFlag) {
+            this.next = 0;
+            this.nDownScrolling = 0;
+            this.sunService.setAboutVal(0);
+            this.sunService.setAstVal(0);
+            this.router.navigate(['/astrology']);   
+            astFlag = false;
+          }
+          
         }
           
           

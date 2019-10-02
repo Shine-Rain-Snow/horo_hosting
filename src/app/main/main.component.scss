@@ -1,16 +1,11 @@
 .main {
-	// background-image: url("../../assets/img/temp.jpg");
-	// background-color: rgb(64,66,105);
-	// height: 100%; 
-	// background-position: center;
- //  	background-repeat: no-repeat;
- //  	background-size: cover;
-//  background-color: white;
-//  background-color: rgb(64,66,105);
+	
  background-color: #4E4B4F;
  width: 100%;
- height: 100%;
+ height: 100vh;
  font-family: Oswald;
+ //overflow: hidden;
+ //position: absolute;
 }
 // 244, 135, 42
 .loading {
@@ -43,23 +38,24 @@
   }
 }
 
-.one {
+.pinkremain {
     filter: color;
-    animation: greyscale 1000s 1 5s;
+    animation: greyrepeat 100s 1 9s;
 }
 
 @keyframes fill-1 {
   50%   { width: 50%; }
-  100%  { width: 100%;   }
+  100%  { width: 100%; }
 }
 
-@keyframes greyscale {
-    0%   { filter: grayscale(1); color: rgb(244, 135, 42); /* Google Chrome & Webkit Nightlies */}
-    100% { filter: grayscale(0); color: rgb(244, 135, 42);/* Google Chrome & Webkit Nightlies */ }
+@keyframes greyrepeat {
+    0%   { filter: greyrepeat(1); color: rgb(244, 135, 42); /* Google Chrome & Webkit Nightlies */}
+    100% { filter: greyrepeat(0); color: rgb(244, 135, 42);/* Google Chrome & Webkit Nightlies */ }
 }
 
 
-.container-main {
+
+.container-main { 
 	text-transform: uppercase;
 }
 

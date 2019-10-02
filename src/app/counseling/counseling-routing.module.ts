@@ -6,6 +6,7 @@ const routes: Routes = [
 	{
 		path: '',
 		component: CounselingComponent,
+		data: { state: 'counseling' }
 	}
 ];
 

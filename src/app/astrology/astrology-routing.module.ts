@@ -9,6 +9,7 @@ const routes: Routes = [
 	{
 		path: '',
 		component: AstrologyComponent,
+		data: { state: 'astrology' }
 	},
 	{
 		path: 'ast-inner',

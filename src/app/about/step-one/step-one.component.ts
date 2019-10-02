@@ -46,10 +46,7 @@ export class StepOneComponent implements OnInit {
         if(this.next < 30) {
           this.next = 0;
           this.sunService.setAboutVal(0); 
-          $(".step-one").fadeOut(1000);
-          setTimeout(() => {
-            this.router.navigate(['/about']); 
-          }, 1000);
+          this.router.navigate(['/about']); 
              
         }
         

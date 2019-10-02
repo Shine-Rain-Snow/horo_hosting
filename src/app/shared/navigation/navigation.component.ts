@@ -70,6 +70,11 @@ export class NavigationComponent implements OnInit {
           this.colorPreference = 'white';
           break;
         }
+        //books page
+        case 8: {
+          this.colorPreference = 'black';
+          break;
+        }
       }
     }, 50);
      
