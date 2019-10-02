@@ -67,7 +67,7 @@ export class NavigationComponent implements OnInit {
         }
         //press page
         case 7: {
-          this.colorPreference = 'black';
+          this.colorPreference = 'white';
           break;
         }
       }

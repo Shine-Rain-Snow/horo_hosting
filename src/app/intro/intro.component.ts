@@ -36,10 +36,6 @@ export class IntroComponent implements OnInit {
       return false;
     };
     
-    $(".intro").css({opacity: "0.3"});
-    $(".intro").animate({
-      opacity: "1"
-    },1000);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(1);
     // this.sunService.setProgressShow(false);
@@ -117,19 +113,7 @@ export class IntroComponent implements OnInit {
               this.sunService.setIntroVal(100);
               scrollUpCount = 0;
               //go to astrology page
-
-              //$(".intro").fadeOut(1800, "swing");
-              if(astFlag) {
-                astFlag = false;
-                
-                $(".transition_wall_intro").toggleClass("anim-trans");
-                
-                setTimeout(() => {
-                  this.router.navigate(['/astrology']); 
-                  this.sunService.setIntroVal(0);
-                }, 3000);
-                
-              }
+              this.router.navigate(['/astrology']); 
             }
           
               
@@ -148,7 +132,7 @@ export class IntroComponent implements OnInit {
         
         if(scrollDownCount > 4) {
           if(this.next >= 45) {
-            console.log("thos"+scrollDownCount);
+            
             this.next = 40;
             scrollDownCount = 0;
             this.sunService.setIntroVal(40);

@@ -81,15 +81,7 @@ export class AstrologyComponent implements OnInit {
               this.sunService.setAstVal(0);
               this.sunService.setIntroVal(0);
               
-              //$(".astrology").fadeOut(1800, "swing");
-              if(introFlag) {
-                console.log("hello");
-                $(".transition_wall").toggleClass("anim-trans");
-                setTimeout(() => {
-                  this.router.navigate(['/intro']); 
-                }, 3000);
-                introFlag = false;
-              }
+              this.router.navigate(['/intro']);
             }
         }
       });

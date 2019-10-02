@@ -243,7 +243,7 @@ export class AstInnerComponent implements OnInit {
     };
     var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,itemsInner,element,elements;
   	var element = $(".g-scrolling-carousel .items-inner");
-    var amount = element.children(":first").outerWidth(true)/10;
+    var amount = element.children(":first").outerWidth(true);
       
   	leftElem = $('<span />').addClass('jc-left');
     rightElem = $('<span />').addClass('jc-right');
@@ -267,17 +267,15 @@ export class AstInnerComponent implements OnInit {
         
         if(event.originalEvent.deltaY < 0) {
             //scroll down
-            next = next - 1;
+            next = next - 5;
             self.sunService.setAstVal(next);
             if(next < 40) {
                 nDownScrolling++; 
                 // console.log("down"+nDownScrolling);
-                if(nDownScrolling > 5) {
+                //if(nDownScrolling > 5) {
                     next = 40;
                     self.sunService.setAstVal(next);
-                    nDownScrolling = 0;
-                   
-                   
+                    nDownScrolling = 0;                   
                     $(".ast-inner").fadeOut(1000);
                     setTimeout(() => {
                         //self.goAstrology();
@@ -285,14 +283,14 @@ export class AstInnerComponent implements OnInit {
                         self.router.navigate(['/astrology']);
                     }, 1000);
 
-                }    
+                //}    
                 
             }
         }
         
         if(event.originalEvent.deltaY > 0) {
             //scroll up
-            next = next + 1;
+            next = next + 5;
             // console.log(next);
             self.sunService.setAstVal(next);
            
@@ -309,28 +307,29 @@ export class AstInnerComponent implements OnInit {
         var oEvent = event.originalEvent, 
         direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
         position = element.scrollLeft();
-        let origin_pos = position;
+        //let origin_pos = position;
         position += direction > 0 ? -amount : amount;
-        let animation_pos = position;
-        //element.scrollLeft(position);
+        //let animation_pos = position;
+        element.scrollLeft(position);
         
-        let cou = 0;
-        let gap =(animation_pos - origin_pos)/10;
-        let smoothInterval = setInterval(()=> {
-            cou++;
-            //console.log(cou);
-            element.animate({
-                scrollLeft: '+='+gap+'px'
-            }, 
-            {
-                duration: 10,
-                easing: "swing"
-            });
-            if(cou>10) {
-                cou = 0;
-                clearInterval(smoothInterval);
-            }
-        }, 1);
+        //mouse scrolling part
+        // let cou = 0;
+        // let gap =(animation_pos - origin_pos)/10;
+        // let smoothInterval = setInterval(()=> {
+        //     cou++;
+        //     //console.log(cou);
+        //     element.animate({
+        //         scrollLeft: '+='+gap+'px'
+        //     }, 
+        //     {
+        //         duration: 10,
+        //         easing: "swing"
+        //     });
+        //     if(cou>10) {
+        //         cou = 0;
+        //         clearInterval(smoothInterval);
+        //     }
+        // }, 1);
         
 
         event.preventDefault();

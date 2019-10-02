@@ -37,56 +37,72 @@ export class PressReleaseComponent implements OnInit {
       width: 1000,
       height: 1370
     },
-
     {//5
+      width: 480,
+      height: 1000
+    },
+
+    {//6
       width: 2000,
       height: 2559
     },
-    {//6
+    {//7
       width: 1000,
       height: 707
     },
-    {//7
+    {//8
       width: 2625,
       height: 3296
     },
-    {//8
+    {//9
       width: 1654,
       height: 2338
     },
-    {//9
+    {//10
+      width: 707,
+      height: 1000, 
+    },
+    {//11
       width: 1,
       height: 1
     },
 
-    {//10
+    {//12
       width: 1228,
       height: 4328
     },
-     {//11
+    {//13
       width: 4158,
       height: 3192
     },
-    {//12
+    {//14
       width: 800,
       height: 687
     },
-    {//13
+    {//15
+      width: 1000,
+      height: 681
+    },
+    {//16
       width: 3286,
       height: 4181
     },
-    {//14
+    {//17
       width: 1000,
       height: 615
     },
-    {//15
+    {//18
       width: 1000,
       height: 694
     },
 
-    {//16
+    {//19
       width: 526,
       height: 697
+    },
+    {//20
+      width: 707,
+      height: 1000
     },
 
   ];
@@ -94,6 +110,7 @@ export class PressReleaseComponent implements OnInit {
     let self = this;
    
     this.sunService.setShowMenu(true);
+    this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(7);
     
     $(".ar-item").hover(function() {
@@ -153,10 +170,6 @@ export class PressReleaseComponent implements OnInit {
           duration: 2600,
           easing: "swing"
         });
-
-       
-        
-      
 
       }, function() {
         //when leave .ar-item span
