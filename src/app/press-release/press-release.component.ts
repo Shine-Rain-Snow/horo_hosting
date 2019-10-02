@@ -162,7 +162,7 @@ export class PressReleaseComponent implements OnInit {
         //when leave .ar-item span
         self.imagePath = "";
         //console.log("ar item span leave");
-        $(".article_titles").css("background-color", "#DCE6DD"); 
+        $(".article_titles").css("background-color", "#7C5E62"); 
         $(".article_container").css("color", "black");
         $(".press_title").css("visibility", "visible");
         $(".ar-item span").finish();
