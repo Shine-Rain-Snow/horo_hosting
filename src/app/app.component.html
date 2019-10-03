@@ -1,6 +1,6 @@
+
 <div class="horo" >
   <mat-sidenav-container>
-      
       <mat-sidenav #sidenav position="end" role="navigation">
         <app-sidenav-list (sidenavClose)="sidenav.close()"></app-sidenav-list>
       </mat-sidenav>
@@ -14,5 +14,17 @@
         </div>
       </mat-sidenav-content>
   </mat-sidenav-container> 
-
 </div>
+
+<!-- <div class="horo" >
+  <div class="menu-lines" (click)="onShowMenu()">
+    <app-blackmenu></app-blackmenu>
+  </div>
+  <div [@routerTransition]="getState(o)" >
+    <router-outlet #o="outlet"></router-outlet>
+  </div>
+  <div class="loading-lines">
+    <app-progressbar></app-progressbar>
+  </div>
+</div>
+ -->

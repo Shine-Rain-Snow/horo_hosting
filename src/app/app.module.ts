@@ -13,12 +13,14 @@ import { SidenavListComponent } from './shared/sidenav-list/sidenav-list.compone
 import { ProgressbarComponent } from './shared/progressbar/progressbar.component';
 import { Globals } from './shared/globals';
 import { MatVideoModule } from 'mat-video';
+import { BlackmenuComponent } from './shared/blackmenu/blackmenu.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     SidenavListComponent,
     ProgressbarComponent,
+    BlackmenuComponent,
   ],
   imports: [
     BrowserModule,
