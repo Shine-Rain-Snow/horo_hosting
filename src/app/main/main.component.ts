@@ -37,10 +37,10 @@ export class MainComponent implements OnInit {
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
     this.sunService.setCurrentPage(0);
-  	// setTimeout(() => {
-   //        this.router.navigate(['/intro']);
-   //        this.sunService.setIntroTitleShow(true);
-   //  }, 9600);
+  	setTimeout(() => {
+          this.router.navigate(['/intro']);
+          this.sunService.setIntroTitleShow(true);
+    }, 9600);
   }
 
   ngOnDestroy() {
@@ -215,7 +215,7 @@ export class MainComponent implements OnInit {
     for(let i=1; i<=4; i++) {
         pressReq[i] = new XMLHttpRequest();
         imgStr[i] = 'https://oferc.herokuapp.com/assets/img/books/books'+i+'.png';
-        console.log(imgStr[i]);
+
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -228,7 +228,7 @@ export class MainComponent implements OnInit {
               url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);  
               
               self.sunService.setBooksImageURL(url); 
-              //console.log(url[i]);
+              //console.log(i+"remoteblalbl"+url[i]);
           }
         }
         pressReq[i].onerror = function() {

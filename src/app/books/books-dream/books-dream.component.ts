@@ -14,11 +14,28 @@ export class BooksDreamComponent implements OnInit {
   constructor(private router: Router, 
     private sunService: SunProgressService,
     private stateData: Globals) { }
-
+  booksImgFlag = true;
+  booksImgURL;
   ngOnInit() {
   	this.sunService.setShowMenu(true);
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(8);
+
+    if (this.booksImgURL = this.sunService.getBooksImageURL()) {
+      this.booksImgFlag = false;
+      console.log(this.booksImgURL[3]);
+    } else {
+      console.log("local image");
+      this.booksImgFlag = true;
+    }
+  }
+
+  getBooksImagePath3() {
+    return this.booksImgURL[3];
+  }
+
+  getBooksImagePath4() {
+    return this.booksImgURL[4];
   }
 
 }

@@ -15,15 +15,14 @@ export class BooksComponent implements OnInit {
     private sunService: SunProgressService,
     private stateData: Globals) { }
   booksImgFlag = true;
-  booksImgURL = [];
+  booksImgURL;
   ngOnInit() {
   	this.sunService.setShowMenu(true);
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(8);
+    
     if (this.booksImgURL = this.sunService.getBooksImageURL()) {
       this.booksImgFlag = false;
-      
-      console.log("remote="+this.booksImgURL[2]);
     } else {
       console.log("local image");
       this.booksImgFlag = true;
@@ -35,7 +34,7 @@ export class BooksComponent implements OnInit {
   }
 
   getBooksImagePath2() {
-    return this.booksImgURL[3];
+    return this.booksImgURL[2];
   }
 
 }
