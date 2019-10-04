@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SunProgressService } from '../../services/sun-progress.service';
 import { Globals } from '../globals';
 import { Router } from '@angular/router';
-
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-progressbar',
@@ -47,6 +47,7 @@ export class ProgressbarComponent implements OnInit {
             this.introVal += 0.1;  
             this.sunService.setIntroVal(this.introVal);
             this.colorPreference = 'white';
+            $(".progress_container").removeClass("about-change");
             if(this.introVal > 100) {
               this.sunService.setIntroVal(100);
               break;
@@ -58,6 +59,7 @@ export class ProgressbarComponent implements OnInit {
             this.astVal += 0.1;
             this.sunService.setAstVal(this.astVal);
             this.colorPreference = 'white';
+            $(".progress_container").removeClass("about-change");
             if(this.astVal > 40) {
               this.sunService.setAstVal(40);
               break;
@@ -67,6 +69,7 @@ export class ProgressbarComponent implements OnInit {
           //ast-inner page
           case 3: {
             this.colorPreference = 'black';
+            $(".progress_container").removeClass("about-change");
             this.sunService.setAstVal(this.astVal);
             break;
            
@@ -74,6 +77,7 @@ export class ProgressbarComponent implements OnInit {
           // about page
           case 4: {
             this.colorPreference = 'black';
+            $(".progress_container").addClass("about-change");
             if(this.aboutVal < 30) {
               this.aboutVal += 0.1;
               this.sunService.setAboutVal(this.aboutVal);
@@ -85,7 +89,7 @@ export class ProgressbarComponent implements OnInit {
           }
           //counseling page
           case 5: {
-            
+            $(".progress_container").removeClass("about-change");
             this.colorPreference = 'black';
           }
         }

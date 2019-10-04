@@ -37,6 +37,16 @@ mat-progress-bar{
 
 }
 
+.about-change {
+  ::ng-deep .mat-progress-bar-fill::after {
+    background-color:black !important;
+  }
+
+  ::ng-deep .mat-progress-bar-buffer {
+      background: rgb(133, 127, 126) !important;
+  }
+}
+
 ::ng-deep .mat-progress-bar-fill::after {
     background-color:rgb(133, 127, 126);
 }
