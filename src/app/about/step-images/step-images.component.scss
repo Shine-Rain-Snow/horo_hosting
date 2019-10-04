@@ -1,0 +1,90 @@
+.step-images {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	background: #DFE0E1;
+	overflow: hidden;
+}
+
+.step-images-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: table;
+	left: 2%;
+	overflow: hidden;
+	
+}
+
+.step-images-container>div
+{
+	float: left;
+}
+
+.step-images-container img {
+	width: 100%;
+	height: 100%;
+}
+
+.img-first-column {
+	width: 40%;
+	height: 100%;
+	// background: red;
+	padding: 3% 1% 1% 3%;
+	.img-1 {
+		width: 70%;
+		height: 30%;
+		float: right;
+		margin-bottom: 5%;
+		// background: pink;
+
+	}
+	.img-2 {
+		width: 70%;
+		height: 30%;
+		float: left;
+		margin-bottom: 5%;
+		// background: blue;
+	}
+	.img-3 {
+		width: 70%;
+		height: 30%;
+		float: right;
+		// background: gray;
+	}
+}
+
+.img-second-column {
+	width: 20%;
+	height: 100%;
+	// background: yellow;
+
+	.img-4 {
+		position: relative;
+		margin: 0 auto;
+		top: 40%;
+		width: 90%;
+		height: 45%;
+		// background: pink;
+	}
+}
+
+.img-third-column {
+	width: 40%;
+	height: 100%;
+	// background: green;
+	padding: 3% 1% 1% 1%;
+	.img-5 {
+		width: 80%;
+		height: 40%;
+		margin-bottom: 10%;
+		// background: gray;
+	}
+	.img-6 {
+		position: relative;
+		left: 25%;
+		width: 35%;
+		height: 45%;
+		// background: pink;
+	}
+}

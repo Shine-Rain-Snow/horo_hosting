@@ -7,6 +7,7 @@ import { StepThreeComponent } from './step-three/step-three.component';
 import { StepFourComponent } from './step-four/step-four.component';
 import { StepFiveComponent } from './step-five/step-five.component';
 import { StepSixComponent } from './step-six/step-six.component';
+import { StepImagesComponent } from './step-images/step-images.component';
 const routes: Routes = [
 	{
 		path: '',
@@ -36,6 +37,10 @@ const routes: Routes = [
 	{
 		path: 'step-six',
 		component: StepSixComponent
+	},
+	{
+		path: 'step-images',
+		component: StepImagesComponent
 	}
 ];
 

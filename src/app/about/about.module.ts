@@ -8,10 +8,13 @@ import { StepThreeComponent } from './step-three/step-three.component';
 import { StepFourComponent } from './step-four/step-four.component';
 import { StepFiveComponent } from './step-five/step-five.component';
 import { StepSixComponent } from './step-six/step-six.component';
+import { StepImagesComponent } from './step-images/step-images.component';
 
 
 @NgModule({
-  declarations: [StepOneComponent, StepTwoComponent, StepThreeComponent, StepFourComponent, StepFiveComponent, StepSixComponent],
+  declarations: [StepOneComponent, StepTwoComponent, 
+  StepThreeComponent, StepFourComponent, StepFiveComponent, 
+  StepSixComponent, StepImagesComponent],
   imports: [
     CommonModule,
     AboutRoutingModule

@@ -20,8 +20,8 @@ export class StepSixComponent implements OnInit {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
-    this.sunService.setAboutVal(80);
-    this.next = 80;
+    this.sunService.setAboutVal(90);
+    this.next = 90;
     $(".step-six").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
@@ -40,10 +40,10 @@ export class StepSixComponent implements OnInit {
         //scroll up
         this.next -= 3;
         this.sunService.setAboutVal(this.next); 
-        if(this.next < 80) {
+        if(this.next < 90) {
           this.next = 0;
           $(".step-six").fadeOut(600);
-          this.sunService.setAboutVal(60); 
+          this.sunService.setAboutVal(80); 
           setTimeout(() => {
             this.router.navigate(['/about/step-five']); 
           }, 600);

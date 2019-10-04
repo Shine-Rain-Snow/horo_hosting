@@ -30,7 +30,7 @@ export class StepThreeComponent implements OnInit {
           this.sunService.setAboutVal(60);
           $(".step-three").fadeOut(600);
           setTimeout(() => {
-            this.router.navigate(['/about/step-four']);
+            this.router.navigate(['/about/step-images']);
           }, 600);
          
         } 

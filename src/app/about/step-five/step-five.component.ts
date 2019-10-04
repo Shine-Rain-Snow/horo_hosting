@@ -21,15 +21,15 @@ export class StepFiveComponent implements OnInit {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
-    this.sunService.setAboutVal(70);
-    this.next = 70;
+    this.sunService.setAboutVal(80);
+    this.next = 80;
     $(".step-five").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
         this.next += 2;
         this.sunService.setAboutVal(this.next); 
-        if(this.next > 80) {
-          this.sunService.setAboutVal(80);
+        if(this.next > 90) {
+          this.sunService.setAboutVal(90);
           $(".step-five").fadeOut(600);
           setTimeout(() => {
             this.router.navigate(['/about/step-six']);
@@ -40,10 +40,10 @@ export class StepFiveComponent implements OnInit {
         //scroll up
         this.next -= 2;
         this.sunService.setAboutVal(this.next); 
-        if(this.next < 70) {
+        if(this.next < 80) {
           this.next = 0;
           $(".step-five").fadeOut(600);
-          this.sunService.setAboutVal(60); 
+          this.sunService.setAboutVal(70); 
           setTimeout(() => {
             this.router.navigate(['/about/step-four']); 
           }, 600);
