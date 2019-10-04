@@ -33,6 +33,7 @@ export class MainComponent implements OnInit {
     this.videoAboutDownload(self);
     this.imagePressDownload(self);
     this.imageBooksDownload(self);
+    this.imageAboutDownload(self);
 
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
@@ -143,15 +144,12 @@ export class MainComponent implements OnInit {
     const video = document.querySelector('video');
     req.onload = function() {
       
-      // Onload is triggered even on 404
-      // so we need to check the status code
+      
       if (this.status === 200) {
         console.log("about"+this);
           var videoBlob = this.response;
           var vid = URL.createObjectURL(videoBlob); // IE10+
-          // Video is now downloaded
-          // and we can set it as source on the video element
-          //video.src = vid;
+          
           let url = self.dom.bypassSecurityTrustUrl(vid);  
           self.sunService.setAboutVideoURL(url); 
           self.flagAbout = true;
@@ -229,6 +227,42 @@ export class MainComponent implements OnInit {
               
               self.sunService.setBooksImageURL(url); 
               //console.log(i+"remoteblalbl"+url[i]);
+          }
+        }
+        pressReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReq[i].send();
+    }
+    
+  }
+
+  imageAboutDownload(self) {
+
+    let pressReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=0; i<7; i++) {
+        pressReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/about/about'+i+'.jpg';
+        pressReq[i].open('GET', imgStr[i], true);
+        pressReq[i].responseType = 'blob';
+       
+        pressReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setAboutImageURL(url);  
+              //console.log(i+"remote="+url[i]);             
           }
         }
         pressReq[i].onerror = function() {

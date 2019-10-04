@@ -30,6 +30,7 @@ export class BooksComponent implements OnInit {
   }
 
   getBooksImagePath1() {
+   
     return this.booksImgURL[1];
   }
 

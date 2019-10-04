@@ -2,26 +2,38 @@
 	<div class="step-images-container">
 		<div class="img-first-column">
 			<div class="img-1">
-				<img src="../../../assets/img/about/about1.jpg" />
+				<div *ngIf="aboutImgFlag; then thenBlock1 else elseBlock1"></div>
+        		<ng-template #thenBlock1><img src="../../../assets/img/about/about1.jpg" /></ng-template>
+        		<ng-template #elseBlock1><img [attr.src]="getAboutImagePath(1)" /></ng-template>				
 			</div>
 			<div class="img-2">
-				<img src="../../../assets/img/about/about2.jpg" />
+				<div *ngIf="aboutImgFlag; then thenBlock2 else elseBlock2"></div>
+        		<ng-template #thenBlock2><img src="../../../assets/img/about/about2.jpg" /></ng-template>
+        		<ng-template #elseBlock2><img [attr.src]="getAboutImagePath(2)" /></ng-template>				
 			</div>
 			<div class="img-3">
-				<img src="../../../assets/img/about/about3.jpg" />
+				<div *ngIf="aboutImgFlag; then thenBlock3 else elseBlock3"></div>
+        		<ng-template #thenBlock3><img src="../../../assets/img/about/about3.jpg" /></ng-template>
+        		<ng-template #elseBlock3><img [attr.src]="getAboutImagePath(3)" /></ng-template>	
 			</div>
 		</div>
 		<div class="img-second-column">
 			<div class="img-4">
-				<img src="../../../assets/img/about/about4.jpg" />
+				<div *ngIf="aboutImgFlag; then thenBlock4 else elseBlock4"></div>
+        		<ng-template #thenBlock4><img src="../../../assets/img/about/about4.jpg" /></ng-template>
+        		<ng-template #elseBlock4><img [attr.src]="getAboutImagePath(4)" /></ng-template>	
 			</div>
 		</div>
 		<div class="img-third-column">
 			<div class="img-5">
-				<img src="../../../assets/img/about/about5.jpg" />
+				<div *ngIf="aboutImgFlag; then thenBlock5 else elseBlock5"></div>
+        		<ng-template #thenBlock5><img src="../../../assets/img/about/about5.jpg" /></ng-template>
+        		<ng-template #elseBlock5><img [attr.src]="getAboutImagePath(5)" /></ng-template>	
 			</div>
 			<div class="img-6">
-				<img src="../../../assets/img/about/about6.jpg" />
+				<div *ngIf="aboutImgFlag; then thenBlock6 else elseBlock6"></div>
+        		<ng-template #thenBlock6><img src="../../../assets/img/about/about6.jpg" /></ng-template>
+        		<ng-template #elseBlock6><img [attr.src]="getAboutImagePath(6)" /></ng-template>	
 			</div>
 		</div>
 	</div>

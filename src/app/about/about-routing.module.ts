@@ -47,6 +47,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations: [AboutComponent],
+  declarations: [],
 })
 export class AboutRoutingModule { }

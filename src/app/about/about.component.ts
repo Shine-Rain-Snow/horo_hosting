@@ -19,6 +19,8 @@ export class AboutComponent implements OnInit {
   next: number = 0;
   nUpScrollling: number = 0;
   nDownScrolling = 0;
+  aboutImgFlag = true;
+  aboutImgURL;
   ngOnInit() {
     
     this.next = 0;
@@ -26,6 +28,14 @@ export class AboutComponent implements OnInit {
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(0);
+    //image preload part 
+    if (this.aboutImgURL = this.sunService.getAboutImageURL()) {
+      this.aboutImgFlag = false;
+    } else {
+      console.log("local image");
+      this.aboutImgFlag = true;
+    }
+
     let oneFlag = true;
     let astFlag = true;
     $(".about_page").bind("wheel", (event) => {  
@@ -73,6 +83,10 @@ export class AboutComponent implements OnInit {
         
       }
     });
+  }
+
+  getAboutImagePath(iNum: Number) {
+     return this.aboutImgURL[iNum.toString()];
   }
 
   ngOnDestroy() {

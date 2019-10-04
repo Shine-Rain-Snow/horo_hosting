@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AboutRoutingModule } from './about-routing.module';
+import { AboutComponent } from './about.component';
 import { StepOneComponent } from './step-one/step-one.component';
 import { StepTwoComponent } from './step-two/step-two.component';
 import { StepThreeComponent } from './step-three/step-three.component';
@@ -12,7 +13,7 @@ import { StepImagesComponent } from './step-images/step-images.component';
 
 
 @NgModule({
-  declarations: [StepOneComponent, StepTwoComponent, 
+  declarations: [AboutComponent, StepOneComponent, StepTwoComponent, 
   StepThreeComponent, StepFourComponent, StepFiveComponent, 
   StepSixComponent, StepImagesComponent],
   imports: [

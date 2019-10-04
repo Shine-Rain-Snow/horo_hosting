@@ -1,7 +1,10 @@
 <div class="about_page">
 
 	<div class="inner img-hover-zoom--slowmo">
-		<img src="../../assets/img/about/about.jpg" alt="Another Image zoom-on-hover effect">
+		<div *ngIf="aboutImgFlag; then thenBlock0 else elseBlock0"></div>
+		<ng-template #thenBlock0><img src="../../assets/img/about/about0.jpg" /></ng-template>
+		<ng-template #elseBlock0><img [attr.src]="getAboutImagePath(0)" /></ng-template>	
+		
 		<div class="about-title">
 			About
 		</div>

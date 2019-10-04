@@ -15,12 +15,22 @@ export class StepImagesComponent implements OnInit {
     private sunService: SunProgressService,
     private stateData: Globals) { }
   next: number = 0;
+  aboutImgFlag = true;
+  aboutImgURL;
   ngOnInit() {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(60);
     this.next = 60;
+    //image preload
+    if (this.aboutImgURL = this.sunService.getAboutImageURL()) {
+      this.aboutImgFlag = false;
+    } else {
+      console.log("local image");
+      this.aboutImgFlag = true;
+    }
+
     $(".step-images").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
@@ -52,6 +62,11 @@ export class StepImagesComponent implements OnInit {
     });
 
    }
+
+   getAboutImagePath(iNum: Number) {
+     console.log(this.aboutImgURL[iNum.toString()])
+     return this.aboutImgURL[iNum.toString()];
+  }
   
 
 }
