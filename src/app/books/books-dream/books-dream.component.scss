@@ -1,18 +1,20 @@
-.books {
+.books-dream {
 	width: 100%;
 	height: 100%;
-	//position: absolute;
+	background: #658795;
 	img {
-		width: 100%;
+		width: 70%;
 		height: 100vh;
 	}
 	z-index: 1;
+	overflow: hidden;
+	position: absolute;
 }
 
-.light {
+.dream {
 	position: absolute;
 	top: 16%;
-	left: 40%;
+	left: 45%;
 	width: 60%;
 	height: 80%;
 	z-index: 10;
@@ -26,12 +28,14 @@
 
 .book_detail {
 	position: absolute;
-	color: black;
+	color: white;
 	font-family: Oswald extra light;
 	font-size: 26px;
-	top: 50%;
+	top: 70%;
 	left: 10%;
-	width: 35%;
+	width: 40%;
 	height: 30%;
-	
+	a {
+		color: white;
+	}
 }

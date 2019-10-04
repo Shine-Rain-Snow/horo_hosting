@@ -18,7 +18,8 @@
     img {
         position: absolute;
         top: 0%;
-        width: 10%;
+        left: -5%;
+        width: 16%;
         height: 20%;
     }
     .left-side-top {
@@ -47,7 +48,7 @@
             position: relative;
             // margin-top: 22%;
             top: -10%;
-            width: 60%;
+            width: 100%;
             height: 100%;
             //transform: rotate(-30deg);
         }
@@ -69,13 +70,21 @@
         // vertical-align:bottom;
         img {
             
-            position: relative;
-            // top: 10%;
-            width: 80%;
-            height: 120%;
-            // right: 10%;
+            position: absolute;
+            top: 0%;
+            right: 0%;
+            width: 40%;
+            height: 55%;
+           
           
             transform: rotate(180deg);
+        }
+        .step_six3 {
+            position: relative;
+            top: 85%;
+            left: 45%;
+            width: 15%; 
+            height: 30%;    
         }
     }
 
@@ -92,6 +101,16 @@
             // background: red;
             
             font-size: 32px;
+            
+            
+        }
+        
+        .step_six4 {
+                width: 6%;
+                height: 10%;   
+                position: absolute;
+                bottom: 0;
+                right: 0;
         }
     }
 

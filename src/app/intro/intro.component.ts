@@ -93,6 +93,7 @@ export class IntroComponent implements OnInit {
     let scrollDownCount = 0;
     //this.sunService.setIntroVal(0);
     let astFlag = true;
+    let astFlag40 = true;
     $(".intro").bind("wheel", (event) => {
       if(this.scroll_flag) {
         this.scroll_flag = false;
@@ -122,11 +123,12 @@ export class IntroComponent implements OnInit {
               
           } 
           if(this.next < 40) {
-            if(astFlag) {
+            if(astFlag40) {
               this.next = 40;
               this.sunService.setIntroVal(40);
               this.animaFlag = false;
               scrollUpCount = 0;
+              astFlag40 = false;
             }
             
           }
@@ -143,7 +145,7 @@ export class IntroComponent implements OnInit {
             
             this.next = 40;
             scrollDownCount = 0;
-            console.log("22222");
+            
             this.sunService.setIntroVal(40);
           }
           else if(this.next>40 && this.next<45) {

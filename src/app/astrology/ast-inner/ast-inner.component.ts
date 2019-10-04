@@ -265,43 +265,8 @@ export class AstInnerComponent implements OnInit {
     let nDownScrolling = 0;
     let astFlag = true;
     let aboutFlag = true;
+    let moveFlag = true;
   	element.bind("wheel", function (event) {    
-        
-        if(event.originalEvent.deltaY < 0) {
-            //scroll down
-            next = next - 8;
-            self.sunService.setAstVal(next);
-            if(next < 40) {
-                nDownScrolling++; 
-                // console.log("down"+nDownScrolling);
-                //if(nDownScrolling > 5) {
-
-                if(astFlag) {
-                  next = 40;
-                  nDownScrolling = 0;   
-                  self.sunService.setAllZero();
-                  self.router.navigate(['/astrology']);
-                  astFlag = false;
-                }
-            }
-        }
-        
-        if(event.originalEvent.deltaY > 0) {
-            //scroll up
-            next = next + 8;
-            // console.log(next);
-            
-            self.sunService.setAstVal(next);
-           
-            if(next > 100) {
-              if (aboutFlag) {
-                next = 100;
-                self.sunService.setAstVal(0);
-                self.router.navigate(['/about']);
-                aboutFlag = false;
-              }
-            }
-        }
         var oEvent = event.originalEvent, 
         direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
         position = element.scrollLeft();
@@ -309,13 +274,59 @@ export class AstInnerComponent implements OnInit {
         position += direction > 0 ? -amount : amount;
         //let animation_pos = position;
         //element.scrollLeft(position);
-        element.animate({
+
+        
+        if(moveFlag) {
+          moveFlag = false;
+          element.animate({
             scrollLeft: position+'px'
-        }, 
-        {
-            duration: 1000,
-            easing: "swing"
-        });
+          }, 
+          {
+              duration: 1000,
+              easing: "swing",
+              complete: function() {
+                moveFlag = true;
+                if(event.originalEvent.deltaY < 0) {
+            //scroll down
+                next -= 10;    
+                
+                  if(next < 40) {
+                    
+                      if(astFlag) {
+                        next = 0;
+                        nDownScrolling = 0;   
+                        self.sunService.setAllZero();
+                        self.router.navigate(['/astrology']);
+                        astFlag = false;
+                      }
+                  } else {
+                    self.sunService.setAstVal(next);
+                  }
+                  }
+                  
+                  if(event.originalEvent.deltaY > 0) {
+                      //scroll up
+                      next += 10;
+                       
+                      if(next > 100) {
+                        if (aboutFlag) {
+                          next = 100;
+                          self.sunService.setAstVal(0);
+                          self.router.navigate(['/about']);
+                          aboutFlag = false;
+                        }
+                      } else {
+                        self.sunService.setAstVal(next);
+                      }
+                  }
+                  }
+              });
+        }
+
+
+        
+        
+       
         //mouse scrolling part
         // let cou = 0;
         // let gap =(animation_pos - origin_pos)/10;
