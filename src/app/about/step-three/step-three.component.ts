@@ -15,12 +15,21 @@ export class StepThreeComponent implements OnInit {
     private sunService: SunProgressService,
     private stateData: Globals) { }
   next: number = 0;
+  historyImgFlag = true;
+  historyImgURL;
   ngOnInit() {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(50);
     this.next = 50;
+    //image preload part 
+    if (this.historyImgURL = this.sunService.getHistoryImageURL()) {
+      this.historyImgFlag = false;
+    } else {
+      //console.log("local image");
+      this.historyImgFlag = true;
+    }
     $(".step-three").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
@@ -53,5 +62,8 @@ export class StepThreeComponent implements OnInit {
 
    }
   
+  getHistoryImagePath(iNum: Number) {
+     return this.historyImgURL[iNum.toString()];
+  }
 
 }

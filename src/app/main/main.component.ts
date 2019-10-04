@@ -39,10 +39,10 @@ export class MainComponent implements OnInit {
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
     this.sunService.setCurrentPage(0);
-  	// setTimeout(() => {
-   //        this.router.navigate(['/intro']);
-   //        this.sunService.setIntroTitleShow(true);
-   //  }, 9600);
+  	setTimeout(() => {
+          this.router.navigate(['/intro']);
+          this.sunService.setIntroTitleShow(true);
+    }, 9600);
   }
 
   ngOnDestroy() {
@@ -298,8 +298,8 @@ export class MainComponent implements OnInit {
               videoBlob[i] = this.response;
               vid[i] = URL.createObjectURL(videoBlob[i]); 
               url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
-              self.sunService.setAboutImageURL(url);  
-              console.log(i+"remote="+url[i]);             
+              self.sunService.setHistoryImageURL(url);  
+              //console.log(i+"remote="+url[i]);             
           }
         }
         pressReq[i].onerror = function() {

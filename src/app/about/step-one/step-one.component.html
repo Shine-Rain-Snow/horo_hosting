@@ -15,12 +15,17 @@
             </div>
         </div>
         <div class="left-side-bottom">
-            <img src="../../../assets/img/about/his1.png" />
+            <div *ngIf="historyImgFlag; then thenBlock0 else elseBlock0"></div>
+            <ng-template #thenBlock0><img src="../../../assets/img/about/his1.png" /></ng-template>
+            <ng-template #elseBlock0><img [attr.src]="getHistoryImagePath(1)" /></ng-template>    
+            
         </div>
     </div>
     <div class="right-side">
         <div class="right-side-top">
-            <img src="../../../assets/img/about/his2.png"  />
+            <div *ngIf="historyImgFlag; then thenBlock1 else elseBlock1"></div>
+            <ng-template #thenBlock1><img src="../../../assets/img/about/his2.png" /></ng-template>
+            <ng-template #elseBlock1><img [attr.src]="getHistoryImagePath(2)" /></ng-template>    
         </div>
         <div class="right-side-bottom">
             <div class="right-side-text">

@@ -1,6 +1,8 @@
 <div class="step-six">
     <div class="left-side">
-        <img src="../../../assets/img/about/step_six2.png"  />
+        <div *ngIf="historyImgFlag; then thenBlock2 else elseBlock2"></div>
+        <ng-template #thenBlock2><img src="../../../assets/img/about/his10.png" /></ng-template>
+        <ng-template #elseBlock2><img [attr.src]="getHistoryImagePath(10)" /></ng-template>
         <div class="left-side-top">
             <div class="left-side-text">
                 <p>
@@ -15,17 +17,22 @@
             </div>
         </div>
         <div class="left-side-bottom">
-            <img src="../../../assets/img/about/step_six1.png" />
+            <div *ngIf="historyImgFlag; then thenBlock0 else elseBlock0"></div>
+            <ng-template #thenBlock0><img src="../../../assets/img/about/his9.png" /></ng-template>
+            <ng-template #elseBlock0><img [attr.src]="getHistoryImagePath(9)" /></ng-template> 
         </div>
     </div>
     <div class="right-side">
         <div class="right-side-top">
-            <img src="../../../assets/img/about/step_six2.png"  />
-            <img class="step_six3" src="../../../assets/img/about/his9.png" />
+            <div *ngIf="historyImgFlag; then thenBlock1 else elseBlock1"></div>
+            <ng-template #thenBlock1><img src="../../../assets/img/about/his10.png" /></ng-template>
+            <ng-template #elseBlock1><img [attr.src]="getHistoryImagePath(10)" /></ng-template>
+
+            <img class="step_six3" src="../../../assets/img/about/step_six3.png" />
         </div>
         <div class="right-side-bottom">
 
-            <img class="step_six4" src="../../../assets/img/about/his10.png" />
+            <img class="step_six4" src="../../../assets/img/about/step_six4.png" />
             <div class="right-side-text">
                 
                 <p>

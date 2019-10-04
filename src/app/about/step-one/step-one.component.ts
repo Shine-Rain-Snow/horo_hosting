@@ -16,11 +16,22 @@ export class StepOneComponent implements OnInit {
     private sunService: SunProgressService,
     private stateData: Globals) { }
   next: number = 0;
+  historyImgFlag = true;
+  historyImgURL;
   ngOnInit() {
     this.sunService.setProgressShow(true);
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(30);
+
+    //image preload part 
+    if (this.historyImgURL = this.sunService.getHistoryImageURL()) {
+      this.historyImgFlag = false;
+    } else {
+      //console.log("local image");
+      this.historyImgFlag = true;
+    }
+
     this.next = 30;
     $(".step-one").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
@@ -53,6 +64,10 @@ export class StepOneComponent implements OnInit {
       }
     });
 
+  }
+
+  getHistoryImagePath(iNum: Number) {
+     return this.historyImgURL[iNum.toString()];
   }
 
 }

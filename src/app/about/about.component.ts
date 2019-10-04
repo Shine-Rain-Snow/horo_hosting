@@ -32,7 +32,7 @@ export class AboutComponent implements OnInit {
     if (this.aboutImgURL = this.sunService.getAboutImageURL()) {
       this.aboutImgFlag = false;
     } else {
-      console.log("local image");
+      //console.log("local image");
       this.aboutImgFlag = true;
     }
 
