@@ -14,11 +14,28 @@ export class BooksComponent implements OnInit {
   constructor(private router: Router, 
     private sunService: SunProgressService,
     private stateData: Globals) { }
-
+  booksImgFlag = true;
+  booksImgURL = [];
   ngOnInit() {
   	this.sunService.setShowMenu(true);
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(8);
+    if (this.booksImgURL = this.sunService.getBooksImageURL()) {
+      this.booksImgFlag = false;
+      
+      console.log("remote="+this.booksImgURL[2]);
+    } else {
+      console.log("local image");
+      this.booksImgFlag = true;
+    }
+  }
+
+  getBooksImagePath1() {
+    return this.booksImgURL[1];
+  }
+
+  getBooksImagePath2() {
+    return this.booksImgURL[3];
   }
 
 }

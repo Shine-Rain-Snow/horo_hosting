@@ -24,6 +24,8 @@ export class SunProgressService {
   mAstVideoURL;
   mContactVideoURL;
   mAboutVideoURL;
+  mPressImageURL;
+  mBooksImageURL
   mShowMenu;
 
   getShowMenu() {
@@ -65,6 +67,22 @@ export class SunProgressService {
 
   getContactVideoURL() {
     return this.mContactVideoURL;
+  }
+
+  setPressImageURL(value) {
+    this.mPressImageURL = value;
+  }
+
+  getPressImageURL() {
+    return this.mPressImageURL;
+  }
+
+  setBooksImageURL(value) {
+    this.mBooksImageURL = value;
+  }
+
+  getBooksImageURL() {
+    return this.mBooksImageURL;
   }
 
   setProgressShow(value) {

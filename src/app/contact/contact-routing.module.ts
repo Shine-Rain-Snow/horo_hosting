@@ -13,6 +13,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
-  declarations: [ContactComponent],
+  declarations: [],
 })
 export class ContactRoutingModule { }

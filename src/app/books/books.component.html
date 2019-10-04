@@ -1,7 +1,13 @@
 <div class="books">
-	<img src="../../assets/img/books/books.png" />
+	<div *ngIf="booksImgFlag; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><img src="../../assets/img/books/books1.png" /></ng-template>
+        <ng-template #elseBlock><img [attr.src]="getBooksImagePath1()" /></ng-template>
+	
 	<div class="light" routerLink="/books/books-dream" >
-		<img src="../../assets/img/books/light.png" />
+		<div *ngIf="booksImgFlag; then thenBlock1 else elseBlock1"></div>
+        <ng-template #thenBlock1><img src="../../assets/img/books/books2.png" /></ng-template>
+        <ng-template #elseBlock1><img [attr.src]="getBooksImagePath2()" /></ng-template>
+		
 	</div>
 	<div class="book_detail">
 		<p>

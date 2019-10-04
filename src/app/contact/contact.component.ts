@@ -17,10 +17,26 @@ export class ContactComponent implements OnInit {
     private sunService: SunProgressService) { }
 
   contactURL;
+  thaiVidFlag = true;
   ngOnInit() {
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(6);
     this.sunService.setShowMenu(true);
+    
+    if (this.contactURL = this.sunService.getContactVideoURL()) {
+      this.thaiVidFlag  = false;
+      console.log("this is local");
+    } else {
+      console.log("this is ajax"+this.sunService.getContactVideoURL());
+      this.thaiVidFlag = true;
+    }
+    setTimeout(function() {
+      $("#thaivid")[0].play();
+      $("#thaivid")[0].autoplay = true;
+      $("#indiavid")[0].play();
+    }, 100);
+
+
   }
 
   public getImagePath(): string {
@@ -29,7 +45,7 @@ export class ContactComponent implements OnInit {
     }
    //console.log("Not found Contact video");
   }
-
+  
   onPress() {
     this.sunService.setAllZero();
     this.router.navigate(['/press-release']);

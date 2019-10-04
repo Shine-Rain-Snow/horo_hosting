@@ -106,6 +106,9 @@ export class PressReleaseComponent implements OnInit {
     },
 
   ];
+  pressImgFlag = true;
+  pressImgURL;
+  retURL;
   ngOnInit() {
     let self = this;
    
@@ -121,6 +124,19 @@ export class PressReleaseComponent implements OnInit {
         
       
         p_index = $(".ar-item span").index(this) + 1;
+
+        //image ajax download
+        self.pressImgURL = self.sunService.getPressImageURL();
+        
+        if (self.pressImgURL = self.sunService.getPressImageURL()) {
+          self.pressImgFlag = false;
+          self.retURL = self.pressImgURL[p_index];
+          //console.log("remote="+self.retURL);
+        } else {
+          //console.log("local image");
+          self.pressImgFlag = true;
+        }
+
         self.prevIndex = p_index;
         self.imagePath = "../../assets/img/press-release/"+p_index+".jpg";
         $(".article_titles").css("background-color", "transparent"); 
@@ -189,6 +205,10 @@ export class PressReleaseComponent implements OnInit {
       $(".ar-item span").finish();
       $(".ar-item span").css({opacity: "1"});
     });
+  }
+
+  public getPressImagePath(): string {
+    return this.retURL;
   }
 
  

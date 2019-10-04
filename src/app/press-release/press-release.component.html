@@ -2,7 +2,10 @@
     <div class="image_display">
         <div class="image_hover">
             <div class="img_zone">
-                <img id="imageid" src={{imagePath}} />
+                <div *ngIf="pressImgFlag; then thenBlock else elseBlock"></div>
+                    <ng-template #thenBlock><img id="imageid" src={{imagePath}} /></ng-template>
+                    <ng-template #elseBlock><img [attr.src]="getPressImagePath()" /></ng-template>
+                
             </div>
         </div>
     </div>

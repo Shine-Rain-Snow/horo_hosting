@@ -31,16 +31,16 @@ export class MainComponent implements OnInit {
     this.videoAstDownload(self);
     this.videoContactDownload(self);
     this.videoAboutDownload(self);
-    
-    
-    //this.sunService.setAstVideoURL(astURL);
+    this.imagePressDownload(self);
+    this.imageBooksDownload(self);
+
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
     this.sunService.setCurrentPage(0);
-  	setTimeout(() => {
-          this.router.navigate(['/intro']);
-          this.sunService.setIntroTitleShow(true);
-    }, 9600);
+  	// setTimeout(() => {
+   //        this.router.navigate(['/intro']);
+   //        this.sunService.setIntroTitleShow(true);
+   //  }, 9600);
   }
 
   ngOnDestroy() {
@@ -107,8 +107,6 @@ export class MainComponent implements OnInit {
     req.send();
   }
 
-  
-
   videoContactDownload(self) {
     var req = new XMLHttpRequest();
     req.open('GET', 'https://oferc.herokuapp.com/assets/video/contact_thailand.Ogg', true);
@@ -148,7 +146,7 @@ export class MainComponent implements OnInit {
       // Onload is triggered even on 404
       // so we need to check the status code
       if (this.status === 200) {
-        console.log("about");
+        console.log("about"+this);
           var videoBlob = this.response;
           var vid = URL.createObjectURL(videoBlob); // IE10+
           // Video is now downloaded
@@ -165,6 +163,82 @@ export class MainComponent implements OnInit {
     }
 
     req.send();
+  }
+
+  
+  imagePressDownload(self) {
+
+    let pressReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<=20; i++) {
+        pressReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/press-release/'+i+'.jpg';
+        pressReq[i].open('GET', imgStr[i], true);
+        pressReq[i].responseType = 'blob';
+       
+        pressReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);  
+              
+              self.sunService.setPressImageURL(url); 
+              
+          }
+        }
+        pressReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReq[i].send();
+    }
+    
+  }
+
+  imageBooksDownload(self) {
+
+    let pressReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<=4; i++) {
+        pressReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/books/books'+i+'.png';
+        console.log(imgStr[i]);
+        pressReq[i].open('GET', imgStr[i], true);
+        pressReq[i].responseType = 'blob';
+       
+        pressReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);  
+              
+              self.sunService.setBooksImageURL(url); 
+              //console.log(url[i]);
+          }
+        }
+        pressReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReq[i].send();
+    }
+    
   }
 
 }
