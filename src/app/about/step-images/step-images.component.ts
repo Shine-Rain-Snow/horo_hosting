@@ -64,7 +64,7 @@ export class StepImagesComponent implements OnInit {
    }
 
    getAboutImagePath(iNum: Number) {
-     console.log(this.aboutImgURL[iNum.toString()])
+    // console.log(this.aboutImgURL[iNum.toString()])
      return this.aboutImgURL[iNum.toString()];
   }
   

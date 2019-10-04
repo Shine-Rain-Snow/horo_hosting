@@ -34,14 +34,15 @@ export class MainComponent implements OnInit {
     this.imagePressDownload(self);
     this.imageBooksDownload(self);
     this.imageAboutDownload(self);
+    this.imageHistoryDownload(self);
 
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
     this.sunService.setCurrentPage(0);
-  	setTimeout(() => {
-          this.router.navigate(['/intro']);
-          this.sunService.setIntroTitleShow(true);
-    }, 9600);
+  	// setTimeout(() => {
+   //        this.router.navigate(['/intro']);
+   //        this.sunService.setIntroTitleShow(true);
+   //  }, 9600);
   }
 
   ngOnDestroy() {
@@ -263,6 +264,42 @@ export class MainComponent implements OnInit {
               url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
               self.sunService.setAboutImageURL(url);  
               //console.log(i+"remote="+url[i]);             
+          }
+        }
+        pressReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReq[i].send();
+    }
+    
+  }
+
+  imageHistoryDownload(self) {
+
+    let pressReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<11; i++) {
+        pressReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/about/his'+i+'.png';
+        pressReq[i].open('GET', imgStr[i], true);
+        pressReq[i].responseType = 'blob';
+       
+        pressReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setAboutImageURL(url);  
+              console.log(i+"remote="+url[i]);             
           }
         }
         pressReq[i].onerror = function() {
