@@ -237,36 +237,166 @@ export class AstInnerComponent implements OnInit {
   }
 
   scrolling(self, next) {
-  	var defaults = {
+  	
+
+    if(navigator.userAgent.indexOf("Firefox") != -1 ) 
+    {
+      var defaults = {
         scrolling: true,
         amount: false
-    };
-    var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,itemsInner,element,elements;
-  	var element = $(".g-scrolling-carousel .items-inner");
-    var amount = element.children(":first").outerWidth(true);
-      
-  	leftElem = $('<span />').addClass('jc-left');
-    rightElem = $('<span />').addClass('jc-right');
-    element.parent().append(leftElem).append(rightElem);
+      };
+      var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,itemsInner,element,elements;
+      var element = $(".g-scrolling-carousel .items-inner");
+      var amount = element.children(":first").outerWidth(true);
+        
+      leftElem = $('<span />').addClass('jc-left');
+      rightElem = $('<span />').addClass('jc-right');
+      element.parent().append(leftElem).append(rightElem);
 
-    maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
-    left = element.scrollLeft();
-    if(maxScrollLeft == left) {
-        rightElem.hide();
-    } else {
-        rightElem.show();
+      maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
+      left = element.scrollLeft();
+      if(maxScrollLeft == left) {
+          rightElem.hide();
+      } else {
+          rightElem.show();
+      }
+      if(left == 0) {
+          leftElem.hide();
+      } else {
+          leftElem.show();
+      }
+      let curIndex = 0;
+      let nDownScrolling = 0;
+      let astFlag = true;
+      let aboutFlag = true;
+      let moveFlag = true;
+         element.bind("DOMMouseScroll", function (event) {    
+        var oEvent = event.originalEvent, 
+        direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+        position = element.scrollLeft();
+        //let origin_pos = position;
+        position += direction > 0 ? -amount : amount;
+        //let animation_pos = position;
+        //element.scrollLeft(position);
+
+        
+        if(moveFlag) {
+          moveFlag = false;
+          element.animate({
+            scrollLeft: position+'px'
+          }, 
+          {
+              duration: 1000,
+              easing: "swing",
+              complete: function() {
+                moveFlag = true;
+                if(event.originalEvent.detail < 0) {
+            //scroll down
+                next -= 10;    
+                
+                  if(next < 40) {
+                    
+                      if(astFlag) {
+                        next = 0;
+                        nDownScrolling = 0;   
+                        self.sunService.setAllZero();
+                        self.router.navigate(['/astrology']);
+                        astFlag = false;
+                      }
+                  } else {
+                    self.sunService.setAstVal(next);
+                  }
+                  }
+                  
+                  if(event.originalEvent.detail > 0) {
+                      //scroll up
+                      next += 10;
+                       
+                      if(next > 100) {
+                        if (aboutFlag) {
+                          next = 100;
+                          self.sunService.setAstVal(0);
+                          self.router.navigate(['/about']);
+                          aboutFlag = false;
+                        }
+                      } else {
+                        self.sunService.setAstVal(next);
+                      }
+                  }
+                  }
+              });
+        }
+
+        //mouse scrolling part
+        // let cou = 0;
+        // let gap =(animation_pos - origin_pos)/10;
+        // let smoothInterval = setInterval(()=> {
+        //     cou++;
+        //     //console.log(cou);
+        //     element.animate({
+        //         scrollLeft: '+='+gap+'px'
+        //     }, 
+        //     {
+        //         duration: 10,
+        //         easing: "swing"
+        //     });
+        //     if(cou>10) {
+        //         cou = 0;
+        //         clearInterval(smoothInterval);
+        //     }
+        // }, 1);
+        
+
+        event.preventDefault();
+        maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
+        left = element.scrollLeft();
+        if(maxScrollLeft == left) {
+            rightElem.fadeOut(200);
+        } else {
+            rightElem.fadeIn(200);
+           
+        }
+        if(left == 0) {
+            leftElem.fadeOut(200);
+            
+        } else {
+            leftElem.fadeIn(200);
+        }
+
+      });
     }
-    if(left == 0) {
-        leftElem.hide();
-    } else {
-        leftElem.show();
-    }
-    let curIndex = 0;
-    let nDownScrolling = 0;
-    let astFlag = true;
-    let aboutFlag = true;
-    let moveFlag = true;
-  	element.bind("wheel", function (event) {    
+    else {
+      // nor firefox 
+      var defaults = {
+        scrolling: true,
+        amount: false
+      };
+      var x,left,down,newX,oldX,maxScrollLeft,am,amX,amL,leftElem,rightElem,currx,itemsInner,element,elements;
+      var element = $(".g-scrolling-carousel .items-inner");
+      var amount = element.children(":first").outerWidth(true);
+        
+      leftElem = $('<span />').addClass('jc-left');
+      rightElem = $('<span />').addClass('jc-right');
+      element.parent().append(leftElem).append(rightElem);
+
+      maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
+      left = element.scrollLeft();
+      if(maxScrollLeft == left) {
+          rightElem.hide();
+      } else {
+          rightElem.show();
+      }
+      if(left == 0) {
+          leftElem.hide();
+      } else {
+          leftElem.show();
+      }
+      let curIndex = 0;
+      let nDownScrolling = 0;
+      let astFlag = true;
+      let aboutFlag = true;
+      let moveFlag = true;
+      element.bind("wheel", function (event) {    
         var oEvent = event.originalEvent, 
         direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
         position = element.scrollLeft();
@@ -322,31 +452,6 @@ export class AstInnerComponent implements OnInit {
                   }
               });
         }
-
-
-        
-        
-       
-        //mouse scrolling part
-        // let cou = 0;
-        // let gap =(animation_pos - origin_pos)/10;
-        // let smoothInterval = setInterval(()=> {
-        //     cou++;
-        //     //console.log(cou);
-        //     element.animate({
-        //         scrollLeft: '+='+gap+'px'
-        //     }, 
-        //     {
-        //         duration: 10,
-        //         easing: "swing"
-        //     });
-        //     if(cou>10) {
-        //         cou = 0;
-        //         clearInterval(smoothInterval);
-        //     }
-        // }, 1);
-        
-
         event.preventDefault();
         maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
         left = element.scrollLeft();
@@ -363,7 +468,8 @@ export class AstInnerComponent implements OnInit {
             leftElem.fadeIn(200);
         }
 
-    });
+      });
+    }
   }
 
   ngOnDestroy() {
