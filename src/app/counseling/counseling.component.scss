@@ -51,6 +51,7 @@
 .time-watch {
 	width: 20%;
 	height: 100%;
+
 }
 @media screen and (max-width: 600px) {
 	.detail, .pay-form, .time-watch {
@@ -59,10 +60,44 @@
 }
 
 @media screen and (min-width:601px) and (max-width:900px) {
+	.detail, {
+	  width: 100%;
+	  height: max-content;
+	}
+	 .pay-form, .time-watch {
+	 	width: 50%;
+	 	height: max-content;
+	 }
+	.detail-text  {
+		margin: 10% 8% 0 8% !important;
+		font-size: 20px;
+	}
 
 }
 
-// @media screen and (min-width:901px) and (max-width:1200px)
+@media screen and (min-width:901px) and (max-width:1200px) {
+	.detail, {
+	  width: 100%;
+	  height: max-content;
+	}
+	 .pay-form, .time-watch {
+	 	width: 50%;
+	 	height: max-content;
+	 }
+	.detail-text  {
+		margin: 10% 8% 0 8% !important;
+		font-size: 20px;
+	}
+	
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+	.detail-text  {
+		margin: 35% 8% 0 8% !important;
+		font-size: 20px;
+	}
+}
+
 // @media screen and (min-width:1201px) and (max-width:1900px)
 // @media screen and (min-width:1900px) and (max-width:2560px)
 // @media screen and (min-width:2560px)

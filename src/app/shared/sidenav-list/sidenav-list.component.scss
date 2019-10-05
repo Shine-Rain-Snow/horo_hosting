@@ -1,10 +1,11 @@
-
+.sidenav-font {
+    font-family: Oswald; 
+}
 .nav-list {
     width: 100%;
     height: 100%;  
     position: absolute;   
     z-index: 100; 
-    font-family: Oswald; 
 }
 
 a {
@@ -85,56 +86,131 @@ mat-nav-list span {
 
 @media screen and (max-width: 600px) {
 
+    .sidenav-font {
+        font-family: Oswald; 
+    }
     .nav-caption{
         font-size: 16px;
+        font-family: Oswald; 
     }
-
     .close-menu {
-        position: absolute;
-        top: 7%;
-        right: 13%;
-        color: white;
-        z-index: 110;
         font-size: 16px;
-        cursor: pointer;
-        font-family: Oswald;
+        font-family: Oswald; 
     }
-
     .num {
-        color: white;
         font-size: 12px !important;
-        padding-right: 2%;
         width: 16px;
-        margin-right: 3%;
     }
-
-
     .press {
-        color: white;
-        font-size: 16px !important;
-        margin-right: 10%;
-        margin-left: 10%;
-        margin-top: 6%;
+        font-size: 16px !important
     }
 
     .books {
-        color: white;
         font-size: 16px !important;
-        margin-top: 6%;
-        margin-left: 14%;
     }
 
     .dash {
         width:40%; border: 1px solid white;
         position: relative;
-       transform: translate(-30px, 13px);
+        transform: translate(-30px, 13px);
     }
 
     
 }
 
-// @media screen and (min-width:601px) and (max-width:900px)
-// @media screen and (min-width:901px) and (max-width:1200px)
-// @media screen and (min-width:1201px) and (max-width:1900px)
+@media screen and (min-width:601px) and (max-width:900px) {
+    .sidenav-font {
+        font-family: Oswald; 
+    }
+    .nav-caption{
+        font-size: 20px !important;
+        font-family: Oswald; 
+    }
+    .close-menu {
+        font-size: 16px !important;
+        font-family: Oswald; 
+    }
+    .num {
+        font-size: 16px !important;
+        width: 20px;
+    }
+    .press {
+        font-size: 16px !important
+    }
+
+    .books {
+        font-size: 16px !important;
+    }
+
+    .dash {
+        width:40%; border: 1px solid white;
+        position: relative;
+        transform: translate(-30px, 17px);
+    }
+}
+
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+    .sidenav-font {
+        font-family: Oswald; 
+    }
+    .nav-caption{
+        font-size: 24px !important;
+        font-family: Oswald; 
+    }
+    .close-menu {
+        font-size: 20px !important;
+        font-family: Oswald; 
+    }
+    .num {
+        font-size: 20px !important;
+        width: 24px;
+    }
+    .press {
+        font-size: 20px !important
+    }
+
+    .books {
+        font-size: 20px !important;
+    }
+
+    .dash {
+        width:40%; border: 1px solid white;
+        position: relative;
+        transform: translate(-30px, 17px);
+    }
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+    .sidenav-font {
+        font-family: Oswald; 
+    }
+    .nav-caption{
+        font-size: 30px !important;
+        font-family: Oswald; 
+    }
+    .close-menu {
+        font-size: 26px !important;
+        font-family: Oswald; 
+    }
+    .num {
+        font-size: 26px !important;
+        width: 24px;
+    }
+    .press {
+        font-size: 26px !important
+    }
+
+    .books {
+        font-size: 26px !important;
+    }
+
+    .dash {
+        width:40%; border: 1px solid white;
+        position: relative;
+        transform: translate(-30px, 22px);
+    }
+}
+
 // @media screen and (min-width:1900px) and (max-width:2560px)
 // @media screen and (min-width:2560px)

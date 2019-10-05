@@ -61,8 +61,18 @@ mat-toolbar{
     }
 }
 
-// @media screen and (min-width:601px) and (max-width:900px)
-// @media screen and (min-width:901px) and (max-width:1200px)
+@media screen and (min-width:601px) and (max-width:900px) {
+    .menu {
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+    .menu {
+        font-size: 20px;
+    }
+}
+
 // @media screen and (min-width:1201px) and (max-width:1900px)
 // @media screen and (min-width:1900px) and (max-width:2560px)
 // @media screen and (min-width:2560px)

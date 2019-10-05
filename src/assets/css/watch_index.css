@@ -26,3 +26,37 @@
     margin:0 auto;
     margin-top: 10%;
 }
+
+@media screen and (min-width:601px) and (max-width:900px) {
+    #bangkok_time{
+      margin-top: 30%;
+    }
+    #bangkok_time, #newyork_time, #mumbai_time, #dubai_time{
+     width:40%;
+    }
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+   #bangkok_time{
+    margin-top: 10%;
+   }
+   #bangkok_time, #newyork_time, #mumbai_time, #dubai_time{
+    width:40%;
+   }
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+   #bangkok_time{
+    margin-top: 70% !important;
+   }
+   #bangkok_time, #newyork_time, #mumbai_time, #dubai_time{
+    width:50%;
+   }
+}
+
+/*    @media screen and (max-width: 600px)
+// @media screen and (min-width:601px) and (max-width:900px)
+// @media screen and (min-width:901px) and (max-width:1200px)
+// @media screen and (min-width:1201px) and (max-width:1900px)
+// @media screen and (min-width:1900px) and (max-width:2560px)
+// @media screen and (min-width:2560px)*/
