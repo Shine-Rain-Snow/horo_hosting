@@ -242,9 +242,212 @@ img {
 	.bottom_middle {
 	
 		width: 20%;
+		//background: pink;
+		z-index: 10;
+
+	}
+
+	// .next_circle {
+
+	// 	position: relative;
+	// 	width: 20vh;
+	// 	height: 20vh;
+	// 	//background-color: #8fac67;
+	// 	border-radius: 50%;
+	// 	z-index: 15;
+	// 	top: 50%;
+	// 	left: 50%;
+	// 	border: 2px solid white;
+	// 	transform: translate(-50%, -50%);
+	// 	cursor: pointer;
+	// 	span {
+	// 		position: relative;
+	// 		top:  45%;
+	// 		z-index: 25;
+	// 	}
+	// }
+
+	// .cir_shape {
+	  
+	//   top: 50%;
+	//   left: 50%;
+	//   transform: translate(-50%, -50%);
+	//   //background: green;
+	//   border: 2px solid white;
+	//   box-sizing: border-box;
+	//   //margin: 1em;
+	//   //padding: 1em 2em;
+	  
+	//   // Using inset box-shadow instead of border for sizing simplicity
+	//   box-shadow: inset 0 0 0 2px black;
+	//   color: black;
+	//   font-size: inherit;
+	//   font-weight: 700;
+
+	//   // Required, since we're setting absolute on pseudo-elements
+	//   position: relative;
+	//   vertical-align: middle;
 		
-		// background: yellow;
-	
+	//   &::before,
+	//   &::after {
+	//     box-sizing: inherit;
+	//     content: '';
+	//     position: absolute;
+	//     width: 100%;
+	//     height: 100%;
+	//   }
+
+	//   span {
+	//   	position: relative;
+	//   	top: 45%;
+	//   }
+	// }
+
+	// .circle {
+	//   border-radius: 100%;
+	//   box-shadow: none;
+	    
+	//   &::before,
+	//   &::after {
+	//     border-radius: 100%;
+	//   }
+	// }
+
+	// .spin {
+	//   width: 20vh;
+	//   height: 20vh;
+	//   padding: 0;
+	  
+	//   &:hover {
+	//     color: black;
+	//   }
+
+	//   &::before,
+	//   &::after {
+	//     top: 0;
+	//     left: 0;
+	//   }
+
+	//   &::before {
+	//     border: 2px solid transparent; // We're animating border-color again
+	//   }
+
+	//   &:hover::before {
+	//     border-top-color: black; // Show borders
+	//     border-right-color: black;
+	//     border-bottom-color: black;
+
+	//     transition:
+	//       border-top-color 0.15s linear, // Stagger border appearances
+	//       border-right-color 0.15s linear 0.10s,
+	//       border-bottom-color 0.15s linear 0.20s;
+	//   }
+
+	//   &::after {
+	//     border: 0 solid transparent; // Makes border thinner at the edges? I forgot what I was doing
+	//   }
+
+	//   &:hover::after {
+	//     border-top: 2px solid black; // Shows border
+	//     border-left-width: 2px; // Solid edges, invisible borders
+	//     border-right-width: 2px; // Solid edges, invisible borders
+	//     transform: rotate(135deg); // Rotate around circle
+	//     transition:
+	//       transform 0.4s linear 0s,
+	//       border-left-width 0s linear 0.35s; // Solid edge post-rotation
+	//   }
+	// }
+
+	.hidden_circle {
+		position: relative;
+		width: 19.5vh;
+		height: 19.5vh;
+		background-color: #E9F4F1;
+		border-radius: 50%;
+		z-index: 25;
+		top: 50%;
+		left: 50%;
+		//border: 2px solid white;
+		transform: translate(-50%, -50%);
+	}
+
+	.next_circle {
+
+			position: relative;
+			width: 20vh;
+			height: 20vh;
+			//background-color: #8fac67;
+			//border-radius: 50%;
+			z-index: 15;
+			top: 50%;
+			left: 50%;
+			//border: 2px solid white;
+			transform: translate(-50%, -50%);
+			cursor: pointer;
+			span {
+				position: relative;
+				top:  45%;
+				z-index: 30;
+			}
+	}
+
+	.quarter-circle-top-left{
+		position: absolute;
+    	width: 10vh;
+    	height: 10vh;
+    	//border: 2px solid black;
+    	background: black;
+    	top: 0;
+    	left: 0;
+	    border-radius: 10vh 0 0 0;
+	    -moz-border-radius: 10vh 0 0 0;
+	    -webkit-border-radius: 10vh 0 0 0;
+	    visibility: hidden;
+	    z-index: 20;
+	}
+	.quarter-circle-top-right{
+	    position: absolute;
+    	width: 10vh;
+    	height: 10vh;
+    	//border: 2px solid black;
+    	background: black;
+    	top: 0;
+    	right: 0;
+	    border-radius: 0 10vh 0 0;
+	    -moz-border-radius: 0 10vh 0 0;
+	    -webkit-border-radius: 0 10vh 0 0;
+	    visibility: hidden;
+	    z-index: 20;
+	}
+	.quarter-circle-bottom-left{
+	    position: absolute;
+    	width: 10vh;
+    	height: 10vh;
+    	//border: 2px solid black;
+    	//border-left: 2px solid yellow;
+    	background: black;
+    	bottom: 0;
+    	left: 0;
+	    border-radius: 0 0 0 10vh;
+	    -moz-border-radius: 0 0 0 10vh;
+	    -webkit-border-radius: 0 0 0 10vh;
+	    visibility: hidden;
+	    z-index: 20;
+	}
+	.quarter-circle-bottom-right{
+	     	position: absolute;
+	    	width: 10vh;
+	    	height: 10vh;
+	    	//border: 2px solid black;
+    		//border-right: 2px solid green;
+    		background: black;
+	    	bottom: 0;
+	    	right: 0;
+		    border-radius: 0 0 10vh 0;
+		    -moz-border-radius: 0 0 10vh 0;
+		    -webkit-border-radius: 0 0 10vh 0;
+		    visibility: hidden;
+		    z-index: 20;
 	}
 
 	.bottom_right {
@@ -319,6 +522,7 @@ img {
 	transform: translate(-50%, -50%);
 	cursor: pointer;
 	z-index: 30;
+	outline: none !important;
 }
 
 .dash {

@@ -1,3 +1,10 @@
+.books-dream-container {
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
 .books-dream {
 	width: 100%;
 	height: 100%;
@@ -14,8 +21,8 @@
 .dream {
 	position: absolute;
 	top: 16%;
-	left: 45%;
-	width: 60%;
+	left: 60%;
+	width: 26%;
 	height: 80%;
 	z-index: 10;
 	cursor: pointer;
@@ -24,6 +31,7 @@
 		height: 100%;
 		
 	}
+	outline: none !important;
 }
 
 .book_detail {
@@ -37,5 +45,17 @@
 	height: 30%;
 	a {
 		color: white;
+		font-size: 20px;
 	}
+}
+
+.img-hover-zoom-books .zoom-out-books {
+  transform-origin: 50% 50%;
+  transition: transform 10s, filter 0s ease-in-out;
+  transform: scale(1.3);
+}
+
+/* The Transformation */
+.img-hover-zoom-books:hover .zoom-out-books {                                                                                                     
+  transform: scale(1);
 }

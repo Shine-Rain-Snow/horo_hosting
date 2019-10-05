@@ -366,7 +366,7 @@ export class AstInnerComponent implements OnInit {
       });
     }
     else {
-      // nor firefox 
+      // not firefox 
       var defaults = {
         scrolling: true,
         amount: false
@@ -396,6 +396,8 @@ export class AstInnerComponent implements OnInit {
       let astFlag = true;
       let aboutFlag = true;
       let moveFlag = true;
+      let circleFlag = false;
+      let circleUpDown = 0;
       element.bind("wheel", function (event) {    
         var oEvent = event.originalEvent, 
         direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
@@ -406,7 +408,7 @@ export class AstInnerComponent implements OnInit {
         //element.scrollLeft(position);
 
         
-        if(moveFlag) {
+        if(moveFlag && !circleFlag) {
           moveFlag = false;
           element.animate({
             scrollLeft: position+'px'
@@ -416,9 +418,10 @@ export class AstInnerComponent implements OnInit {
               easing: "swing",
               complete: function() {
                 moveFlag = true;
+
                 if(event.originalEvent.deltaY < 0) {
-            //scroll down
-                next -= 10;    
+                  //scroll down
+                  next -= 10;    
                 
                   if(next < 40) {
                     
@@ -432,25 +435,72 @@ export class AstInnerComponent implements OnInit {
                   } else {
                     self.sunService.setAstVal(next);
                   }
-                  }
-                  
-                  if(event.originalEvent.deltaY > 0) {
-                      //scroll up
-                      next += 10;
-                       
-                      if(next > 100) {
-                        if (aboutFlag) {
-                          next = 100;
-                          self.sunService.setAstVal(0);
-                          self.router.navigate(['/about']);
-                          aboutFlag = false;
-                        }
-                      } else {
-                        self.sunService.setAstVal(next);
+                }
+                
+                if(event.originalEvent.deltaY > 0) {
+                    //scroll up
+                    next += 10;
+                     
+                    if(next > 100) {
+                      next = 100;
+                      if (aboutFlag) {
+                        next = 100;
+                        self.sunService.setAstVal(100);
+                        //self.router.navigate(['/about']);
+                        aboutFlag = false;
                       }
-                  }
-                  }
-              });
+                    } else {
+                      self.sunService.setAstVal(next);
+                    }
+                }
+                console.log("current console"+next);
+                if(next > 90) {
+                  circleFlag = true;  
+                  console.log("work circle");
+                }
+              }
+          });
+        }
+        // circle next effecting
+        if(circleFlag) {
+          
+          if(event.originalEvent.deltaY < 0) {
+            circleUpDown--;
+            console.log("down="+circleUpDown);
+            if(circleUpDown < 0) {
+              circleFlag = false;
+              circleUpDown = 0;
+            } else if(circleUpDown == 0) {
+              $(".quarter-circle-top-right").css({visibility: "hidden"}, 100);
+            } else if(circleUpDown == 1) {
+              $(".quarter-circle-bottom-right").css({visibility: "hidden"}, 100);
+            } else if(circleUpDown == 2) {
+              $(".quarter-circle-bottom-left").css({visibility: "hidden"}, 100);
+            } else if(circleUpDown == 3) {
+              $(".quarter-circle-top-left").css({visibility: "hidden"}, 100);
+            }
+          }
+          if(event.originalEvent.deltaY > 0) {
+            circleUpDown++;
+            console.log("up="+circleUpDown);
+            if(circleUpDown > 4) {
+              next = 100;
+              self.sunService.setAstVal(100);
+              self.router.navigate(['/about']);
+              aboutFlag = false;
+              circleUpDown = 0;
+            } else if(circleUpDown == 1) {
+              $(".quarter-circle-top-right").css({visibility: "visible"}, 100);
+            } else if(circleUpDown == 2) {
+              $(".quarter-circle-bottom-right").css({visibility: "visible"}, 100);
+            } else if(circleUpDown == 3) {
+              $(".quarter-circle-bottom-left").css({visibility: "visible"}, 100);
+            } else if(circleUpDown == 4) {
+              $(".quarter-circle-top-left").css({visibility: "visible"}, 100);
+            }
+          }  
+          
+
         }
         event.preventDefault();
         maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;

@@ -1,20 +1,22 @@
-<div class="books-dream">
-	<div *ngIf="booksImgFlag; then thenBlock else elseBlock"></div>
-        <ng-template #thenBlock><img src="../../../assets/img/books/books3.png" /></ng-template>
-        <ng-template #elseBlock><img [attr.src]="getBooksImagePath3()" /></ng-template>
-	
-	<div class="dream" routerLink="/books" >
-		<div *ngIf="booksImgFlag; then thenBlock1 else elseBlock1"></div>
-        <ng-template #thenBlock1><img src="../../../assets/img/books/books4.png" /></ng-template>
-        <ng-template #elseBlock1><img [attr.src]="getBooksImagePath4()" /></ng-template>
-	</div>
-	<div class="book_detail">
-		<p>
-			DREAMS, is an insightful book that will unfold the mysteries of this ever-so intriguing concept, like never before. The book is an insight to the unconscious mind, as well as an exclusive, educative and fun reference guide that will tell us everything we need to understand about our dreams and our innermost self.
-			<br /><br />
-			<a href="https://www.amazon.com/Dreams-Interpretations-Secrets-ofer-cohen/dp/1491294086" target="_blank">Buy the book : https://www.amazon.com/Dreams-Interpretations-Secrets-ofer-cohen/dp/1491294086</a>
+<div class="books-dream-container">
+	<div class="books-dream img-hover-zoom-books">
+		<div *ngIf="booksImgFlag; then thenBlock else elseBlock"></div>
+	        <ng-template #thenBlock><img class="zoom-out-books" src="../../../assets/img/books/books3.png" /></ng-template>
+	        <ng-template #elseBlock><img class="zoom-out-books" [attr.src]="getBooksImagePath3()" /></ng-template>
+		
+		<div class="dream" routerLink="/books" >
+			<div *ngIf="booksImgFlag; then thenBlock1 else elseBlock1"></div>
+	        <ng-template #thenBlock1><img src="../../../assets/img/books/books4.png" /></ng-template>
+	        <ng-template #elseBlock1><img [attr.src]="getBooksImagePath4()" /></ng-template>
+		</div>
+		<div class="book_detail">
+			<p>
+				DREAMS, is an insightful book that will unfold the mysteries of this ever-so intriguing concept, like never before. The book is an insight to the unconscious mind, as well as an exclusive, educative and fun reference guide that will tell us everything we need to understand about our dreams and our innermost self.
+				<br /><br />
+				<a href="https://www.amazon.com/Dreams-Interpretations-Secrets-ofer-cohen/dp/1491294086" target="_blank">Buy the book : https://www.amazon.com/Dreams-Interpretations-Secrets-ofer-cohen/dp/1491294086</a>
 
-		</p>
-	</div>
+			</p>
+		</div>
 
+	</div>
 </div>
