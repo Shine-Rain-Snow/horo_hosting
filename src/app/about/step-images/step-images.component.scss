@@ -21,7 +21,7 @@
 }
 
 .step-images-container img {
-	width: 100%;
+	width: auto;
 	height: 100%;
 }
 
@@ -91,5 +91,29 @@
 @media screen and (max-width: 600px) {
 	.img-first-column, .img-second-column, .img-third-column {
 		width: 100%;
+	}
+}
+
+@media screen and (min-width:601px) and (max-width:900px) {
+	.img-first-column, .img-second-column, .img-third-column {
+		width: 100%;
+	}
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+	.img-second-column {
+		.img-4 {
+			height: 35%;
+		}
+	}
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+	.img-second-column {
+		.img-4 {
+			top: 40%;
+			width: 90%;
+			height: 35%;
+		}
 	}
 }

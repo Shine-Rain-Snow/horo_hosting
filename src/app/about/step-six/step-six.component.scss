@@ -14,7 +14,7 @@
     width: 50%;
     height: 96%;
     float: left;
-    //background: green;
+    background: #F4F4F7;
     img {
         position: absolute;
         top: 0%;
@@ -62,7 +62,7 @@
     width: 50%;
     height: 92%;
     float: right;
-    // background: red;
+    background: #F4F4F7;
     .right-side-top {
         width: 100%;
         height: 60%;
@@ -71,19 +71,17 @@
         // vertical-align:bottom;
         img {
             
-            position: absolute;
+            position: relative;
             top: 0%;
-            right: 0%;
-            width: 40%;
-            height: 55%;
-           
-          
+            left: 0%;
+            width: 100%;
+            height: 100%;
             transform: rotate(180deg);
         }
         .step_six3 {
             position: relative;
-            top: 85%;
-            left: 45%;
+            top: -20%;
+            left: 40%;
             width: 15%; 
             height: 30%;    
         }
