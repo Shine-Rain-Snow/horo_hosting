@@ -410,3 +410,191 @@ mat-video {
 	width:300px;
 	height: 300px;
 }
+
+@media screen and (max-width: 600px) {
+
+	.photo {
+		width: 100%;
+	}
+	.movies {
+		width: 80%;
+		left: 0%;
+		margin-top: 15%;
+
+	}
+
+	.intro_text {
+		width: 100%;
+		top: 30%;
+		left: 15%;
+	
+		.intro_text_title {
+			font-size: 60px;
+			line-height: 80px;
+		}
+
+		.intro_tex_content {
+			font-size: 18px;
+			padding-top: 20px;
+			white-space: normal;
+			padding-left: 0%;
+			margin-right: 80px;
+		}
+	}
+
+	.intro_detail {
+		width: 90%;
+		top: 30%;
+		left: 3%;
+	}
+
+	.intro_detail_text {
+		white-space: normal;
+		font-size: 16px;
+		position: relative;
+	    color: rgb(133, 127, 126);
+	}
+
+	.method-1 {
+		font-size: 20px;
+	}
+	
+}
+
+@media screen and (min-width:601px) and (max-width:900px) {
+	.photo {
+		width: 40%;
+	}
+	.movies {
+		width: 40%;
+		margin-top: 15%;
+	}
+
+	.intro_text {
+		width: 100%;
+		top: 30%;
+		left: 15%;
+	
+		.intro_text_title {
+			font-size: 60px;
+			line-height: 80px;
+		}
+
+		.intro_tex_content {
+			font-size: 18px;
+			padding-top: 20px;
+			white-space: normal;
+			padding-left: 0%;
+			margin-right: 50px;
+		}
+	}
+
+	.intro_detail {
+		width: 90%;
+		top: 35%;
+		left: 8%;
+	}
+
+	.intro_detail_text {
+		white-space: normal;
+		font-size: 16px;
+		position: relative;
+	    color: rgb(133, 127, 126);
+	}
+
+	.method-1 {
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+	.photo {
+		//width: 40%;
+	}
+	.movies {
+		//width: 40%;
+		margin-top: 10%;
+	}
+
+	.intro_text {
+		width: 100%;
+		top: 30%;
+		left: 15%;
+	
+		.intro_text_title {
+			font-size: 60px;
+			line-height: 80px;
+		}
+
+		.intro_tex_content {
+			font-size: 18px;
+			padding-top: 20px;
+			white-space: normal;
+			padding-left: 0%;
+			margin-right: 50px;
+		}
+	}
+
+	.intro_detail {
+		width: 90%;
+		top: 35%;
+		left: 8%;
+	}
+
+	.intro_detail_text {
+		white-space: normal;
+		font-size: 16px;
+		position: relative;
+	    color: rgb(133, 127, 126);
+	}
+
+	.method-1 {
+		font-size: 20px;
+	}
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+	.photo {
+		//width: 40%;
+	}
+	.movies {
+		//width: 40%;
+		margin-top: 10%;
+	}
+
+	.intro_text {
+		width: 100%;
+		top: 30%;
+		left: 15%;
+	
+		.intro_text_title {
+			font-size: 70px;
+			line-height: 80px;
+		}
+
+		.intro_tex_content {
+			font-size: 22px;
+			padding-top: 20px;
+			white-space: normal;
+			padding-left: 0%;
+			margin-right: 50px;
+		}
+	}
+
+	.intro_detail {
+		width: 90%;
+		top: 30%;
+		left: 8%;
+	}
+
+	.intro_detail_text {
+		white-space: normal;
+		font-size: 22px;
+		position: relative;
+	    color: rgb(133, 127, 126);
+	}
+
+	.method-1 {
+		font-size: 26px;
+	}
+}

@@ -273,3 +273,307 @@
 		width: 33%;
 	}
 }
+
+.contact_me_first {
+	float: left; margin-bottom: 20%;
+}
+
+@media screen and (max-width: 600px) {
+	.first_contact {
+		.first_detail { width: 100%; height: max-content; 
+			.first_detail_data {
+				width: 70%;
+				height: 70%;
+				position: relative;
+				top: 40%;
+				left: 25%;
+			}
+		}
+		.first_video { width: 100%; height: max-content;
+			.first_video_zone { 
+				top: 30%;
+			}
+		} 
+		.divide-line {
+			bottom: -18%;
+		}
+	}
+
+
+
+	.second_contact {
+		.second_detail { width: 100%; 
+			height: mex-content;
+			.second_detail_data {
+				left: 20%;
+			}
+		}
+		.second_video { width: 100%;
+			.second_video_zone {
+				top: 75%;
+    			left: 41%;
+			}
+		}
+	}
+
+	.third_contact { 
+		.third_detail { width: 100%;
+			height: inherit;
+			.third_detail_data {
+				left: 45%;
+			}	
+		}
+		.third_video { width: 100%; }
+	}
+
+	.social_icons {
+		margin-top: 0;
+	}
+
+	.contact_us {
+		font-size: 12px;
+		margin-bottom: 0%;
+	}
+
+	.country {
+		font-size: 30px; 
+		font-weight: bold;
+		margin-bottom: 10%;
+	}
+
+	.city {
+		font-size: 20px;
+	}
+
+	.tel {
+		font-size: 12px;
+	}
+
+	.email_us {
+		font-size: 16px;
+	}
+
+	.dash {
+		border-bottom: 1px solid black; 
+		width:40px; 
+		float:left; 
+		position: relative; 
+		margin: -6px 0 0 20px;
+	}
+}
+
+
+@media screen and (min-width:601px) and (max-width:900px) {
+	.first_contact {
+		.first_detail { width: 100%; height: max-content; 
+			.first_detail_data {
+				width: 70%;
+				height: 70%;
+				position: relative;
+				top: 40%;
+				left: 30%;
+			}
+		}
+		.first_video { width: 100%; height: max-content;
+			.first_video_zone { 
+				top: 50%;
+			}
+		} 
+		.divide-line {
+			bottom: -45%;
+		}
+	}
+
+	.contact_me_first {
+		margin: 5% 0;
+	}
+
+	.thai-dash {
+		padding-top: 27px;
+	}
+
+	.press-slim {
+		margin-top: 12%;
+	}
+
+	.second_contact {
+		.second_detail { width: 100%; 
+			height: mex-content;
+			.second_detail_data {
+				top: 81%;
+   				left: 17%;
+			}
+		}
+		.second_video { width: 100%;
+			.second_video_zone {
+				top: 105%;
+    			left: 41%;
+			}
+		}
+	}
+
+	.third_contact { 
+		.third_detail { width: 100%;
+			height: inherit;
+			.third_detail_data {
+				top: 90%;
+    			left: 42%;
+			}	
+		}
+		.third_video { width: 100%;
+			.third_video_zone {
+				top: 80%;
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	.social_icons {
+		margin-top: 0;
+	}
+
+	.contact_us {
+		font-size: 12px;
+		margin-bottom: 0%;
+	}
+
+	.country {
+		font-size: 30px; 
+		font-weight: bold;
+		margin-bottom: 10%;
+	}
+
+	.city {
+		font-size: 20px;
+	}
+
+	.tel {
+		font-size: 12px;
+	}
+
+	.email_us {
+		font-size: 16px;
+	}
+
+	.dash {
+		border-bottom: 1px solid black; 
+		width:40px; 
+		float:left; 
+		position: relative; 
+		margin: -8px 0 0 20px;
+	}
+}
+@media screen and (min-width:901px) and (max-width:1200px) {
+
+	.first_contact {
+		.first_detail { 
+			.first_detail_data {
+				left: 30%;
+			}
+		}
+		
+		
+	}
+	.social_icons {
+		margin-top: 0;
+	}
+
+	.contact_us {
+		font-size: 12px;
+		margin-bottom: 0%;
+	}
+
+	.country {
+		font-size: 40px; 
+		font-weight: bold;
+		margin-bottom: 10%;
+	}
+
+	.city {
+		font-size: 24px;
+	}
+
+	.tel {
+		font-size: 16px;
+	}
+
+	.email_us {
+		font-size: 16px;
+	}
+
+	.middle-dash {
+		text-align: center;
+		width: 30%;
+		margin: 0 5%;
+		cursor: pointer;
+		p {
+			position: relative;
+			top: -35%;
+			color: red; 
+			font-size: 20px
+		}
+		
+	}
+
+	.social_icons {
+		
+		font-size: 14px;
+		
+	}
+
+	.dash {
+		border-bottom: 1px solid black; 
+		width:40px; 
+		margin: -7px 0 0 20px;
+	}
+}
+@media screen and (min-width:1201px) and (max-width:1900px) {
+	.first_contact {
+		.first_detail { 
+			.first_detail_data {
+				left: 33%;
+				top: 44%;
+			}
+		}
+		
+		
+	}
+	.social_icons {
+		margin-top: 0;
+	}
+
+	.contact_us {
+		font-size: 14px;
+		margin-bottom: 0%;
+	}
+
+	.country {
+		font-size: 40px; 
+		font-weight: bold;
+		margin-bottom: 10%;
+	}
+
+	.city {
+		font-size: 24px;
+	}
+
+	.tel {
+		font-size: 16px;
+	}
+
+	.email_us {
+		font-size: 16px;
+	}
+	.middle-dash {
+		margin: 0 10%;
+		p {
+			font-size: 18px
+		}
+	}
+
+	.dash {
+		margin: -4px 0 0 20px;
+	}
+}
+// @media screen and (min-width:1900px) and (max-width:2560px)
+// @media screen and (min-width:2560px)

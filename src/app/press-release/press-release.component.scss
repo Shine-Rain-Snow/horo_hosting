@@ -90,3 +90,145 @@
     }
 }
 
+
+
+@media screen and (max-width: 600px) {
+    .article_titles {
+        .press_title {
+            font-size: 100px;
+        }
+        .article_container {
+            width: 100%;
+            font-size: 14px;
+            top: 50%;
+            
+        }
+    }
+
+    .image_display {
+        .image_hover {
+            .img_zone {
+                width: 50%;
+                height: 50%;
+                img {
+                    width: auto;
+                    height: 60%;
+                }
+            }
+        }
+        
+    }
+    
+}
+
+@media screen and (min-width:601px) and (max-width:900px) {
+    .article_titles {
+        .press_title {
+            font-size: 180px;
+        }
+        .article_container {
+            width: 100%;
+            font-size: 14px;
+            top: 60%;
+            
+        }
+    }
+
+    .image_display {
+        .image_hover {
+            .img_zone {
+                width: 70%;
+                height: 70%;
+                img {
+                    width: auto;
+                    height: 80%;
+                }
+            }
+        }
+        
+    }
+}
+@media screen and (min-width:901px) and (max-width:1200px) {
+    .article_titles {
+        .press_title {
+            font-size: 240px;
+        }
+        .article_container {
+            width: 100%;
+            font-size: 16px;
+            top: 65%;
+            
+        }
+    }
+
+    .image_display {
+        .image_hover {
+            .img_zone {
+                width: 90%;
+                height: 90%;
+                img {
+                    width: auto;
+                    height: 80%;
+                }
+            }
+        }
+        
+    }
+}
+@media screen and (min-width:1201px) and (max-width:1900px) {
+    .article_titles {
+        .press_title {
+            font-size: 300px;
+            top: 16%;
+        }
+        .article_container {
+            width: 90%;
+            font-size: 18px;
+            top: 65%;
+            
+        }
+    }
+
+    .image_display {
+        .image_hover {
+            .img_zone {
+                width: 80%;
+                height: 80%;
+                img {
+                    width: auto;
+                    height: 80%;
+                }
+            }
+        }
+        
+    }
+}
+@media screen and (min-width:1900px) and (max-width:2560px) {
+    .article_titles {
+        .press_title {
+            font-size: 400px;
+            top: 16%;
+        }
+        .article_container {
+            width: 80%;
+            font-size: 18px;
+            top: 70%;
+            
+        }
+    }
+
+    .image_display {
+        .image_hover {
+            .img_zone {
+                width: 80%;
+                height: 80%;
+                img {
+                    width: auto;
+                    height: 80%;
+                }
+            }
+        }
+        
+    }
+}
+// @media screen and (min-width:2560px)

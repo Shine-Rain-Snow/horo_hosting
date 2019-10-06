@@ -11,7 +11,8 @@ const routes: Routes = [
 	},
 	{
 		path: 'books-dream',
-		component:BooksDreamComponent
+		component:BooksDreamComponent,
+		data: { state: 'books-dream' }
 	}
 ];
 

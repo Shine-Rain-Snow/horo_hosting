@@ -34,7 +34,7 @@ export class StepImagesComponent implements OnInit {
     $(".step-images").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 2;
+        this.next += 1;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 70) {
           this.sunService.setAboutVal(70);
@@ -46,7 +46,7 @@ export class StepImagesComponent implements OnInit {
         } 
       } else {
         //scroll up
-        this.next -= 2;
+        this.next -= 1;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 60) {
           this.next = 0;

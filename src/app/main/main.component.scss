@@ -10,7 +10,7 @@
 // 244, 135, 42
 .loading {
 	font-weight: bold;
-	font-size: 100px;
+	//font-size: 100px;
 	position: absolute;
 	color: rgb(230, 231, 233);
 	top: 50%;
@@ -63,4 +63,9 @@
 	display: inline-block;
 }
 
+@media screen and (max-width: 600px) {
+  .method-1 {
+    font-size: 30px;
+  }
+}
 

@@ -36,7 +36,7 @@ export class StepOneComponent implements OnInit {
     $(".step-one").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 2;
+        this.next += 1.5;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 40) {
           this.sunService.setAboutVal(40);

@@ -534,5 +534,177 @@ img {
 }
 
 @media screen and (max-width: 600px) {
+	.ast-inner-container {
+		padding-top: 40px;
+	}
+
+	.ast-inner-title {
+		font-size: 12px;
+		// visibility: hidden;
+	}
+	.sunsign_text {
+		.left_text {
+			font-size: 14px;
+			.left_text_career, .left_text_love {
+				font-size: 14px;
+			}
+		}
+		.right_text {
+			font-size: 14px;
+			.right_text_career, .right_text_love {
+				font-size: 14px;
+			}
+		}
+		
+	}
+	.sunsign_title {
+		font-size: 14px;
+	}
+
 	
-  }
+	.sunsign_img {
+		.bottom_left { 
+			.left_img {
+				.icon_img {
+					img {
+						width: 30px !important;
+						height: 30px !important;
+						bottom: 0%;
+						left: -200%;
+	    				transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+		.bottom_right {
+			.right_img {
+				.icon_img {
+					img {
+						width: 30px !important;
+						height: 30px !important;
+						bottom: 0%;
+						left: -200%;
+						transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+	}
+
+	.dash {
+		width:30px; 
+		float:left; 
+		position: relative; 
+		margin: 18px 0 0 10px;
+	}
+	
+}
+
+
+@media screen and (min-width:601px) and (max-width:900px) {
+	.ast-inner-title {
+		font-size: 12px;
+		top: 3%;
+		transform: translate(-50%, -20%);
+	}
+	.sunsign_img {
+		.bottom_left { 
+			.left_img {
+				.icon_img {
+					img {
+						width: 30px !important;
+						height: 30px !important;
+						bottom: 0%;
+						left: -100%;
+	    				transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+		.bottom_right {
+			.right_img {
+				.icon_img {
+					img {
+						width: 30px !important;
+						height: 30px !important;
+						bottom: 0%;
+						left: -100%;
+						transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+	}
+}
+@media screen and (min-width:901px) and (max-width:1200px) {
+	.sunsign_img {
+		.bottom_left { 
+			.left_img {
+				.icon_img {
+					img {
+						width: 50px !important;
+						height: 50px !important;
+						bottom: 0%;
+						left: -100%;
+	    				transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+		.bottom_right {
+			.right_img {
+				.icon_img {
+					img {
+						width: 50px !important;
+						height: 50px !important;
+						bottom: 0%;
+						left: -100%;
+						transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+	.sunsign_img {
+		.bottom_left { 
+			.left_img {
+				.icon_img {
+					img {
+						width: 50px !important;
+						height: 50px !important;
+						bottom: 0%;
+						left: -100%;
+	    				transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+		.bottom_right {
+			.right_img {
+				.icon_img {
+					img {
+						width: 50px !important;
+						height: 50px !important;
+						bottom: 0%;
+						left: -100%;
+						transform: translate(-100%, 100%);
+					}
+				}
+			}
+			
+		}
+	}
+}
+
+// @media screen and (min-width:1900px) and (max-width:2560px)
+// @media screen and (min-width:2560px)

@@ -43,3 +43,39 @@
   //filter: brightness(100%);
   transform: scale(1);
 }
+
+
+@media screen and (max-width: 600px) {
+  .about-title {
+    font-size: 50px;
+    top: 50%;
+  }
+}
+
+@media screen and (min-width:601px) and (max-width:900px) {
+  .about-title {
+    font-size: 60px;
+    top: 50%;
+  }
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+  .about-title {
+    font-size: 70px;
+    top: 50%;
+  }
+}
+
+@media screen and (min-width:1201px) and (max-width:1900px) {
+  .about-title {
+    font-size: 80px;
+    top: 50%;
+  }
+}
+
+@media screen and (min-width:1900px) and (max-width:2560px) {
+	.about-title {
+	    font-size: 100px;
+	    top: 50%;
+	}
+}
