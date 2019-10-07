@@ -409,6 +409,7 @@ export class AstInnerComponent implements OnInit {
 
         
         if(moveFlag && !circleFlag) {
+          $(".hidden_circle").css({visibility: "hidden"});
           moveFlag = false;
           element.animate({
             scrollLeft: position+'px'
@@ -463,7 +464,7 @@ export class AstInnerComponent implements OnInit {
         }
         // circle next effecting
         if(circleFlag) {
-          
+          $(".hidden_circle").css({visibility: "visible"});
           if(event.originalEvent.deltaY < 0) {
             circleUpDown--;
             console.log("down="+circleUpDown);
@@ -471,6 +472,7 @@ export class AstInnerComponent implements OnInit {
               circleFlag = false;
               circleUpDown = 0;
             } else if(circleUpDown == 0) {
+              $(".next_circle span").css({visibility: "hidden"});
               $(".quarter-circle-top-right").css({visibility: "hidden"}, 100);
             } else if(circleUpDown == 1) {
               $(".quarter-circle-bottom-right").css({visibility: "hidden"}, 100);
@@ -484,12 +486,15 @@ export class AstInnerComponent implements OnInit {
             circleUpDown++;
             console.log("up="+circleUpDown);
             if(circleUpDown > 4) {
+
               next = 100;
+              $(".next_circle>div").css({visibility:"hidden"});
               self.sunService.setAstVal(100);
               self.router.navigate(['/about']);
               aboutFlag = false;
-              circleUpDown = 0;
+              // circleUpDown = 0;
             } else if(circleUpDown == 1) {
+              $(".next_circle span").css({visibility: "visible"});
               $(".quarter-circle-top-right").css({visibility: "visible"}, 100);
             } else if(circleUpDown == 2) {
               $(".quarter-circle-bottom-right").css({visibility: "visible"}, 100);

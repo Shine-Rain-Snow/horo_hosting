@@ -22,7 +22,8 @@ export class StepTwoComponent implements OnInit {
     this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(4);
     this.sunService.setAboutVal(40);
-
+    $("#backgroundvid")[0].play();
+    $("#backgroundvid")[0].muted = true;
     this.next = 40;
     let oneFlag = true;
     $(".step-two").bind("wheel", (event) => {  

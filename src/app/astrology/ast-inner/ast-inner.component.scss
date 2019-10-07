@@ -358,97 +358,7 @@ img {
 	//   }
 	// }
 
-	.hidden_circle {
-		position: relative;
-		width: 19.5vh;
-		height: 19.5vh;
-		background-color: #E9F4F1;
-		border-radius: 50%;
-		z-index: 25;
-		top: 50%;
-		left: 50%;
-		//border: 2px solid white;
-		transform: translate(-50%, -50%);
-	}
-
-	.next_circle {
-
-			position: relative;
-			width: 20vh;
-			height: 20vh;
-			//background-color: #8fac67;
-			//border-radius: 50%;
-			z-index: 15;
-			top: 50%;
-			left: 50%;
-			//border: 2px solid white;
-			transform: translate(-50%, -50%);
-			cursor: pointer;
-			span {
-				position: relative;
-				top:  45%;
-				z-index: 30;
-			}
-	}
-
-	.quarter-circle-top-left{
-		position: absolute;
-    	width: 10vh;
-    	height: 10vh;
-    	//border: 2px solid black;
-    	background: black;
-    	top: 0;
-    	left: 0;
-	    border-radius: 10vh 0 0 0;
-	    -moz-border-radius: 10vh 0 0 0;
-	    -webkit-border-radius: 10vh 0 0 0;
-	    visibility: hidden;
-	    z-index: 20;
-	}
-	.quarter-circle-top-right{
-	    position: absolute;
-    	width: 10vh;
-    	height: 10vh;
-    	//border: 2px solid black;
-    	background: black;
-    	top: 0;
-    	right: 0;
-	    border-radius: 0 10vh 0 0;
-	    -moz-border-radius: 0 10vh 0 0;
-	    -webkit-border-radius: 0 10vh 0 0;
-	    visibility: hidden;
-	    z-index: 20;
-	}
-	.quarter-circle-bottom-left{
-	    position: absolute;
-    	width: 10vh;
-    	height: 10vh;
-    	//border: 2px solid black;
-    	//border-left: 2px solid yellow;
-    	background: black;
-    	bottom: 0;
-    	left: 0;
-	    border-radius: 0 0 0 10vh;
-	    -moz-border-radius: 0 0 0 10vh;
-	    -webkit-border-radius: 0 0 0 10vh;
-	    visibility: hidden;
-	    z-index: 20;
-	}
-	.quarter-circle-bottom-right{
-	     	position: absolute;
-	    	width: 10vh;
-	    	height: 10vh;
-	    	//border: 2px solid black;
-    		//border-right: 2px solid green;
-    		background: black;
-	    	bottom: 0;
-	    	right: 0;
-		    border-radius: 0 0 10vh 0;
-		    -moz-border-radius: 0 0 10vh 0;
-		    -webkit-border-radius: 0 0 10vh 0;
-		    visibility: hidden;
-		    z-index: 20;
-	}
+	
 
 	.bottom_right {
 		width: 30%;
@@ -511,6 +421,107 @@ img {
 	}
 
 }
+
+.hidden_circle {
+	position: relative;
+	width: 3.7vw;
+	height: 3.7vw;
+	background-color: #E9F4F1;
+	//background-color: red;
+	border-radius: 50%;
+	z-index: 25;
+	top: 50%;
+	left: 50%;
+	//border: 2px solid white;
+	transform: translate(-50%, -50%);
+	visibility: hidden;
+}
+
+.next_circle {
+
+		position: absolute;
+		width: 4vw;
+		height: 4vw;
+
+		//background-color: yellow;
+		//border-radius: 50%;
+		z-index: 15;
+		top: 42%;
+		right: 3%;
+		//border: 2px solid white;
+		// transform: translate(-50%, -50%);
+		cursor: pointer;
+		span {
+			position: relative;
+			top: 35%;
+    		left: 30%;
+			z-index: 30;
+ 			visibility: hidden;
+		}
+		
+}
+
+.quarter-circle-top-left{
+	position: inherit;
+	width: 2vw;
+	height: 2vw;
+	border-top: 2px solid black;
+	border-left: 2px solid black;
+	//background: black;
+	top: 0;
+	left: 0;
+    border-radius: 2vw 0 0 0;
+    -moz-border-radius: 2vw 0 0 0;
+    -webkit-border-radius: 2vw 0 0 0;
+    visibility: hidden;
+    z-index: 20;
+}
+.quarter-circle-top-right{
+    position: inherit;
+	width: 2vw;
+	height: 2vw;
+	border-top: 2px solid black;
+	border-right: 2px solid black;
+	//background: black;
+	top: 0;
+	right: 0;
+    border-radius: 0 2vw 0 0;
+    -moz-border-radius: 0 2vw 0 0;
+    -webkit-border-radius: 0 2vw 0 0;
+    visibility: hidden;
+    z-index: 20;
+}
+.quarter-circle-bottom-left{
+    position: inherit;
+	width: 2vw;
+	height: 2vw;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	//background: black;
+	bottom: 0;
+	left: 0;
+    border-radius: 0 0 0 2vw;
+    -moz-border-radius: 0 0 0 2vw;
+    -webkit-border-radius: 0 0 0 2vw;
+    visibility: hidden;
+    z-index: 20;
+}
+.quarter-circle-bottom-right{
+     	position: inherit;
+    	width: 2vw;
+    	height: 2vw;
+    	border-bottom: 2px solid black;
+		border-right: 2px solid black;
+		//background: black;
+    	bottom: 0;
+    	right: 0;
+	    border-radius: 0 0 2vw 0;
+	    -moz-border-radius: 0 0 2vw 0;
+	    -webkit-border-radius: 0 0 2vw 0;
+	    visibility: hidden;
+	    z-index: 20;
+}
+
 
 .ast-inner-title {
 	

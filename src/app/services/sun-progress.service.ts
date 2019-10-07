@@ -21,6 +21,8 @@ export class SunProgressService {
   mIntroRefresh: boolean = false;
 
   mIntroVideoURL;
+  mIntroVideoURL1;
+  mIntroImageURL;
   mAstVideoURL;
   mContactVideoURL;
   mAboutVideoURL;
@@ -45,6 +47,22 @@ export class SunProgressService {
 
   getIntroVideoURL() {
     return this.mIntroVideoURL;
+  }
+
+  setIntroImageURL(value) {
+    this.mIntroImageURL = value;
+  }
+
+  getIntroImageURL() {
+    return this.mIntroImageURL;
+  }
+
+  setIntroVideoURL1(value) {
+    this.mIntroVideoURL1 = value;
+  }
+
+  getIntroVideoURL1() {
+    return this.mIntroVideoURL1;
   }
 
   setAstVideoURL(value) {

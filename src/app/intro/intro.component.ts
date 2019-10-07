@@ -29,7 +29,10 @@ export class IntroComponent implements OnInit {
   animaFlag: boolean = true;
   failFlag: boolean = false;
   introURL;
+  introURL1;
   playInterval;
+  introImgFlag = true;
+  introImgURL;
   ngOnInit() {
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
@@ -40,7 +43,13 @@ export class IntroComponent implements OnInit {
     // this.sunService.setProgressShow(false);
     this.scroll_flag = this.sunService.getIntroTitleShow();
     let self = this;
-    
+    //image preload
+    if (this.introImgURL = this.sunService.getIntroImageURL()) {
+      this.introImgFlag = false;
+    } else {
+      console.log("local image");
+      this.introImgFlag = true;
+    }
     
     setTimeout(() => {
       $("#playV1")[0].play();
@@ -59,7 +68,7 @@ export class IntroComponent implements OnInit {
       $("#playV7")[0].muted = true;
       $("#playV8")[0].play();
       $("#playV8")[0].muted = true;
-    }, 100);
+    }, 1);
     
      
     if(navigator.userAgent.indexOf("Chrome") != -1 ){
@@ -375,5 +384,17 @@ export class IntroComponent implements OnInit {
     if (this.introURL = this.sunService.getIntroVideoURL()) {
       return this.introURL = this.sunService.getIntroVideoURL(); //  after get the video from documents service
     }
+  }
+
+  public getImagePath1(): string {
+    
+    if (this.introURL1 = this.sunService.getIntroVideoURL1()) {
+      return this.introURL1 = this.sunService.getIntroVideoURL1(); //  after get the video from documents service
+    }
+  }
+
+  getIntroImagePath(iNum: Number) {
+    // console.log(this.aboutImgURL[iNum.toString()])
+     return this.introImgURL[iNum.toString()];
   }
 }

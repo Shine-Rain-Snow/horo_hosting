@@ -20,13 +20,55 @@ export class BooksComponent implements OnInit {
   	this.sunService.setShowMenu(true);
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(8);
-    
+    let self = this;
     if (this.booksImgURL = this.sunService.getBooksImageURL()) {
+      console.log("remote="+this.booksImgURL);
       this.booksImgFlag = false;
     } else {
       console.log("local image");
       this.booksImgFlag = true;
     }
+    let circleUpDown = 0;
+    $(".books-container").bind("wheel", function (event) {
+      
+         
+          if(event.originalEvent.deltaY < 0) {
+            circleUpDown--;
+           
+            if(circleUpDown < 0) {
+              circleUpDown = 0;
+              $(".next_circle span").css({visibility: "hidden"});
+            } else if(circleUpDown == 0) {
+              $(".quarter-circle-top-right").css({visibility: "hidden"}, 100);
+              $(".next_circle span").css({visibility: "hidden"});
+            } else if(circleUpDown == 1) {
+              $(".quarter-circle-bottom-right").css({visibility: "hidden"}, 100);
+            } else if(circleUpDown == 2) {
+              $(".quarter-circle-bottom-left").css({visibility: "hidden"}, 100);
+            } else if(circleUpDown == 3) {
+              $(".quarter-circle-top-left").css({visibility: "hidden"}, 100);
+            }
+          }
+          if(event.originalEvent.deltaY > 0) {
+            circleUpDown++;
+            
+            if(circleUpDown > 4) {
+              circleUpDown = 5;
+              $(".next_circle>div").css({visibility:"hidden"});
+              self.router.navigate(['/books/books-dream']);
+              
+            } else if(circleUpDown == 1) {
+              $(".next_circle span").css({visibility: "visible"});
+              $(".quarter-circle-top-right").css({visibility: "visible"}, 100);
+            } else if(circleUpDown == 2) {
+              $(".quarter-circle-bottom-right").css({visibility: "visible"}, 100);
+            } else if(circleUpDown == 3) {
+              $(".quarter-circle-bottom-left").css({visibility: "visible"}, 100);
+            } else if(circleUpDown == 4) {
+              $(".quarter-circle-top-left").css({visibility: "visible"}, 100);
+            }
+          }
+    });
   }
 
   getBooksImagePath1() {

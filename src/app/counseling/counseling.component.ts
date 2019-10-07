@@ -29,7 +29,7 @@ export class CounselingComponent implements OnInit {
           clockNumbers:false,
           clock:1,
           stopwatch:10,
-          shiftH:0,
+          shiftH:-5,
           shiftM:0,
           shiftS:0
       });
@@ -38,7 +38,7 @@ export class CounselingComponent implements OnInit {
         clockNumbers:false,
         clock:1,
         stopwatch:10,
-        shiftH:3,
+        shiftH:-16,
         shiftM:0,
         shiftS:0
       });
@@ -47,8 +47,8 @@ export class CounselingComponent implements OnInit {
         clockNumbers:false,
         clock:1,
         stopwatch:10,
-        shiftH:4,
-        shiftM:0,
+        shiftH:-6,
+        shiftM:-30,
         shiftS:0
       });
       $('#dubai_time').jsRapClock({
@@ -56,7 +56,7 @@ export class CounselingComponent implements OnInit {
         clockNumbers:false,
         clock:1,
         stopwatch:10,
-        shiftH:9,
+        shiftH:-8,
         shiftM:0,
         shiftS:0
       });
@@ -139,12 +139,19 @@ export class CounselingComponent implements OnInit {
       }
       
       this.ShowTime = function(){
+      // let d = new Date();
+      // let t = d.getTime() + this.opt.shiftH * 3600000 + this.opt.shiftM * 60000 + this.opt.shiftS * 1000;
+      // d.setTime(t);
+      // let h = d.getHours();
+      // let m = d.getMinutes();
+      // let s = d.getSeconds();
+
       let d = new Date();
-      let t = d.getTime() + this.opt.shiftH * 3600000 + this.opt.shiftM * 60000 + this.opt.shiftS * 1000;
-      d.setTime(t);
-      let h = d.getHours();
-      let m = d.getMinutes();
-      let s = d.getSeconds();
+      //let t = d.getTime() + this.opt.shiftH * 3600000 + this.opt.shiftM * 60000 + this.opt.shiftS * 1000;
+      //d.setTime(t);
+      let h = d.getUTCHours()+this.opt.shiftH;
+      let m = d.getUTCMinutes()+this.opt.shiftM;
+      let s = d.getUTCSeconds()+this.opt.shiftS;
       
       $('.rapClockH',this).css('transform','translate(-50%,-50%) rotate(' + (h * 30 + m / 2) + 'deg) translate(0,-40%)');
       $('.rapClockM',this).css('transform','translate(-50%,-50%) rotate(' + (m * 6) + 'deg) translate(0,-45%)');

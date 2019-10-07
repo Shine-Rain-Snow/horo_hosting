@@ -49,20 +49,8 @@
         </div>
         <div class="first_video">
             <div class="first_video_zone">
-                <!-- <div *ngIf="thaiVidFlag; then thenBlockContact else elseBlockContact"></div>
-                <ng-template #thenBlockContact>
-                    <video  id="thaivid" onloadeddata="this.play();"  autoplay playsinline  muted loop preload="auto">
-                        <source src="../../assets/video/contact_thailand.Ogg" type='video/ogg; codecs="theora, vorbis"'>
-                        <source src="../../assets/video/contact_thailand.mp4" type='video/mp4; codecs="H264, avc1.4D401E, mp4a.40.2"'>
-                    </video>
-                </ng-template>
-                <ng-template #elseBlockContact>
-                    <video  id="thaivid" onloadeddata="this.play();"  autoplay playsinline  muted loop preload="auto">
-                        <source [attr.src]="getImagePath()" type='video/ogg; codecs="theora, vorbis"'>
-                    </video>
-                </ng-template> -->
 
-                <video id="thaivid"  autoplay muted loop preload="auto">
+                <video id="thaivid" onloadeddata="this.play();" autoplay muted loop preload="auto">
                         <source [attr.src]="getImagePath()" type='video/ogg; codecs="Theora, Vorbis"'>
                         <source src="../../assets/video/contact_thailand.Ogg" type='video/ogg; codecs="theora, vorbis"'>
                         <source src="../../assets/video/contact_thailand.mp4" type='video/mp4; codecs="H264, avc(h264), aac"'>
@@ -76,7 +64,7 @@
     <div class="second_contact">
         <div class="second_video">
             <div class="second_video_zone">
-                <video  id="indiavid" onloadeddata="this.play();" autoplay playsinline  muted loop preload="auto">
+                <video  id="indiavid" onloadeddata="this.play();" autoplay  muted loop preload="auto">
                     <!-- <source src="video.webm" type='video/webm; codecs="vp8.0, vorbis"'> -->
                     <source src="../../assets/video/contact_india.Ogg" type='video/ogg; codecs="theora, vorbis"'>
                     <source src="../../assets/video/contact_india.mp4" type='video/mp4; codecs="H264, avc1.4D401E, mp4a.40.2"'>

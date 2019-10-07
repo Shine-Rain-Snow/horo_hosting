@@ -32,8 +32,9 @@ export class ContactComponent implements OnInit {
     }
     setTimeout(function() {
       $("#thaivid")[0].play();
-      $("#thaivid")[0].autoplay = true;
+      $("#thaivid")[0].muted = true;
       $("#indiavid")[0].play();
+      $("#indiavid")[0].muted = true;
     }, 100);
 
 

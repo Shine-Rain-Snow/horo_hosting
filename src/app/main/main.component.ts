@@ -28,6 +28,7 @@ export class MainComponent implements OnInit {
     let self  = this;
    
     this.videoIntroDownload(self);
+    this.imageIntroDownload(self);
     this.videoAstDownload(self);
     this.videoContactDownload(self);
     this.videoAboutDownload(self);
@@ -42,7 +43,7 @@ export class MainComponent implements OnInit {
   	setTimeout(() => {
           this.router.navigate(['/intro']);
           this.sunService.setIntroTitleShow(true);
-    }, 9600);
+    }, 6000);
   }
 
   ngOnDestroy() {
@@ -51,7 +52,7 @@ export class MainComponent implements OnInit {
 
   videoIntroDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.herokuapp.com/assets/video/intro_1.Ogg', true);
+    req.open('GET', 'https://oferc.com/assets/video/intro_1.Ogg', true);
     req.responseType = 'blob';
     
     const video = document.querySelector('video');
@@ -77,12 +78,39 @@ export class MainComponent implements OnInit {
     }
 
     req.send();
+
+    var req1 = new XMLHttpRequest();
+    req1.open('GET', 'https://oferc.com/assets/video/intro_2.Ogg', true);
+    req1.responseType = 'blob';
+    
+    req1.onload = function() {
+     
+      if (this.status === 200) {
+          
+          var videoBlob1 = this.response;
+          var vid1 = URL.createObjectURL(videoBlob1); // IE10+
+          // Video is now downloaded
+          // and we can set it as source on the video element
+          //video.src = vid;
+          let url1 = self.dom.bypassSecurityTrustUrl(vid1);  
+          self.sunService.setIntroVideoURL1(url1); 
+          self.flagIntro = true;
+          console.log("INTRO1");
+         
+      } 
+    }
+    req1.onerror = function() {
+      // Error
+      console.log("error");
+    }
+
+    req1.send();
   }
 
   videoAstDownload(self) {
     var req = new XMLHttpRequest();
-    // req.open('GET', 'https://oferc.herokuapp.com/assets/video/astrology.Ogg', true);
-    req.open('GET', 'https://oferc.herokuapp.com/assets/img/astrology.jpg', true);
+    
+    req.open('GET', 'https://oferc.com/assets/img/astrology.jpg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function(e) {
@@ -111,7 +139,7 @@ export class MainComponent implements OnInit {
 
   videoContactDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.herokuapp.com/assets/video/contact_thailand.Ogg', true);
+    req.open('GET', 'https://oferc.com/assets/video/contact_thailand.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
@@ -140,7 +168,7 @@ export class MainComponent implements OnInit {
 
   videoAboutDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.herokuapp.com/assets/video/about_inner1.Ogg', true);
+    req.open('GET', 'https://oferc.com/assets/video/about_inner1.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
@@ -176,7 +204,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=1; i<=20; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/press-release/'+i+'.jpg';
+        imgStr[i] = 'https://oferc.com/assets/img/press-release/'+i+'.jpg';
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -213,7 +241,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=1; i<=4; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/books/books'+i+'.png';
+        imgStr[i] = 'https://oferc.com/assets/img/books/books'+i+'.png';
 
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
@@ -251,7 +279,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=0; i<7; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/about/about'+i+'.jpg';
+        imgStr[i] = 'https://oferc.com/assets/img/about/about'+i+'.jpg';
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -287,7 +315,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=1; i<11; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.herokuapp.com/assets/img/about/his'+i+'.png';
+        imgStr[i] = 'https://oferc.com/assets/img/about/his'+i+'.png';
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -310,6 +338,40 @@ export class MainComponent implements OnInit {
         pressReq[i].send();
     }
     
+  }
+
+  imageIntroDownload(self) {
+    let pressReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<9; i++) {
+        pressReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://oferc.com/assets/img/intro/intro_'+i+'.jpg';
+        pressReq[i].open('GET', imgStr[i], true);
+        pressReq[i].responseType = 'blob';
+       
+        pressReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setIntroImageURL(url);  
+              //console.log(i+"remote="+url[i]);             
+          }
+        }
+        pressReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReq[i].send();
+    }
   }
 
 }

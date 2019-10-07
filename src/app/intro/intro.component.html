@@ -7,28 +7,51 @@
 		<div class="show_window">
 			<div class="photo">
 				<span  class="photo_1 active">
-					<img src="assets/img/intro/intro_1.jpg">
+					<div *ngIf="introImgFlag; then thenBlock1 else elseBlock1"></div>
+        			<ng-template #thenBlock1><img src="assets/img/intro/intro_1.jpg"></ng-template>
+        			<ng-template #elseBlock1><img [attr.src]="getIntroImagePath(1)" /></ng-template>	
 				</span>
 				<span  class="photo_2 prev">
-					<img src="assets/img/intro/intro_2.jpg">
+					<div *ngIf="introImgFlag; then thenBlock2 else elseBlock2"></div>
+        			<ng-template #thenBlock2><img src="assets/img/intro/intro_2.jpg"></ng-template>
+        			<ng-template #elseBlock2><img [attr.src]="getIntroImagePath(2)" /></ng-template>
+					
 				</span>
 				<span  class="photo_3 ">
-					<img src="assets/img/intro/intro_3.jpg">
+					<div *ngIf="introImgFlag; then thenBlock3 else elseBlock3"></div>
+        			<ng-template #thenBlock3><img src="assets/img/intro/intro_3.jpg"></ng-template>
+        			<ng-template #elseBlock3><img [attr.src]="getIntroImagePath(3)" /></ng-template>
+					
 				</span>
 				<span  class="photo_4 ">
-					<img src="assets/img/intro/intro_4.jpg">
+					<div *ngIf="introImgFlag; then thenBlock4 else elseBlock4"></div>
+        			<ng-template #thenBlock4><img src="assets/img/intro/intro_4.jpg"></ng-template>
+        			<ng-template #elseBlock4><img [attr.src]="getIntroImagePath(4)" /></ng-template>
+					
 				</span>
 				<span  class="photo_5 ">
-					<img src="assets/img/intro/intro_5.jpg">
+					<div *ngIf="introImgFlag; then thenBlock5 else elseBlock5"></div>
+        			<ng-template #thenBlock5><img src="assets/img/intro/intro_5.jpg"></ng-template>
+        			<ng-template #elseBlock5><img [attr.src]="getIntroImagePath(5)" /></ng-template>
+					
 				</span>
 				<span  class="photo_6 ">
-					<img src="assets/img/intro/intro_6.jpg">
+					<div *ngIf="introImgFlag; then thenBlock6 else elseBlock6"></div>
+        			<ng-template #thenBlock6><img src="assets/img/intro/intro_6.jpg"></ng-template>
+        			<ng-template #elseBlock6><img [attr.src]="getIntroImagePath(6)" /></ng-template>
+					
 				</span>
 				<span  class="photo_7 ">
-					<img src="assets/img/intro/intro_7.jpg">
+					<div *ngIf="introImgFlag; then thenBlock7 else elseBlock7"></div>
+        			<ng-template #thenBlock7><img src="assets/img/intro/intro_7.jpg"></ng-template>
+        			<ng-template #elseBlock7><img [attr.src]="getIntroImagePath(7)" /></ng-template>
+					
 				</span>
 				<span  class="photo_8 ">
-					<img src="assets/img/intro/intro_8.jpg">
+					<div *ngIf="introImgFlag; then thenBlock8 else elseBlock8"></div>
+        			<ng-template #thenBlock8><img src="assets/img/intro/intro_8.jpg"></ng-template>
+        			<ng-template #elseBlock8><img [attr.src]="getIntroImagePath(8)" /></ng-template>
+					
 				</span>
 			</div>
 
@@ -47,6 +70,7 @@
 				</span>
 				<span class="video_2 prev">
 					<video  id="playV2" onloadeddata="this.play();" autoplay muted loop preload="auto">
+						<source  [attr.src]="getImagePath1()" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_2.Ogg" type='video/ogg;codecs="theora, vorbis"'>
 						<source src="assets/video/intro_2.mp4" type="video/mp4">
 						<source src="assets/video/intro_2.webm" type="video/webm">	

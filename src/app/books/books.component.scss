@@ -21,8 +21,8 @@
 	position: absolute;
 	top: 16%;
 	left: 60%;
-	width: 30%;
-	height: 80%;
+	width: 35%;
+	height: 85%;
 	z-index: 10;
 	cursor: pointer;
 	img {
@@ -32,6 +32,8 @@
 	}
 	outline: none !important;
 }
+
+
 
 .book_detail {
 	position: absolute;
@@ -54,6 +56,91 @@
 /* The Transformation */
 .img-hover-zoom-books:hover .zoom-out-books {                                                                                                     
   transform: scale(1);
+}
+
+
+.next_circle {
+
+	position: absolute;
+	width: 4vw;
+	height: 4vw;
+	z-index: 15;
+	top: 42%;
+	right: 3%;
+	cursor: pointer;
+	span {
+		position: relative;
+		top: 36%;
+		left: 34%;
+		z-index: 30;
+		font-size: 14px;
+		color: rgb(97, 175, 211);
+		visibility: hidden;
+	}
+	outline: none !important;
+}
+
+.quarter-circle-top-left{
+	position: inherit;
+	width: 2vw;
+	height: 2vw;
+	border-left: 2px solid rgb(41, 202, 186);
+	border-top: 2px solid rgb(41, 202, 186);
+	//background: rgb(41, 202, 186);
+	top: 0;
+	left: 0;
+    border-radius: 2vw 0 0 0;
+    -moz-border-radius: 2vw 0 0 0;
+    -webkit-border-radius: 2vw 0 0 0;
+    visibility: hidden;
+    z-index: 20;
+}
+.quarter-circle-top-right{
+    position: inherit;
+	width: 2vw;
+	height: 2vw;
+	border-right: 2px solid rgb(41, 202, 186);
+	border-top: 2px solid rgb(41, 202, 186);
+	//background: rgb(41, 202, 186);
+	top: 0;
+	right: 0;
+    border-radius: 0 2vw 0 0;
+    -moz-border-radius: 0 2vw 0 0;
+    -webkit-border-radius: 0 2vw 0 0;
+    visibility: hidden;
+    z-index: 20;
+}
+.quarter-circle-bottom-left{
+    position: inherit;
+	width: 2vw;
+	height: 2vw;
+	border-left: 2px solid rgb(41, 202, 186);
+	border-bottom: 2px solid rgb(41, 202, 186);
+	//border-left: 2px solid yellow;
+	//background: rgb(41, 202, 186);
+	bottom: 0;
+	left: 0;
+    border-radius: 0 0 0 2vw;
+    -moz-border-radius: 0 0 0 2vw;
+    -webkit-border-radius: 0 0 0 2vw;
+    visibility: hidden;
+    z-index: 20;
+}
+.quarter-circle-bottom-right{
+     	position: inherit;
+    	width: 2vw;
+    	height: 2vw;
+    	border-right: 2px solid rgb(41, 202, 186);
+    	border-bottom: 2px solid rgb(41, 202, 186);
+		//border-right: 2px solid green;
+		//background: rgb(41, 202, 186);
+    	bottom: 0;
+    	right: 0;
+	    border-radius: 0 0 2vw 0;
+	    -moz-border-radius: 0 0 2vw 0;
+	    -webkit-border-radius: 0 0 2vw 0;
+	    visibility: hidden;
+	    z-index: 20;
 }
 
 
