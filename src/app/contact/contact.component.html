@@ -49,12 +49,19 @@
         </div>
         <div class="first_video">
             <div class="first_video_zone">
-
-                <video id="thaivid" onloadeddata="this.play();" autoplay muted loop preload="auto">
-                        <source [attr.src]="getImagePath()" type='video/ogg; codecs="Theora, Vorbis"'>
+                <!-- <video id="thaivid" onloadeddata="this.play();" autoplay muted loop preload="auto">
+                    <div *ngIf="thaiVidFlag; then thenBlock0 else elseBlock0"></div>
+                    <ng-template #thenBlock0>
                         <source src="../../assets/video/contact_thailand.Ogg" type='video/ogg; codecs="theora, vorbis"'>
                         <source src="../../assets/video/contact_thailand.mp4" type='video/mp4; codecs="H264, avc(h264), aac"'>
-                        <source src="../../assets/video/contact_thailand.webm" type='video/webm'>
+                    </ng-template>
+                    <ng-template #elseBlock0><source [attr.src]="getContactPath()" type='video/ogg; codecs="Theora, Vorbis"'></ng-template>
+                </video>   -->      
+                <video id="thaivid" onloadeddata="this.play();" autoplay muted loop preload="auto">
+                    <source [attr.src]="getContactPath()" type='video/ogg; codecs="Theora, Vorbis"'>
+                    <source src="../../assets/video/contact_thailand.Ogg" type='video/ogg; codecs="theora, vorbis"'>
+                    <source src="../../assets/video/contact_thailand.mp4" type='video/mp4; codecs="H264, avc(h264), aac"'>
+                    <source src="../../assets/video/contact_thailand.webm" type='video/webm'>
                 </video>
             </div>   
         </div>

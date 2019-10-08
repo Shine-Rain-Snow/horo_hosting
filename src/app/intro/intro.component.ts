@@ -31,9 +31,10 @@ export class IntroComponent implements OnInit {
   introURL;
   introURL1;
   playInterval;
-  introImgFlag = true;
+  introImgFlag;
   introImgURL;
   ngOnInit() {
+    let self = this;
     this.router.routeReuseStrategy.shouldReuseRoute = function () {
       return false;
     };
@@ -42,14 +43,15 @@ export class IntroComponent implements OnInit {
     this.sunService.setCurrentPage(1);
     // this.sunService.setProgressShow(false);
     this.scroll_flag = this.sunService.getIntroTitleShow();
-    let self = this;
+    
     //image preload
+    
     if (this.introImgURL = this.sunService.getIntroImageURL()) {
       this.introImgFlag = false;
     } else {
       console.log("local image");
       this.introImgFlag = true;
-    }
+    }  
     
     setTimeout(() => {
       $("#playV1")[0].play();
@@ -397,4 +399,9 @@ export class IntroComponent implements OnInit {
     // console.log(this.aboutImgURL[iNum.toString()])
      return this.introImgURL[iNum.toString()];
   }
+
+  // getIntroImageFlag(iNum: Number) {
+  //   return this.introImgFlag[iNum.toString()];
+  // }
+ 
 }

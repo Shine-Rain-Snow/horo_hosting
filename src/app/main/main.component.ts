@@ -43,7 +43,7 @@ export class MainComponent implements OnInit {
   	setTimeout(() => {
           this.router.navigate(['/intro']);
           this.sunService.setIntroTitleShow(true);
-    }, 6000);
+    }, 3000);
   }
 
   ngOnDestroy() {
@@ -52,7 +52,7 @@ export class MainComponent implements OnInit {
 
   videoIntroDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.com/assets/video/intro_1.Ogg', true);
+    req.open('GET', 'https://ofercohen.net/assets/video/intro_1.Ogg', true);
     req.responseType = 'blob';
     
     const video = document.querySelector('video');
@@ -68,7 +68,7 @@ export class MainComponent implements OnInit {
           let url = self.dom.bypassSecurityTrustUrl(vid);  
           self.sunService.setIntroVideoURL(url); 
           self.flagIntro = true;
-          console.log("INTRO");
+          console.log("intro");
          
       } 
     }
@@ -80,7 +80,7 @@ export class MainComponent implements OnInit {
     req.send();
 
     var req1 = new XMLHttpRequest();
-    req1.open('GET', 'https://oferc.com/assets/video/intro_2.Ogg', true);
+    req1.open('GET', 'https://ofercohen.net/assets/video/intro_2.Ogg', true);
     req1.responseType = 'blob';
     
     req1.onload = function() {
@@ -95,7 +95,7 @@ export class MainComponent implements OnInit {
           let url1 = self.dom.bypassSecurityTrustUrl(vid1);  
           self.sunService.setIntroVideoURL1(url1); 
           self.flagIntro = true;
-          console.log("INTRO1");
+          console.log("intro1");
          
       } 
     }
@@ -107,10 +107,44 @@ export class MainComponent implements OnInit {
     req1.send();
   }
 
+  imageIntroDownload(self) {
+    let pressReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<9; i++) {
+        pressReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://ofercohen.net/assets/img/intro/intro_'+i+'.jpg';
+        pressReq[i].open('GET', imgStr[i], true);
+        pressReq[i].responseType = 'blob';
+       
+        pressReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setIntroImageURL(url);  
+              //console.log(i+"remote="+url[i]);             
+          }
+        }
+        pressReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReq[i].send();
+    }
+  }
+
   videoAstDownload(self) {
     var req = new XMLHttpRequest();
     
-    req.open('GET', 'https://oferc.com/assets/img/astrology.jpg', true);
+    req.open('GET', 'https://ofercohen.net/assets/img/astrology.jpg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function(e) {
@@ -125,7 +159,7 @@ export class MainComponent implements OnInit {
           let url = self.dom.bypassSecurityTrustUrl(vid);  
           self.sunService.setAstVideoURL(url); 
           self.flagAst = true;
-          console.log("ast video downloaded");
+          console.log("ast main image downloaded");
           
           //video.src = vid;
       }
@@ -139,7 +173,7 @@ export class MainComponent implements OnInit {
 
   videoContactDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.com/assets/video/contact_thailand.Ogg', true);
+    req.open('GET', 'https://ofercohen.net/assets/video/contact_thailand.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
@@ -168,20 +202,21 @@ export class MainComponent implements OnInit {
 
   videoAboutDownload(self) {
     var req = new XMLHttpRequest();
-    req.open('GET', 'https://oferc.com/assets/video/about_inner1.Ogg', true);
+    req.open('GET', 'https://ofercohen.net/assets/video/about_inner1.Ogg', true);
     req.responseType = 'blob';
     const video = document.querySelector('video');
     req.onload = function() {
       
       
       if (this.status === 200) {
-        console.log("about"+this);
+        
           var videoBlob = this.response;
           var vid = URL.createObjectURL(videoBlob); // IE10+
           
           let url = self.dom.bypassSecurityTrustUrl(vid);  
           self.sunService.setAboutVideoURL(url); 
           self.flagAbout = true;
+          console.log("about");
       }
     }
     req.onerror = function() {
@@ -204,7 +239,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=1; i<=20; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.com/assets/img/press-release/'+i+'.jpg';
+        imgStr[i] = 'https://ofercohen.net/assets/img/press-release/'+i+'.jpg';
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -241,7 +276,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=1; i<=4; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.com/assets/img/books/books'+i+'.png';
+        imgStr[i] = 'https://ofercohen.net/assets/img/books/books'+i+'.png';
 
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
@@ -279,7 +314,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=0; i<7; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.com/assets/img/about/about'+i+'.jpg';
+        imgStr[i] = 'https://ofercohen.net/assets/img/about/about'+i+'.jpg';
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -315,7 +350,7 @@ export class MainComponent implements OnInit {
     let imgArray;
     for(let i=1; i<11; i++) {
         pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.com/assets/img/about/his'+i+'.png';
+        imgStr[i] = 'https://ofercohen.net/assets/img/about/his'+i+'.png';
         pressReq[i].open('GET', imgStr[i], true);
         pressReq[i].responseType = 'blob';
        
@@ -340,38 +375,6 @@ export class MainComponent implements OnInit {
     
   }
 
-  imageIntroDownload(self) {
-    let pressReq = [];
-    let pressCount = 0;
-    let videoBlob = [];
-    let vid = [];
-    let url = [];
-    let imgStr = [];
-    let imgArray;
-    for(let i=1; i<9; i++) {
-        pressReq[i] = new XMLHttpRequest();
-        imgStr[i] = 'https://oferc.com/assets/img/intro/intro_'+i+'.jpg';
-        pressReq[i].open('GET', imgStr[i], true);
-        pressReq[i].responseType = 'blob';
-       
-        pressReq[i].onload = function() {
-          
-          if (this.status === 200) {
-            
-              videoBlob[i] = this.response;
-              vid[i] = URL.createObjectURL(videoBlob[i]); 
-              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
-              self.sunService.setIntroImageURL(url);  
-              //console.log(i+"remote="+url[i]);             
-          }
-        }
-        pressReq[i].onerror = function() {
-          // Error
-          console.log("error");
-        }
-
-        pressReq[i].send();
-    }
-  }
+  
 
 }

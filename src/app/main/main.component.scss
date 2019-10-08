@@ -34,13 +34,13 @@
     width: 0;
     color: rgb(244, 135, 42);
     // animation: fill-1 20s infinite;
-    animation: fill-1 6s;
+    animation: fill-1 3s;
   }
 }
 
 .pinkremain {
     filter: color;
-    animation: greyrepeat 100s 1 6s;
+    animation: greyrepeat 200s 1 3s;
 }
 
 @keyframes fill-1 {

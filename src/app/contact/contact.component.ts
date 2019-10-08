@@ -25,9 +25,9 @@ export class ContactComponent implements OnInit {
     
     if (this.contactURL = this.sunService.getContactVideoURL()) {
       this.thaiVidFlag  = false;
-      console.log("this is local");
+      console.log("this is remote"+this.sunService.getContactVideoURL());
     } else {
-      console.log("this is ajax"+this.sunService.getContactVideoURL());
+      console.log("this is local dev");
       this.thaiVidFlag = true;
     }
     setTimeout(function() {
@@ -35,12 +35,12 @@ export class ContactComponent implements OnInit {
       $("#thaivid")[0].muted = true;
       $("#indiavid")[0].play();
       $("#indiavid")[0].muted = true;
-    }, 100);
+    }, 10);
 
 
   }
 
-  public getImagePath(): string {
+  public getContactPath(): string {
     if (this.contactURL = this.sunService.getContactVideoURL()) {
       return this.contactURL = this.sunService.getContactVideoURL(); //  after get the image from documents service
     }
