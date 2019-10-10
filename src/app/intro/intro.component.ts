@@ -80,7 +80,31 @@ export class IntroComponent implements OnInit {
       console.log("not chrome");
     }
 
-    setTimeout(() => {
+    //scrollbar, title animation part
+   
+    if(screen.width < 901) {
+      setTimeout(() => {
+      $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
+      $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
+      $(".intro_tex_content").animate({opacity: '1'}, 9000);
+      
+      this.scrollingInterval = setInterval(function(){
+      
+        $(".scroll_symbol").animate({
+          width: '60px',
+        }, 
+        {
+          duration: 2000,
+          easing: "linear",
+          complete: function() {
+            $(".scroll_symbol").css({ width: '0px' });
+          }
+        });
+      }, 2100);
+
+    }, 100);
+    } else {
+      setTimeout(() => {
       $(".ofer").animate({left: '0px', opacity: '1'}, 9000);
       $(".cohen").animate({left: '0px', opacity: '1'}, 9000);
       $(".intro_tex_content").animate({opacity: '1'}, 9000);
@@ -99,6 +123,8 @@ export class IntroComponent implements OnInit {
         });
       }, 2100);
     }, 100);
+    }
+    
     //scrolling symbol
     let scrollUpCount = 0;
     let scrollDownCount = 0;
@@ -106,6 +132,7 @@ export class IntroComponent implements OnInit {
     let astFlag = true;
     let astFlag40 = true;
     $(".intro").bind("wheel", (event) => {
+
       if(this.scroll_flag) {
         this.scroll_flag = false;
         this.next = 0;
@@ -181,6 +208,56 @@ export class IntroComponent implements OnInit {
       }
     });
 
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".intro").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;
+      this.sunService.setIntroTitleShow(false);
+      this.sunService.setProgressShow(true);
+      if(this.scroll_flag) {
+        this.scroll_flag = false;
+        this.next = 0;
+        this.sunService.setIntroVal(0);
+      }
+    });
+
+    $(".intro").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".intro").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+        console.log("gap="+andGap);
+        if(andGap > -40 && andGap  < 0) {
+          this.animaFlag = false;
+          this.sunService.setIntroVal(40);
+        } 
+        if( andGap < -80) {
+          console.log("go to next");
+          this.router.navigate(['/astrology']); 
+        } 
+        if( andGap > 0) {
+          
+          $(".intro").fadeOut(1000);
+          setTimeout(() => {
+            this.router.navigate(['/intro']); 
+          }, 1000);
+        }
+      }
+    });
+
+
     //photo and video are moving by this function.
     clearInterval(this.photoInterval);
     clearInterval(this.videoInterval);
@@ -227,7 +304,6 @@ export class IntroComponent implements OnInit {
     $(".photo").finish();
     $(".movies").finish();
   }
-
 
   movePhoto() {
     const numPhoto = 8;

@@ -52,14 +52,7 @@ export class AboutComponent implements OnInit {
           }
           
         }
-        //if(this.next > 30) {
-          
-        
-        //} 
-        // if(this.next > 100){
-        //   this.router.navigate(['/counseling']);
-        //   this.sunService.setAboutVal(0);
-        // }
+   
       } else {
         //scroll up
         this.next -= 1;
@@ -77,10 +70,41 @@ export class AboutComponent implements OnInit {
           }
           
         }
-          
-          
-       // }
-        
+      }
+    });
+
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".about_page").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;      
+    });
+
+    $(".about_page").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".about_page").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+       
+        if(andGap  < 0) {
+          this.sunService.setIntroVal(0);
+          this.sunService.setAstVal(40);
+          this.router.navigate(['/about/step-one']); 
+        } 
+        if( andGap > 0) {
+          this.router.navigate(['/astrology']);
+        } 
       }
     });
   }

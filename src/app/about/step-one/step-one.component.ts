@@ -46,10 +46,6 @@ export class StepOneComponent implements OnInit {
           }, 1000);
          
         } 
-        // if(this.next > 100){
-        //   this.router.navigate(['/counseling']);
-        //   this.sunService.setAboutVal(0);
-        // }
       } else {
         //scroll up
         this.next -= 2;
@@ -64,6 +60,38 @@ export class StepOneComponent implements OnInit {
       }
     });
 
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".step-one").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;      
+    });
+
+    $(".step-one").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".step-one").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+        
+        if(andGap  < -60) {
+          this.router.navigate(['/about/step-two']); 
+        } 
+        if( andGap > 60) {
+          this.router.navigate(['/about']);
+        } 
+      }
+    });
   }
 
   getHistoryImagePath(iNum: Number) {

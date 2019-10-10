@@ -58,6 +58,28 @@
   transform: scale(1);
 }
 
+.show_circle {
+	position: absolute;
+	width: 4vw;
+	height: 4vw;
+	border-radius: 4vw;
+	border: 2px solid white;
+	z-index: 10;
+	top: 42%;
+	right: 3%;
+	cursor: pointer;
+	span {
+		position: relative;
+		top: 36%;
+		left: 34%;
+		z-index: 30;
+		font-size: 14px;
+
+		color: rgb(97, 175, 211);
+	}
+	outline: none !important;
+}
+
 
 .next_circle {
 
@@ -176,6 +198,10 @@
 				height: 30%;
 				z-index: 20;
 			}
+			.show_circle {
+				display: none;
+				span{display: none;}
+			}
 		}
 	}
 	
@@ -210,6 +236,10 @@
 				width: 100%;
 				height: 30%;
 				z-index: 20;
+			}
+			.show_circle {
+				display: none;
+				span{display: none;}
 			}
 		}
 	}
@@ -246,6 +276,14 @@
 				height: 30%;
 				z-index: 20;
 			}
+			.show_circle {
+				//display: none;
+				span {
+					top: 27% !important;
+    	 			left: 24% !important;
+    				//display: none;
+				}
+			}
 		}
 	}
 }
@@ -280,6 +318,12 @@
 				width: 60%;
 				height: 30%;
 				z-index: 20;
+			}
+			.show_circle {
+				span {
+				    top: 31%;
+					left: 29%;
+				}
 			}
 		}
 	}

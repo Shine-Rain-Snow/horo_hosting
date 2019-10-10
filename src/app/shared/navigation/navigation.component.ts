@@ -75,6 +75,11 @@ export class NavigationComponent implements OnInit {
           this.colorPreference = 'black';
           break;
         }
+        //tarot page
+        case 9: {
+          this.colorPreference = 'black';
+          break;
+        }
       }
     }, 50);
      

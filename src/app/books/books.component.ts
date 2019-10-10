@@ -69,6 +69,39 @@ export class BooksComponent implements OnInit {
             }
           }
     });
+
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".books").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;      
+    });
+
+    $(".books").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".books").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+        
+        if(andGap  < -60) {
+          this.router.navigate(['/books/books-dream']); 
+        } 
+        if( andGap > 60) {
+          this.router.navigate(['/books/books-dream']);
+        } 
+      }
+    });
   }
 
   getBooksImagePath1() {

@@ -33,12 +33,6 @@ export class AstrologyComponent implements OnInit {
     } else {
       this.imgFlag = true;
     }
-    // setTimeout(() => {
-      
-    //   $("#backgroundvid")[0].play();
-    //   $("#backgroundvid")[0].muted = true;
-    //   $("#backgroundvid")[0].autoplay = true;
-    // }, 10);
 
     this.sunService.setProgressShow(true);
     this.sunService.setAstVal(0);
@@ -60,6 +54,7 @@ export class AstrologyComponent implements OnInit {
               this.nUpScrollling = 0;              
               this.next = 40;
               this.sunService.setAstVal(40);
+              this.sunService.setIntroVal(0);
               this.router.navigate(['/astrology/ast-inner']); 
               astinnerFlag = false;
             }
@@ -84,7 +79,41 @@ export class AstrologyComponent implements OnInit {
             }
         }
       });
-        
+       
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".astrology").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;      
+    });
+
+    $(".astrology").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".astrology").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+       
+        if(andGap  < 0) {
+          this.sunService.setIntroVal(0);
+          this.sunService.setAstVal(40);
+          this.router.navigate(['/astrology/ast-inner']); 
+        } 
+        if( andGap > 0) {
+          this.router.navigate(['/intro']);
+        } 
+      }
+    }); 
   } 
 
   public getImagePath(): string {

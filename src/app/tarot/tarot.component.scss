@@ -1,8 +1,310 @@
-.tarot {
+// .tarot {
 	
-	background-color: rgb(64,66,105);
-	width: 100%;
-	height: 100%; 
-	position: absolute;
-	overflow: hidden;
-}
+// 	background-color: white;
+// 	width: 100%;
+// 	height: 100%; 
+// 	position: absolute;
+// 	overflow: hidden;
+// 	font-family: Oswald;
+// }
+
+// .tarot_container {
+// 	width: 100%;
+// 	height: 100%;
+// 	position: absolute;
+// }
+
+// .left_triangle {
+// 	position: absolute;
+// 	bottom: 0;
+// 	left: 0;
+// 	width: 0;
+// 	height: 0;
+// 	border-right: 66vh solid transparent;
+//     border-bottom: 66vh solid #C6B3C6;
+//     z-index: 0;
+// }
+
+// .tarot_content {
+// 	z-index: 10;
+// 	width: 100%;
+// 	height: 100%;
+// 	display: table;
+// 	.tarot_title {
+// 		//background-color: yellow;
+// 		text-align: center;
+// 		font-size: 80px;
+// 		color: #5A3594;
+// 		letter-spacing: 6px;
+// 		padding: 4% 0 1% 0;
+// 		font-weight: bold;
+// 	}
+// 	.tarot_deck {
+// 		width: 50%;
+// 		height: 100%;
+// 		float: left;
+// 		//background: red;
+// 		padding-left: 23%;
+
+// 		.deck_title {
+// 			font-size: 36px;
+// 			margin-bottom: 10%;
+// 			margin-left: 20%;
+// 		}
+
+// 		.classic_rider {
+// 			display: table;
+// 			margin-top: 5%;
+// 			.classic_rider_text {
+// 				font-size: 26px;
+// 				width: 50%;
+// 				padding-top: 10%;
+// 				float: left;
+// 			}
+// 			.classic_rider_img {
+// 				width: 50%;
+// 				float: left;
+// 				img {
+// 					width: 50%;
+// 					height: 100%;
+// 				}
+// 			}
+// 		}
+
+// 		.hermetic {
+// 			display: table;
+// 			margin-top: 5%;
+// 			.hermetic_text {
+// 				font-size: 26px;
+// 				text-align: right;
+// 				width: 50%;
+// 				padding-top: 10%;
+// 				float: left;
+// 			}
+// 			.hermetic_img {
+// 				width: 50%;
+// 				float: left;
+// 				img {
+// 					width: 46%;
+// 					height: 100%;
+// 					margin-left: 50%;
+// 				}
+// 			}
+// 		}
+// 		.lenormand {
+// 			display: table;
+// 			margin-top: 5%;
+// 			.lenormand_text {
+// 				font-size: 26px;
+// 				width: 50%;
+// 				padding-top: 10%;
+// 				float: left;
+// 			}
+// 			.lenormand_img {
+// 				width: 50%;
+// 				float: left;
+// 				img {
+// 					width: 60%;
+// 					height: 100%;
+// 					margin-top: 4%;
+// 				}
+// 			}
+// 		}
+// 	}
+// 	.tarot_spread {
+// 		width: 50%;
+// 		height: 100%;
+// 		float: left;
+// 		//background: blue;
+
+// 		.spread_title {
+// 			font-size: 36px;
+// 			margin-bottom: 10%;
+// 			margin-left: 46%;
+// 		}
+
+// 		.first_mode {
+// 			width: 100%;
+// 			display: table;
+// 			margin-top: 5%;
+// 			.first_mode_img {
+// 				width: 50%;
+// 				float: left;
+// 				padding-left: 30%;
+// 				.first_mode_card {
+// 					width: 4vh;
+// 					height: 6.5vh;
+// 					border: 1px solid #DCDCDC;
+// 				}
+// 			}
+
+// 			.first_mode_text {
+// 				font-size: 26px;
+// 				width: 50%;
+// 				padding-top: 2%;
+// 				float: left;
+// 			}
+// 		}
+
+// 		.second_mode {
+// 			width: 100%;
+// 			display: table;
+// 			margin-top: 5%;
+// 			.second_mode_img {
+// 				width: 50%;
+// 				float: left;
+// 				display: table;
+// 				padding-left: 23%;
+// 				.second_mode_card1 {
+// 					width: 4vh;
+// 					height: 6.5vh;
+// 					border: 1px solid #DCDCDC;
+// 					margin-right: 10%;
+// 					float: left;
+// 				}
+// 				.second_mode_card2 {
+// 					width: 4vh;
+// 					height: 6.5vh;
+// 					border: 1px solid #DCDCDC;	
+// 					margin-right: 10%;
+// 					float: left;
+// 				}
+// 				.second_mode_card3 {
+// 					width: 4vh;
+// 					height: 6.5vh;
+// 					border: 1px solid #DCDCDC;
+// 					float: left;
+// 				}
+// 			}
+// 			.second_mode_text {
+// 				font-size: 26px;
+// 				width: 50%;
+// 				float: left;
+// 				padding-top: 2%;
+// 			}
+// 		}
+
+// 		.third_mode {
+// 			width: 100%;
+// 			display: table;
+// 			margin-top: 5%;
+// 			.third_mode_img {
+// 				width: 50%;
+// 				float: left;
+// 				display: table;
+// 				padding-left: 23%;
+// 				.third_row1 {
+// 					width: 100%;
+// 					padding-left: 26%;
+// 					padding-bottom: 5%;
+// 					.third_mode_row1_card1 {
+
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 					}
+// 				}
+// 				.third_row2 {
+// 					display: table;
+// 					float: left;
+// 					width: 100%;
+// 					padding-left: 0%;
+// 					padding-bottom: 5%;
+// 					.third_mode_row2_card1 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 						margin-right: 10%;
+// 						float: left;
+// 					}
+// 					.third_mode_row2_card2 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 						margin-right: 10%;
+// 						float: left;
+// 					}
+// 					.third_mode_row2_card3 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 						float: left;
+// 					}
+// 				}
+// 				.third_row3 {
+// 					float: left;
+// 					padding-left: 26%;
+// 					padding-bottom: 5%;
+// 					.third_mode_row3_card1 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 					}
+// 				}
+
+				
+// 			}
+// 			.third_mode_text {
+				
+// 				display: table;
+// 				position: relative;
+// 				left: -4%;
+// 				.third_mode_text_col1 {
+// 					float: left;
+// 					width: 10%;
+// 					// background-color: red;
+// 					.third_col1_card1 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 						margin-bottom: 10%;
+// 					}
+// 					.third_col1_card2 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 						margin-bottom: 10%;
+// 					}
+// 					.third_col1_card3 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 						margin-bottom: 10%;
+// 					}
+// 					.third_col1_card4 {
+// 						width: 4vh;
+// 						height: 6.5vh;
+// 						border: 1px solid #DCDCDC;
+// 					}
+// 				}
+// 				.third_mode_text_col2 {
+// 					width: 90%;
+// 					float: left;
+// 					font-size: 26px;
+// 					float: left;
+// 					padding-top: 20%;
+// 					padding-left: 3%;
+// 					padding-right: 10%;
+// 				}
+				
+// 			}
+// 		}
+// 	}
+// }
+
+// .black_raven {
+// 	z-index: 15;
+// 	width: 100%;
+// 	position: absolute;
+// 	bottom: 4%;
+// 	text-align: center;
+// 	img {
+// 		width: 6%;
+// 		height: 6%;
+// 	}
+// 	.raven_text {
+// 		font-size: 30px;
+// 		color: #5A3594;
+// 	}
+// }
+

@@ -604,11 +604,25 @@ img {
 		}
 	}
 
+	.sunsign_text {
+		.mid_img {
+			visibility: hidden;
+		}
+	}
+
+	.next_circle {
+		span {
+			top: 5%;
+    		left: 5%;
+    		font-size: 12px;
+    		display: none;
+		}
+	}
 	.dash {
 		width:30px; 
 		float:left; 
 		position: relative; 
-		margin: 18px 0 0 10px;
+		margin: 11px 0 0 10px;
 	}
 	
 }
@@ -650,6 +664,34 @@ img {
 			
 		}
 	}
+	.sunsign_text {
+		.mid_img {
+			text-align: center;
+			width: 20%;
+			// background: yellow;
+			.helper {
+				display: inline-block;
+	    		height: 100%;
+	    		vertical-align: middle;
+			}
+			
+			img {
+				width: auto;
+				height: 30%;
+				vertical-align: middle;
+
+			}
+		}
+	}
+	.next_circle {
+		span {
+			top: 5%;
+    		left: 5%;
+    		font-size: 12px;
+    		display: none;
+		}
+	}
+	
 }
 @media screen and (min-width:901px) and (max-width:1200px) {
 	.sunsign_img {
@@ -682,6 +724,17 @@ img {
 			
 		}
 	}
+	.g-scrolling-carousel {
+		.next_circle {
+			span {
+				top: 4%;
+	    		left: 4%;
+	    		font-size: 12px;
+	    		visibility: hidden;
+			}
+		}
+	}
+	
 }
 
 @media screen and (min-width:1201px) and (max-width:1900px) {

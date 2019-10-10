@@ -60,6 +60,39 @@ export class StepThreeComponent implements OnInit {
       }
     });
 
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".step-three").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;      
+    });
+
+    $(".step-three").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".step-three").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+        
+        if(andGap  < -60) {
+          this.router.navigate(['/about/step-images']); 
+        } 
+        if( andGap > 60) {
+          this.router.navigate(['/about/step-two']);
+        } 
+      }
+    });
+
    }
   
   getHistoryImagePath(iNum: Number) {

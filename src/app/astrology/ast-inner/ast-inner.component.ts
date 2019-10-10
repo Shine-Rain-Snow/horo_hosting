@@ -56,8 +56,6 @@ export class AstInnerComponent implements OnInit {
   }
   next;
   ngOnInit() {
-    
-   
 
    let self = this;
    this.sunService.setCurrentPage(3);
@@ -169,9 +167,6 @@ export class AstInnerComponent implements OnInit {
     }
    }, 10);
 
-   
-    
-
     $(".left_img img").css("visibility", "visible");
     $(".left_img").css("background-size", "0 0");
     $(".left_img").hover(function(){
@@ -194,8 +189,6 @@ export class AstInnerComponent implements OnInit {
     }, function(){
         $(this).css("background-size", "0 0");
         $(".left_img img").css("visibility", "visible");
-
-        
     });
 
     $(".right_img img").css("visibility", "visible");
@@ -237,7 +230,6 @@ export class AstInnerComponent implements OnInit {
   }
 
   scrolling(self, next) {
-  	
 
     if(navigator.userAgent.indexOf("Firefox") != -1 ) 
     {
@@ -326,26 +318,6 @@ export class AstInnerComponent implements OnInit {
                   }
               });
         }
-
-        //mouse scrolling part
-        // let cou = 0;
-        // let gap =(animation_pos - origin_pos)/10;
-        // let smoothInterval = setInterval(()=> {
-        //     cou++;
-        //     //console.log(cou);
-        //     element.animate({
-        //         scrollLeft: '+='+gap+'px'
-        //     }, 
-        //     {
-        //         duration: 10,
-        //         easing: "swing"
-        //     });
-        //     if(cou>10) {
-        //         cou = 0;
-        //         clearInterval(smoothInterval);
-        //     }
-        // }, 1);
-        
 
         event.preventDefault();
         maxScrollLeft = element.get(0).scrollWidth - element.get(0).clientWidth;
@@ -524,7 +496,94 @@ export class AstInnerComponent implements OnInit {
         }
 
       });
+      
+      //android touch moving implements
+    
+      let andStartPos, andEndPos;
+      let andStartTouch, andEndTouch;
+      let andTouchFlag = false;
+      let lastMove = null;
+      let andGap;
+      element.bind("touchstart", (event) => {
+        andStartTouch = event.touches[0];
+        andStartPos = andStartTouch.pageX;
+        andTouchFlag = true;      
+      });
+
+      element.bind("touchmove", (event) => {
+        lastMove = event;
+      });
+
+        // var oEvent = event.originalEvent, 
+        // direction = oEvent.detail ? oEvent.detail * -amount : oEvent.wheelDelta, 
+        // position = element.scrollLeft();
+        // //let origin_pos = position;
+        // position += direction > 0 ? -amount : amount;
+      let position = 0;  
+      element.bind("touchend", (event) => {
+        andEndTouch = lastMove.touches[0];
+        andEndPos = andEndTouch.pageX;
+        
+        if(andTouchFlag) {
+          andTouchFlag = false;
+          andGap = andEndPos - andStartPos;
+          if(andGap  > 0) {
+            position += -screen.width;
+          } 
+          if( andGap < 0) {
+            position += screen.width;
+          } 
+
+          if(moveFlag) {
+          $(".hidden_circle").css({visibility: "hidden"});
+          console.log("posi"+position);
+          moveFlag = false;
+          element.animate({
+            scrollLeft: position+'px'
+          }, 
+          {
+              duration: 1000,
+              easing: "swing",
+              complete: function() {
+                moveFlag = true;
+
+                if(andGap > 0) {
+                  //scroll down
+                  next -= 10;    
+                  console.log("up="+next); 
+                  if(next < 40) {
+                      next = 0;
+                      self.router.navigate(['/astrology']);
+                  } else {
+                    self.sunService.setAstVal(next);
+                  }
+                }
+                
+                if(andGap < 0) {
+                    //scroll up
+                    next += 10;
+                    console.log("up="+next); 
+                    if(next > 90) {
+                      next = 100;
+                      self.router.navigate(['/about']);
+                    } else {
+                      self.sunService.setAstVal(next);
+                    }
+                }
+                // console.log("current console"+next);
+                // if(next > 90) {
+                //   circleFlag = true;  
+                //   console.log("work circle");
+                // }
+              }
+          });
+        }
+          
+        }
+      }); 
     }
+
+
   }
 
   ngOnDestroy() {

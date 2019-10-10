@@ -62,6 +62,39 @@ export class StepSixComponent implements OnInit {
       }
     });
 
+    //android touch moving implements
+    
+    let andStartPos, andEndPos;
+    let andStartTouch, andEndTouch;
+    let andTouchFlag = false;
+    let lastMove = null;
+    let andGap;
+    $(".step-six").bind("touchstart", (event) => {
+      andStartTouch = event.touches[0];
+      andStartPos = andStartTouch.pageX;
+      andTouchFlag = true;      
+    });
+
+    $(".step-six").bind("touchmove", (event) => {
+      lastMove = event;
+    });
+
+    $(".step-six").bind("touchend", (event) => {
+      andEndTouch = lastMove.touches[0];
+      andEndPos = andEndTouch.pageX;
+      if(andTouchFlag) {
+        andTouchFlag = false;
+        andGap = andEndPos - andStartPos;
+        
+        if(andGap  < -60) {
+          this.router.navigate(['/counseling']); 
+        } 
+        if( andGap > 60) {
+          this.router.navigate(['/about/step-five']);
+        } 
+      }
+    });
+
    }
   
   getHistoryImagePath(iNum: Number) {

@@ -459,6 +459,37 @@ mat-video {
 	.method-1 {
 		font-size: 20px;
 	}
+
+	.scroll_show {
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		background-color: white;
+		left: 50%;
+		//bottom:	80px;
+		transform: translate(-50%);
+		z-index: 100;
+	}
+
+	.scroll_symbol {
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		background-color: rgb(133, 127, 126);
+		left: 50%;
+		//bottom:	80px;
+		transform: translate(-50%);
+		z-index: 100;
+	}
+
+	.scroll_text {
+		position: absolute;
+		color: white;
+		left: 50%;
+		bottom: 40px;
+		transform: translate(-50%, -50%);
+		font-size: 12px;
+	}
 	
 }
 
@@ -468,7 +499,7 @@ mat-video {
 	}
 	.movies {
 		width: 40%;
-		margin-top: 15%;
+		//margin-top: 15%;
 	}
 
 	.intro_text {
@@ -505,6 +536,36 @@ mat-video {
 
 	.method-1 {
 		font-size: 20px;
+	}
+
+	.scroll_show {
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		background-color: white;
+		left: 50%;
+		bottom:	80px;
+		transform: translate(-50%, -50%);
+		z-index: 100;
+	}
+
+	.scroll_symbol {
+		position: absolute;
+		width: 60px;
+		height: 1px;
+		background-color: rgb(133, 127, 126);
+		left: 50%;
+		transform: translate(-50%);
+		z-index: 100;
+	}
+
+	.scroll_text {
+		position: absolute;
+		color: white;
+		left: 50%;
+		bottom: 40px;
+		transform: translate(-50%);
+		font-size: 12px;
 	}
 }
 
@@ -552,6 +613,9 @@ mat-video {
 	.method-1 {
 		font-size: 20px;
 	}
+
+
+	
 }
 
 @media screen and (min-width:1201px) and (max-width:1900px) {
