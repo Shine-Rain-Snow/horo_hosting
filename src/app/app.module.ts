@@ -12,7 +12,6 @@ import { NavigationComponent } from './shared/navigation/navigation.component';
 import { SidenavListComponent } from './shared/sidenav-list/sidenav-list.component';
 import { ProgressbarComponent } from './shared/progressbar/progressbar.component';
 import { Globals } from './shared/globals';
-import { MatVideoModule } from 'mat-video';
 import { BlackmenuComponent } from './shared/blackmenu/blackmenu.component';
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { BlackmenuComponent } from './shared/blackmenu/blackmenu.component';
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
-    MatVideoModule,
   ],
   exports: [],
   providers: [Globals],

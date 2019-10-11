@@ -18,8 +18,6 @@ export const routerTransition = trigger('routerTransition', [
   ])
 ])
 
-
-// filter: blur(2px);
 // export const routerTransition = trigger('routerTransition', [
 //   transition('* <=> *', [
 //     /* order */

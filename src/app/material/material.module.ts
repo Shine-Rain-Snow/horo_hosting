@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { MatTabsModule, MatSidenavModule, MatToolbarModule, 
          MatIconModule, MatButtonModule, MatListModule, 
          MatMenuModule, MatProgressBarModule } from '@angular/material';
-import { MatVideoModule } from 'mat-video';
+
 
 @NgModule({
   imports: [
@@ -17,7 +17,6 @@ import { MatVideoModule } from 'mat-video';
     MatTabsModule,
     MatSidenavModule,
     MatProgressBarModule,
-    MatVideoModule,
 
   ],
   exports: [
@@ -29,7 +28,6 @@ import { MatVideoModule } from 'mat-video';
     MatTabsModule,
     MatSidenavModule,
     MatProgressBarModule,
-    MatVideoModule,
   ],
   declarations: []
 })

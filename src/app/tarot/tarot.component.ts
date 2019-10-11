@@ -19,8 +19,8 @@ export class TarotComponent implements OnInit {
     private domSanitizer: DomSanitizer) { }
 
   ngOnInit() {
-  	//this.sunService.setShowMenu(true);
-    //this.sunService.setCurrentPage(9);
+  	this.sunService.setShowMenu(true);
+    this.sunService.setCurrentPage(9);
   }
 
 }
