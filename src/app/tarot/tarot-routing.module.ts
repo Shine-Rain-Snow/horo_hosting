@@ -13,10 +13,12 @@ const routes: Routes = [
 	{
 		path: 'select-cards',
 		component: SelectCardsComponent,
+		data: { state: 'select-cards' }
 	},
 	{
 		path: 'show-cards',
 		component: ShowCardsComponent,
+		data: { state: 'show-cards' }
 	}
 
 ];

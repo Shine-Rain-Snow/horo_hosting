@@ -6,12 +6,14 @@
 	position: absolute;
 	overflow: hidden;
 	font-family: Oswald;
+	z-index: 0;
 }
 
 .tarot_container {
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	z-index: 0;
 }
 
 .left_triangle {
@@ -22,14 +24,17 @@
 	height: 0;
 	border-right: 66vh solid transparent;
     border-bottom: 66vh solid #C6B3C6;
-    z-index: 0;
+    z-index: -1;
+    //background-color: pink;
 }
 
 .tarot_content {
-	z-index: 10;
+
+	z-index: 20;
 	width: 100%;
 	height: 100%;
 	display: table;
+	// background-color: blue;
 	.tarot_title {
 		//background-color: yellow;
 		text-align: center;
@@ -43,9 +48,9 @@
 		width: 50%;
 		height: 100%;
 		float: left;
-		//background: red;
+		// background: red;
 		padding-left: 23%;
-
+		z-index: 20;
 		.deck_title {
 			font-size: 36px;
 			margin-bottom: 10%;
@@ -53,6 +58,7 @@
 		}
 
 		.classic_rider {
+			cursor: pointer;
 			display: table;
 			margin-top: 5%;
 			.classic_rider_text {
@@ -60,20 +66,27 @@
 				width: 50%;
 				padding-top: 10%;
 				float: left;
+
 			}
 			.classic_rider_img {
 				width: 50%;
 				float: left;
 				img {
+					cursor: pointer;
 					width: 50%;
 					height: 100%;
 				}
+				
 			}
 		}
-
+		.classic_rider:hover {
+			transform: scale(1.2);
+		}
 		.hermetic {
+			cursor: pointer;
 			display: table;
 			margin-top: 5%;
+			z-index: 30;
 			.hermetic_text {
 				font-size: 26px;
 				text-align: right;
@@ -88,12 +101,17 @@
 					width: 46%;
 					height: 100%;
 					margin-left: 50%;
+					
 				}
 			}
+		}
+		.hermetic:hover {
+			transform: scale(1.2);
 		}
 		.lenormand {
 			display: table;
 			margin-top: 5%;
+			cursor: pointer;
 			.lenormand_text {
 				font-size: 26px;
 				width: 50%;
@@ -107,8 +125,12 @@
 					width: 60%;
 					height: 100%;
 					margin-top: 4%;
-				}
+					cursor: pointer;
+				}				
 			}
+		}
+		.lenormand:hover {
+			transform: scale(1.2);
 		}
 	}
 	.tarot_spread {
@@ -124,10 +146,12 @@
 		}
 
 		.first_mode {
+			cursor: pointer;
 			width: 100%;
 			display: table;
 			margin-top: 5%;
 			.first_mode_img {
+				cursor: pointer;
 				width: 50%;
 				float: left;
 				padding-left: 30%;
@@ -146,11 +170,17 @@
 			}
 		}
 
+		.first_mode:hover {
+			transform: scale(1.2);
+		}
+
 		.second_mode {
 			width: 100%;
 			display: table;
 			margin-top: 5%;
+			cursor: pointer;
 			.second_mode_img {
+				cursor: pointer;
 				width: 50%;
 				float: left;
 				display: table;
@@ -183,12 +213,17 @@
 				padding-top: 2%;
 			}
 		}
+		.second_mode:hover {
+			transform: scale(1.2);
+		}
 
 		.third_mode {
-			width: 100%;
+			cursor: pointer;
+			width: 100%;	
 			display: table;
 			margin-top: 5%;
 			.third_mode_img {
+				cursor: pointer;
 				width: 50%;
 				float: left;
 				display: table;
@@ -244,6 +279,7 @@
 
 				
 			}
+			
 			.third_mode_text {
 				
 				display: table;
@@ -289,6 +325,10 @@
 				
 			}
 		}
+		.third_mode:hover {
+			transform: scale(1.2);
+		}
+
 	}
 }
 
@@ -298,11 +338,21 @@
 	position: absolute;
 	bottom: 4%;
 	text-align: center;
-	img {
+	img:nth-child(1) {
 		cursor: pointer;
+		position: relative;
+		left: 6%;
 		width: 6%;
 		height: 6%;
 		outline: none !important;
+	}
+	img:nth-child(2) {
+		cursor: pointer;
+		position: relative;
+		left: 45%;
+		visibility: hidden;
+		width: 12%;
+		height: 12%;
 	}
 	.raven_text {
 		cursor: pointer;
