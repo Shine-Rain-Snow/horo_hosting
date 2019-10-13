@@ -383,7 +383,7 @@ export class ShowCardsComponent implements OnInit {
       this.deck_folder = "hermetic";
       for(let i=1; i<=3; i++) {        
         threeCardNums[i] = Math.floor((Math.random() * 22) + 1);
-        this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
+        this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".png";
       }
     }
     if(this.deck_mode == 3) {

@@ -26,7 +26,7 @@ export class TarotComponent implements OnInit {
     let self = this;
     //hover effting jquery
     $(".classic_rider").click(function(){
-      $(".classic_rider_text").css({color: self.getRandomColor()});
+      $(".classic_rider_text").css({color: "#5A3594"});
       $(".hermetic_text").css({color: "black"});
       $(".lenormand_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
@@ -34,7 +34,7 @@ export class TarotComponent implements OnInit {
     });
     $(".hermetic").click(function(){
       $(".classic_rider_text").css({color: "black"});
-      $(".hermetic_text").css({color: self.getRandomColor()});
+      $(".hermetic_text").css({color: "#5A3594"});
       $(".lenormand_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "orange"});
       self.deck_mode = 2;
@@ -42,13 +42,13 @@ export class TarotComponent implements OnInit {
     $(".lenormand").click(function(){
       $(".classic_rider_text").css({color: "black"});
       $(".hermetic_text").css({color: "black"});
-      $(".lenormand_text").css({color: self.getRandomColor()});
+      $(".lenormand_text").css({color: "#5A3594"});
       //$(".left_triangle").css({"border-bottom-color": "green"});
       self.deck_mode = 3;
     });
 
      $(".first_mode").click(function(){
-      $(".first_mode_text").css({color: self.getRandomColor()});
+      $(".first_mode_text").css({color: "#5A3594"});
       $(".second_mode_text").css({color: "black"});
       $(".third_mode_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
@@ -56,7 +56,7 @@ export class TarotComponent implements OnInit {
     });
     $(".second_mode").click(function(){
       $(".first_mode_text").css({color: "black"});
-      $(".second_mode_text").css({color: self.getRandomColor()});
+      $(".second_mode_text").css({color: "#5A3594"});
       $(".third_mode_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "orange"});
       self.spread_mode = 2;
@@ -64,7 +64,7 @@ export class TarotComponent implements OnInit {
     $(".third_mode").click(function(){
       $(".first_mode_text").css({color: "black"});
       $(".second_mode_text").css({color: "black"});
-      $(".third_mode_text").css({color: self.getRandomColor()});
+      $(".third_mode_text").css({color: "#5A3594"});
       //$(".left_triangle").css({"border-bottom-color": "green"});
       self.spread_mode = 3;
     });

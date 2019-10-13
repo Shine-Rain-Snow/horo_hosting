@@ -22,7 +22,7 @@
 	left: 0;
 	width: 0;
 	height: 0;
-	border-right: 66vh solid transparent;
+	border-right: 33vh solid transparent;
     border-bottom: 66vh solid #C6B3C6;
     z-index: -1;
     //background-color: pink;
@@ -43,18 +43,26 @@
 		letter-spacing: 6px;
 		padding: 4% 0 1% 0;
 		font-weight: bold;
+		
 	}
 	.tarot_deck {
 		width: 50%;
 		height: 100%;
 		float: left;
 		// background: red;
-		padding-left: 23%;
+		padding-left: 13%;
 		z-index: 20;
 		.deck_title {
 			font-size: 36px;
 			margin-bottom: 10%;
 			margin-left: 20%;
+			.main-dash {
+				position: relative;
+			    width: 45px;
+			    border-bottom: 1px solid black;
+			    left: -75px;
+			    top: 29px;	
+			}
 		}
 
 		.classic_rider {
@@ -143,6 +151,13 @@
 			font-size: 36px;
 			margin-bottom: 10%;
 			margin-left: 46%;
+			.main-dash {
+				position: relative;
+			    width: 45px;
+			    border-bottom: 1px solid black;
+			    left: -75px;
+			    top: 29px;	
+			}
 		}
 
 		.first_mode {
@@ -331,6 +346,7 @@
 		}
 
 	}
+	
 }
 
 .black_raven {

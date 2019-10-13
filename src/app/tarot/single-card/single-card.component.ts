@@ -373,11 +373,11 @@ export class SingleCardComponent implements OnInit {
       this.single_deck_title = this.riderCard_txt[singleCardNums-1].title;
       this.single_deck_detail = this.riderCard_txt[singleCardNums-1].detail;
     }
-
+ 
     if(this.deck_mode == 2) {
       this.deck_folder = "hermetic";
       singleCardNums = Math.floor((Math.random() * 22) + 1);
-      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
+      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".png";
 
       this.single_deck_title = this.hermeticCard_txt[singleCardNums-1].title;
       this.single_deck_detail = this.hermeticCard_txt[singleCardNums-1].detail;
