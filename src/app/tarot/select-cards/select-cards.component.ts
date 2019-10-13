@@ -20,6 +20,7 @@ export class SelectCardsComponent implements OnInit {
   spread_mode;
   card_num = 0;
   card_mode_text = "";
+  card_mode_text1 = "";
   oneFlag = false;
   threeCardFlag = false;
   ngOnInit() {
@@ -42,6 +43,7 @@ export class SelectCardsComponent implements OnInit {
     
     if(this.spread_mode == 1) {
       this.card_mode_text = "Single";
+      this.card_mode_text1 = "one";
       let prevNum = 0;
       let cNum = 0;
       $(".sel-cards-imgs img").click(function(){
@@ -65,6 +67,7 @@ export class SelectCardsComponent implements OnInit {
     //three card mode
     if(this.spread_mode == 2) {
       this.card_mode_text = "Three";
+      this.card_mode_text1 = "three";
       let threeFlag = [true,true,true,true,true,true,true,true,true];
       let cNum = 0;
       let countCard = 0;
