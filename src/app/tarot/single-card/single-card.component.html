@@ -1,0 +1,42 @@
+<div class="single-card">
+	<div class="single-card-container">
+		<div class="single-left-detail">
+			<div class="single-title"> <span>One card Reading</span> </div>	
+			<div class="single-img">
+				<img src={{singleImagePath}} />
+			</div>
+			<div class="single-detail">
+				<div class="single-detail-title">
+					{{single_deck_title}}
+				</div>
+				<div class="yes-no">
+					YES
+				</div>
+				<div class="single-detail-text">
+					{{single_deck_detail}}
+				</div>
+			</div>
+		</div>
+		<div class="single-right-detail">
+			<div class="single-sel-item3-container">
+				<div class="single-back-reading">
+					<div (click)="goSelectCard()" >Back up</div>
+					<div routerLink="/tarot">Start a new Reading</div>
+				</div>
+				<div class="arrow-symbol">
+					<div>
+						<i class='fa fa-chevron-up'></i>
+					</div>												
+					<div class="arrow-dash"></div>
+					<div class="arrow-down">
+						<i class='fa fa-chevron-down'></i>
+					</div>
+				</div>
+			</div>
+			<div class="right-img">
+				<img src="assets/img/tarot/tarot4.png" />
+			</div>
+		</div>
+		<div class="left_triangle"></div>
+	</div>
+</div>

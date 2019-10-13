@@ -101,6 +101,7 @@
 .sel-cards {
 	//background: red;
 	position: relative;
+	top: -8%;
 	.sel-cards-imgs {
 		//text-align: center;
 		position: relative;
@@ -112,9 +113,7 @@
 			position: absolute;
 			cursor: pointer;
 		}
-		img:hover {
-			transform: scale(1.2);
-		}
+		
 		img:nth-child(1) {
 			left: 20%;
 			top: 20%;
@@ -122,46 +121,132 @@
 			z-index: 1;
 		}
 		img:nth-child(2) {
-			left: 27%;
-			top: 10%;
-			transform: rotate(-12deg);
+			left: 22.2%;
+			top: 18%;
+			transform: rotate(-14.4deg);
 			z-index: 2;
 		}
 		img:nth-child(3) {
-			left: 34%;
-			top: 5%;
-			transform: rotate(-8deg);
+			left: 24.4%;
+			top: 16%;
+			transform: rotate(-12.8deg);
 			z-index: 3;
 		}
 		img:nth-child(4) {
-			left: 40%;
-			top: 2%;
-			transform: rotate(-1deg);
+			left: 26.6%;
+			top: 14%;
+			transform: rotate(-11.2deg);
 			z-index: 4;
 		}
 		img:nth-child(5) {
-			left: 46%;
-			top: 2%;
-			transform: rotate(1deg);
+			left: 28.8%;
+			top: 12%;
+			transform: rotate(-9.6deg);
 			z-index: 5;
 		}
 		img:nth-child(6) {
-			left: 53%;
-			top: 5%;
-			transform: rotate(8deg);
+			left: 31%;
+			top: 10%;
+			transform: rotate(-8deg);
 			z-index: 6;
 		}
 		img:nth-child(7) {
-			left: 60%;
-			top: 10%;
-			transform: rotate(12deg);
+			left: 33.2%;
+			top: 8%;
+			transform: rotate(-6.4deg);
 			z-index: 7;
 		}
 		img:nth-child(8) {
-			left: 67%;
+			left: 35.4%;
+			top: 6%;
+			transform: rotate(-4.8deg);
+			z-index: 8;
+		}
+
+		img:nth-child(9) {
+			left: 37.6%;
+			top: 4%;
+			transform: rotate(-3.2deg);
+			z-index: 9;
+		}
+		img:nth-child(10) {
+			left: 39.8%;
+			top: 2%;
+			transform: rotate(-1.6deg);
+			z-index: 10;
+		}
+		img:nth-child(11) {
+			left: 42%;
+			top: 1%;
+			transform: rotate(-0deg);
+			z-index: 11;
+		}
+		img:nth-child(12) {
+			left: 44.2%;
+			top: 1%;
+			transform: rotate(0deg);
+			z-index: 12;
+		}
+		img:nth-child(13) {
+			left: 46.4%;
+			top: 2%;
+			transform: rotate(1.6deg);
+			z-index: 13;
+		}
+		img:nth-child(14) {
+			left: 48.6%;
+			top: 4%;
+			transform: rotate(3.2deg);
+			z-index: 14;
+		}
+		img:nth-child(15) {
+			left: 50.8%;
+			top: 6%;
+			transform: rotate(4.8deg);
+			z-index: 15;
+		}
+		img:nth-child(16) {
+			left: 53%;
+			top: 8%;
+			transform: rotate(6.4deg);
+			z-index: 16;
+		}
+
+		img:nth-child(17) {
+			left: 55.2%;
+			top: 10%;
+			transform: rotate(8deg);
+			z-index: 17;
+		}
+		img:nth-child(18) {
+			left: 57.4%;
+			top: 12%;
+			transform: rotate(9.6deg);
+			z-index: 18;
+		}
+		img:nth-child(19) {
+			left: 59.6%;
+			top: 14%;
+			transform: rotate(11.2deg);
+			z-index: 19;
+		}
+		img:nth-child(20) {
+			left: 61.8%;
+			top: 16%;
+			transform: rotate(12.8deg);
+			z-index: 20;
+		}
+		img:nth-child(21) {
+			left: 64%;
+			top: 18%;
+			transform: rotate(14.4deg);
+			z-index: 21;
+		}
+		img:nth-child(22) {
+			left: 66.2%;
 			top: 20%;
 			transform: rotate(16deg);
-			z-index: 8;
+			z-index: 22;
 		}
 	}
 	.sel-cards-arc {
@@ -169,7 +254,7 @@
 		top: 100%;
 		left: 50%;
 
-		transform: translate(-50%, 1%);
+		transform: translate(-50%, 2%);
 		width: 160vw;
 	    height: 160vw;
 	    border-radius: 50%;

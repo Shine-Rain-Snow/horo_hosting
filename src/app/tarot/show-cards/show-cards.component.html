@@ -1,23 +1,26 @@
 <div class="show-cards">
 	<div class="show-cards-container">
 		<div class="left-detail">
+			<div class="three-title">
+				<span>3 Cards Reading</span>
+			</div>
 			<div class="cards-pic">
 				<div class="pic1">
-					<div class="pic-img"><img src={{imagePath1}}></div>
+					<div class="pic-img"><img src={{imagePath1}} /></div>
 					<div class="pic-name">1/Past</div>					
 				</div>
 				<div class="pic2">
-					<div class="pic-img"><img src={{imagePath2}}></div>
+					<div class="pic-img"><img src={{imagePath2}} /></div>
 					<div class="pic-name">2/Present</div>
 				</div>
 				<div class="pic3">
-					<div class="pic-img"><img src={{imagePath3}}></div>
+					<div class="pic-img"><img src={{imagePath3}} /></div>
 					<div class="pic-name">3/Future</div>
 				</div>
 			</div>
 			<div class="cards-content">
 				<div class="con1">
-					<div class="con-img"><img src={{imagePath1}}></div>
+					<div class="con-img"><img src={{imagePath1}} /></div>
 					<div class="con-detail">
 						<div class="con-detail-title"> {{deck_title1}} </div>
 						<div class="con-detail-content">
@@ -26,7 +29,7 @@
 					</div>
 				</div>
 				<div class="con2">
-					<div class="con-img"><img src={{imagePath2}}></div>
+					<div class="con-img"><img src={{imagePath2}} /></div>
 					<div class="con-detail">
 						<div class="con-detail-title"> {{deck_title2}} </div>
 						<div class="con-detail-content">
@@ -35,7 +38,7 @@
 					</div>
 				</div>
 				<div class="con3">
-					<div class="con-img"><img src={{imagePath3}}></div>
+					<div class="con-img"><img src={{imagePath3}} /></div>
 					<div class="con-detail">
 						<div class="con-detail-title"> {{deck_title3}} </div>
 						<div class="con-detail-content">
@@ -45,11 +48,11 @@
 				</div>
 			</div>
 		</div>
-		<div class="right-detail">
-			<div class="sel-item3-container">
-				<div class="back-reading">
-					<div routerLink="/tarot" >Start To New Reading</div>
-					<div>Book a privet session</div>
+		<div class="three-right-detail">
+			<div class="three-sel-item3-container">
+				<div class="three-back-reading">
+					<div (click)="goSelectCards()"> Back Up</div>
+					<div routerLink="/tarot">Start a new Reading</div>
 				</div>
 				<div class="arrow-symbol">
 					<div >

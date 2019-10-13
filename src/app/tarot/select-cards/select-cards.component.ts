@@ -46,31 +46,56 @@ export class SelectCardsComponent implements OnInit {
       this.card_mode_text1 = "one";
       let prevNum = 0;
       let cNum = 0;
-      $(".sel-cards-imgs img").click(function(){
-        $(".sel-cards-arc").css("background-color", self.getRandomColor());
-        self.oneFlag = true;
-        prevNum =  self.card_num;
+      $(".sel-cards-imgs img").hover(function() {
+        $(".sel-cards-arc").css({background: self.getRandomColor()});        
         self.card_num = $(".sel-cards-imgs img").index(this) + 1;
-        cNum = self.card_num;
-        
-        $(".sel-cards-imgs img:nth-child("+cNum+")").css({
-          top: "-=10%"
-        });
-        if(prevNum > 0) {
-          $(".sel-cards-imgs img:nth-child("+prevNum+")").css({
-            top: "+=10%"
-          });
-        }
-        
+        cNum = self.card_num; 
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "-=5%"});
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(120%)"});
+        self.oneFlag = true;
+      }, function() {
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "+=5%"});
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(100%)"});
       });
+      // let prevNum = 0;
+      // let cNum = 0;
+      // $(".sel-cards-imgs img").click(function(){
+      //   $(".sel-cards-arc").css("background-color", self.getRandomColor());
+      //   self.oneFlag = true;
+      //   prevNum =  self.card_num;
+      //   self.card_num = $(".sel-cards-imgs img").index(this) + 1;
+      //   cNum = self.card_num;
+        
+      //   $(".sel-cards-imgs img:nth-child("+cNum+")").css({
+      //     top: "-=10%"
+      //   });
+      //   if(prevNum > 0) {
+      //     $(".sel-cards-imgs img:nth-child("+prevNum+")").css({
+      //       top: "+=10%"
+      //     });
+      //   }
+        
+      // });
     }
     //three card mode
     if(this.spread_mode == 2) {
       this.card_mode_text = "Three";
       this.card_mode_text1 = "three";
-      let threeFlag = [true,true,true,true,true,true,true,true,true];
+      let threeFlag = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
       let cNum = 0;
       let countCard = 0;
+
+      $(".sel-cards-imgs img").hover(function() {
+        $(".sel-cards-arc").css({background: self.getRandomColor()});        
+        self.card_num = $(".sel-cards-imgs img").index(this) + 1;
+        cNum = self.card_num; 
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "-=3%"});
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(120%)"});
+        self.oneFlag = true;
+      }, function() {
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "+=3%"});
+        $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(100%)"});
+      });
      
       $(".sel-cards-imgs img").click(function(){
         $(".sel-cards-arc").css("background-color", self.getRandomColor());
@@ -98,6 +123,7 @@ export class SelectCardsComponent implements OnInit {
 
         if(countCard == 3) {
           self.threeCardFlag = true;
+          self.router.navigate(['/tarot/show-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
         } else {
           self.threeCardFlag = false;
         }
@@ -110,14 +136,14 @@ export class SelectCardsComponent implements OnInit {
   cardPredict() {
     if(this.spread_mode == 1) {
       if(this.oneFlag) {
-        this.router.navigate(['/tarot/show-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]);
+        this.router.navigate(['/tarot/single-card', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]);
       }
     }
-    if(this.spread_mode == 2) {
-      if(this.threeCardFlag) {
-        this.router.navigate(['/tarot/show-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]);
-      }
-    }
+    // if(this.spread_mode == 2) {
+    //   if(this.threeCardFlag) {
+    //     this.router.navigate(['/tarot/show-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]);
+    //   }
+    // }
     
   }
 

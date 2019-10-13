@@ -6,30 +6,23 @@ import { Globals } from '../../shared/globals';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-show-cards',
-  templateUrl: './show-cards.component.html',
-  styleUrls: ['./show-cards.component.scss']
+  selector: 'app-single-card',
+  templateUrl: './single-card.component.html',
+  styleUrls: ['./single-card.component.scss']
 })
-export class ShowCardsComponent implements OnInit {
+export class SingleCardComponent implements OnInit {
 
   constructor(private router: Router, 
     private sunService: SunProgressService,
     private stateData: Globals,
     private aRoute: ActivatedRoute) { }
-  deck_mode;
-  deck_folder;
-  spread_mode;
-  imagePath = [];
-  imagePath1;
-  imagePath2;
-  imagePath3;
-  deck_title1;
-  deck_title2;
-  deck_title3;
-  deck_detail1;
-  deck_detail2;
-  deck_detail3;
 
+  deck_mode;
+  spread_mode;
+  singleImagePath;
+  single_deck_title;
+  single_deck_detail;
+  deck_folder;
   //detail rider card content
   riderCard_txt = [
     {
@@ -363,74 +356,45 @@ export class ShowCardsComponent implements OnInit {
   ];
 
   ngOnInit() {
+  	let self = this;
   	this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(9);
     this.deck_mode = this.aRoute.snapshot.paramMap.get('deck_mode');
     this.spread_mode = this.aRoute.snapshot.paramMap.get('spread_mode');
     console.log("deck_mode="+this.deck_mode+"spread_mode"+this.spread_mode);
-    
-    let threeCardNums = [];
+
+    let singleCardNums;
 
     if(this.deck_mode == 1) {
       this.deck_folder = "ridercard";
-      for(let i=1; i<=3; i++) {        
-        threeCardNums[i] = Math.floor((Math.random() * 22) + 1);
-        this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".png";
-      }
+      singleCardNums = Math.floor((Math.random() * 22) + 1);
+      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".png";
+
+      this.single_deck_title = this.riderCard_txt[singleCardNums-1].title;
+      this.single_deck_detail = this.riderCard_txt[singleCardNums-1].detail;
     }
 
     if(this.deck_mode == 2) {
       this.deck_folder = "hermetic";
-      for(let i=1; i<=3; i++) {        
-        threeCardNums[i] = Math.floor((Math.random() * 22) + 1);
-        this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
-      }
+      singleCardNums = Math.floor((Math.random() * 22) + 1);
+      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
+
+      this.single_deck_title = this.hermeticCard_txt[singleCardNums-1].title;
+      this.single_deck_detail = this.hermeticCard_txt[singleCardNums-1].detail;
     }
     if(this.deck_mode == 3) {
       this.deck_folder = "lenormand";
-      for(let i=1; i<=3; i++) {        
-        threeCardNums[i] = Math.floor((Math.random() * 36) + 1);
-        this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
-      }
+      singleCardNums = Math.floor((Math.random() * 36) + 1);
+      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
+
+      this.single_deck_title = this.lenormandCard_txt[singleCardNums-1].title;
+      this.single_deck_detail = this.lenormandCard_txt[singleCardNums-1].detail;
     }
-      
-    this.imagePath1 = this.imagePath[1];
-    this.imagePath2 = this.imagePath[2];
-    this.imagePath3 = this.imagePath[3];
-
-    if(this.deck_mode == 1) {
-      this.deck_title1 = this.riderCard_txt[threeCardNums[1]-1].title;
-      this.deck_title2 = this.riderCard_txt[threeCardNums[2]-1].title;
-      this.deck_title3 = this.riderCard_txt[threeCardNums[3]-1].title;
-
-      this.deck_detail1 = this.riderCard_txt[threeCardNums[1]-1].detail;
-      this.deck_detail2 = this.riderCard_txt[threeCardNums[2]-1].detail;
-      this.deck_detail3 = this.riderCard_txt[threeCardNums[3]-1].detail;
-    }
-
-    if(this.deck_mode == 2 ) {
-      this.deck_title1 = this.hermeticCard_txt[threeCardNums[1]-1].title;
-      this.deck_title2 = this.hermeticCard_txt[threeCardNums[2]-1].title;
-      this.deck_title3 = this.hermeticCard_txt[threeCardNums[3]-1].title;
-
-      this.deck_detail1 = this.hermeticCard_txt[threeCardNums[1]-1].detail;
-      this.deck_detail2 = this.hermeticCard_txt[threeCardNums[2]-1].detail;
-      this.deck_detail3 = this.hermeticCard_txt[threeCardNums[3]-1].detail;
-    }
-
-    if(this.deck_mode == 3) {
-      this.deck_title1 = this.lenormandCard_txt[threeCardNums[1]-1].title;
-      this.deck_title2 = this.lenormandCard_txt[threeCardNums[2]-1].title;
-      this.deck_title3 = this.lenormandCard_txt[threeCardNums[3]-1].title;
-
-      this.deck_detail1 = this.lenormandCard_txt[threeCardNums[1]-1].detail;
-      this.deck_detail2 = this.lenormandCard_txt[threeCardNums[2]-1].detail;
-      this.deck_detail3 = this.lenormandCard_txt[threeCardNums[3]-1].detail;
-    }
+  
   }
 
-  goSelectCards() {
-    this.router.navigate(['/tarot/select-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]); 
+  goSelectCard() {
+  	this.router.navigate(['/tarot/select-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]); 
   }
 
 }

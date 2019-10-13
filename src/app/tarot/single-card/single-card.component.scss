@@ -1,4 +1,4 @@
-.show-cards {
+.single-card {
 	width: 100%;
 	height: 100vh;
 	position: absolute;
@@ -6,135 +6,66 @@
 	overflow: hidden;
 }
 
-.show-cards-container {
+.single-card-container {
 	width: 100%;
 	height: 100%;
 }
 
-.left-detail {
+.single-left-detail {
 	width: 70%;
 	height: 100%;
 	float: left;
-
-	//background: red;
-	.three-title {
+	position: relative;
+	.single-title {
 		font-size: 40px;
 		color: #5A3594;
-		padding: 3% 0 0 0%;
+		padding: 6% 0 1% 0;
 	 	// background: red;
 	 	span {
 	 		position: relative;
-	 		left: 53%;
+	 		left: 50%;
 	 	}
 	}
-
-	.cards-pic {
+	.single-img {
 		position: relative;
-		width: 100%;
-		height: 25%;
-		//background-color: pink;
-		display: table;
-		left: 30%;
-		margin-top: 1%;
-		.pic1 {
-			width: 20%;
-			height: 100%;
-			//background: yellow;
-			float: left;
-
-		}
-		.pic2 {
-			width: 20%;
-			height: 100%;
-			//background: blue;
-			float: left;
-		}
-		.pic3 {
-			width: 20%;
-			height: 100%;
-			//background: green;
-			float: left;
-		}
-		.pic-img {
-			width: 100%;
-			height: 80%;
+		margin: 3% 0;
+		img {
 			position: relative;
-			margin-top: 5%;
-			top: 8%;
-			text-align: center;
-			img {
-				width: 40%;
-				height: 18vh;
-			}
-		}
-		.pic-name {
-			text-align: center;
-			font-size: 18px;
-
+			left: 48.5%;
+			width: 18%;
+			height: 35vh;
 		}
 	}
-
-	.cards-content {
-		width: 100%;
-		height: 50%;
+	.single-detail {
 		position: relative;
-		.con1 {
-			width: 100%;
-			height: 15vh;
-			//background: red;
-			display: table;
+		left: 30%;
+		margin-top: 5%;
+		.single-detail-title {
+			font-size: 28px;
 		}
-		.con2 {
-			width: 100%;
-			height: 15vh;
-			//background: yellow;
-			display: table;
+		.yes-no {
+			padding-top: 1%;
+			font-size: 24px;
 		}
-		.con3 {
-			width: 100%;
-			height: 15vh;
-			//background: green;
-			display: table;
-		}
-		.con-img {
-			height: 100%;
-			width: 30%;
-			float: left;
-			position: relative;
-			margin-top: 2%;
-			img {
-				width: 20%;
-				height: 13vh;
-				float: right;
-			}
-		}
-		.con-detail {
-			width: 70%;
-			float: left;
-			padding: 3% 4%;
-			.con-detail-title {
-				font-size: 22px;
-				margin-bottom: 1%;
-			}
-			.con-detail-content {
-				font-size: 20px;
-			}
+		.single-detail-text {
+			padding-top: 2%;
+			font-size: 20px;
 		}
 	}
 }
 
-.three-right-detail {
+.single-right-detail {
 	width: 30%;
 	height: 100%;
 	float: right;
 	//background: blue;
-	.three-sel-item3-container {
+	.single-sel-item3-container {
 		width: 100%;
 		position: relative;
 	    display: table;
 	    margin-top: 28%;
 		margin-left: 25%;
-		.three-back-reading {
+		.single-back-reading {
 			float: left;
 			font-size: 22px;
 			color: #5A3594;
