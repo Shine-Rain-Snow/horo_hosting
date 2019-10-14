@@ -125,6 +125,15 @@
 			}
 		}
 	}
+	.hand-down {
+		text-align: center;
+		img {
+			cursor: pointer;
+			outline: none !important;
+			width: 10%;
+			height: 10vh;
+		}
+	}
 }
 
 .celtic-right-detail {

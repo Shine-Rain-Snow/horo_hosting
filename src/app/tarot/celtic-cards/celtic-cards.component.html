@@ -9,6 +9,7 @@
 				<div class="left-imgs">
 					<div class="five-img">
 						<img src={{celtic_imgPath[5]}} /> 
+						
 					</div>
 					<div class="middle-imgs">
 						<div class="three-img"><img src={{celtic_imgPath[3]}} /></div>
@@ -26,13 +27,15 @@
 					<div class="seven-img"><img src={{celtic_imgPath[7]}} /></div>
 				</div>
 			</div>
+			<div class="hand-down">
+				<img  src="assets/img/tarot/tarot8.png" (click)="goCelticDetailCards()" />
+			</div>
 		</div>
 		<div class="celtic-right-detail">
 			<div class="celtic-sel-item3-container">
 				<div class="celtic-back-reading">
 					<div (click)="goCelticSelectCards()"> Back Up</div>
 					<div routerLink="/tarot">Start a new Reading</div>
-					<div (click)="goCelticDetailCards()">Celtic detail</div>
 				</div>
 				<div class="arrow-symbol">
 					<div >
