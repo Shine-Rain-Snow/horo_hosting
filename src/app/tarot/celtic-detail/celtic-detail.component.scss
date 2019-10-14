@@ -1,4 +1,4 @@
-.single-card {
+.celtic-ten {
 	width: 100%;
 	height: 100vh;
 	position: absolute;
@@ -6,67 +6,108 @@
 	overflow: hidden;
 }
 
-.single-card-container {
+.celtic-ten-container {
 	width: 100%;
 	height: 100%;
 }
 
-.single-left-detail {
+.celtic-ten-left {
 	width: 70%;
 	height: 100%;
-	float: left;
 	position: relative;
-	.single-title {
-		font-size: 40px;
-		color: #5A3594;
-		padding: 6% 0 1% 0;
-	 	// background: red;
-	 	span {
-	 		position: relative;
-	 		left: 50%;
-	 	}
-	}
-	.single-img {
+	float: left;
+	display: table;
+	z-index: 20;
+	.one-five {
+		width: 50%;
+		height: 100%;
 		position: relative;
-		margin: 3% 0;
-		img {
-			position: relative;
-			left: 48.5%;
-			width: 18%;
-			height: 40vh;
+		float: left;
+		//background: red;
+		.cel1, .cel2, .cel3, .cel4, .cel5 {
+			width: 100%;
+			//background-color: pink;
+			display: table;			
+			margin: 5% 5% 5% 40%;
+
+		}
+		.cel-img {
+			width: 15%;
+			float: left;
+			img {
+				width:100%;
+				height: 15vh;
+			}
+		}
+		.cel-text {
+			width: 80%;
+			float: left;
+			padding: 3% 5% 3% 5%;
+			.cel-text-title {
+				font-size: 20px;
+			}
+			.cel-text-content {
+				font-style: 18px;
+				width: 90%;
+				height: 9vh;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				//background: yellow;
+			}
 		}
 	}
-	.single-detail {
+	.six-ten {
+		width: 50%;
+		height: 100%;
 		position: relative;
-		left: 30%;
-		margin-top: 5%;
-		.single-detail-title {
-			font-size: 28px;
+		float: left;
+		//background: blue;
+		.cel6, .cel7, .cel8, .cel9, .cel10 {
+			width: 100%;
+			//background-color: yellow;
+			display: table;			
+			margin: 5% 5% 5% 30%;
+
 		}
-		.yes-no {
-			padding-top: 1%;
-			font-size: 24px;
+		.cel-img {
+			width: 15%;
+			float: left;
+			img {
+				width:100%;
+				height: 15vh;
+			}
 		}
-		.single-detail-text {
-			padding-top: 2%;
-			font-size: 20px;
-			width: 60%;
+		.cel-text {
+			width: 80%;
+			float: left;
+			padding: 3% 5% 3% 5%;
+			.cel-text-title {
+				font-size: 20px;
+			}
+			.cel-text-content {
+				font-size: 18px;
+				width: 90%;
+				height: 9vh;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
 		}
+
 	}
 }
 
-.single-right-detail {
+.celtic-ten-right {
 	width: 30%;
 	height: 100%;
 	float: right;
 	//background: blue;
-	.single-sel-item3-container {
+	.celtic-ten-container {
 		width: 100%;
 		position: relative;
 	    display: table;
 	    margin-top: 28%;
 		margin-left: 25%;
-		.single-back-reading {
+		.celtic-ten-back-reading {
 			float: left;
 			font-size: 22px;
 			color: #5A3594;
@@ -76,6 +117,11 @@
 				cursor: pointer;
 			}
 			div:nth-child(2) {
+				text-align: right;
+				margin-top: 60px;
+			}
+			div:nth-child(3) {
+				text-align: right;
 				margin-top: 60px;
 			}
 		}

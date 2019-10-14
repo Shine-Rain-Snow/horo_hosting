@@ -1,0 +1,54 @@
+<div class="celtic-cards">
+	<div class="celtic-cards-container">
+		<div class="celtic-left-detail">
+			<div class="celtic-title">
+				<span>Celtic Cross deep Reading</span>
+			</div>
+			<div class="celtic-img">
+				<div class="empty-img"></div>
+				<div class="left-imgs">
+					<div class="five-img">
+						<img src={{celtic_imgPath[5]}} /> 
+					</div>
+					<div class="middle-imgs">
+						<div class="three-img"><img src={{celtic_imgPath[3]}} /></div>
+						<div class="one-img"><img src={{celtic_imgPath[1]}} /></div>
+						<div class="four-img"><img src={{celtic_imgPath[4]}} /></div>
+
+						<div class="two-img"><img src={{celtic_imgPath[2]}} /></div>
+					</div>
+					<div class="six-img"><img src={{celtic_imgPath[6]}} /></div>
+				</div>
+				<div class="right-imgs">
+					<div class="ten-img"><img src={{celtic_imgPath[10]}} /></div>
+					<div class="nine-img"><img src={{celtic_imgPath[9]}} /></div>
+					<div class="eight-img"><img src={{celtic_imgPath[8]}} /></div>
+					<div class="seven-img"><img src={{celtic_imgPath[7]}} /></div>
+				</div>
+			</div>
+		</div>
+		<div class="celtic-right-detail">
+			<div class="celtic-sel-item3-container">
+				<div class="celtic-back-reading">
+					<div (click)="goCelticSelectCards()"> Back Up</div>
+					<div routerLink="/tarot">Start a new Reading</div>
+					<div (click)="goCelticDetailCards()">Celtic detail</div>
+				</div>
+				<div class="arrow-symbol">
+					<div >
+						<i class='fa fa-chevron-up'></i>
+					</div>												
+					<div class="arrow-dash"></div>
+					<div class="arrow-down">
+						<i class='fa fa-chevron-down'></i>
+					</div>
+				</div>
+			</div>
+			<div class="right-img">
+				<img src="assets/img/tarot/tarot4.png" />
+			</div>
+		</div>
+		<div class="left_triangle"></div>
+	</div>
+
+</div>

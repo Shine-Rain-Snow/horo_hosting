@@ -31,9 +31,18 @@ export class SunProgressService {
   mPressImageURL;
   mBooksImageURL
   mShowMenu;
+  mCelticTenCardNum;
 
   getShowMenu() {
     return this.mShowMenu;
+  }
+
+  setCelticTenCardNum(value) {
+    this.mCelticTenCardNum = value;
+  }
+
+  getCelticTenCardNum() {
+    return this.mCelticTenCardNum;
   }
   
 

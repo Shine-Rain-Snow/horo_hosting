@@ -6,11 +6,11 @@ import { Globals } from '../../shared/globals';
 import * as $ from 'jquery';
 
 @Component({
-  selector: 'app-single-card',
-  templateUrl: './single-card.component.html',
-  styleUrls: ['./single-card.component.scss']
+  selector: 'app-celtic-detail',
+  templateUrl: './celtic-detail.component.html',
+  styleUrls: ['./celtic-detail.component.scss']
 })
-export class SingleCardComponent implements OnInit {
+export class CelticDetailComponent implements OnInit {
 
   constructor(private router: Router, 
     private sunService: SunProgressService,
@@ -19,11 +19,11 @@ export class SingleCardComponent implements OnInit {
 
   deck_mode;
   spread_mode;
-  singleImagePath;
-  single_deck_title;
-  single_deck_detail;
+  celtic_random_mode;
   deck_folder;
-  yesNo;
+  celtic_imgPath = [];
+  celtic_cardTitle = [];
+  celtic_cardContent = [];
   //detail rider card content
   riderCard_txt = [
     {
@@ -445,52 +445,46 @@ export class SingleCardComponent implements OnInit {
     },
   ];
 
+
   ngOnInit() {
-  	let self = this;
   	this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(9);
     this.deck_mode = this.aRoute.snapshot.paramMap.get('deck_mode');
     this.spread_mode = this.aRoute.snapshot.paramMap.get('spread_mode');
-    console.log("deck_mode="+this.deck_mode+"spread_mode"+this.spread_mode);
 
-    let singleCardNums;
-
-    if(this.deck_mode == 1) {
-      this.deck_folder = "ridercard";
-      singleCardNums = Math.floor((Math.random() * 22) + 1);
-      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".png";
-
-      this.single_deck_title = this.riderCard_txt[singleCardNums-1].title;
-      this.single_deck_detail = this.riderCard_txt[singleCardNums-1].detail;
-    }
- 
+    let tenCardNums = [];
+    tenCardNums = this.sunService.getCelticTenCardNum();
+    if(this.deck_mode == 1 ) {
+      this.deck_folder = "ridercard";      
+      for(let i=1; i<=10; i++) {   
+        this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".png";
+        this.celtic_cardTitle[i] = this.riderCard_txt[tenCardNums[i]-1].title;
+        this.celtic_cardContent[i] = this.riderCard_txt[tenCardNums[i]-1].detail;
+      }      
+    } 
+   
     if(this.deck_mode == 2) {
-      this.deck_folder = "hermetic";
-      singleCardNums = Math.floor((Math.random() * 22) + 1);
-      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".png";
-
-      this.single_deck_title = this.hermeticCard_txt[singleCardNums-1].title;
-      this.single_deck_detail = this.hermeticCard_txt[singleCardNums-1].detail;
+      this.deck_folder = "hermetic";     
+      for(let i=1; i<=10; i++) {  
+        this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".png";
+        this.celtic_cardTitle[i] = this.hermeticCard_txt[tenCardNums[i]-1].title;
+        this.celtic_cardContent[i] = this.hermeticCard_txt[tenCardNums[i]-1].detail;
+      }      
     }
+   
     if(this.deck_mode == 3) {
-      this.deck_folder = "lenormand";
-      singleCardNums = Math.floor((Math.random() * 36) + 1);
-      this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
-
-      this.single_deck_title = this.lenormandCard_txt[singleCardNums-1].title;
-      this.single_deck_detail = this.lenormandCard_txt[singleCardNums-1].detail;
+      this.deck_folder = "lenormand";      
+      for(let i=1; i<=10; i++) {
+        this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".jpg";
+        this.celtic_cardTitle[i] = this.lenormandCard_txt[tenCardNums[i]-1].title;
+        this.celtic_cardContent[i] = this.lenormandCard_txt[tenCardNums[i]-1].detail;
+      }      
     }
-    if((Math.floor((Math.random() * 2) + 1)) == 1) {
-      this.yesNo = "Yes";
-    } else {
-      this.yesNo = "No";
-    }
-    
-  
+    this.sunService.setCelticTenCardNum(tenCardNums);
   }
 
-  goSelectCard() {
-  	this.router.navigate(['/tarot/select-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode}]); 
-  }
+  goCelticMainPage() {
+  	this.router.navigate(['/tarot/celtic-cards', {deck_mode:this.deck_mode, spread_mode:this.spread_mode, celtic_random_mode: 2}]); 
+  } 
 
 }
