@@ -4,6 +4,7 @@
 	position: absolute;
 	font-family: Oswald;
 	overflow: hidden;
+	background-color: #E6E4E4;
 }
 
 .select-card-container {
@@ -47,7 +48,7 @@
 		text-align: center;
 		p:nth-child(1) {
 			font-size: 46px;
-			
+			cursor: pointer;
 		}
 		
 	}
@@ -66,27 +67,30 @@
 				float: left;
 				font-size: 22px;
 				color: #5A3594;
-				margin-top: 30px;
+				margin-top: 3vh;
 			}
 			.arrow-symbol {
 				float: left;
 				margin-left: 30px;
+				cursor: pointer;
+				//background: red;
+
 				.arrow-dash {
 					position: relative;
-					margin-left: 10px;
+					margin-left: 9px;
 					margin-top: -40px;
 					width: 3px;
-				    height: 300px;
+				    height: 22vh;
 				    background-image: linear-gradient(to bottom, transparent 50%, #5A3594 50%);
 				    background-size: 50px 50px;
 				}
 				i:nth-child(1) {
-					font-size:22px;
+					font-size:20px;
 					color:#5A3594;
 				}
 
 				i:nth-child(2) {
-					font-size:22px;
+					font-size:20px;
 					color:#5A3594;
 					
 				}

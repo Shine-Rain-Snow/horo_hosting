@@ -1,10 +1,11 @@
-// orange ,deep blue ,yello purple light
+
 .show-cards {
 	width: 100%;
 	height: 100vh;
 	position: absolute;
 	font-family: Oswald;
 	overflow: hidden;
+	background-color: #E6E4E4;
 }
 
 .show-cards-container {
@@ -25,8 +26,9 @@
 	 	// background: red;
 	 	span {
 	 		position: relative;
-	 		left: 53%;
+	 		left: 60%;
 	 	}
+	 	cursor: pointer;
 	}
 
 	.cards-pic {
@@ -35,14 +37,22 @@
 		height: 25%;
 		//background-color: pink;
 		display: table;
-		left: 30%;
+		left: 37%;
 		margin-top: 1%;
 		.pic1 {
+			position: relative;
 			width: 20%;
 			height: 100%;
 			//background: yellow;
 			float: left;
-
+			img {
+				position: relative;
+				left: 30%;
+			}
+			.pic-name {
+				position: relative;
+				left: 30%;
+			}
 		}
 		.pic2 {
 			width: 20%;
@@ -55,6 +65,14 @@
 			height: 100%;
 			//background: green;
 			float: left;
+			img {
+				position: relative;
+				left: -30%;
+			}
+			.pic-name {
+				position: relative;
+				left: -30%;
+			}
 		}
 		.pic-img {
 			width: 100%;
@@ -79,6 +97,7 @@
 		width: 100%;
 		height: 50%;
 		position: relative;
+		left: 5%;
 		.con1 {
 			width: 100%;
 			height: 15vh;
@@ -113,17 +132,17 @@
 		.con-detail {
 			width: 70%;
 			float: left;
-			padding: 3% 4%;
+			padding: 2% 2%;
 			//background: red;
 			.con-detail-title {
-				font-size: 22px;
+				font-size: 20px;
 				margin-bottom: 1%;
 			}
 			.con-detail-content {
-				font-size: 20px;
-				height: 6vh;
-				overflow: hidden;
-  				text-overflow: ellipsis; 
+				font-size: 16px;
+				// height: 15vh;
+				//overflow: hidden;
+  				//text-overflow: ellipsis; 
 			}
 		}
 	}
@@ -144,34 +163,35 @@
 			float: left;
 			font-size: 22px;
 			color: #5A3594;
-			margin-top: 30px;
+			margin-top: 3vh;
+			cursor: pointer;
 			div {
 				text-align: right;
 				cursor: pointer;
 			}
-			div:nth-child(2) {
-				margin-top: 60px;
-			}
+			// div:nth-child(2) {
+			// 	margin-top: 60px;
+			// }
 		}
 		.arrow-symbol {
 			float: left;
 			margin-left: 30px;
 			.arrow-dash {
 				position: relative;
-				margin-left: 10px;
+				margin-left: 9px;
 				margin-top: -40px;
 				width: 3px;
-			    height: 300px;
+			    height: 22vh;
 			    background-image: linear-gradient(to bottom, transparent 50%, #5A3594 50%);
 			    background-size: 50px 50px;
 			}
 			i:nth-child(1) {
-				font-size:22px;
+				font-size:20px;
 				color:#5A3594;
 			}
 
 			i:nth-child(2) {
-				font-size:22px;
+				font-size:20px;
 				color:#5A3594;
 				
 			}

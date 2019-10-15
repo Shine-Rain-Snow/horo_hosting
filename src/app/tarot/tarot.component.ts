@@ -69,59 +69,81 @@ export class TarotComponent implements OnInit {
       self.spread_mode = 3;
     });
     $(".classic_rider").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getRandomColor()});
+      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      //$(".classic_rider_text").css({color: '#FF7F00'});
     }, function(){
       $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+       //$(".classic_rider_text").css({color: 'black'});
     });
 
     $(".hermetic").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getRandomColor()});
+      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      //$(".hermetic_text").css({color: '#FF7F00'});
     }, function(){
       $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      //$(".hermetic_text").css({color: 'black'});
     });
     $(".lenormand").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getRandomColor()});
+      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      //$(".lenormand_text").css({color: '#FF7F00'});
     }, function(){
       $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      //$(".lenormand_text").css({color: 'black'});
     });
 
     $(".first_mode").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getRandomColor()});
+      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
     }, function(){
       $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
     });
 
     $(".second_mode").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getRandomColor()});
+      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
     }, function(){
       $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
     });
     $(".third_mode").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getRandomColor()});
+      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
     }, function(){
       $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+    });
+
+    // hovering effect for changing color
+    $(".tarot_title").hover(function(){
+       $(".tarot_title").css({color: self.getFourColor()});
+    }, function(){
+       $(".tarot_title").css({color: '#5A3594'});
+    });
+    $(".raven_text").hover(function() {
+      $(".raven_text").css({color: self.getFourColor()});
+    }, function(){
+      $(".raven_text").css({color:'#5A3594'});
     });
   }
 
   flyRaven() {
     let self = this;
-    $(".black_raven img:nth-child(1)").css({visibility: "hidden"});
-    $(".black_raven img:nth-child(2)").css({
-      visibility: "visible", 
-      bottom: "4%",
-      position: "fixed",
-      width: "12%",
-      height: "26%"
-     });
-    $(".black_raven img:nth-child(2)").animate({
-      left: "-10%",
-      bottom: "100%",
-    }, {
-      duration: 4000,
-      complete: function() {    
-        self.router.navigate(['/tarot/select-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]); 
-      }
-    });
+    if(self.deck_mode == 3 && self.spread_mode == 3) {
+      self.router.navigate(['/tarot']);   
+    } else {
+      $(".black_raven img:nth-child(1)").css({visibility: "hidden"});
+      $(".black_raven img:nth-child(2)").css({
+        visibility: "visible", 
+        bottom: "4%",
+        position: "fixed",
+        width: "12%",
+        height: "26%"
+       });
+      $(".black_raven img:nth-child(2)").animate({
+        left: "-10%",
+        bottom: "100%",
+      }, {
+        duration: 4000,
+        complete: function() { 
+          self.router.navigate(['/tarot/select-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]); 
+        }
+      });
+    }
   }
 
   getRandomColor() {
@@ -131,6 +153,14 @@ export class TarotComponent implements OnInit {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+  }
+
+  getFourColor() {
+    // orange ,deep blue ,yello purple light
+    let fourColor = ['#FF7F00', '#0021f3', '#FFFF00', '#e79aff']
+    let randomNum
+    randomNum = Math.floor((Math.random() * 4) + 1);
+    return fourColor[randomNum-1];
   }
 
 }

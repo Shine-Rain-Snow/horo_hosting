@@ -5,7 +5,7 @@
 5 - empress
 6 - fool
 7 - hanged_man
-8 - hemit
+8 - hermit
 9 - hierophant
 10 - highpriestess
 11 - judgment

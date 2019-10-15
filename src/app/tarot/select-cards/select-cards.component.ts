@@ -181,7 +181,31 @@ export class SelectCardsComponent implements OnInit {
       
     }
 
-    
+    // color changing section
+    $(".sel-item2 p:nth-child(1)").hover(function() {
+      $(".sel-item2 p:nth-child(1)").css({'color': self.getFourColor()});
+    }, function() {
+      $(".sel-item2 p:nth-child(1)").css({'color': '#5A3594'});
+    });
+    // $(".arrow-symbol").hover(function(){
+    //   let colStr = "linear-gradient(to bottom, transparent 50%,"+self.getFourColor()+", 50%)";      
+    //   $(".arrow-dash").css({'background-image': colStr});
+    //   $(".arrow-symbol i").css({'color': self.getFourColor()});
+    // });
+    $(".back-reading").hover(function(){
+      $(".back-reading").css({'color': self.getFourColor()});
+    }, function(){
+      $(".back-reading").css({'color': '#5A3594'});
+    });
+
+  }
+
+  getFourColor() {
+    // orange ,deep blue ,yello purple light
+    let fourColor = ['#FF7F00', '#0021f3', '#FFFF00', '#e79aff']
+    let randomNum
+    randomNum = Math.floor((Math.random() * 4) + 1);
+    return fourColor[randomNum-1];
   }
 
 

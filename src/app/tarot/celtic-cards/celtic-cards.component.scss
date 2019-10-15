@@ -4,6 +4,7 @@
 	position: absolute;
 	font-family: Oswald;
 	overflow: hidden;
+	background-color: #E6E4E4;
 }
 
 .celtic-cards-container {
@@ -23,7 +24,7 @@
 	 	margin-top: 4%;
 	 	span {
 	 		position: relative;
-	 		left: 40%;
+	 		left: 50%;
 	 	}
 	}
 	.celtic-img {
@@ -31,7 +32,7 @@
 		//background: gray;
 		display: table;
 		width: 100%;
-		//margin-left: 40%;
+		margin-left: 10%;
 		.empty-img {
 			width: 35%;
 			height: 100px;
@@ -127,12 +128,17 @@
 	}
 	.hand-down {
 		text-align: center;
+		margin-left: 21%;
 		img {
 			cursor: pointer;
 			outline: none !important;
-			width: 10%;
-			height: 10vh;
+			width: 6%;
+			height: 8vh;
 		}
+	}
+	.hand-down img:hover {
+		transform: scale(1.1);
+		//box-shadow: 10px 10px 5px #000000;
 	}
 }
 
@@ -151,39 +157,39 @@
 			float: left;
 			font-size: 22px;
 			color: #5A3594;
-			margin-top: 30px;
+			margin-top: 3vh;
 			div {
 				text-align: right;
 				cursor: pointer;
 			}
-			div:nth-child(2) {
-				text-align: right;
-				margin-top: 60px;
-			}
-			div:nth-child(3) {
-				text-align: right;
-				margin-top: 60px;
-			}
+			// div:nth-child(2) {
+			// 	text-align: right;
+			// 	margin-top: 60px;
+			// }
+			// div:nth-child(3) {
+			// 	text-align: right;
+			// 	margin-top: 60px;
+			// }
 		}
 		.arrow-symbol {
 			float: left;
 			margin-left: 30px;
 			.arrow-dash {
 				position: relative;
-				margin-left: 10px;
+				margin-left: 9px;
 				margin-top: -40px;
-				width: 3px;
-			    height: 300px;
+				width: 2px;
+			    height: 22vh;
 			    background-image: linear-gradient(to bottom, transparent 50%, #5A3594 50%);
 			    background-size: 50px 50px;
 			}
 			i:nth-child(1) {
-				font-size:22px;
+				font-size:20px;
 				color:#5A3594;
 			}
 
 			i:nth-child(2) {
-				font-size:22px;
+				font-size:20px;
 				color:#5A3594;
 				
 			}
@@ -205,6 +211,8 @@
 			height: 100%;
 		}
 	}
+	
+
 }
 
 .left_triangle {
