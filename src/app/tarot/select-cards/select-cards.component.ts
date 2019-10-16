@@ -54,8 +54,8 @@ export class SelectCardsComponent implements OnInit {
     // single card mode
     
     if(this.spread_mode == 1) {
-      this.card_mode_text = "Single Card";
-      this.card_mode_text1 = "one";
+      this.card_mode_text = "Single card";
+      this.card_mode_text1 = "one card !";
       let prevNum = 0;
       let cNum = 0;
       $(".sel-cards-imgs img").hover(function() {
@@ -86,8 +86,8 @@ export class SelectCardsComponent implements OnInit {
     }
     //three card mode
     if(this.spread_mode == 2) {
-      this.card_mode_text = "Three Card";
-      this.card_mode_text1 = "three";
+      this.card_mode_text = "Three cards";
+      this.card_mode_text1 = "Three cards !";
       let threeFlag = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
       let cNum = 0;
       let countCard = 0;
@@ -133,8 +133,8 @@ export class SelectCardsComponent implements OnInit {
 
     //celtic cross card mode
     if(this.spread_mode == 3) {
-      this.card_mode_text = "Celtic Cross";
-      this.card_mode_text1 = "ten";
+      this.card_mode_text = "Celtic Cross Deep";
+      this.card_mode_text1 = "Ten cards !";
       let threeFlag = [true,true,true,true,true,
       true,true,true,true,true,
       true,true,true,true,true,

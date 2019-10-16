@@ -31,6 +31,12 @@ export class TarotComponent implements OnInit {
       $(".lenormand_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
       self.deck_mode = 1;
+      $(".third_mode").css({visibility: "visible"});
+
+      $(".left-hand1").css({visibility: "visible"});
+      $(".left-hand2").css({visibility: "hidden"});
+      $(".left-hand3").css({visibility: "hidden"});
+
     });
     $(".hermetic").click(function(){
       $(".classic_rider_text").css({color: "black"});
@@ -38,6 +44,11 @@ export class TarotComponent implements OnInit {
       $(".lenormand_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "orange"});
       self.deck_mode = 2;
+      $(".third_mode").css({visibility: "visible"});
+
+      $(".left-hand1").css({visibility: "hidden"});
+      $(".left-hand2").css({visibility: "visible"});
+      $(".left-hand3").css({visibility: "hidden"});
     });
     $(".lenormand").click(function(){
       $(".classic_rider_text").css({color: "black"});
@@ -45,6 +56,11 @@ export class TarotComponent implements OnInit {
       $(".lenormand_text").css({color: "#5A3594"});
       //$(".left_triangle").css({"border-bottom-color": "green"});
       self.deck_mode = 3;
+      $(".third_mode").css({visibility: "hidden"});
+
+      $(".left-hand1").css({visibility: "hidden"});
+      $(".left-hand2").css({visibility: "hidden"});
+      $(".left-hand3").css({visibility: "visible"});
     });
 
      $(".first_mode").click(function(){
@@ -53,6 +69,10 @@ export class TarotComponent implements OnInit {
       $(".third_mode_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
       self.spread_mode = 1;
+
+      $(".first_mode_text img").css({visibility: "visible"});
+      $(".second_mode_text img").css({visibility: "hidden"});
+      $(".third_mode_text img").css({visibility: "hidden"});
     });
     $(".second_mode").click(function(){
       $(".first_mode_text").css({color: "black"});
@@ -60,6 +80,10 @@ export class TarotComponent implements OnInit {
       $(".third_mode_text").css({color: "black"});
       //$(".left_triangle").css({"border-bottom-color": "orange"});
       self.spread_mode = 2;
+
+      $(".first_mode_text img").css({visibility: "hidden"});
+      $(".second_mode_text img").css({visibility: "visible"});
+      $(".third_mode_text img").css({visibility: "hidden"});
     });
     $(".third_mode").click(function(){
       $(".first_mode_text").css({color: "black"});
@@ -67,6 +91,10 @@ export class TarotComponent implements OnInit {
       $(".third_mode_text").css({color: "#5A3594"});
       //$(".left_triangle").css({"border-bottom-color": "green"});
       self.spread_mode = 3;
+
+       $(".first_mode_text img").css({visibility: "hidden"});
+      $(".second_mode_text img").css({visibility: "hidden"});
+      $(".third_mode_text img").css({visibility: "visible"});
     });
     $(".classic_rider").hover(function(){
       $(".left_triangle").css({"border-bottom-color": self.getFourColor()});

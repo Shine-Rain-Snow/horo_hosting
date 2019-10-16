@@ -61,13 +61,14 @@
 			position: relative;
 		    display: table;
 		    margin-top: 8%;
-			margin-left: 25%;
+			margin-left: 42%;
 			.back-reading {
 				cursor: pointer;
 				float: left;
 				font-size: 22px;
 				color: #5A3594;
 				margin-top: 3vh;
+				outline: none;
 			}
 			.arrow-symbol {
 				float: left;
@@ -77,7 +78,7 @@
 
 				.arrow-dash {
 					position: relative;
-					margin-left: 9px;
+					margin-left: 8.8px;
 					margin-top: -40px;
 					width: 3px;
 				    height: 22vh;

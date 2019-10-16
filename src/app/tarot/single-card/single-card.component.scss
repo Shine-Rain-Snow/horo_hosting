@@ -41,19 +41,24 @@
 	.single-detail {
 		position: relative;
 		left: 40%;
-		margin-top: 5%;
+		margin-top: 10px;
 		.single-detail-title {
 			cursor: pointer;
 			font-size: 28px;
 		}
 		.yes-no {
-			padding-top: 1%;
+			padding: 10px 0;
 			font-size: 24px;
 		}
 		.single-detail-text {
-			padding-top: 2%;
+			padding-top: 10px;
 			font-size: 20px;
 			width: 60%;
+			font-family: Oswald light;
+			div:nth-child(2), div:nth-child(4) {
+				font-weight: bold;
+				margin-top: 10px;
+			}
 		}
 	}
 }
@@ -77,6 +82,7 @@
 			div {
 				text-align: right;
 				cursor: pointer;
+				outline: none;
 			}
 			// div:nth-child(2) {
 			// 	margin-top: 11vh;

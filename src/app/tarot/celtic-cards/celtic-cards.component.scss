@@ -57,7 +57,7 @@
 			.middle-imgs {
 				display: table;
 				width: 100%;
-				margin: 1% 0;
+				margin: 20px 0;
 				.three-img {
 					width: 30%;
 					float: left;
@@ -108,16 +108,19 @@
 				img {
 					height: 15vh;
 				}
+				margin-bottom: 20px;
 			}
 			.nine-img {
 				img {
 					height: 15vh;
 				}
+				margin-bottom: 20px;
 			}
 			.eight-img {
 				img {
 					height: 15vh;
 				}
+				margin-bottom: 20px;
 			}
 			.seven-img {
 				img {
@@ -152,7 +155,7 @@
 		position: relative;
 	    display: table;
 	    margin-top: 28%;
-		margin-left: 25%;
+		margin-left: 43%;
 		.celtic-back-reading {
 			float: left;
 			font-size: 22px;
@@ -161,6 +164,7 @@
 			div {
 				text-align: right;
 				cursor: pointer;
+				outline: none;
 			}
 			// div:nth-child(2) {
 			// 	text-align: right;
@@ -204,7 +208,7 @@
 		height: 15%;
 		width: 30%;
 		top: 30%;
-		left: 20%;
+		left: 50%;
 		//background: red;
 		img {
 			width: 100%;

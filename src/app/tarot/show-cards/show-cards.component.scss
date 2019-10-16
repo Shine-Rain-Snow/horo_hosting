@@ -4,7 +4,7 @@
 	height: 100vh;
 	position: absolute;
 	font-family: Oswald;
-	overflow: hidden;
+	overflow-x: hidden;
 	background-color: #E6E4E4;
 }
 
@@ -14,7 +14,7 @@
 }
 
 .left-detail {
-	width: 70%;
+	width: 80%;
 	height: 100%;
 	float: left;
 
@@ -26,7 +26,7 @@
 	 	// background: red;
 	 	span {
 	 		position: relative;
-	 		left: 60%;
+	 		left: 52%;
 	 	}
 	 	cursor: pointer;
 	}
@@ -37,11 +37,11 @@
 		height: 25%;
 		//background-color: pink;
 		display: table;
-		left: 37%;
+		left: 35%;
 		margin-top: 1%;
 		.pic1 {
 			position: relative;
-			width: 20%;
+			width: 17%;
 			height: 100%;
 			//background: yellow;
 			float: left;
@@ -55,13 +55,13 @@
 			}
 		}
 		.pic2 {
-			width: 20%;
+			width: 16%;
 			height: 100%;
 			//background: blue;
 			float: left;
 		}
 		.pic3 {
-			width: 20%;
+			width: 16%;
 			height: 100%;
 			//background: green;
 			float: left;
@@ -78,8 +78,8 @@
 			width: 100%;
 			height: 80%;
 			position: relative;
-			margin-top: 5%;
-			top: 8%;
+			margin-top: 0%;
+			top: 0%;
 			text-align: center;
 			img {
 				width: 40%;
@@ -119,27 +119,36 @@
 		}
 		.con-img {
 			height: 100%;
-			width: 30%;
+			width: 6%;
 			float: left;
 			position: relative;
-			margin-top: 2%;
+			//margin-top: 2%;
+			//background: pink;
 			img {
-				width: 20%;
-				height: 13vh;
+				width: 100%;
+				height: 16vh;
 				float: right;
 			}
 		}
 		.con-detail {
-			width: 70%;
+			width: 90%;
 			float: left;
-			padding: 2% 2%;
+			padding: 0 2%;
 			//background: red;
+			position: relative;	
+			font-family: Oswald light;
 			.con-detail-title {
 				font-size: 20px;
-				margin-bottom: 1%;
+				margin-bottom: 5px;
+				color: #5A3594;
 			}
 			.con-detail-content {
-				font-size: 16px;
+				font-size: 20px;
+				//background: red;
+				div:nth-child(1), div:nth-child(3) {
+					font-weight: bold;
+				}
+				margin-bottom: 2%;
 				// height: 15vh;
 				//overflow: hidden;
   				//text-overflow: ellipsis; 
@@ -149,7 +158,7 @@
 }
 
 .three-right-detail {
-	width: 30%;
+	width: 20%;
 	height: 100%;
 	float: right;
 	//background: blue;
@@ -158,7 +167,7 @@
 		position: relative;
 	    display: table;
 	    margin-top: 28%;
-		margin-left: 25%;
+		margin-left: 15%;
 		.three-back-reading {
 			float: left;
 			font-size: 22px;
@@ -168,6 +177,7 @@
 			div {
 				text-align: right;
 				cursor: pointer;
+				outline: none;
 			}
 			// div:nth-child(2) {
 			// 	margin-top: 60px;
@@ -203,10 +213,10 @@
 
 	.right-img {
 		position: relative;
-		height: 15%;
+		height: 10%;
 		width: 30%;
-		top: 30%;
-		left: 20%;
+		top: 50%;
+		left: 30%;
 		//background: red;
 		img {
 			width: 100%;
