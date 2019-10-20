@@ -5,7 +5,7 @@ import { SunProgressService } from '../services/sun-progress.service';
 import { Globals } from '../shared/globals';
 import * as $ from 'jquery';
 import { DomSanitizer } from '@angular/platform-browser';
-
+// this is tarot main ts file
 @Component({
   selector: 'app-tarot',
   templateUrl: './tarot.component.html',
