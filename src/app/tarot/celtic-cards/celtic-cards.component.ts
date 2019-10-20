@@ -268,37 +268,39 @@ export class CelticCardsComponent implements OnInit {
     this.celtic_random_mode = this.aRoute.snapshot.paramMap.get('celtic_random_mode');
     // generate newly, random ten number
     let tenCardNums = [];
-  
-    if(this.deck_mode == 1 ) {
-      this.deck_folder = "ridercard";
-      for(let i=1; i<=10; i++) {   
-
-        if(this.celtic_random_mode == 2) {
-          tenCardNums = this.sunService.getCelticTenCardNum();
-        } else {
-          tenCardNums[i] = Math.floor((Math.random() * 22) + 1);
+    let nums1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+    if(this.celtic_random_mode == 2) {
+      tenCardNums = this.sunService.getCelticTenCardNum();
+    } else {
+      //random generating non-repeating
+      let nums1Length = nums1.length;
+      let j = 0;
+      let countLimit = 0;
+      while(nums1Length--) {
+        countLimit++;
+        if(countLimit > 10) {
+          break;
         }
-        
-        this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".png";
-        ///this.celtic_cardTitle[i] = this.riderCard_txt[tenCardNums[i]-1].title;
-        //this.celtic_cardContent[i] = this.riderCard_txt[tenCardNums[i]-1].detail;
+        j = Math.floor(Math.random() * (nums1Length+1));
+        tenCardNums[countLimit] = nums1[j];
+        nums1.splice(j, 1);
       }
-      this.sunService.setCelticTenCardNum(tenCardNums);
+    }
+    this.sunService.setCelticTenCardNum(tenCardNums);
+
+    if(this.deck_mode == 1 ) {
+      this.deck_folder = "ridercard";      
+      for(let i=1; i<=10; i++) {        
+        this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".png";
+      }
+      
     } 
    
     if(this.deck_mode == 2) {
       this.deck_folder = "hermetic";
       for(let i=1; i<=10; i++) {        
-        if(this.celtic_random_mode == 2) {
-          tenCardNums = this.sunService.getCelticTenCardNum();
-        } else {
-          tenCardNums[i] = Math.floor((Math.random() * 22) + 1);
-        }
         this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".jpg";
-        //this.celtic_cardTitle[i] = this.hermeticCard_txt[tenCardNums[i]-1].title;
-       // this.celtic_cardContent[i] = this.hermeticCard_txt[tenCardNums[i]-1].detail;
       }
-      this.sunService.setCelticTenCardNum(tenCardNums);
     }
    
     //title hovering effect section

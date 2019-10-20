@@ -6,7 +6,7 @@
 	position: absolute;
 	overflow: hidden;
 	font-family: Oswald;
-	z-index: 0;
+	z-index: -10;
 	background: url('../../assets/img/tarot/tarot10.jpg') no-repeat center center fixed; 
   	-webkit-background-size: cover;
     -moz-background-size: cover;
@@ -22,16 +22,86 @@
 }
 
 .left_triangle {
-	position: absolute;
-	bottom: 0;
+	// position: absolute;
+	// bottom: 0;
+	// left: 0;
+	// width: 0;
+	// height: 0;
+	// border-right: 33vh solid transparent;
+ //    border-bottom: 66vh solid #C6B3C6;
+ //    z-index: -1;
+
+ 	position: absolute;
+	// /top: 20%;
 	left: 0;
-	width: 0;
-	height: 0;
-	border-right: 33vh solid transparent;
-    border-bottom: 66vh solid #C6B3C6;
+	//background-color: red;	
+	width: 100%;
+	height: 100%;
+	// border-left: 33vh solid transparent;
+ //    border-top: 66vh solid transparent;
     z-index: -1;
-    //background-color: pink;
+    //background: linear-gradient(to bottom left, transparent 0%, transparent 100%, #a48d01 100%, #a48d01 100%);   
+    //background: url('../../assets/img/tarot/tarot12.png') no-repeat; 
+  	// -webkit-background-size: cover;
+   //  -moz-background-size: cover;
+   //  -o-background-size: cover;
+   //  background-size: cover;		
+ 	.tri-layer {
+ 		// background-color: rgba(248, 247, 216, 0.7);
+   //  position: absolute;
+   //  top: 0;
+   //  left: 0;
+   //  width: 100%;
+   //  height: 100%;
+    	position: absolute;
+   		width: 20%;
+   		height: 70%;
+   		top: 14%;
+   		background: url('../../assets/img/tarot/tarot12.png') no-repeat; 
+   		background-size: 100% 100%;
+    	//background: linear-gradient(to bottom left, transparent 100%, black 100%, black 100%, black 100%);
+    	//background: red;
+    	opacity: 0.8;
+    	// background: red;
+    	// img {
+	    // 	position: absolute;    	
+	    // 	width: 100%;
+	    // 	height:100%;
+	    // }
+
+	    .tri-img {
+	    	position: absolute;
+	    	width: 100%;
+	    	height: 100%;
+	    	top: 2%;
+	    	//background-color: red;
+	    	background: linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%);
+	    	opacity: 0.4;
+	    }
+ 	}
+    // img {
+    // 	position: relative;    	
+    // 	width: 100%;
+    // 	height:100%;
+    // }
 }
+
+// .candle-video {
+// 	position: absolute;
+// 	width: 100vh;
+// 	height: 100vh;
+// 	//background: yellow;
+// 	border-radius: 50vh;
+// 	-webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+// 	z-index: -100;  	
+// 	top: 45vh;
+//     left: -50vh;	  
+// 	#tarotvid {
+//     	position: absolute; 
+//     	width: 100vh;	
+//     	z-index: -101;
+//     }	
+// }
 
 .tarot_content {
 
@@ -79,7 +149,8 @@
 				font-size: 26px;
 				width: 50%;
 				padding-top: 10%;
-				float: left;				
+				float: left;
+				//text-align: right;				
 			}
 			
 			.classic_rider_img {
@@ -120,6 +191,7 @@
 				width: 50%;
 				padding-top: 10%;
 				float: left;
+				padding-right: 8%;
 			}
 			.hermetic_img {
 				width: 25%;
