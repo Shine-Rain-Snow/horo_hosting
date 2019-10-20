@@ -47,7 +47,7 @@ export class SelectCardsComponent implements OnInit {
       this.backImg = "assets/img/tarot/tarot7.png";
     }
     if(this.deck_mode == 3) {
-      this.backImg = "assets/img/tarot/tarot6.jpg";
+      this.backImg = "assets/img/tarot/tarot11.png";
     }
 
 

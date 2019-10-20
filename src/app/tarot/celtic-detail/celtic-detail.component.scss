@@ -135,11 +135,12 @@
 			cursor: pointer;
 			div:nth-child(1) {
 				text-align: right;
-				
+				outline: none;
 			}
 			div:nth-child(2) {
 				text-align: right;
 				margin-top: 11vh;
+				outline: none;
 			}
 			
 		}

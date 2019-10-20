@@ -272,147 +272,183 @@ export class ShowCardsComponent implements OnInit {
   lenormandCard_txt = [
     {
       title: "typing here title",
-      detail: `typing here detail avout chariot`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "222",
-      detail: `222`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "333",
-      detail: `333`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "444",
-      detail: `444`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "555",
-      detail: `555`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "666",
-      detail: `666`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "777",
-      detail: `777`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "888",
-      detail: `888`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "999",
-      detail: `999`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "10",
-      detail: `10`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "11",
-      detail: `11`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "12",
-      detail: `12`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "13",
-      detail: `13`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "14",
-      detail: `14`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "15",
-      detail: `15`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "16",
-      detail: `16`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "17",
-      detail: `17`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "18",
-      detail: `18`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "19",
-      detail: `19`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "20",
-      detail: `20`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "21",
-      detail: `21`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "22",
-      detail: `22`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "23",
-      detail: `23`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "24",
-      detail: `24`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "25",
-      detail: `25`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "26",
-      detail: `26`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "27",
-      detail: `27`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "28",
-      detail: `28`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "29",
-      detail: `29`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "30",
-      detail: `30`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "31",
-      detail: `31`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "32",
-      detail: `32`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "33",
-      detail: `33`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "34",
-      detail: `34`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "35",
-      detail: `35`
+      detail1: ``,
+      detail2: ``,
     },
     {
       title: "36",
-      detail: `36`
+      detail1: ``,
+      detail2: ``,
     },
   ];
 
@@ -426,25 +462,65 @@ export class ShowCardsComponent implements OnInit {
     
     let threeCardNums = [];
 
+    let nums1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22];
+    let nums2 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36];
     if(this.deck_mode == 1) {
       this.deck_folder = "ridercard";
-      for(let i=1; i<=3; i++) {        
-        threeCardNums[i] = Math.floor((Math.random() * 22) + 1);
+      let nums1Length = nums1.length;
+      let j = 0;
+      let countLimit = 0;
+      while(nums1Length--) {
+        countLimit++;
+        if(countLimit > 3) {
+          break;
+        }
+        j = Math.floor(Math.random() * (nums1Length+1));
+        threeCardNums[countLimit] = nums1[j];
+        nums1.splice(j, 1);
+      }
+
+      for(let i=1; i<=3; i++) {    
+        
         this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".png";
       }
     }
 
     if(this.deck_mode == 2) {
       this.deck_folder = "hermetic";
+      let nums1Length = nums1.length;
+      let j = 0;
+      let countLimit = 0;
+      while(nums1Length--) {
+        countLimit++;
+        if(countLimit > 3) {
+          break;
+        }
+        j = Math.floor(Math.random() * (nums1Length+1));
+        threeCardNums[countLimit] = nums1[j];
+        nums1.splice(j, 1);
+      }
       for(let i=1; i<=3; i++) {        
-        threeCardNums[i] = Math.floor((Math.random() * 22) + 1);
+        
         this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
       }
     }
     if(this.deck_mode == 3) {
       this.deck_folder = "lenormand";
+      let nums2Length = nums2.length;
+      let j = 0;
+      let countLimit = 0;
+      while(nums2Length--) {
+        countLimit++;
+        if(countLimit > 3) {
+          break;
+        }
+        j = Math.floor(Math.random() * (nums2Length+1));
+        threeCardNums[countLimit] = nums2[j];
+        nums2.splice(j, 1);
+      }
+
       for(let i=1; i<=3; i++) {        
-        threeCardNums[i] = Math.floor((Math.random() * 36) + 1);
+        
         this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
       }
     }
@@ -484,12 +560,12 @@ export class ShowCardsComponent implements OnInit {
       this.deck_title2 = this.lenormandCard_txt[threeCardNums[2]-1].title;
       this.deck_title3 = this.lenormandCard_txt[threeCardNums[3]-1].title;
 
-      // this.deck_one1 = this.lenormandCard_txt[threeCardNums[1]-1].detail1;
-      // this.deck_two1 = this.lenormandCard_txt[threeCardNums[2]-1].detail1;
-      // this.deck_three1 = this.lenormandCard_txt[threeCardNums[3]-1].detail1;
-      // this.deck_one2 = this.lenormandCard_txt[threeCardNums[1]-1].detail2;
-      // this.deck_two2 = this.lenormandCard_txt[threeCardNums[2]-1].detail2;
-      // this.deck_three2 = this.lenormandCard_txt[threeCardNums[3]-1].detail2;
+      this.deck_one1 = this.lenormandCard_txt[threeCardNums[1]-1].detail1;
+      this.deck_two1 = this.lenormandCard_txt[threeCardNums[2]-1].detail1;
+      this.deck_three1 = this.lenormandCard_txt[threeCardNums[3]-1].detail1;
+      this.deck_one2 = this.lenormandCard_txt[threeCardNums[1]-1].detail2;
+      this.deck_two2 = this.lenormandCard_txt[threeCardNums[2]-1].detail2;
+      this.deck_three2 = this.lenormandCard_txt[threeCardNums[3]-1].detail2;
     }
 
     $(".three-title").hover(function() {

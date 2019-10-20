@@ -56,11 +56,14 @@ export class TarotComponent implements OnInit {
       $(".lenormand_text").css({color: "#5A3594"});
       //$(".left_triangle").css({"border-bottom-color": "green"});
       self.deck_mode = 3;
-      $(".third_mode").css({visibility: "hidden"});
+      
 
       $(".left-hand1").css({visibility: "hidden"});
       $(".left-hand2").css({visibility: "hidden"});
       $(".left-hand3").css({visibility: "visible"});
+
+      $(".third_mode").css({visibility: "hidden"});
+      $(".third_mode_text_col2 img").css({visibility: "hidden"});
     });
 
      $(".first_mode").click(function(){
@@ -72,8 +75,9 @@ export class TarotComponent implements OnInit {
 
       $(".first_mode_text img").css({visibility: "visible"});
       $(".second_mode_text img").css({visibility: "hidden"});
-      $(".third_mode_text img").css({visibility: "hidden"});
+      $(".third_mode_text_col2 img").css({visibility: "hidden"});
     });
+
     $(".second_mode").click(function(){
       $(".first_mode_text").css({color: "black"});
       $(".second_mode_text").css({color: "#5A3594"});
@@ -83,7 +87,7 @@ export class TarotComponent implements OnInit {
 
       $(".first_mode_text img").css({visibility: "hidden"});
       $(".second_mode_text img").css({visibility: "visible"});
-      $(".third_mode_text img").css({visibility: "hidden"});
+      $(".third_mode_text_col2 img").css({visibility: "hidden"});
     });
     $(".third_mode").click(function(){
       $(".first_mode_text").css({color: "black"});
@@ -94,46 +98,66 @@ export class TarotComponent implements OnInit {
 
        $(".first_mode_text img").css({visibility: "hidden"});
       $(".second_mode_text img").css({visibility: "hidden"});
-      $(".third_mode_text img").css({visibility: "visible"});
+      $(".third_mode_text_col2 img").css({visibility: "visible"});
     });
+
     $(".classic_rider").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      //$(".left_triangle").css({"border-top-color": self.getFourColor()});
       //$(".classic_rider_text").css({color: '#FF7F00'});
+      let triC = self.getFourColor();    
+      let triStr = "linear-gradient(to bottom left, transparent 0%, transparent 50%,"+ triC +" 50%,"+triC+" 100%)";
+      $(".tri-img").css({"background": triStr});
     }, function(){
-      $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      //$(".left_triangle").css({"border-top-color": "#C6B3C6"});
        //$(".classic_rider_text").css({color: 'black'});
+
+      $(".tri-img").css({"background": "linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%)"});
     });
 
     $(".hermetic").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      //$(".left_triangle").css({"border-bottom-color": self.getFourColor()});
       //$(".hermetic_text").css({color: '#FF7F00'});
+      let triC = self.getFourColor();    
+      let triStr = "linear-gradient(to bottom left, transparent 0%, transparent 50%,"+ triC +" 50%,"+triC+" 100%)";
+      $(".tri-img").css({"background": triStr});
     }, function(){
-      $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      //$(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
       //$(".hermetic_text").css({color: 'black'});
+      $(".tri-img").css({"background": "linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%)"});
     });
     $(".lenormand").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      //$(".left_triangle").css({"border-bottom-color": self.getFourColor()});
       //$(".lenormand_text").css({color: '#FF7F00'});
+      let triC = self.getFourColor();    
+      let triStr = "linear-gradient(to bottom left, transparent 0%, transparent 50%,"+ triC +" 50%,"+triC+" 100%)";
+      $(".tri-img").css({"background": triStr});
     }, function(){
-      $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+     // $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
       //$(".lenormand_text").css({color: 'black'});
+      $(".tri-img").css({"background": "linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%)"});
     });
 
     $(".first_mode").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      let triC = self.getFourColor();    
+      let triStr = "linear-gradient(to bottom left, transparent 0%, transparent 50%,"+ triC +" 50%,"+triC+" 100%)";
+      $(".tri-img").css({"background": triStr});
     }, function(){
-      $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      $(".tri-img").css({"background": "linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%)"});
     });
 
     $(".second_mode").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      let triC = self.getFourColor();    
+      let triStr = "linear-gradient(to bottom left, transparent 0%, transparent 50%,"+ triC +" 50%,"+triC+" 100%)";
+      $(".tri-img").css({"background": triStr});
     }, function(){
-      $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      $(".tri-img").css({"background": "linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%)"});
     });
     $(".third_mode").hover(function(){
-      $(".left_triangle").css({"border-bottom-color": self.getFourColor()});
+      let triC = self.getFourColor();    
+      let triStr = "linear-gradient(to bottom left, transparent 0%, transparent 50%,"+ triC +" 50%,"+triC+" 100%)";
+      $(".tri-img").css({"background": triStr});
     }, function(){
-      $(".left_triangle").css({"border-bottom-color": "#C6B3C6"});
+      $(".tri-img").css({"background": "linear-gradient(to bottom left, transparent 0%, transparent 50%, #5A3594 50%, #5A3594 100%)"});
     });
 
     // hovering effect for changing color
