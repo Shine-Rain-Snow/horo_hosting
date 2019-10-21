@@ -13,11 +13,19 @@
 					{{yesNo}}
 				</div>
 				<div class="single-detail-text">
-					<div> If your question was about:</div>
-					<div>Love and relationships</div>
-					<div> {{single_deck_detail1}} </div>
-					<div>Work and career</div>
-					<div> {{single_deck_detail2}} </div>
+					<div *ngIf="notLenormand; then thenBlock0 else elseBlock0"></div>
+					<ng-template #thenBlock0>
+						<div> If your question was about:</div>
+						<div>Love and relationships</div>
+						<div> {{single_deck_detail1}} </div>
+						<div>Work and career</div>
+						<div> {{single_deck_detail2}} </div>
+					</ng-template>
+					<ng-template #elseBlock0>
+						<div>{{single_deck_detail1}}</div>
+						<div>Possible answers:</div>
+						<div class="ans-array"></div>
+					</ng-template>
 				</div>
 			</div>
 		</div>

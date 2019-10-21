@@ -192,7 +192,11 @@ export class TarotComponent implements OnInit {
       }, {
         duration: 4000,
         complete: function() { 
-          self.router.navigate(['/tarot/select-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]); 
+          if(self.deck_mode == 3) {
+            self.router.navigate(['/tarot/lenormand-select', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]); 
+          } else {
+            self.router.navigate(['/tarot/select-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]); 
+          }
         }
       });
     }

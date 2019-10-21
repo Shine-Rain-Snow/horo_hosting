@@ -1,0 +1,355 @@
+.select-card {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	font-family: Oswald;
+	overflow: hidden;
+	background-color: #E6E4E4;
+}
+
+.select-card-container {
+	width: 100%;
+	height: 100%;
+}
+
+.sel-title {
+	font-size: 26px;
+	text-align: center;
+	margin: 2% 0;
+}
+
+.sel-items {
+	margin-top: 4%;
+	width: 100%;
+	height: 35%;
+	//background-color: red;
+	display: table;
+	.sel-item1 {
+		float: left;
+		width: 30%;
+		height: 30vh;
+		img {
+			position: relative;
+			left: 50%;
+			top: 10%;
+			width: 20%;
+			height: 50%;
+			cursor: pointer;
+			outline: none !important; 
+		}
+
+	}
+	.sel-item2 {
+		float: left;
+		width: 40%;
+		//background: blue;
+		color: #5A3594;
+		font-size: 26px;
+		text-align: center;
+		p:nth-child(1) {
+			font-size: 46px;
+			cursor: pointer;
+		}
+		
+	}
+	.sel-item3 {
+		float: left;
+		width: 30%;
+		//background: green;
+		.sel-item3-container {
+			width: 100%;
+			position: relative;
+		    display: table;
+		    margin-top: 8%;
+			margin-left: 42%;
+			.back-reading {
+				cursor: pointer;
+				float: left;
+				font-size: 22px;
+				color: #5A3594;
+				margin-top: 3vh;
+				outline: none;
+			}
+			.arrow-symbol {
+				float: left;
+				margin-left: 30px;
+				cursor: pointer;
+				//background: red;
+
+				.arrow-dash {
+					position: relative;
+					margin-left: 8.8px;
+					margin-top: -40px;
+					width: 3px;
+				    height: 22vh;
+				    background-image: linear-gradient(to bottom, transparent 50%, #5A3594 50%);
+				    background-size: 50px 50px;
+				}
+				i:nth-child(1) {
+					font-size:20px;
+					color:#5A3594;
+				}
+
+				i:nth-child(2) {
+					font-size:20px;
+					color:#5A3594;
+					
+				}
+				.arrow-down {
+					margin-top: -14px;
+				}
+			}
+		}
+	}
+}
+
+.sel-cards {
+	//background: red;
+	position: relative;
+	top: -8%;
+	.sel-cards-imgs {
+		//text-align: center;
+		position: relative;
+		height: 40vh;
+        width: 100%;
+        margin-top: 6%;
+		img {
+			width: 8%;
+			height: 65%;
+			position: absolute;
+			cursor: pointer;
+		}
+		
+		img:nth-child(1) {
+			left: 10%;
+			top: 30%;
+			transform: rotate(-22deg);
+			z-index: 1;
+		}
+		img:nth-child(2) {
+			left: 12%;
+			top: 28.24%;
+			transform: rotate(-20.7deg);
+			z-index: 2;
+		}
+		img:nth-child(3) {
+			left: 14%;
+			top: 26.48%;
+			transform: rotate(-19.4deg);
+			z-index: 3;
+		}
+		img:nth-child(4) {
+			left: 16%;
+			top: 24.72%;
+			transform: rotate(-18.1deg);
+			z-index: 4;
+		}
+		img:nth-child(5) {
+			left: 18%;
+			top: 22.96%;
+			transform: rotate(-16.8deg);
+			z-index: 5;
+		}
+		img:nth-child(6) {
+			left: 20%;
+			top: 21.2%;
+			transform: rotate(-15.5deg);
+			z-index: 6;
+		}
+		img:nth-child(7) {
+			left: 22%;
+			top: 19.44%;
+			transform: rotate(-14.2deg);
+			z-index: 7;
+		}
+		img:nth-child(8) {
+			left: 24%;
+			top: 17.68%;
+			transform: rotate(-12.9deg);
+			z-index: 8;
+		}
+
+		img:nth-child(9) {
+			left: 26%;
+			top: 15.92%;
+			transform: rotate(-11.6deg);
+			z-index: 9;
+		}
+		img:nth-child(10) {
+			left: 28%;
+			top: 14.16%;
+			transform: rotate(-10.3deg);
+			z-index: 10;
+		}
+		img:nth-child(11) {
+			left: 30%;
+			top: 12.4%;
+			transform: rotate(-9deg);
+			z-index: 11;
+		}
+		img:nth-child(12) {
+			left: 32%;
+			top: 10.64%;
+			transform: rotate(-7.7deg);
+			z-index: 12;
+		}
+		img:nth-child(13) {
+			left: 34%;
+			top: 8.88%;
+			transform: rotate(-6.4deg);
+			z-index: 13;
+		}
+		img:nth-child(14) {
+			left: 36%;
+			top: 7.12%;
+			transform: rotate(-5.1deg);
+			z-index: 14;
+		}
+		img:nth-child(15) {
+			left: 38%;
+			top: 5.36%;
+			transform: rotate(-3.8deg);
+			z-index: 15;
+		}
+		img:nth-child(16) {
+			left: 40%;
+			top: 3.6%;
+			transform: rotate(-2.5deg);
+			z-index: 16;
+		}
+
+		img:nth-child(17) {
+			left: 42%;
+			top: 1.84%;
+			transform: rotate(-1.2deg);
+			z-index: 17;
+		}
+		img:nth-child(18) {
+			left: 44%;
+			top: 0.08%;
+			transform: rotate(0deg);
+			z-index: 18;
+		}
+		img:nth-child(19) {
+			left: 46%;
+			top: 0.08%;
+			transform: rotate(0deg);
+			z-index: 19;
+		}
+		img:nth-child(20) {
+			left: 48%;
+			top: 1.84%;
+			transform: rotate(1.2deg);
+			z-index: 20;
+		}
+		img:nth-child(21) {
+			left: 50%;
+			top: 3.6%;
+			transform: rotate(2.5deg);
+			z-index: 21;
+		}
+		img:nth-child(22) {
+			left: 52%;
+			top: 5.36%;
+			transform: rotate(3.8deg);
+			z-index: 22;
+        }
+        img:nth-child(23) {
+			left: 54%;
+			top: 7.12%;
+			transform: rotate(5.1deg);
+			z-index: 23;
+		}
+		img:nth-child(24) {
+			left: 56%;
+			top: 8.88%;
+			transform: rotate(6.4deg);
+			z-index: 24;
+		}
+		img:nth-child(25) {
+			left: 58%;
+			top: 10.64%;
+			transform: rotate(7.7deg);
+			z-index: 25;
+		}
+		img:nth-child(26) {
+			left: 60%;
+			top: 12.4%;
+			transform: rotate(9deg);
+			z-index: 26;
+		}
+		img:nth-child(27) {
+			left: 62%;
+			top: 14.16%;
+			transform: rotate(10.3deg);
+			z-index: 27;
+		}
+		img:nth-child(28) {
+			left: 64%;
+			top: 15.92%;
+			transform: rotate(11.6deg);
+			z-index: 28;
+		}
+		img:nth-child(29) {
+			left: 66%;
+			top: 17.68%;
+			transform: rotate(12.9deg);
+			z-index: 29;
+		}
+		img:nth-child(30) {
+			left: 68%;
+			top: 19.44%;
+			transform: rotate(14.2deg);
+			z-index: 30;
+		}
+
+		img:nth-child(31) {
+			left: 70%;
+			top: 21.2%;
+			transform: rotate(15.5deg);
+			z-index: 31;
+		}
+		img:nth-child(32) {
+			left: 72%;
+			top: 22.96%;
+			transform: rotate(16.8deg);
+			z-index: 32;
+		}
+		img:nth-child(33) {
+			left: 74%;
+			top: 24.72%;
+			transform: rotate(18.1deg);
+			z-index: 33;
+		}
+		img:nth-child(34) {
+			left: 76%;
+			top: 26.48%;
+			transform: rotate(19.4deg);
+			z-index: 34;
+		}
+		img:nth-child(35) {
+			left: 78%;
+			top: 28.24%;
+			transform: rotate(20.7deg);
+			z-index: 35;
+		}
+		img:nth-child(36) {
+			left: 80%;
+			top: 30%;
+			transform: rotate(22deg);
+			z-index: 36;
+		}
+	}
+	.sel-cards-arc {
+		position: absolute;
+		top: 100%;
+		left: 50%;
+
+		transform: translate(-50%, -2%);
+		width: 160vw;
+	    height: 160vw;
+	    border-radius: 50%;
+	    background-color: #5A3594;
+	    background-image: linear-gradient(0deg, white 50%, transparent 50%);
+	}
+}

@@ -6,6 +6,7 @@ import { ShowCardsComponent } from './show-cards/show-cards.component';
 import { SingleCardComponent } from './single-card/single-card.component';
 import { CelticCardsComponent } from './celtic-cards/celtic-cards.component';
 import { CelticDetailComponent } from './celtic-detail/celtic-detail.component';
+import { LenormandSelectComponent } from './lenormand-select/lenormand-select.component';
 const routes: Routes = [
 	{
 		path: '',
@@ -16,6 +17,11 @@ const routes: Routes = [
 		path: 'select-cards',
 		component: SelectCardsComponent,
 		data: { state: 'select-cards' }
+	},
+	{
+		path: 'lenormand-select',
+		component: LenormandSelectComponent,
+		data: { state: 'lenormand-select' }
 	},
 	{
 		path: 'show-cards',

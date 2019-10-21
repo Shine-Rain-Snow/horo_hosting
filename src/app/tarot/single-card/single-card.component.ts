@@ -25,6 +25,7 @@ export class SingleCardComponent implements OnInit {
   single_deck_detail2;
   deck_folder;
   yesNo;
+  notLenormand = true;
   //detail rider card content
   riderCard_txt = [
     {
@@ -262,148 +263,323 @@ export class SingleCardComponent implements OnInit {
   //lernomand card detail
   lenormandCard_txt = [
     {
-      title: "typing here title",
-      detail: `typing here detail avout chariot`
+      title: "Cavalier",
+      detail1: `It’s a positive card. A new person. New circumstances. New contacts. Good news from far places . Import, Export. A message from abroad, and/ or a relationship with a foreigner. If the card is next to a bad card you can expect bad news.`,
+      detail2: `1.	You are about to get good news. 
+      2.	Everything will happen quickly.
+      3.	The one you are attracted to is here for short term.
+      4.	Lots of energy, something was stuck and now is moving forward.
+      5.	Someone new entering your life.`,
     },
     {
-      title: "222",
-      detail: `222`
+      title: "Clover Leaf",
+      detail1: `Your hopes, gambling, if the cart is surrounded by a good card it shows good luck. short success, happiness. Unexpected event. If the card is near bad card. It means a danger of falling sick or you will end up in getting disappointed.`,
+      detail2: `1.	You will get lucky, Good investment.
+      2.	If Next to a bad card it means loss or disappointment.
+      3.	The card shows sudden changes in your lifestyle, usually positive.
+      4.	Excitement, positive approach ,hope. 
+      5.	Gambling and taking financial risk can be harmful.
+      6.	Someone offers you help.`
     },
     {
-      title: "333",
-      detail: `333`
+      title: "The Ship",
+      detail1: `Traveling, a holiday or a business trip is likely. Long distance business opportunities, passport and visa issues, inheritance, Prosperity, receiving money or benefit from abroad. new car.`,
+      detail2: `1.	Import export, trading.
+      2.	A business trip can be financially beneficial.
+      3.	Visitor from far country.
+      4.	International study / prospects are high.
+      5.	buy new car.`
     },
     {
-      title: "444",
-      detail: `444`
+      title: "House",
+      detail1: `Family, Family Business. Home, Good fortune, fruitful project…If surrounded by bad cart be careful of greedy people around you. The card can also show a man water sign (Cancer, Scorpio, Pisces)`,
+      detail2: `1.	a new house.
+      2.	Family have a lot of effect.
+      3.	Comfortable Relationship.
+      4.	A father figure, a husband; a man that is loved; a man that cares about you.
+      5.	This card shows everything is stable right now.
+      6.	Maid, a professional work at home.`
     },
     {
-      title: "555",
-      detail: `555`
+      title: "Tree",
+      detail1: `Your Health! Faith, Karma, try to keep a healthy daily routine. The card show a past life connection deeply rooted, if close to the Coffin card then it denotes bad health and danger.`,
+      detail2: `1.	 take rest to avoid falling sick.
+      2.	someone around you is unwell.
+      3.	a growth period patiently wait for things to unfold.
+      4.	strong karmic connection with someone, the cards around will indicate positive or negative.
+      5.	A long lasting love, Possible soul mate or past-life connection.`
     },
     {
-      title: "666",
-      detail: `666`
+      title: "Clouds",
+      detail1: `Unexpected obstacle, bad time, sadness, complicate situation, feeling emotionally low, if the dark side of the clouds are nextto a bad card it is a bad sign. Bad company, Alcoholism, Depression.`,
+      detail2: `1.	Careful you will get into trouble or take a bad decision.
+      2.	Things will go wrong; you need to change your plans.
+      3.	Watch your health! If this card is next to TREE.
+      4.	Your career is unsteady, You’re not sure which way to go or what is going to be the outcome. 
+      5.	Relationship problems ,suffering.`
     },
     {
-      title: "777",
-      detail: `777`
+      title: "Snake",
+      detail1: `Deception, Cheating, manipulating, betrayed, secret passion, forbidden attraction, jealousy, hypocrisy and bad intentions. A Fire sign woman.`,
+      detail2: `1.	 a secret affair, don’t trust.
+      2.	Seduction. 
+      3.	A jealous woman.
+      4.	Serious health issue if next to the TREE or CLOUDS.
+      5.	Watch out of someone jealous; gossiping behind your back. `
     },
     {
-      title: "888",
-      detail: `888`
+      title: "Coffin",
+      detail1: `End of something, great transformation, Death, a bad event, big loss, death after illness. The meaning of this card depends on the card before and after it. it is not always negative. This card can just show a big change in one’s life.`,
+      detail2: `1.	A chapter in your life is about to end, it can be a relationship or something to do with work.
+      2.	If the cart appears next to a bad card it means bad for money, health or relationship.
+      3.	This cart also suggests serious illness and/or a troubled relationship.
+      4.	When the cart is next to the Tree and Clouds it show severe illness or life threatening situation.`
     },
     {
-      title: "999",
-      detail: `999`
+      title: "Flowers",
+      detail1: `The card shows pleasant moments, positive work opportunity, happiness, joy, gift, good fortune, abundance of love, respect, loyalty. Can also show a woman young, dark with good character.`,
+      detail2: `1.	Is there is a woman Aquarius or Gemini or Libran in your life now? The cards surrounding Flowers will tell you about her.
+      2.	You will get respect from people who will appreciate your hard work.
+      3.	You will celebrate and find love; maybe a woman will fall in love with you.
+      4.	Women’s love.`
     },
     {
-      title: "10",
-      detail: `10`
+      title: "Scythe",
+      detail1: `Great danger, accident, sudden event, bad but not last long. Breakup. Be careful in driving or when dealing with bad people. Sudden end. A warning card.`,
+      detail2: `1.	a bad situation.
+      2.	Careful, you might be unaware of a dangerous situation.
+      3.	Someone might leave you unexpectedly.
+      4.	 leaving your job soon, either by choice or through getting fired.
+      5.	Surgery if next to the TREE, the surrounding cards will tell you about your health.`
     },
     {
-      title: "11",
-      detail: `11`
+      title: "The Whip",
+      detail1: `conflict, punishment, disagreements, arguments, domestic problems. Involve in competitive sport. The card can show struggling in life and tough time. Violence, abusive relationship. Problems with authorities.222`,
+      detail2: `1. feel angry and disappointed about something.
+      2.	Argument with love one, Learn to relax.
+      3.	Chronical health issue , restrictions.
+      4.	Your career is become very demanding. 
+      5.	Someone obsessive.`
     },
     {
-      title: "12",
-      detail: `12`
+      title: "The Birds",
+      detail1: `Flirting, Gossips. A short prosperous journey, small problems and/or restless behavior is also indicated. Verbal, phone calls, negotiations, twins, siblings, hectic times; an older couple is also seen.`,
+      detail2: `1.	You are excited and very attracted to someone.
+      2.	Online activity, friends, social media.
+      3.	Older lover. 
+      4.	It can also show a lot of small issues at work.
+      5.	Communication issues.`
     },
     {
-      title: "13",
-      detail: `13`
+      title: "Child",
+      detail1: `This cart shows children, Birth announcement, new arrival, someone you trust, pleasant friendship, kindness, a new start, innocence. It also shows a deep desire to have a baby.`,
+      detail2: `1.	Innocent approach.
+      2.	Growing child; children’s health; fertility.
+      3.	If next to a positive card, you will have good relationship with your children.
+      4.	Kids products business. 
+      5.	Immature person, new start in love. `
     },
     {
-      title: "14",
-      detail: `14`
+      title: "The Fox",
+      detail1: `Theft, someone is telling lies, being cheated by a manipulative person, a business manipulator, cunning person, a manger, it’s warning from devious and envious people, treachery and hidden traps.`,
+      detail2: `1.	Someone lying or cheating you.
+      2.	This is not love, there is money involve here or beneficial relationship.
+      3.	 You sign a contract please read carefully the small letters .
+      4.	A smart business man, Contract work.
+      5.	 If your health is not good or you will need to go for a surgery please go get second opinion. `
     },
     {
-      title: "15",
-      detail: `15`
+      title: "Bear",
+      detail1: `Judge, Power, Mother or Father figure, politician, The family leader. Strong person, aggression, When the bear is surrounded with good cards it means you will be protected by a powerful person. If a bad card is next to it, you need to be more caution when interacting with powerful people. The negative aspect of the bear is evil, corrupted or jealousy.`,
+      detail2: `1.	You are protected by an older man or a powerful person.
+      2.	Straight to overcome problems.
+      3.	Someone will try to control you.
+      4.	When related to health then Stress or anger management might be necessary, such as meditation or yoga.`
     },
     {
-      title: "16",
-      detail: `16`
+      title: "The stars",
+      detail1: `Fame, about your reputation, success, lucky period, public appearance, spirituality ,psychic ability and Dreams. If surrounded by good cards, you will be very successful, fortune of all aspects. if the dark clouds card or the coffin card is next it means, loss of popularity or sudden misfortune. `,
+      detail2: `1.	Lady luck is on your side, your popularity is on the rise.
+      2.	You will be offered work that can bring recognition. 
+      3.	If you are an artist, success is around the corner.
+      4.	You’re are going into a lucky relationship. `
     },
     {
-      title: "17",
-      detail: `17`
+      title: "Stork",
+      detail1: `Positive change, moving house, relocating , health improve ,pregnancy or planning a baby. Want to have a family.It can also show a woman water sign(Cancer, Scorpio, Pieces)`,
+      detail2: `1.	good chance you will get pregnant in future.
+      2.	You are in the process of moving a house. 
+      3.	Your life will change soon.
+      4.	 career change – career growth, a new  path… Anything is possible.
+      `
     },
     {
-      title: "18",
-      detail: `18`
+      title: "Dog",
+      detail1: `A loyal friend. Trust worthy person, Help from a good person, friendship. if the Mountain card is next to the dog then a friend will turn to an enemy. This cart also shows a reliable and innocent intentions.`,
+      detail2: `1.	You will get help from a friend.
+      2.	You are in a good company.
+      3.	People believe you and you will gain trust. 
+      4.	This card could indicate either stable health or a good doctor is helping you.
+      5.	 Friendship turns into love.`
     },
     {
-      title: "19",
-      detail: `19`
+      title: "The Tower",
+      detail1: `Government authorities, Tax issues, protection, prison, hospital  a person in a leading position or influence. Fame in life, a  famous person or a long life spend. If the cart of the tree is next to the Tower it means severe health problem. It also shows people we know from the past entering back to our life.`,
+      detail2: `1.	success and fame will be part of your future life.
+      2.	You will reach a position of power, but loneliness will be part of it.
+      3.	If a bad card next, it can predict problems with authorities Tax or hospitalizing.
+      4.	You prefer to work alone and get things done, rather than working as a team.`
     },
     {
-      title: "20",
-      detail: `20`
+      title: "The Garden",
+      detail1: `Good life, Popular, Public figure, high society, being a single, media events, worthy friends, hi society parties, having fun, creativity, meeting new people and artists. If this cart is next to a bad card you can’t trust the people you are socializing with.`,
+      detail2: `1.	Attending a wedding or media event, maybe a big party.
+      2.	Some important people will help you to get what you want. 
+      3.	 spending too much money.
+      4.	Overall health and vitality is good.
+      5.	Positive career growth, great network.`
     },
     {
-      title: "21",
-      detail: `21`
+      title: "The Mountain",
+      detail1: `Delays, life problems, Dangerous enemies, a long difficult period, powerful people, obstacles. It also shows cold relationship. Feeling stuck.`,
+      detail2: `1.	Watch out, someone want to harm you.
+      2.	A friend might turn into an enemy.
+      3.	Stay away from negative people.
+      4.	Problems at your workplace, Things aren’t moving in your favor.
+      5.	Love has obstacles that need to be resolved or things won’t progress.`
     },
     {
-      title: "22",
-      detail: `22`
+      title: "The Crossroads",
+      detail1: `A choice, Separation, important decision, journey, you will have to make choice, decisions. If surrounded by good carts you will find a way out of your problem. Can sometime show a woman earth sign (Taurus, Virgo, Capricorn)`,
+      detail2: `1.	Two options at work or maybe in love life.
+      2.	Faithfulness issues in relationship.
+      3.	No commitment, someone or you planning to walk away.
+      4.	You will change your lifestyle or health routine.
+      5.	Work responsibilities will grow.`
     },
     {
-      title: "23",
-      detail: `23`
+      title: "The Mouse",
+      detail1: `Lost of money in stocks, loss in gambling or in business, theft, poverty, someone is using you financially, might even stealing from you. losing energy. You are wasting your time on the wrong person. Extortion and emotional blackmail.`,
+      detail2: `1.	Someone is not honest with you, watch your back. 
+      2.	Stop giving your money and energy to the wrong people.
+      3.	You might fall sick if you will continue to work too hard.
+      4.	Your partner is not really in love with you, it is more for beneficial reasons.
+      5.	unemployment or job loss, Can sometime indicates illness.`
     },
     {
-      title: "24",
-      detail: `24`
+      title: "The Heart",
+      detail1: `Real love, caring, unconditional love, emotional involvement, spiritual love, falling in love. This cart shows happiness in the near period. This card is a good sign of joy and fortune.`,
+      detail2: `1.	Love is in the air, make sure its mutual. 
+      2.	Someone expressing his true feeling and intentions.
+      3.	The Heart next to Scythe show heartache, relationship breakup, heart surgery.
+      4.	The love of your life, Also describes your current love life.
+      5.	If the card is next to the snake it shows jealousy, false intentions.`
     },
     {
-      title: "25",
-      detail: `25`
+      title: "The Ring",
+      detail1: `Marriage, partnership, commitment. If the ring is surrounded by bad cards it predicts bad marriage or problems in partnership, if next to the tower it can show painful separation.`,
+      detail2: `1.	Marriage proposal.
+      2.	You will sign a contract or get a new job offer.
+      3.	Positive change in relationship.
+      4.	Business agreement.
+      5.	The Ring symbolizes job offers, new business deal, or work proposal.`
     },
     {
-      title: "26",
-      detail: `26`
+      title: "The Book",
+      detail1: `A secret, it can be a secret relationship or any secret activity. Education, things that are unknown to you, mystery, something is about to be revealed. This cart shows wisdom and good advice as well.`,
+      detail2: `1.	Someone keeps secrets from you. 
+      2.	New information will be revealed.
+      3.	News about visa, paper work.
+      4.	Investigate if you want to uncover a hidden issue.
+      5.	Secret love.`
     },
     {
-      title: "27",
-      detail: `27`
+      title: "The Letter",
+      detail1: `good news, messages, paper work, telephone calls and sending mails. It might show an invitation. If the card is close to the clouds the news will be bad.`,
+      detail2: `1.	News from abroad, letter from bank and government offices. 
+      2.	Can be invitation for a work interview. 
+      3.	 Plan to visit family or friends.
+      4.	 Appreciation for hard work, award.
+      5.	If the heart card next it shows a love letter or romantic communication.`
     },
     {
-      title: "28",
-      detail: `28`
+      title: "The Gentleman",
+      detail1: `A man, it is you if you are a man. if the card appears for woman it shows the man she is interested in, husband, a friend, brother, father, the man a woman is interested in.`,
+      detail2: `1.	You need to be strong and take leadership.
+      2.	Information regarding your husband.
+      3.	A relationship with a man.
+      4.	If close to the heart it shows joy, satisfaction, and contentment.
+      5.	Could show that you have found your soul mate.`
     },
     {
-      title: "29",
-      detail: `29`
+      title: "The Woman",
+      detail1: `You if you are a woman. A woman in your life. If the card appears for a man it shows his wife, sister, and daughter or mother also.`,
+      detail2: `1.	You need to softer and gentler.
+      2.	A relationship with a woman.
+      3.	It signifies women habits and personality.
+      4.	It will usually signify stable and healthy relationships.
+      5.	Next to the Snake it shows a woman you cannot trust.`
     },
     {
-      title: "30",
-      detail: `30`
+      title: "The Lilies.",
+      detail1: `An older man, Peach, good relationship, financially well settled, retire person, , support and positive attitude towards life. great respect. Stability and harmony. It might show a man air sign (Gemini, Libra, Aquarius)`,
+      detail2: `1.	Influential person will contact you.
+      2.	Important meeting with a business man.
+      3.	Acknowledgment and recognition, high position.
+      4.	Established career or someone who will mentor you.
+      5.	Often indicates illness related to old age Dementia.`
     },
     {
-      title: "31",
-      detail: `31`
+      title: "The Sun",
+      detail1: `Money and recognition, Victory, Success, good luck, Good fortune. Indicates optimism, happiness, things are in your hand.`,
+      detail2: `1.	Your career is a success.
+      2.	You will heal from a health problem.
+      3.	A good relationship is about to begin.
+      4.	Good news financially.`
     },
     {
-      title: "32",
-      detail: `32`
+      title: "The Moon",
+      detail1: `Respect, honor, recognition; Fame if you are an artist, a moody person yet talented, attraction to someone, great imagination, you will be praised and respected for your hard work. at work you can expect to be promoted.`,
+      detail2: `1.	 indicate romance and the feelings associated with it, It also represents creative endeavors writing a book, an art project.
+      2.	Health wise you might need to take some time to recharge.
+      3.	 Fame and recognition will come in surprise, It doesn’t mean you have to be a famous celebrity, but it does mean you’ll receive recognition of some sort.
+      4.	Amazing artist yet moody and emotional.`
     },
     {
-      title: "33",
-      detail: `33`
+      title: "The Key",
+      detail1: `Karmic event, Destiny, spiritual, a new beginning, solutions, success. If next to a bad card it indicates a bad start up.`,
+      detail2: `1.	A very important connection, Karmic relationship.
+      2.	If close to the card of the Man /women it shows success and positive event.
+      3.	 A health issue will eventually improve.
+      4.	You have the ability to change your life, destiny will lead you to that.
+      5.	This cart shows luck in setting a new business, things in your hand.`
     },
     {
-      title: "34",
-      detail: `34`
+      title: "The Fish",
+      detail1: `Great card for Money, richness, high class life. Spending money. owner, good business and good fortune. Can also show a business man or dark man water sign (Pieces, Scorpio, Cancer)`,
+      detail2: `1.	It involves all types of business activities – import export, sales, fishing, commercial property, hotels. 
+      2.	 you will do well in your own business.
+      3.	It can show a health issue regarding hormones or water balance in body.
+      4.	 a deep connection in marriage or love relationship.
+      5.	It describes a powerful man or a rich man, or business man who is determined and firm. `
     },
     {
-      title: "35",
-      detail: `35`
+      title: "The Anchor",
+      detail1: `Your achievements, stability, Faithfulness, success and security. A long-lasting relationship.  over sea business. Want to settle down in life. Serious intentions.`,
+      detail2: `1.	Stable career, good prospects, a long-term investment.
+      2.	Faithful and unorthodox partner, successful business, Good job position!
+      3.	If the Tree card next or a bad card next it can show a long-lasting health problem.
+      4.	An open-ended relationship (common law) where you are free to go or stay.
+      5.	It sometime shows love to the sea or wanting to immigrate.`
     },
     {
-      title: "36",
-      detail: `36`
+      title: "The Cross",
+      detail1: `Sorrow, pain, religious, suffering, misfortune, Hardship, no hope for a situation. Karma, tough destiny, unlucky in life.`,
+      detail2: `1.	It typically points to a difficult time, physical and/or emotional pain, despair, or a guilty.
+      2.	Bad for work and job search!.
+      3.	You wanted your personal life to work out but it didn’t.
+      4.	physical or emotional pain for a old family member.
+      5.	A serious problem to reach your goals.`
     },
   ];
 
@@ -419,31 +595,38 @@ export class SingleCardComponent implements OnInit {
 
     if(this.deck_mode == 1) {
       this.deck_folder = "ridercard";
+      this.notLenormand = true;
       singleCardNums = Math.floor((Math.random() * 22) + 1);
       this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".png";
 
       this.single_deck_title = this.riderCard_txt[singleCardNums-1].title;
       this.single_deck_detail1 = this.riderCard_txt[singleCardNums-1].detail1;
       this.single_deck_detail2 = this.riderCard_txt[singleCardNums-1].detail2;
+      
     }
  
     if(this.deck_mode == 2) {
       this.deck_folder = "hermetic";
+      this.notLenormand = true;
       singleCardNums = Math.floor((Math.random() * 22) + 1);
       this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
 
       this.single_deck_title = this.hermeticCard_txt[singleCardNums-1].title;
       this.single_deck_detail1 = this.hermeticCard_txt[singleCardNums-1].detail1;
       this.single_deck_detail2 = this.hermeticCard_txt[singleCardNums-1].detail2;
+      
     }
     if(this.deck_mode == 3) {
       this.deck_folder = "lenormand";
+      this.notLenormand = false;
       singleCardNums = Math.floor((Math.random() * 36) + 1);
       this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
 
       this.single_deck_title = this.lenormandCard_txt[singleCardNums-1].title;
-      //this.single_deck_detail1 = this.lenormandCard_txt[singleCardNums-1].detail1;
-      //this.single_deck_detail1 = this.lenormandCard_txt[singleCardNums-1].detail1;
+      this.single_deck_detail1 = this.lenormandCard_txt[singleCardNums-1].detail1;
+      this.single_deck_detail2 = this.lenormandCard_txt[singleCardNums-1].detail2;
+      
+      
     }
     if((Math.floor((Math.random() * 2) + 1)) == 1) {
       this.yesNo = "Yes";
@@ -468,6 +651,22 @@ export class SingleCardComponent implements OnInit {
       $(".single-detail-title").css({'color': '#5A3594'});
     });
   
+  }
+
+  ngAfterViewInit() {
+    if(this.deck_mode == 3) {
+      let strArr = [];
+
+      strArr = this.single_deck_detail2.split(".");
+      //console.log(strArr);
+      strArr.forEach((element, k) => {
+        //console.log("num"+k);
+        if(k % 2 != 0) {
+          $(".ans-array").append("<div>"+strArr[k-1]+"."+strArr[k]+"."+"</div>");
+        } 
+        k++;
+      });
+    }
   }
 
   goSelectCard() {
