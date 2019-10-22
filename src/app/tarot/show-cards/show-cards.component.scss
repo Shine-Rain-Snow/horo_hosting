@@ -237,3 +237,371 @@
     border-bottom: 50vh solid #5A3594;
     z-index: 0;
 }
+
+@media screen and (max-width: 600px) {
+	.left_triangle {
+		display: none;
+	}
+
+	.left-detail {
+		width: 80%;
+		.three-title {
+			font-size: 28px;
+			padding: 10% 0 2% 0%;
+			span {
+				left: 33%;
+			}
+		}
+
+		.cards-pic {
+			width: 100%;
+			height: 25%;
+			display: table;
+			left: 16%;
+			margin-top: 1%;
+			.pic1 {
+				position: relative;
+				width: 30%;
+				img {
+					position: relative;
+					left: 30%;
+				}
+				.pic-name {
+					left: 30%;
+				}
+			}
+			.pic2 {
+				width: 30%;
+			}
+			.pic3 {
+				width: 30%;
+				img {
+					left: -30%;
+				}
+				.pic-name {
+					left: -30%;
+				}
+			}
+			.pic-img {
+				width: 100%;
+				height: 80%;
+				position: relative;
+				margin-top: 0%;
+				top: 0%;
+				text-align: center;
+				img {
+					width: 40%;
+					height: 18vh;
+				}
+			}
+			.pic-name {
+				text-align: center;
+				font-size: 14px;
+			}
+		}
+
+		.cards-content {
+			width: 100%;
+			height: 50%;
+			position: relative;
+			left: 5%;
+			.con1 {
+				width: 100%;
+				height: 15vh;
+				//background: pink;
+				overflow: hidden;
+				display: table;
+				margin-bottom: 1%;
+			}
+			.con2 {
+				width: 100%;
+				height: 15vh;
+				//background: yellow;
+				display: table;
+				margin-bottom: 1%;
+			}
+			.con3 {
+				width: 100%;
+				height: 15vh;
+				//background: green;
+				display: table;
+				margin-bottom: 1%;
+			}
+			.con-img {
+				height: 100%;
+				width: 10%;
+				float: left;
+				position: relative;
+				//margin-top: 2%;
+				//background: pink;
+				img {
+					width: 100%;
+					height: 16vh;
+					float: right;
+				}
+			}
+			.con-detail {
+				width: 90%;
+				float: left;
+				padding: 0 2%;
+				.con-detail-title {
+					font-size: 16px;
+					margin-bottom: 5px;
+				}
+				.con-detail-content {
+					font-size: 16px;
+					margin-bottom: 2%;
+				}
+			}
+		}
+	}
+
+	.three-right-detail {
+		width: 20%;
+		height: 100%;
+		float: right;
+		.three-sel-item3-container {
+			margin-top: 82%;
+    		margin-left: 2%;
+			.three-back-reading {
+				float: left;
+				font-size: 16px;
+				margin-top: 3vh;
+				position: relative;
+    			left: -33px;
+				div {
+					
+				}
+			}
+			.arrow-symbol {
+				float: left;
+				margin-left: 30px;
+				.arrow-dash {
+					position: relative;
+					margin-left: 7px;
+					margin-top: -40px;
+					width: 2px;
+					height: 22vh;
+				}
+				i:nth-child(1) {
+					font-size:16px;
+				}
+
+				i:nth-child(2) {
+					font-size:16px;
+					
+				}
+				.arrow-down {
+					margin-top: -14px;
+				}
+			}
+		}
+
+		.right-img {
+			position: relative;
+			height: 10%;
+			width: 30%;
+			top: 50%;
+			left: 30%;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width:601px) and (max-width:900px) {
+	.left_triangle {
+		display: none;
+	}
+
+	.left-detail {
+		width: 80%;
+		.three-title {
+			font-size: 28px;
+			padding: 10% 0 2% 0%;
+			span {
+				left: 40%;
+			}
+		}
+
+		.cards-pic {
+			width: 100%;
+			height: 25%;
+			display: table;
+			left: 16%;
+			margin-top: 1%;
+			.pic1 {
+				position: relative;
+				width: 30%;
+				img {
+					position: relative;
+					left: 30%;
+				}
+				.pic-name {
+					left: 30%;
+				}
+			}
+			.pic2 {
+				width: 30%;
+			}
+			.pic3 {
+				width: 30%;
+				img {
+					left: -30%;
+				}
+				.pic-name {
+					left: -30%;
+				}
+			}
+			.pic-img {
+				width: 100%;
+				height: 80%;
+				position: relative;
+				margin-top: 0%;
+				top: 0%;
+				text-align: center;
+				img {
+					width: 40%;
+					height: 18vh;
+				}
+			}
+			.pic-name {
+				text-align: center;
+				font-size: 14px;
+			}
+		}
+
+		.cards-content {
+			width: 100%;
+			height: 50%;
+			position: relative;
+			left: 5%;
+			.con1 {
+				width: 100%;
+				height: 15vh;
+				//background: pink;
+				overflow: hidden;
+				display: table;
+				margin-bottom: 1%;
+			}
+			.con2 {
+				width: 100%;
+				height: 15vh;
+				//background: yellow;
+				display: table;
+				margin-bottom: 1%;
+			}
+			.con3 {
+				width: 100%;
+				height: 15vh;
+				//background: green;
+				display: table;
+				margin-bottom: 1%;
+			}
+			.con-img {
+				height: 100%;
+				width: 10%;
+				float: left;
+				position: relative;
+				//margin-top: 2%;
+				//background: pink;
+				img {
+					width: 100%;
+					height: 16vh;
+					float: right;
+				}
+			}
+			.con-detail {
+				width: 90%;
+				float: left;
+				padding: 0 2%;
+				.con-detail-title {
+					font-size: 16px;
+					margin-bottom: 5px;
+				}
+				.con-detail-content {
+					font-size: 16px;
+					margin-bottom: 2%;
+				}
+			}
+		}
+	}
+
+	.three-right-detail {
+		width: 20%;
+		height: 100%;
+		float: right;
+		.three-sel-item3-container {
+			margin-top: 82%;
+    		margin-left: 2%;
+			.three-back-reading {
+				float: left;
+				font-size: 16px;
+				margin-top: 3vh;
+				position: relative;
+    			left: -33px;
+				div {
+					
+				}
+			}
+			.arrow-symbol {
+				float: left;
+				margin-left: 30px;
+				.arrow-dash {
+					position: relative;
+					margin-left: 7px;
+					margin-top: -40px;
+					width: 2px;
+					height: 22vh;
+				}
+				i:nth-child(1) {
+					font-size:16px;
+				}
+
+				i:nth-child(2) {
+					font-size:16px;
+					
+				}
+				.arrow-down {
+					margin-top: -14px;
+				}
+			}
+		}
+
+		.right-img {
+			position: relative;
+			height: 10%;
+			width: 30%;
+			top: 50%;
+			left: 30%;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+@media screen and (min-width:901px) and (max-width:1200px) {
+	.left-detail {
+		.three-title {
+			span {
+				left: 40%;
+			}
+		}
+	}
+}
+@media screen and (min-width:1201px) and (max-width:1900px) {
+	.left-detail {
+		.three-title {
+			span {
+				left: 46%;
+			}
+		}
+	}
+}
+@media screen and (min-width:1900px) and (max-width:2560px) {
+	
+}
+// @media screen and (min-width:2560px)

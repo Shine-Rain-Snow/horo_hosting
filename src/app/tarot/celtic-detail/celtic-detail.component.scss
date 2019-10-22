@@ -32,10 +32,7 @@
 		font-family: Oswald light;
 		.cel1, .cel2, .cel3, .cel4, .cel5,.cel6, .cel7, .cel8, .cel9, .cel10 {
 			width: 100%;
-			//background-color: pink;
 			display: table;			
-			//margin: 5% 5% 5% 5%;
-			//height: 20vh;
 			margin-bottom: 3%;
 			.cel-img {
 				width: 7%;
@@ -58,10 +55,6 @@
 				.cel-text-content {
 					font-size: 20px;
 					width: 100%;
-					//height: 9vh;
-					//overflow: hidden;
-					//text-overflow: ellipsis;
-					//background: yellow;
 					div:nth-child(1), div:nth-child(3) {
 						font-weight: bold;
 					}
@@ -71,48 +64,6 @@
 		}
 		
 	}
-	// .six-ten {
-	// 	width: 50%;
-	// 	height: 100%;
-	// 	position: relative;
-	// 	float: left;
-	// 	//background: blue;
-	// 	margin-top: 2vh;
-	// 	font-family: Oswald extra light;
-	// 	.cel6, .cel7, .cel8, .cel9, .cel10 {
-	// 		width: 100%;
-	// 		//background-color: yellow;
-	// 		display: table;		
-	// 		height: 20vh;	
-	// 		//margin: 5% 5% 5% 30%;
-	// 		.cel-img1 {
-	// 			width: 12%;
-	// 			float: left;
-	// 			img {
-	// 				width:100%;
-	// 				height: 15vh;
-	// 			}
-	// 		}
-	// 		.cel-text1 {
-	// 			width: 80%;
-	// 			float: left;
-	// 			padding: 1% 0 1% 3%;
-	// 			.cel-text-title1 {
-	// 				font-size: 18px;
-	// 				font-weight: bold;
-	// 			}
-	// 			.cel-text-content1 {
-	// 				font-size: 14px;
-	// 				width: 100%;
-	// 				//height: 9vh;
-	// 				overflow: hidden;
-	// 				text-overflow: ellipsis;
-	// 			}
-	// 		}
-	// 	}
-		
-
-	// }
 }
 
 .celtic-ten-right {
@@ -198,3 +149,227 @@
     border-bottom: 50vh solid #5A3594;
     z-index: 0;
 }
+
+@media screen and (max-width: 600px) {
+	.celtic-ten-left {
+		
+		margin-top: 3%;
+		z-index: 20;
+		padding-left: 3%;
+	
+		.one-five {
+			
+			margin-top: 2vh;
+			.cel1, .cel2, .cel3, .cel4, .cel5,.cel6, .cel7, .cel8, .cel9, .cel10 {
+				width: 100%;
+				display: table;			
+				margin-bottom: 3%;
+				.cel-img {
+					width: 15%;
+					float: left;
+					img {
+						width:100%;
+						height: 18vh;
+					}
+				}
+				.cel-text {
+					width: 85%;
+					float: left;
+					padding: 0 0 1% 1%;
+					.cel-text-title {
+						font-size: 18px;
+						font-weight: bold;
+					}
+					.cel-text-content {
+						font-size: 18px;
+						width: 100%;
+						div:nth-child(1), div:nth-child(3) {
+							font-weight: bold;
+						}
+	
+					}
+				}
+			}
+			
+		}
+	}
+	
+	.celtic-ten-right {
+		.celtic-ten-container {
+			
+			margin-top: 28%;
+			padding-left: 18%;
+			.celtic-ten-back-reading {
+				font-size: 16px;
+				margin-top: 10vh;
+				position: relative;
+				left: -17px;
+				div:nth-child(1) {
+					text-align: right;
+					outline: none;
+				}
+				div:nth-child(2) {
+					text-align: right;
+					margin-top: 5vh;
+					outline: none;
+				}
+				
+			}
+			.arrow-symbol {
+				position: relative;
+				float: left;
+				margin-left: 30px;
+				//left: 19%;
+				.arrow-dash {
+					position: relative;
+					margin-left: 7px;
+					margin-top: -38px;
+					width: 2px;
+					height: 22vh;
+				}
+				i:nth-child(1) {
+					font-size:16px;
+				}
+	
+				i:nth-child(2) {
+					font-size:16px;
+					
+				}
+				.arrow-down {
+					margin-top: -14px;
+				}
+			}
+		}
+	
+		.right-img {
+			position: absolute;
+			height: 10vh;
+			width: 30%;
+			bottom: 0%;
+			left: 40%;
+			//background: red;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+@media screen and (min-width:601px) and (max-width:900px) {
+	.celtic-ten-left {
+		
+		margin-top: 3%;
+		z-index: 20;
+		padding-left: 3%;
+	
+		.one-five {
+			
+			margin-top: 2vh;
+			.cel1, .cel2, .cel3, .cel4, .cel5,.cel6, .cel7, .cel8, .cel9, .cel10 {
+				width: 100%;
+				display: table;			
+				margin-bottom: 3%;
+				.cel-img {
+					width: 15%;
+					float: left;
+					img {
+						width:100%;
+						height: 18vh;
+					}
+				}
+				.cel-text {
+					width: 85%;
+					float: left;
+					padding: 0 0 1% 1%;
+					.cel-text-title {
+						font-size: 18px;
+						font-weight: bold;
+					}
+					.cel-text-content {
+						font-size: 18px;
+						width: 100%;
+						div:nth-child(1), div:nth-child(3) {
+							font-weight: bold;
+						}
+	
+					}
+				}
+			}
+			
+		}
+	}
+	
+	.celtic-ten-right {
+		.celtic-ten-container {
+			
+			margin-top: 28%;
+			padding-left: 18%;
+			.celtic-ten-back-reading {
+				font-size: 16px;
+				margin-top: 10vh;
+				position: relative;
+				left: -45px;
+				div:nth-child(1) {
+					text-align: right;
+					outline: none;
+				}
+				div:nth-child(2) {
+					text-align: right;
+					margin-top: 5vh;
+					outline: none;
+				}
+				
+			}
+			.arrow-symbol {
+				position: relative;
+				float: left;
+				margin-left: 30px;
+				//left: 19%;
+				.arrow-dash {
+					position: relative;
+					margin-left: 7px;
+					margin-top: -38px;
+					width: 2px;
+					height: 22vh;
+				}
+				i:nth-child(1) {
+					font-size:16px;
+				}
+	
+				i:nth-child(2) {
+					font-size:16px;
+					
+				}
+				.arrow-down {
+					margin-top: -14px;
+				}
+			}
+		}
+	
+		.right-img {
+			position: absolute;
+			height: 10vh;
+			width: 30%;
+			bottom: 0%;
+			left: 40%;
+			//background: red;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+@media screen and (min-width:901px) and (max-width:1200px) {
+	.celtic-ten-right {
+		.celtic-ten-container {	
+				
+			margin-top: 65% !important;
+			margin-top: 18%;
+		}
+	}
+}
+// @media screen and (min-width:1201px) and (max-width:1900px)
+// @media screen and (min-width:1900px) and (max-width:2560px)
+// @media screen and (min-width:2560px)

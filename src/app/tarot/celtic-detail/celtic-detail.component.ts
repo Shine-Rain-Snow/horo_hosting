@@ -269,12 +269,12 @@ export class CelticDetailComponent implements OnInit {
     this.spread_mode = this.aRoute.snapshot.paramMap.get('spread_mode');
 
     let tenCardNums = [];
-    tenCardNums = this.sunService.getCelticTenCardNum();
+    //tenCardNums = this.sunService.getCelticTenCardNum();
    
     if(this.deck_mode == 1 ) {
       this.deck_folder = "ridercard";      
       for(let i=1; i<=10; i++) {   
-        // tenCardNums[i] = Math.floor((Math.random() * 22) + 1);
+        tenCardNums[i] = Math.floor((Math.random() * 22) + 1);
         this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".png";
         this.celtic_cardTitle[i] = this.riderCard_txt[tenCardNums[i]-1].title;
         this.celtic_cardContent1[i] = this.riderCard_txt[tenCardNums[i]-1].detail1;
@@ -287,7 +287,7 @@ export class CelticDetailComponent implements OnInit {
     if(this.deck_mode == 2) {
       this.deck_folder = "hermetic";     
       for(let i=1; i<=10; i++) {  
-        // tenCardNums[i] = Math.floor((Math.random() * 22) + 1);
+        tenCardNums[i] = Math.floor((Math.random() * 22) + 1);
         this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".jpg";
         this.celtic_cardTitle[i] = this.hermeticCard_txt[tenCardNums[i]-1].title;
         this.celtic_cardContent1[i] = this.hermeticCard_txt[tenCardNums[i]-1].detail1;

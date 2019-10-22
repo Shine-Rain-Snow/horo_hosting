@@ -36,7 +36,7 @@ export class TarotComponent implements OnInit {
       $(".left-hand1").css({visibility: "visible"});
       $(".left-hand2").css({visibility: "hidden"});
       $(".left-hand3").css({visibility: "hidden"});
-
+      
     });
     $(".hermetic").click(function(){
       $(".classic_rider_text").css({color: "black"});
@@ -179,13 +179,24 @@ export class TarotComponent implements OnInit {
       self.router.navigate(['/tarot']);   
     } else {
       $(".black_raven img:nth-child(1)").css({visibility: "hidden"});
-      $(".black_raven img:nth-child(2)").css({
-        visibility: "visible", 
-        bottom: "4%",
-        position: "fixed",
-        width: "12%",
-        height: "26%"
-       });
+      if(screen.width <  901) {
+        $(".black_raven img:nth-child(2)").css({
+          visibility: "visible", 
+          bottom: "4%",
+          position: "fixed",
+          width: "20vh",
+          height: "20vh"
+         });
+      } else {
+        $(".black_raven img:nth-child(2)").css({
+          visibility: "visible", 
+          bottom: "4%",
+          position: "fixed",
+          width: "12%",
+          height: "26%"
+         });
+      }
+      
       $(".black_raven img:nth-child(2)").animate({
         left: "-10%",
         bottom: "100%",
