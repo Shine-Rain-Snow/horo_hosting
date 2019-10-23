@@ -559,9 +559,13 @@
 	}
 }
  @media screen and (min-width:1900px) and (max-width:2560px) {
-	// .single-card {
-	// 	overflow-y: scroll;
-	// }
+	.left_triangle {
+		display: none;
+	}
+	.single-card {
+		overflow-y: scroll;
+		
+	}
 	
 	// .single-left-detail {
 	// 	.single-title {

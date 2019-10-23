@@ -316,7 +316,7 @@
 				text-align: center;
 				background-color: #80d4ea;
 				color: white;
-				margin-left: 4%;
+				margin-left: 12%;
 				font-size: 60px;
 				padding-top: 74px;
 			}
@@ -335,7 +335,7 @@
 				text-align: center;
 				background-color: #80d4ea;
 				color: white;
-				margin-left: 4%;
+				margin-left: 12%;
 				font-size: 60px;
 				padding-top: 74px;
 			}
@@ -349,53 +349,53 @@
 }
 
 @media screen and (min-width:1900px) and (max-width:2560px) {
-	// .time-watch { 
-	// 	font-size: 22px;
-	// 	.time-title {
-	// 		margin-left: 36%;
-	// 		margin-top: 30%;
-	// 	}
-	// 	.bangkok-time {
-	// 		margin-top: 5%;
-	// 		font-size: 22px;
-	// 		.bangkok-time-img {
-	// 			margin-left: -11%;
-	// 			height: max-content;
-	// 			width: 450px;
-	// 			height: 250px;
-	// 			text-align: center;
-	// 			background-color: #80d4ea;
-	// 			color: white;
-	// 			margin-left: 4%;
-	// 			font-size: 60px;
-	// 			padding-top: 74px;
-	// 		}
-	// 		.bangkok-time-txt {
-	// 			font-size: 22px;
-	// 			margin-left: 36%;
-	// 		}
-	// 	}
-	// 	.newyork-time {
-	// 		margin: 5% 0;
-	// 		.newyork-time-img {
-	// 			margin-left: -11%;
-	// 			height: max-content;
-	// 			width: 450px;
-	// 			height: 250px;
-	// 			text-align: center;
-	// 			background-color: #80d4ea;
-	// 			color: white;
-	// 			margin-left: 4%;
-	// 			font-size: 60px;
-	// 			padding-top: 74px;
-	// 		}
+	.time-watch { 
+		font-size: 22px;
+		.time-title {
+			margin-left: 28%;
+			margin-top: 40%;
+		}
+		.bangkok-time {
+			margin-top: 5%;
+			font-size: 22px;
+			.bangkok-time-img {
+				margin-left: -11%;
+				height: max-content;
+				width: 450px;
+				height: 250px;
+				text-align: center;
+				background-color: #80d4ea;
+				color: white;
+				margin-left: 4%;
+				font-size: 60px;
+				padding-top: 74px;
+			}
+			.bangkok-time-txt {
+				font-size: 22px;
+				margin-left: 28%;
+			}
+		}
+		.newyork-time {
+			margin: 5% 0;
+			.newyork-time-img {
+				margin-left: -11%;
+				height: max-content;
+				width: 450px;
+				height: 250px;
+				text-align: center;
+				background-color: #80d4ea;
+				color: white;
+				margin-left: 4%;
+				font-size: 60px;
+				padding-top: 74px;
+			}
 			
-	// 		.newyork-time-txt {
-	// 			font-size: 22px;
-	// 			margin-left: 36%;
-	// 		}
-	// 	}
-	// }
+			.newyork-time-txt {
+				font-size: 22px;
+				margin-left: 28%;
+			}
+		}
+	}
 }
 @media screen and (min-width:2560px) {
 	// .time-watch { 

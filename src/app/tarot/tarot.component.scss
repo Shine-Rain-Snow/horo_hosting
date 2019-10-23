@@ -1291,13 +1291,13 @@
 					img {
 						width: 55%;
 						height: 60%;
-						margin-left: 7%;
+						margin-left: 83%;
 						
 					}
 				}
 				.left-hand2 {
 					width: 25%;
-					left: 0%;
+					left: 30%;
 					img {
 						margin-top: 20%;
 					}
@@ -1447,6 +1447,219 @@
 
 @media screen and (min-width:1900px) and (max-width:2560px) {
 	
+	// .tarot_content {
+		
+	// 	.tarot_title {
+			
+	// 		font-size: 50px;
+	// 		padding: 4% 0 1% 0;
+	// 	}
+	// 	.tarot_deck {
+	// 		.deck_title {
+	// 			font-size: 26px;
+	// 			.main-dash {
+	// 				width: 35px;
+	// 				left: -55px;
+	// 				top: 22px;	
+	// 			}
+	// 		}
+	
+	// 		.classic_rider {
+	// 			cursor: pointer;
+	// 			display: table;
+	// 			margin-top: 5%;
+	// 			.classic_rider_text {
+	// 				font-size: 22px;
+	// 				width: 50%;
+	// 				padding-top: 10%;	
+	// 			}
+				
+	// 			.classic_rider_img {
+	// 				width: 25%;
+	// 				img {
+	// 					width: 80%;
+	// 					height: 80%;
+	// 				}
+					
+	// 			}
+	// 			.left-hand1 {
+	// 				position: relative;
+	// 				left: 5%;				
+	// 				width: 25%;
+	// 				float: left;
+	// 				visibility: hidden;
+	// 				img {
+	// 					position: relative;
+	// 					margin-top: 30%;
+	// 				}
+	// 			}
+	// 		}
+	// 		.classic_rider:hover {
+	// 			transform: scale(1.2);
+	// 			text-shadow: 10px 10px 5px #5A3594;
+	// 		}
+	// 		.hermetic {
+	// 			margin-top: 5%;
+	// 			.hermetic_text {
+	// 				font-size: 22px;
+	// 			}
+	// 			.hermetic_img {
+	// 				width: 25%;
+	// 				img {
+	// 					width: 55%;
+	// 					height: 60%;
+	// 					margin-left: 83%;
+						
+	// 				}
+	// 			}
+	// 			.left-hand2 {
+	// 				width: 25%;
+	// 				left: 30%;
+	// 				img {
+	// 					margin-top: 20%;
+	// 				}
+	// 			}
+	// 		}
+	// 		.hermetic:hover {
+	// 			transform: scale(1.2);
+	// 			text-shadow: 10px 10px 5px #5A3594;
+	// 		}
+	// 		.lenormand {
+	// 			.lenormand_text {
+	// 				font-size: 22px;
+	// 				width: 50%;
+	// 				padding-top: 10%;
+	// 				float: left;
+	// 			}
+	// 			.lenormand_img {
+	// 				width: 25%;
+	// 				float: left;
+	// 				img {
+	// 					width: 100%;
+	// 					height: 100%;
+	// 					margin-top: 4%;
+	// 					cursor: pointer;
+	// 				}				
+	// 			}
+	// 			.left-hand3 {
+	// 				width: 25%;
+	// 				float: left;
+	// 				position: relative;
+	// 				left: 5%;
+	// 				visibility: hidden;
+	// 				img {
+	// 					position: relative;
+	// 					margin-top: 30%;
+	
+	// 				}
+	// 			}
+	// 		}
+	// 		.lenormand:hover {
+	// 			transform: scale(1.2);
+	// 			text-shadow: 10px 10px 5px #5A3594;
+	// 		}
+	// 	}
+	// 	.tarot_spread {
+	// 		.spread_title {
+	// 			font-size: 28px;
+	// 			.main-dash {
+	// 				width: 35px;
+	// 				left: -65px;
+	// 				top: 22px;	
+	// 			}
+	// 		}
+	
+	// 		.first_mode {
+	// 			.first_mode_text {
+	// 				font-size: 18px;
+	// 				width: 30%;
+	// 				padding-top: 0%;
+	// 				div:nth-child(2) {
+	// 					font-size: 18px;
+	// 				}
+	// 				img {
+	// 					left: 100%; top: -70px;
+	// 				}
+	// 			}
+	// 		}
+	
+	// 		.first_mode:hover {
+	// 			transform: scale(1.2);
+	// 		}
+	
+	// 		.second_mode {
+	// 			margin-top: 0%;
+	// 			.second_mode_img {
+	// 				padding-left: 23%;
+	// 			}
+	// 			.second_mode_text {
+	// 				font-size: 18px;
+	// 				width: 50%;
+	// 				padding-top: 0%;
+	// 				div:nth-child(2) {
+	// 					font-size: 18px;
+	// 				}
+	// 				img {
+	// 					left: 60%; top: -70px;
+	// 				}
+	// 			}
+	// 		}
+	// 		.second_mode:hover {
+	// 			transform: scale(1.2);
+	// 		}
+	
+	// 		.third_mode {
+	// 			margin-top: 0%;
+	// 			.third_mode_img {
+	// 				padding-left: 23%;
+	// 			}
+				
+	// 			.third_mode_text {
+	// 				left: -6%;
+	// 				.third_mode_text_col1 {
+	// 					float: left;
+	// 					width: 10%;
+	// 				}
+	// 				.third_mode_text_col2 {
+	// 					width: 90%;
+	// 					font-size: 18px;
+	// 					div:nth-child(2) {
+	// 						font-size: 18px;
+	// 					}
+	// 					img {
+	// 						left: 80%; top: -110px;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 		.third_mode:hover {
+	// 			transform: scale(1.2);
+	// 		}
+	
+	// 	}
+		
+	// }
+	
+	// .black_raven {
+	// 	z-index: 10;
+	// 	width: 100px;
+	// 	bottom: 4%;
+	// 	left: 50%;
+	// 	img:nth-child(1) {
+	// 		width: 100%;
+	// 		height: 100%;
+	// 	}
+	// 	img:nth-child(2) {
+	// 		left: 45%;
+	// 		width: 12%;
+	// 		height: 12%;
+	// 	}
+	// 	.raven_text {
+	// 		font-size: 18px;
+	// 		width: 500px;
+	// 		left: -210%;
+	// 	}
+	// }
 }
 
 // @media screen and (min-width:2560px)
