@@ -23,6 +23,7 @@ export class TarotComponent implements OnInit {
   ngOnInit() {
   	this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(9);
+    this.sunService.setProgressShow(false);
     let self = this;
     //hover effting jquery
     $(".classic_rider").click(function(){

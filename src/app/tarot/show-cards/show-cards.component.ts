@@ -575,7 +575,7 @@ export class ShowCardsComponent implements OnInit {
       title: "The Anchor",
       detail1: `Your achievements, stability, Faithfulness, success and security. A long-lasting relationship.  over sea business. Want to settle down in life. Serious intentions.`,
       detail2: `1.	Stable career, good prospects, a long-term investment.
-      2.	Faithful and unorthodox partner, successful business, Good job position!
+      2.	Faithful and unorthodox partner, successful business, Good job position.
       3.	If the Tree card next or a bad card next it can show a long-lasting health problem.
       4.	An open-ended relationship (common law) where you are free to go or stay.
       5.	It sometime shows love to the sea or wanting to immigrate.`

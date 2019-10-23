@@ -32,6 +32,25 @@
     p:first-child {
 		font-weight: bold;
 	}
+	.detail-img {
+		width: 100%;
+		height: 100%;
+		margin-left: 20%;
+		margin-top: 10%;
+		display: table;
+		.img-item {
+			position: relative;
+			width: 20%;
+			height: 7vh;
+			float: left;
+			margin-left: 2%;
+			margin-bottom: 3vh;
+			img {
+				width: 100%;
+				height: 100%;;
+			}
+		}
+	}
 }
 
 .divide {
@@ -75,15 +94,21 @@
 	.time-title {
 		position: relative;
 		margin-left: 42%;
-    	margin-top: 40%;
+    	margin-top: 35%;
 	}
 	.bangkok-time {
 		margin-top: 5%;
 		.bangkok-time-img {
-			width: 50%;
-			height: 15vh;
-			//background: red;
+			// width: 50%;
+			// height: 15vh;
+			width: 450px;
+			height: 250px;
+			text-align: center;
+			background-color: #80d4ea;
+			color: white;
 			margin-left: 19%;
+			font-size: 60px;
+			padding-top: 74px;
 		}
 		.bangkok-time-txt {
 			margin-top: 3%;
@@ -93,10 +118,14 @@
 	.newyork-time {
 		margin-top: 5%;
 		.newyork-time-img {
-			width: 50%;
-			height: 15vh;
-			//background: red;
+			width: 450px;
+			height: 250px;
+			text-align: center;
+			background-color: #80d4ea;
+			color: white;
 			margin-left: 19%;
+			font-size: 60px;
+			padding-top: 74px;
 		}
 		.newyork-time-txt {
 			margin-top: 3%;
@@ -108,6 +137,15 @@
 	.detail, .pay-form, .time-watch {
 	  width: 100%;
 	  height: max-content;
+	}
+	.detail {
+		.detail-img {
+			.img-item {
+				width: 20%;
+				height: 7vh;
+				margin-left: 2%;
+			}
+		}
 	}
 	.counseling {
 		img {
@@ -122,7 +160,7 @@
 		.bangkok-time {
 			margin-top: 5%;
 			.bangkok-time-img {
-				margin-left: 15%;
+				margin-left: 3%;
 				height: max-content;
 			}
 			.bangkok-time-txt {
@@ -132,7 +170,7 @@
 		.newyork-time {
 			margin: 5% 0;
 			.newyork-time-img {
-				margin-left: 15%;
+				margin-left: 3%;
 				height: max-content;
 			}
 			
@@ -153,6 +191,15 @@
 			  width: 100%;
 		  }
 	  }
+	  .detail {
+		.detail-img {
+			.img-item {
+				width: 18%;
+				height: 7vh;
+				margin-left: 2%;
+			}
+		}
+	  }
 	  .time-watch { 
 		  .time-title {
 			  margin-left: 42%;
@@ -161,7 +208,7 @@
 		  .bangkok-time {
 			  margin-top: 5%;
 			  .bangkok-time-img {
-				  margin-left: 25%;
+				  margin-left: 15%;
 				  height: max-content;
 			  }
 			  .bangkok-time-txt {
@@ -171,7 +218,7 @@
 		  .newyork-time {
 			  margin: 5% 0;
 			  .newyork-time-img {
-				  margin-left: 25%;
+				  margin-left: 15%;
 				  height: max-content;
 			  }
 			  
@@ -185,17 +232,25 @@
 }
 
 @media screen and (min-width:901px) and (max-width:1200px) {
+
 	.detail {
-	  width: 30%;
-	  height: max-content;
+		width: 100%;
+	    height: max-content;
+		.detail-img {
+			.img-item {
+				width: 10%;
+				height: 7vh;
+				margin-left: 2%;
+			}
+		}
 	}
 	 .pay-form {
-	 	width: 40%;
+	 	width: 50%;
 		height: max-content;
 		margin-bottom: 5%;
 	 }
 	 .time-watch {
-		width: 30%;
+		width: 50%;
 	 }
 	.detail-text  {
 		margin: 10% 8% 0 8% !important;
@@ -210,8 +265,8 @@
 
 	.time-watch { 
 		.time-title {
-			margin-left: 42%;
-			margin-top: 20%;
+			margin-left: 36%;
+			margin-top: 30%;
 		}
 		.bangkok-time {
 			margin-top: 5%;
@@ -220,7 +275,7 @@
 				height: max-content;
 			}
 			.bangkok-time-txt {
-				margin-left: 42%;
+				margin-left: 36%;
 			}
 		}
 		.newyork-time {
@@ -231,7 +286,7 @@
 			}
 			
 			.newyork-time-txt {
-				margin-left: 42%;
+				margin-left: 36%;
 			}
 		}
 	}
@@ -245,34 +300,149 @@
 	}
 
 	.time-watch { 
+		font-size: 22px;
 		.time-title {
-			margin-left: 42%;
-			margin-top: 40%;
+			margin-left: 36%;
+			margin-top: 50%;
 		}
 		.bangkok-time {
 			margin-top: 5%;
+			font-size: 22px;
 			.bangkok-time-img {
-				margin-left: 7%;
+				margin-left: -11%;
 				height: max-content;
+				width: 350px;
+				height: 200px;
+				text-align: center;
+				background-color: #80d4ea;
+				color: white;
+				margin-left: 4%;
+				font-size: 60px;
+				padding-top: 74px;
 			}
 			.bangkok-time-txt {
-				margin-left: 42%;
+				font-size: 22px;
+				margin-left: 36%;
 			}
 		}
 		.newyork-time {
 			margin: 5% 0;
 			.newyork-time-img {
-				margin-left: 7%;
+				margin-left: -11%;
 				height: max-content;
+				width: 350px;
+				height: 200px;
+				text-align: center;
+				background-color: #80d4ea;
+				color: white;
+				margin-left: 4%;
+				font-size: 60px;
+				padding-top: 74px;
 			}
 			
 			.newyork-time-txt {
-				margin-left: 42%;
+				font-size: 22px;
+				margin-left: 36%;
 			}
 		}
 	}
 }
 
-// @media screen and (min-width:1201px) and (max-width:1900px)
-// @media screen and (min-width:1900px) and (max-width:2560px)
-// @media screen and (min-width:2560px)
+@media screen and (min-width:1900px) and (max-width:2560px) {
+	// .time-watch { 
+	// 	font-size: 22px;
+	// 	.time-title {
+	// 		margin-left: 36%;
+	// 		margin-top: 30%;
+	// 	}
+	// 	.bangkok-time {
+	// 		margin-top: 5%;
+	// 		font-size: 22px;
+	// 		.bangkok-time-img {
+	// 			margin-left: -11%;
+	// 			height: max-content;
+	// 			width: 450px;
+	// 			height: 250px;
+	// 			text-align: center;
+	// 			background-color: #80d4ea;
+	// 			color: white;
+	// 			margin-left: 4%;
+	// 			font-size: 60px;
+	// 			padding-top: 74px;
+	// 		}
+	// 		.bangkok-time-txt {
+	// 			font-size: 22px;
+	// 			margin-left: 36%;
+	// 		}
+	// 	}
+	// 	.newyork-time {
+	// 		margin: 5% 0;
+	// 		.newyork-time-img {
+	// 			margin-left: -11%;
+	// 			height: max-content;
+	// 			width: 450px;
+	// 			height: 250px;
+	// 			text-align: center;
+	// 			background-color: #80d4ea;
+	// 			color: white;
+	// 			margin-left: 4%;
+	// 			font-size: 60px;
+	// 			padding-top: 74px;
+	// 		}
+			
+	// 		.newyork-time-txt {
+	// 			font-size: 22px;
+	// 			margin-left: 36%;
+	// 		}
+	// 	}
+	// }
+}
+@media screen and (min-width:2560px) {
+	// .time-watch { 
+	// 	font-size: 22px;
+	// 	.time-title {
+	// 		margin-left: 36%;
+	// 		margin-top: 35%;
+	// 	}
+	// 	.bangkok-time {
+	// 		margin-top: 5%;
+	// 		font-size: 22px;
+	// 		.bangkok-time-img {
+	// 			margin-left: -11%;
+	// 			height: max-content;
+	// 			width: 450px;
+	// 			height: 250px;
+	// 			text-align: center;
+	// 			background-color: #80d4ea;
+	// 			color: white;
+	// 			margin-left: 13%;
+	// 			font-size: 60px;
+	// 			padding-top: 74px;
+	// 		}
+	// 		.bangkok-time-txt {
+	// 			font-size: 22px;
+	// 			margin-left: 36%;
+	// 		}
+	// 	}
+	// 	.newyork-time {
+	// 		margin: 5% 0;
+	// 		.newyork-time-img {
+	// 			margin-left: -11%;
+	// 			height: max-content;
+	// 			width: 450px;
+	// 			height: 250px;
+	// 			text-align: center;
+	// 			background-color: #80d4ea;
+	// 			color: white;
+	// 			margin-left: 13%;
+	// 			font-size: 60px;
+	// 			padding-top: 74px;
+	// 		}
+			
+	// 		.newyork-time-txt {
+	// 			font-size: 22px;
+	// 			margin-left: 36%;
+	// 		}
+	// 	}
+	// }
+}
