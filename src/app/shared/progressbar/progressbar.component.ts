@@ -127,7 +127,7 @@ export class ProgressbarComponent implements OnInit {
 
   onCounseling() {
     this.sunService.setAllZero();
-    this.router.navigate(['/counseling']);
+    this.router.navigate(['/booksession']);
   }
 
   onContact() {

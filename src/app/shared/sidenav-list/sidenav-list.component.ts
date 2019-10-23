@@ -64,7 +64,7 @@ export class SidenavListComponent implements OnInit {
 
   onCounseling() {
     this.sunService.setAllZero();
-    this.router.navigate(['/counseling']);
+    this.router.navigate(['/booksession']);
     this.sidenavClose.emit();
   }
 

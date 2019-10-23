@@ -1,25 +1,33 @@
 .counseling {
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	display: table;
 	font-family: Oswald light;
+	//background: url('../../assets/img/counseling/counseling.png') no-repeat; 
+	background: #deddd6;
+	
+	img {
+		position: absolute;
+		width: 30%;
+		height: 100vh;
+		z-index: 0;
+		//background: red;
+	}
+	overflow: hidden;
 }
 .counseling>div
 {
 	float: left;
 }
+
 .detail {
 	width: 30%;
 	height: 100%;
-	
+	margin-top: 2%;
 	position: relative;
-	//
 	font-size: 22px;
 	.detail-text  {
-		// width: 80%;
-		
-		margin: 40% 8% 0 8%;
-		// background: red;
+		margin: 40% 8% 0 20%;
 	}
     p:first-child {
 		font-weight: bold;
@@ -33,61 +41,199 @@
 }
 
 .pay-form {
-	width: 50%;
+	width: 40%;
 	height: 100%;
 	padding: 5% 5% 0 5%;
 	font-size: 22px;
+	margin-top: 2%;
+	z-index: 20;
 	p{
 		text-align: center;
-		font-weight: bold;
-		padding-bottom: 5%;
+		font-family: Oswald;
+	}
+	p:nth-child(1) {
+		font-size: 36px;
+	}
+	p:nth-child(2) {
+		margin-bottom: 5%;
 	}
 	.pay-btn {
 		margin-top: 5%;
+		
+		.sendPay {cursor: pointer;}
 	}
 	//background: yellow;
 }
 
 .time-watch {
-	width: 20%;
+	width: 30%;
 	height: 100%;
-
+	font-family: Oswald;
+	font-size: 28px;
+	position: relative;
+	margin-top: 2%;
+	.time-title {
+		position: relative;
+		margin-left: 42%;
+    	margin-top: 40%;
+	}
+	.bangkok-time {
+		margin-top: 5%;
+		.bangkok-time-img {
+			width: 50%;
+			height: 15vh;
+			//background: red;
+			margin-left: 19%;
+		}
+		.bangkok-time-txt {
+			margin-top: 3%;
+			margin-left: 42%;
+		}
+	}
+	.newyork-time {
+		margin-top: 5%;
+		.newyork-time-img {
+			width: 50%;
+			height: 15vh;
+			//background: red;
+			margin-left: 19%;
+		}
+		.newyork-time-txt {
+			margin-top: 3%;
+			margin-left: 42%;
+		}
+	}
 }
 @media screen and (max-width: 600px) {
 	.detail, .pay-form, .time-watch {
 	  width: 100%;
 	  height: max-content;
 	}
+	.counseling {
+		img {
+			width: 100%;
+		}
+	}
+	.time-watch { 
+		.time-title {
+			margin-left: 42%;
+			margin-top: 20%;
+		}
+		.bangkok-time {
+			margin-top: 5%;
+			.bangkok-time-img {
+				margin-left: 15%;
+				height: max-content;
+			}
+			.bangkok-time-txt {
+				margin-left: 42%;
+			}
+		}
+		.newyork-time {
+			margin: 5% 0;
+			.newyork-time-img {
+				margin-left: 15%;
+				height: max-content;
+			}
+			
+			.newyork-time-txt {
+				margin-left: 42%;
+			}
+		}
+	}
 }
 
 @media screen and (min-width:601px) and (max-width:900px) {
-	.detail, {
-	  width: 100%;
-	  height: max-content;
-	}
-	 .pay-form, .time-watch {
-	 	width: 50%;
-	 	height: max-content;
-	 }
-	.detail-text  {
-		margin: 10% 8% 0 8% !important;
-		font-size: 20px;
-	}
+	.detail, .pay-form, .time-watch {
+		width: 100%;
+		height: max-content;
+	  }
+	  .counseling {
+		  img {
+			  width: 100%;
+		  }
+	  }
+	  .time-watch { 
+		  .time-title {
+			  margin-left: 42%;
+			  margin-top: 20%;
+		  }
+		  .bangkok-time {
+			  margin-top: 5%;
+			  .bangkok-time-img {
+				  margin-left: 25%;
+				  height: max-content;
+			  }
+			  .bangkok-time-txt {
+				  margin-left: 42%;
+			  }
+		  }
+		  .newyork-time {
+			  margin: 5% 0;
+			  .newyork-time-img {
+				  margin-left: 25%;
+				  height: max-content;
+			  }
+			  
+			  .newyork-time-txt {
+				  margin-left: 42%;
+			  }
+		  }
+		  
+	  }
 
 }
 
 @media screen and (min-width:901px) and (max-width:1200px) {
-	.detail, {
-	  width: 100%;
+	.detail {
+	  width: 30%;
 	  height: max-content;
 	}
-	 .pay-form, .time-watch {
-	 	width: 50%;
-	 	height: max-content;
+	 .pay-form {
+	 	width: 40%;
+		height: max-content;
+		margin-bottom: 5%;
+	 }
+	 .time-watch {
+		width: 30%;
 	 }
 	.detail-text  {
 		margin: 10% 8% 0 8% !important;
 		font-size: 20px;
+	}
+	.counseling {
+		img {
+			width:50%;
+			height: 78vh;
+		}
+	}
+
+	.time-watch { 
+		.time-title {
+			margin-left: 42%;
+			margin-top: 20%;
+		}
+		.bangkok-time {
+			margin-top: 5%;
+			.bangkok-time-img {
+				margin-left: 0%;
+				height: max-content;
+			}
+			.bangkok-time-txt {
+				margin-left: 42%;
+			}
+		}
+		.newyork-time {
+			margin: 5% 0;
+			.newyork-time-img {
+				margin-left: 0%;
+				height: max-content;
+			}
+			
+			.newyork-time-txt {
+				margin-left: 42%;
+			}
+		}
 	}
 	
 }
@@ -96,6 +242,34 @@
 	.detail-text  {
 		margin: 35% 8% 0 8% !important;
 		font-size: 20px;
+	}
+
+	.time-watch { 
+		.time-title {
+			margin-left: 42%;
+			margin-top: 40%;
+		}
+		.bangkok-time {
+			margin-top: 5%;
+			.bangkok-time-img {
+				margin-left: 7%;
+				height: max-content;
+			}
+			.bangkok-time-txt {
+				margin-left: 42%;
+			}
+		}
+		.newyork-time {
+			margin: 5% 0;
+			.newyork-time-img {
+				margin-left: 7%;
+				height: max-content;
+			}
+			
+			.newyork-time-txt {
+				margin-left: 42%;
+			}
+		}
 	}
 }
 

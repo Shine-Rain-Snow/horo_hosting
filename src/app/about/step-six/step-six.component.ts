@@ -40,7 +40,7 @@ export class StepSixComponent implements OnInit {
           this.sunService.setAboutVal(0);
           $(".step-six").fadeOut(600);
           setTimeout(() => {
-            this.router.navigate(['/counseling']);
+            this.router.navigate(['/booksession']);
           }, 600);
          
         } 

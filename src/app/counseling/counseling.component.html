@@ -1,4 +1,6 @@
 <div class="counseling">
+    <img src="../../assets/img/counseling/counseling.png" />
+   
 	<div class="detail">
         <div class="detail-text">
         <p>Please read Before you book your session</p>
@@ -37,20 +39,19 @@
         <p>
             Ofer
         </p>
-
-        <!-- <div class="divide"></div> -->
         </div>
     </div>
     <div class="pay-form">
-        <p>BOOK YOUR SESSION</p>
+        <p>Book your session</p>
+        <p>40 Min online Session : 125 USD</p>
         <div class="pay-form-content">
             <div class="first-name form-group">
                 <label>First Name*</label>
-                <input type="text" class="form-control"  placeholder="First Name" />
+                <input type="text" class="form-control" placeholder="First Name" >
             </div>
-            <div class="first-name form-group">
+            <div class="last-name form-group">
                 <label >Last Name*</label>
-                <input type="text" class="form-control"  placeholder="Last Name" />
+                <input type="text" class="form-control"  placeholder="Last Name" >
             </div>
             <div class="email-name form-group">
                 <label for="exampleInputEmail1">E-mail*</label>
@@ -61,32 +62,56 @@
             </div>
             <div class="city-name form-group">
                 <label>City</label>
-                <input type="text" class="form-control"  placeholder="City" />
+                <input type="text" class="form-control"  placeholder="City" >
             </div>
             <div class="zip-name form-group">
                 <label>Postal/ZIP Code</label>
-                <input type="text" class="form-control" placeholder="Zip code" />
+                <input type="text" class="form-control" placeholder="Zip code" >
             </div>
             <div class="country-name form-group">
                 <label>Country*</label>
-                <input type="text" class="form-control" placeholder="Country name" />
+                <input type="text" class="form-control" placeholder="Country name" >
             </div>
             <div class="verification-name form-group">
                 <label>Enter verification number below: like 033121</label>
-                <input type="text" class="form-control" placeholder="Verification code" />
+                <input type="text" class="form-control" placeholder="Verification code" >
             </div>
             <div class="pay-btn">
-                <input type="button" class="btn btn-primary btn-lg" value="PayPal" />
+                <input type="button" class="btn btn-primary btn-lg sendPay" value="PayPal" >
             </div>
         </div>
     </div> 
     <div class="time-watch">
-        
-        <div id="divMain">
-            <div id="bangkok_time" ></div>
-            <div id="newyork_time" ></div>
-            <div id="mumbai_time" ></div>
-            <div id="dubai_time" ></div>
+        <div class="time-title">Time zone</div>
+        <div class="bangkok-time">
+            <div class="bangkok-time-img">
+                <iframe scrolling="no" frameborder="no" clocktype="html5" 
+                style="overflow:hidden;
+                border:0;
+                margin:0;
+                padding:0;
+                width:450px;
+                height:210px;"
+                src="https://www.clocklink.com/html5embed.php?clock=048&timezone=USA_Albany&color=blue&size=450&Title=&Message=&Target=&From=2019,1,1,0,0,0&Color=blue"></iframe>
+            </div>
+            <div class="bangkok-time-txt">
+                Bangkok
+            </div>
         </div>
+        <div class="newyork-time">
+                <div class="newyork-time-img">
+                    <iframe scrolling="no" frameborder="no" clocktype="html5" class="digital-watch"
+                    style="overflow:hidden;
+                    border:0;
+                    margin:0;
+                    padding:0;
+                    width:450px;
+                    height:210px;"
+                    src="https://www.clocklink.com/html5embed.php?clock=048&timezone=USA_Albany&color=blue&size=450&Title=&Message=&Target=&From=2019,1,1,0,0,0&Color=blue"></iframe>
+                </div>
+                <div class="newyork-time-txt">
+                    New York 
+                </div>
+            </div>
     </div>
 </div>

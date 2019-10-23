@@ -14,7 +14,7 @@ const routes: Routes = [
     loadChildren: () => import('./tarot/tarot.module').then(mod => mod.TarotModule)
   },
   {
-    path: 'counseling',
+    path: 'booksession',
     loadChildren: () => import('./counseling/counseling.module').then(mod => mod.CounselingModule)
   },
   {

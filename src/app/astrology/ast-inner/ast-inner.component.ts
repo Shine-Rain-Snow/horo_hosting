@@ -461,6 +461,7 @@ export class AstInnerComponent implements OnInit {
 
               next = 100;
               $(".next_circle>div").css({visibility:"hidden"});
+              $(".next_circle span").css({visibility:"hidden"});
               self.sunService.setAstVal(100);
               self.router.navigate(['/about']);
               aboutFlag = false;
