@@ -24,6 +24,9 @@ export class SelectCardsComponent implements OnInit {
   oneFlag = false;
   threeCardFlag = false;
   backImg;
+  oneClickFlag = true;
+  threeClickFlag = true;
+  celticClickFlag = true;
   ngOnInit() {
     let self = this;
   	this.sunService.setShowMenu(true);
@@ -70,18 +73,24 @@ export class SelectCardsComponent implements OnInit {
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(100%)"});
       });
 
+      
       $(".sel-cards-imgs img").click(function() {
-        $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
-          top: "-=15%"
-        }, 500).animate({
-          top: "160%",
-        }, {
-          duration: 1100,
-          complete: function() {
-            self.router.navigate(['/tarot/single-card', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
-          }
-        });
+        if(self.oneClickFlag) {
+          self.oneClickFlag = false;
+          $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
+            top: "-=15%"
+          }, 500).animate({
+            top: "160%",
+          }, {
+            duration: 1100,
+            complete: function() {
+              self.router.navigate(['/tarot/single-card', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
+            }
+          });
+        }
       });
+    
+      
       
     }
     //three card mode
@@ -103,30 +112,36 @@ export class SelectCardsComponent implements OnInit {
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "+=3%"});
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(100%)"});
       });
-     
+      let threeClickCount = 0;
       $(".sel-cards-imgs img").click(function(){
-        $(".sel-cards-arc").css("background-color", self.getRandomColor());
-        self.card_num = $(".sel-cards-imgs img").index(this) + 1;
-        cNum = self.card_num;
-
-        $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
-          top: "-=15%"
-        }, 500).animate({
-          top: "160%",
-        }, {
-          duration: 1100,
-          complete: function() {
-            
-            if(countCard == 2) {
-              self.threeCardFlag = true;
-              self.router.navigate(['/tarot/show-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
-            } else {
-              self.threeCardFlag = false;
-            }
-            countCard++; 
-            threeFlag[cNum] = !threeFlag[cNum];   
+        if(self.threeClickFlag) {
+          threeClickCount++;
+          if(threeClickCount > 2) {
+            self.threeClickFlag = false;
           }
-        });
+          $(".sel-cards-arc").css("background-color", self.getRandomColor());
+          self.card_num = $(".sel-cards-imgs img").index(this) + 1;
+          cNum = self.card_num;
+
+          $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
+            top: "-=15%"
+          }, 500).animate({
+            top: "160%",
+          }, {
+            duration: 1100,
+            complete: function() {
+              
+              if(countCard == 2) {
+                self.threeCardFlag = true;
+                self.router.navigate(['/tarot/show-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
+              } else {
+                self.threeCardFlag = false;
+              }
+              countCard++; 
+              threeFlag[cNum] = !threeFlag[cNum];   
+            }
+          });
+        }   
       });
       
     }
@@ -153,30 +168,36 @@ export class SelectCardsComponent implements OnInit {
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "+=3%"});
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(100%)"});
       });
-     
+      let tenClickCount = 0;
       $(".sel-cards-imgs img").click(function(){
-        $(".sel-cards-arc").css("background-color", self.getRandomColor());
-        self.card_num = $(".sel-cards-imgs img").index(this) + 1;
-        cNum = self.card_num;
-
-        $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
-          top: "-=15%"
-        }, 500).animate({
-          top: "160%",
-        }, {
-          duration: 1100,
-          complete: function() {
-            
-            if(countCard == 9) {
-              self.threeCardFlag = true;
-              self.router.navigate(['/tarot/celtic-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode, celtic_random_mode: 1}]);
-            } else {
-              self.threeCardFlag = false;
-            }
-            countCard++; 
-            threeFlag[cNum] = !threeFlag[cNum];   
+        if(self.celticClickFlag) {
+          tenClickCount++;
+          if(tenClickCount > 9) {
+            self.celticClickFlag = false;
           }
-        });
+          $(".sel-cards-arc").css("background-color", self.getRandomColor());
+          self.card_num = $(".sel-cards-imgs img").index(this) + 1;
+          cNum = self.card_num;
+
+          $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
+            top: "-=15%"
+          }, 500).animate({
+            top: "160%",
+          }, {
+            duration: 1100,
+            complete: function() {
+              
+              if(countCard == 9) {
+                self.threeCardFlag = true;
+                self.router.navigate(['/tarot/celtic-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode, celtic_random_mode: 1}]);
+              } else {
+                self.threeCardFlag = false;
+              }
+              countCard++; 
+              threeFlag[cNum] = !threeFlag[cNum];   
+            }
+          });
+        }
       });
       
     }
@@ -187,11 +208,7 @@ export class SelectCardsComponent implements OnInit {
     }, function() {
       $(".sel-item2 p:nth-child(1)").css({'color': '#5A3594'});
     });
-    // $(".arrow-symbol").hover(function(){
-    //   let colStr = "linear-gradient(to bottom, transparent 50%,"+self.getFourColor()+", 50%)";      
-    //   $(".arrow-dash").css({'background-image': colStr});
-    //   $(".arrow-symbol i").css({'color': self.getFourColor()});
-    // });
+    
     $(".back-reading").hover(function(){
       $(".back-reading").css({'color': self.getFourColor()});
     }, function(){

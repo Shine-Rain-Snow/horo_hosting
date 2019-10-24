@@ -78,12 +78,13 @@ export class ProgressbarComponent implements OnInit {
           case 4: {
             this.colorPreference = 'black';
             $(".progress_container").addClass("about-change");
-            if(this.aboutVal < 30) {
-              this.aboutVal += 0.1;
-              this.sunService.setAboutVal(this.aboutVal);
-            } else {
-              break;
-            }
+            this.sunService.setAboutVal(this.aboutVal);
+            // if(this.aboutVal < 30) {
+            //   this.aboutVal += 0.1;
+            //   this.sunService.setAboutVal(this.aboutVal);
+            // } else {
+            //   break;
+            // }
             
             break;
           }

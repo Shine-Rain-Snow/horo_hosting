@@ -45,7 +45,7 @@
 			.cel-text {
 				width: 90%;
 				float: left;
-				padding: 10px 0 1% 3%;
+				padding: 0px 0 1% 3%;
 				//background-color: red;
 				.cel-text-title {
 					font-size: 22px;
@@ -55,7 +55,10 @@
 				.cel-text-content {
 					font-size: 20px;
 					width: 100%;
-					div:nth-child(1), div:nth-child(3) {
+					div:nth-child(1) {
+						color: #5A3594;
+					}
+					div:nth-child(2), div:nth-child(4) {
 						font-weight: bold;
 					}
 

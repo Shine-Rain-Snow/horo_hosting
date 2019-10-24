@@ -23,12 +23,14 @@
 }
 
 .about-title {
+  cursor: pointer;
 	font-weight: bold;
 	color: black;
 	font-size: 200px;
 	position: absolute;
 	right: 3%;
-	top: 40%;
+  top: 40%;
+  outline: none;
 }
 
 .img-hover-zoom--slowmo img {

@@ -34,7 +34,7 @@ export class StepSixComponent implements OnInit {
     $(".step-six").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 1.5;
+        this.next += 12;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 100) {
           this.sunService.setAboutVal(0);
@@ -47,7 +47,7 @@ export class StepSixComponent implements OnInit {
        
       } else {
         //scroll up
-        this.next -= 1.5;
+        this.next -= 12;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 90) {
           this.next = 0;

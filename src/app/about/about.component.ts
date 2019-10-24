@@ -41,10 +41,10 @@ export class AboutComponent implements OnInit {
     $(".about_page").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 1;
+        this.next += 12;
         this.sunService.setAboutVal(this.next); 
         this.nUpScrollling++;
-        if(this.nUpScrollling > 3) {
+        if(this.next > 10) {
           if(oneFlag) {
             this.sunService.setAboutVal(30); 
             this.router.navigate(['/about/step-one']);
@@ -59,7 +59,7 @@ export class AboutComponent implements OnInit {
         this.sunService.setAboutVal(this.next); 
         //if(this.next < 0) {
         this.nDownScrolling++;
-        if(this.nDownScrolling > 2) {
+        if(this.nDownScrolling > 1) {
           if(astFlag) {
             this.next = 0;
             this.nDownScrolling = 0;

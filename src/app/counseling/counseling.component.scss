@@ -294,15 +294,21 @@
 }
 
 @media screen and (min-width:1201px) and (max-width:1900px) {
-	.detail-text  {
-		margin: 35% 8% 0 8% !important;
-		font-size: 20px;
-	}
 
+	
+	.detail {
+		width: 30%;
+		.detail-text  {
+			margin: 35% 8% 0 8% !important;
+			font-size: 20px;
+		}
+	}
+	.pay-form {}
 	.time-watch { 
+		width: 30%;
 		font-size: 22px;
 		.time-title {
-			margin-left: 36%;
+			margin-left: 33%;
 			margin-top: 50%;
 		}
 		.bangkok-time {
@@ -311,18 +317,18 @@
 			.bangkok-time-img {
 				margin-left: -11%;
 				height: max-content;
-				width: 350px;
+				width: 300px;
 				height: 200px;
 				text-align: center;
 				background-color: #80d4ea;
 				color: white;
-				margin-left: 12%;
+				margin-left: 6%;
 				font-size: 60px;
 				padding-top: 74px;
 			}
 			.bangkok-time-txt {
 				font-size: 22px;
-				margin-left: 36%;
+				margin-left: 33%;
 			}
 		}
 		.newyork-time {
@@ -330,19 +336,19 @@
 			.newyork-time-img {
 				margin-left: -11%;
 				height: max-content;
-				width: 350px;
+				width: 300px;
 				height: 200px;
 				text-align: center;
 				background-color: #80d4ea;
 				color: white;
-				margin-left: 12%;
+				margin-left: 6%;
 				font-size: 60px;
 				padding-top: 74px;
 			}
 			
 			.newyork-time-txt {
 				font-size: 22px;
-				margin-left: 36%;
+				margin-left: 33%;
 			}
 		}
 	}

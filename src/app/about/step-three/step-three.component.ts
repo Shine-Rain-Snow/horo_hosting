@@ -33,7 +33,7 @@ export class StepThreeComponent implements OnInit {
     $(".step-three").bind("wheel", (event) => {  
       if(event.originalEvent.deltaY > 0) {
         //scroll down
-        this.next += 1.5;
+        this.next += 12;
         this.sunService.setAboutVal(this.next); 
         if(this.next > 60) {
           this.sunService.setAboutVal(60);
@@ -45,7 +45,7 @@ export class StepThreeComponent implements OnInit {
         } 
       } else {
         //scroll up
-        this.next -= 1.5;
+        this.next -= 12;
         this.sunService.setAboutVal(this.next); 
         if(this.next < 50) {
           this.next = 0;

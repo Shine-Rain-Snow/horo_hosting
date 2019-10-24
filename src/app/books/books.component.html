@@ -1,10 +1,8 @@
 <div class="books-container">
 	<div class="books img-hover-zoom-books">
-			<div *ngIf="booksImgFlag; then thenBlock else elseBlock" ></div>
-	        <ng-template #thenBlock><img class="zoom-out-books" src="../../assets/img/books/books1.png" /></ng-template>
-	        <ng-template #elseBlock><img class="zoom-out-books" [attr.src]="getBooksImagePath1()" /></ng-template>
-
-	        
+		<div *ngIf="booksImgFlag; then thenBlock else elseBlock" ></div>
+		<ng-template #thenBlock><img class="zoom-out-books" src="../../assets/img/books/books1.png" /></ng-template>
+		<ng-template #elseBlock><img class="zoom-out-books" [attr.src]="getBooksImagePath1()" /></ng-template>
 		
 		<div class="light" routerLink="/books/books-dream" >
 			<div *ngIf="booksImgFlag; then thenBlock1 else elseBlock1"></div>

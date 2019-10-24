@@ -24,6 +24,8 @@ export class LenormandSelectComponent implements OnInit {
     oneFlag = false;
     threeCardFlag = false;
     backImg;  
+    oneClickFlag = true;
+    threeClickFlag = true;
   ngOnInit() {
     let self = this;
   	this.sunService.setShowMenu(true);
@@ -72,16 +74,19 @@ export class LenormandSelectComponent implements OnInit {
       });
 
       $(".sel-cards-imgs img").click(function() {
-        $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
-          top: "-=15%"
-        }, 500).animate({
-          top: "160%",
-        }, {
-          duration: 1100,
-          complete: function() {
-            self.router.navigate(['/tarot/single-card', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
-          }
-        });
+        if(self.oneClickFlag) {
+          self.oneClickFlag = false;
+          $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
+            top: "-=15%"
+          }, 500).animate({
+            top: "160%",
+          }, {
+            duration: 1100,
+            complete: function() {
+              self.router.navigate(['/tarot/single-card', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
+            }
+          });
+        }
       });
       
     }
@@ -92,7 +97,7 @@ export class LenormandSelectComponent implements OnInit {
       let threeFlag = [true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true,true];
       let cNum = 0;
       let countCard = 0;
-
+      let threeClickCount = 0;
       $(".sel-cards-imgs img").hover(function() {
         $(".sel-cards-arc").css({background: self.getRandomColor()});        
         self.card_num = $(".sel-cards-imgs img").index(this) + 1;
@@ -106,28 +111,34 @@ export class LenormandSelectComponent implements OnInit {
       });
      
       $(".sel-cards-imgs img").click(function(){
-        $(".sel-cards-arc").css("background-color", self.getRandomColor());
-        self.card_num = $(".sel-cards-imgs img").index(this) + 1;
-        cNum = self.card_num;
-
-        $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
-          top: "-=15%"
-        }, 500).animate({
-          top: "160%",
-        }, {
-          duration: 1100,
-          complete: function() {
-            
-            if(countCard == 2) {
-              self.threeCardFlag = true;
-              self.router.navigate(['/tarot/show-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
-            } else {
-              self.threeCardFlag = false;
-            }
-            countCard++; 
-            threeFlag[cNum] = !threeFlag[cNum];   
+        if(self.threeClickFlag) {
+          threeClickCount++;
+          if(threeClickCount > 2) {
+            self.threeClickFlag = false;
           }
-        });
+          $(".sel-cards-arc").css("background-color", self.getRandomColor());
+          self.card_num = $(".sel-cards-imgs img").index(this) + 1;
+          cNum = self.card_num;
+
+          $(".sel-cards-imgs img:nth-child("+cNum+")").animate({
+            top: "-=15%"
+          }, 500).animate({
+            top: "160%",
+          }, {
+            duration: 1100,
+            complete: function() {
+              
+              if(countCard == 2) {
+                self.threeCardFlag = true;
+                self.router.navigate(['/tarot/show-cards', {deck_mode:self.deck_mode, spread_mode:self.spread_mode}]);
+              } else {
+                self.threeCardFlag = false;
+              }
+              countCard++; 
+              threeFlag[cNum] = !threeFlag[cNum];   
+            }
+          });
+        }
       });
       
     }
