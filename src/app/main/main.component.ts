@@ -26,7 +26,7 @@ export class MainComponent implements OnInit {
   downInterval;
   ngOnInit() {
     let self  = this;
-   
+    // predownload section
     this.videoIntroDownload(self);
     this.imageIntroDownload(self);
     this.videoAstDownload(self);
