@@ -27,6 +27,9 @@ export class SelectCardsComponent implements OnInit {
   oneClickFlag = true;
   threeClickFlag = true;
   celticClickFlag = true;
+  tarotImgFlag = true;
+  tarotImgURL;
+  tarotBackImgURL;
   ngOnInit() {
     let self = this;
   	this.sunService.setShowMenu(true);
@@ -39,19 +42,52 @@ export class SelectCardsComponent implements OnInit {
     if(this.spread_mode == 0) {
       this.spread_mode = 1;     
     }
+
+    //image preload part 
+    if (this.tarotImgURL = this.sunService.getTarotImageURL()) {
+      this.tarotImgFlag = false;
+      // if(this.deck_mode == 1) {
+      //   this.tarotBackImgURL = this.tarotImgURL[6]; 
+      // }
+      // if(this.deck_mode == 2) {
+      //   this.tarotBackImgURL = this.tarotImgURL[7]; 
+      // }
+      // if(this.deck_mode == 3) {
+      //   this.tarotBackImgURL = this.tarotImgURL[10];
+      // }
+      
+      if(this.deck_mode == 1) {
+        this.backImg = this.tarotImgURL[6];
+        
+      }
+      if(this.deck_mode == 2) {
+        this.backImg = this.tarotImgURL[7];
+
+      }
+      if(this.deck_mode == 3) {
+        this.backImg = this.tarotImgURL[10];
+      }
+      $(".sel-cards-imgs img").attr("src", this.backImg.changingThisBreaksApplicationSecurity);
+    } else {
+      this.tarotImgFlag = true;
+      if(this.deck_mode == 1) {
+        this.backImg = "assets/img/tarot/tarot6.png";
+        
+      }
+      if(this.deck_mode == 2) {
+        this.backImg = "assets/img/tarot/tarot7.png";
+      }
+      if(this.deck_mode == 3) {
+        this.backImg = "assets/img/tarot/tarot10.png";
+      }
+      $(".sel-cards-imgs img").attr("src", this.backImg);
+    }
+
     $(".back-reading").click(function() {
       self.router.navigate(['/tarot']);
     });
 
-    if(this.deck_mode == 1) {
-      this.backImg = "assets/img/tarot/tarot6.jpg";
-    }
-    if(this.deck_mode == 2) {
-      this.backImg = "assets/img/tarot/tarot7.png";
-    }
-    if(this.deck_mode == 3) {
-      this.backImg = "assets/img/tarot/tarot11.png";
-    }
+    
 
 
     // single card mode
@@ -72,7 +108,6 @@ export class SelectCardsComponent implements OnInit {
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({top: "+=5%"});
         $(".sel-cards-imgs img:nth-child("+cNum+")").css({filter: "brightness(100%)"});
       });
-
       
       $(".sel-cards-imgs img").click(function() {
         if(self.oneClickFlag) {
@@ -233,6 +268,18 @@ export class SelectCardsComponent implements OnInit {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+  }
+
+  getTarotImagePath(iNum: Number) {
+    //console.log(this.tarotImgURL[iNum.toString()]);
+    return this.tarotImgURL[iNum.toString()];
+  }
+
+  getTarotImageBackPath() {
+    //console.log(Object.values(this.tarotBackImgURL));
+    //console.log(this.tarotBackImgURL.changingThisBreaksApplicationSecurity);
+    
+    return this.tarotBackImgURL;
   }
 
 }

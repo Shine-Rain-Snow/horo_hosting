@@ -32,10 +32,8 @@ export class SunProgressService {
   mBooksImageURL
   mShowMenu;
   mCelticTenCardNum;
-
-  getShowMenu() {
-    return this.mShowMenu;
-  }
+  mCounselingImageURL;
+  mTarotImageURL;
 
   setCelticTenCardNum(value) {
     this.mCelticTenCardNum = value;
@@ -45,9 +43,28 @@ export class SunProgressService {
     return this.mCelticTenCardNum;
   }
   
+  getShowMenu() {
+    return this.mShowMenu;
+  }
 
   setShowMenu(value) {
     this.mShowMenu = value;
+  }
+
+  setTarotImageURL(value) {
+    this.mTarotImageURL = value;
+  }
+
+  getTarotImageURL() {
+    return this.mTarotImageURL;
+  }
+
+  setCounselingImageURL(value) {
+    this.mCounselingImageURL = value;
+  }
+
+  getCounselingImageURL() {
+    return this.mCounselingImageURL;
   }
 
   setIntroVideoURL(value) {

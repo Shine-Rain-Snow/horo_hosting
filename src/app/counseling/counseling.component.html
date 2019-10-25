@@ -1,5 +1,8 @@
 <div class="counseling">
-    <img src="../../assets/img/counseling/counseling.png" />
+    <div *ngIf="counselingImgFlag; then thenBlock0 else elseBlock0"></div>
+    <ng-template #thenBlock0><img src="../../assets/img/counseling/counseling.png" /></ng-template>
+    <ng-template #elseBlock0><img [attr.src]="getCounselingImagePath()" /></ng-template>
+    
    
 	<div class="detail">
         <div class="detail-text">

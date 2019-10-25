@@ -3,7 +3,10 @@
 		<div class="sel-title">Tarot Reading</div>
 		<div class="sel-items">
 			<div class="sel-item1">
-				<img src="assets/img/tarot/tarot5.png"  />
+				<div *ngIf="tarotImgFlag; then thenBlock5 else elseBlock5"></div>
+				<ng-template #thenBlock5><img src="assets/img/tarot/tarot5.png"  /></ng-template>
+				<ng-template #elseBlock5><img [attr.src]="getTarotImagePath(5)" /></ng-template>
+				
 			</div>
 			<div class="sel-item2">
 				<p>
@@ -31,30 +34,31 @@
 		</div>
 		<div class="sel-cards">
 			<div class="sel-cards-imgs">
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
 
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
 
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
-				<img src={{backImg}} />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />
+				<img  />	
+				
 			</div>
 			<div class="sel-cards-arc"></div>
 		</div>

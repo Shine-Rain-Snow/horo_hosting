@@ -10,7 +10,10 @@
 				<div class="classic_rider">
 					<div class="classic_rider_text">Classic Rider Tarot Deck</div>
 					<div class="classic_rider_img"> 
-						<img src="assets/img/tarot/tarot1.png" />
+						<div *ngIf="tarotImgFlag; then thenBlock1 else elseBlock1"></div>
+						<ng-template #thenBlock1><img src="assets/img/tarot/tarot1.png" /></ng-template>
+						<ng-template #elseBlock1><img [attr.src]="getTarotImagePath(1)" /></ng-template>    
+						
 						<!-- <img src="assets/img/tarot/tarot9.png" />  -->
 					</div>
 					<div class="left-hand1"><img src="assets/img/tarot/tarot9.png" /></div>
@@ -19,14 +22,18 @@
 				<div class="hermetic">
 					<div class="hermetic_text">Hermetic Tarot</div>
 					<div class="hermetic_img"> 
-						<img src="assets/img/tarot/tarot2.png" /> 
+						<div *ngIf="tarotImgFlag; then thenBlock2 else elseBlock2"></div>
+						<ng-template #thenBlock2><img src="assets/img/tarot/tarot2.png" /></ng-template>
+						<ng-template #elseBlock2><img [attr.src]="getTarotImagePath(2)" /></ng-template>  
 					</div>
 					<div class="left-hand2"><img src="assets/img/tarot/tarot9.png" /></div>
 				</div>
 				<div class="lenormand">
 					<div class="lenormand_text">Tarot Madam Lenormand</div>
-					<div class="lenormand_img"> 
-						<img src="assets/img/tarot/tarot3.png" /> 
+					<div class="lenormand_img">
+						<div *ngIf="tarotImgFlag; then thenBlock3 else elseBlock3"></div>
+						<ng-template #thenBlock3><img src="assets/img/tarot/tarot3.png" /></ng-template>
+						<ng-template #elseBlock3><img [attr.src]="getTarotImagePath(3)" /></ng-template>
 					</div>
 					<div class="left-hand3"><img src="assets/img/tarot/tarot9.png" /></div>
 				</div>
@@ -85,30 +92,17 @@
 			</div>
 		</div>
 		<div class="black_raven">
-			<img src="assets/img/tarot/tarot4.png" (click)="flyRaven()" />
-			<img src="assets/img/tarot/tarot6.gif">
+			<div *ngIf="tarotImgFlag; then thenBlock4 else elseBlock4"></div>
+			<ng-template #thenBlock4><img src="assets/img/tarot/tarot4.png" (click)="flyRaven()" /></ng-template>
+			<ng-template #elseBlock4><img [attr.src]="getTarotImagePath(4)" (click)="flyRaven()"/></ng-template>
+			<img src="assets/img/tarot/tarot15.gif">
 			<div class="raven_text" >To Get Your Reading! Click on the Crow</div>
 		</div>
 		<div class="left_triangle">
 			<div class="tri-layer">
 				<div class="tri-img"></div>
-				<!-- <img src="../../assets/img/tarot/tarot12.png"> -->
-				<!-- <video  id="tarotvid" autoplay loop muted preload="auto">
-					<source [attr.src]="getImagePath()" type='video/ogg; codecs="theora, vorbis"'>
-					<source  src="../../assets/video/astrology.mp4" type='video/mp4;codecs="avc1.4D401E, mp4a.40.2"'>
-					<source  src="../../assets/video/tarot.Ogg" type='video/ogg; codecs="theora, vorbis"'>
-				</video> --> 
 			</div>
-			<!-- <img src="../../assets/img/tarot/tarot12.png"> -->
 		</div>
-		<!-- <div class="candle-video">
-			<img src="assets/img/tarot12.png">
-			<video  id="tarotvid" autoplay loop muted preload="auto">
-				<source [attr.src]="getImagePath()" type='video/ogg; codecs="theora, vorbis"'>
-				<source  src="../../assets/video/astrology.mp4" type='video/mp4;codecs="avc1.4D401E, mp4a.40.2"'>
-				<source  src="../../assets/video/tarot.Ogg" type='video/ogg; codecs="theora, vorbis"'>
-			</video> 
-		</div> -->
 	</div>
 </div>
 

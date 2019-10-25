@@ -27,22 +27,24 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     let self  = this;
    
-    this.videoIntroDownload(self);
-    this.imageIntroDownload(self);
-    this.videoAstDownload(self);
-    this.videoContactDownload(self);
-    this.videoAboutDownload(self);
-    this.imagePressDownload(self);
-    this.imageBooksDownload(self);
-    this.imageAboutDownload(self);
-    this.imageHistoryDownload(self);
+    // this.videoIntroDownload(self);
+    // this.imageIntroDownload(self);
+    // this.videoAstDownload(self);
+    // this.videoContactDownload(self);
+    // this.videoAboutDownload(self);
+    // this.imagePressDownload(self);
+    // this.imageBooksDownload(self);
+    // this.imageAboutDownload(self);
+    // this.imageHistoryDownload(self);
+    //this.imageCounselingDownload(self);
+    this.imageTarotDownload(self);
 
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
     this.sunService.setCurrentPage(0);
   	setTimeout(() => {
-          this.router.navigate(['/intro']);
-          this.sunService.setIntroTitleShow(true);
+      this.router.navigate(['/intro']);
+      this.sunService.setIntroTitleShow(true);
     }, 3000);
   }
 
@@ -375,6 +377,65 @@ export class MainComponent implements OnInit {
     
   }
 
+  imageCounselingDownload(self) {
+    var reqCounseling = new XMLHttpRequest();    
+    reqCounseling.open('GET', 'https://ofercohen.net/assets/img/counseling/counseling.png', true);
+    reqCounseling.responseType = 'blob';
+    reqCounseling.onload = function(e) {
+      
+      // Onload is triggered even on 404
+      // so we need to check the status code
+      if (this.status === 200) {
+        
+          var videoBlob = this.response;
+          var vid = URL.createObjectURL(videoBlob); // IE10+
+          
+          let url = self.dom.bypassSecurityTrustUrl(vid);  
+          self.sunService.setCounselingImageURL(url); 
+          
+          console.log("reqCounseling image downloaded"+url);
+      }
+    }
+    reqCounseling.onerror = function() {
+      // Error
+      console.log("error");
+    }
+    reqCounseling.send();
+  }
   
+  imageTarotDownload(self) {
+    let pressReqTarot = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<=11; i++) {
+        pressReqTarot[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://ofercohen.net/assets/img/tarot/tarot'+i+'.png';
+        pressReqTarot[i].open('GET', imgStr[i], true);
+        pressReqTarot[i].responseType = 'blob';
+       
+        pressReqTarot[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);  
+              
+              self.sunService.setTarotImageURL(url); 
+             
+          }
+        }
+        pressReqTarot[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        pressReqTarot[i].send();
+    }
+  }
 
 }

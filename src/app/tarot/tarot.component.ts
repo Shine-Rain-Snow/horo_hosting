@@ -20,11 +20,24 @@ export class TarotComponent implements OnInit {
 
   deck_mode = 0;
   spread_mode = 0;
+  tarotImgFlag = true;
+  tarotImgURL;
   ngOnInit() {
   	this.sunService.setShowMenu(true);
     this.sunService.setCurrentPage(9);
     this.sunService.setProgressShow(false);
     let self = this;
+
+    //image preload part 
+    if (this.tarotImgURL = this.sunService.getTarotImageURL()) {
+      // let tri_img = this.tarotImgURL[11];
+      // console.log(tri_img);
+      // $(".tri-layer").css({background: "url('"+tri_img+"') no-repeat"});
+      this.tarotImgFlag = false;
+    } else {
+      //$(".tri-layer").css({background: "url('../../assets/img/tarot/tarot11.png') no-repeat"});
+      this.tarotImgFlag = true;
+    }
     //hover effting jquery
     $(".classic_rider").click(function(){
       $(".classic_rider_text").css({color: "#5A3594"});
@@ -229,6 +242,11 @@ export class TarotComponent implements OnInit {
     let randomNum
     randomNum = Math.floor((Math.random() * 4) + 1);
     return fourColor[randomNum-1];
+  }
+
+  getTarotImagePath(iNum: Number) {
+    //console.log(this.tarotImgURL[iNum.toString()]);
+    return this.tarotImgURL[iNum.toString()];
   }
 
 }

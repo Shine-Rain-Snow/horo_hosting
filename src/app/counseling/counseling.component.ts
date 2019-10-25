@@ -16,11 +16,22 @@ export class CounselingComponent implements OnInit {
     private sunService: SunProgressService) { }
 
   watch_clock;
+  counselingImgFlag = true;
+  counselingImgURL;
   ngOnInit() {
     let self = this;
     this.sunService.setProgressShow(false);
     this.sunService.setCurrentPage(5);
     this.sunService.setShowMenu(true);
+
+    if (this.counselingImgURL = this.sunService.getCounselingImageURL()) {
+      console.log(this.counselingImgURL);
+      this.counselingImgFlag = false;
+    } else {
+      //console.log("local image");
+      this.counselingImgFlag = true;
+    }
+
     this.displayTime();
     this.watch_clock = setInterval(this.displayTime, 1000);
   }
@@ -95,5 +106,9 @@ export class CounselingComponent implements OnInit {
     $(".bangkok-time-img").text(bangkok_hr + ":" + utc_min + ":" + utc_sec + " " + bangkok_meridiem);
     $(".newyork-time-img").text(newyork_hr + ":" + utc_min + ":" + utc_sec + " " + newyork_meridiem);
 }
+
+  getCounselingImagePath() {
+    return this.counselingImgURL;
+  }
 
 }

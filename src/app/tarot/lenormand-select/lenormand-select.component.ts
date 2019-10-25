@@ -26,6 +26,9 @@ export class LenormandSelectComponent implements OnInit {
     backImg;  
     oneClickFlag = true;
     threeClickFlag = true;
+    tarotImgFlag = true;
+    tarotImgURL;
+    tarotBackImgURL;
   ngOnInit() {
     let self = this;
   	this.sunService.setShowMenu(true);
@@ -39,6 +42,34 @@ export class LenormandSelectComponent implements OnInit {
     if(this.spread_mode == 0) {
       this.spread_mode = 1;     
     }
+
+    //image preload part 
+    if (this.tarotImgURL = this.sunService.getTarotImageURL()) {
+      this.tarotImgFlag = false;
+      if(this.deck_mode == 1) {
+        this.tarotBackImgURL = this.tarotImgURL[6]; 
+      }
+      if(this.deck_mode == 2) {
+        this.tarotBackImgURL = this.tarotImgURL[7]; 
+      }
+      if(this.deck_mode == 3) {
+        this.tarotBackImgURL = this.tarotImgURL[10];
+      }
+      $(".sel-cards-imgs img").attr("src", this.tarotBackImgURL.changingThisBreaksApplicationSecurity);
+    } else {
+      this.tarotImgFlag = true;
+      if(this.deck_mode == 1) {
+        this.backImg = "assets/img/tarot/tarot6.png";
+      }
+      if(this.deck_mode == 2) {
+        this.backImg = "assets/img/tarot/tarot7.png";
+      }
+      if(this.deck_mode == 3) {
+        this.backImg = "assets/img/tarot/tarot10.png";
+      }
+      $(".sel-cards-imgs img").attr("src", this.backImg);
+    }
+
     $(".back-reading").click(function() {
       self.router.navigate(['/tarot']);
     });
@@ -50,7 +81,7 @@ export class LenormandSelectComponent implements OnInit {
       this.backImg = "assets/img/tarot/tarot7.png";
     }
     if(this.deck_mode == 3) {
-      this.backImg = "assets/img/tarot/tarot11.png";
+      this.backImg = "assets/img/tarot/tarot10.png";
     }
 
 
@@ -222,6 +253,15 @@ export class LenormandSelectComponent implements OnInit {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+  }
+
+  getTarotImagePath(iNum: Number) {
+    //console.log(this.tarotImgURL[iNum.toString()]);
+    return this.tarotImgURL[iNum.toString()];
+  }
+
+  getTarotImageBackPath() {
+    return this.tarotBackImgURL;
   }
 
 }
