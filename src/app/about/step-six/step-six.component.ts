@@ -87,7 +87,7 @@ export class StepSixComponent implements OnInit {
         andGap = andEndPos - andStartPos;
         
         if(andGap  < -60) {
-          this.router.navigate(['/counseling']); 
+          this.router.navigate(['/booksession']); 
         } 
         if( andGap > 60) {
           this.router.navigate(['/about/step-five']);

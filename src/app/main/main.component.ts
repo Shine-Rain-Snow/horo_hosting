@@ -27,20 +27,20 @@ export class MainComponent implements OnInit {
   ngOnInit() {
     let self  = this;
    
-    // this.videoIntroDownload(self);
-    // this.imageIntroDownload(self);
-    // this.videoAstDownload(self);
-    // this.videoContactDownload(self);
-    // this.videoAboutDownload(self);
-    // this.imagePressDownload(self);
-    // this.imageBooksDownload(self);
-    // this.imageAboutDownload(self);
-    // this.imageHistoryDownload(self);
-    //this.imageCounselingDownload(self);
+    this.videoIntroDownload(self);
+    this.imageIntroDownload(self);
+    this.videoAstDownload(self);
+    this.videoContactDownload(self);
+    this.videoAboutDownload(self);
+    this.imagePressDownload(self);
+    this.imageBooksDownload(self);
+    this.imageAboutDownload(self);
+    this.imageHistoryDownload(self);
+    this.imageCounselingDownload(self);
     this.imageTarotDownload(self);
-    // this.imageRiderDownload(self);
-    // this.imageHermeticDownload(self);
-    // this.imageLenormandDownload(self);
+    this.imageRiderDownload(self);
+    this.imageHermeticDownload(self);
+    this.imageLenormandDownload(self);
 
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);

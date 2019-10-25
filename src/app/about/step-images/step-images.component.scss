@@ -3,7 +3,8 @@
 	height: 100%;
 	position: absolute;
 	background: #DFE0E1;
-	// overflow: hidden;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .step-images-container {
