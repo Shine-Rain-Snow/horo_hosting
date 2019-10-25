@@ -25,6 +25,8 @@ export class CelticDetailComponent implements OnInit {
   celtic_cardTitle = [];
   celtic_cardContent1 = [];
   celtic_cardContent2 = [];
+  riderImgURL;
+  hermeticImgURL;
   //detail rider card content
   riderCard_txt = [
     {
@@ -281,6 +283,31 @@ export class CelticDetailComponent implements OnInit {
         //console.log("num="+i+"text="+this.riderCard_txt[tenCardNums[i]-1].detail1);     
       } 
 
+      if (this.riderImgURL = this.sunService.getRiderImageURL()) {       
+        $(".cel1 img").attr("src", this.riderImgURL[tenCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".cel2 img").attr("src", this.riderImgURL[tenCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".cel3 img").attr("src", this.riderImgURL[tenCardNums[3]].changingThisBreaksApplicationSecurity);
+        $(".cel4 img").attr("src", this.riderImgURL[tenCardNums[4]].changingThisBreaksApplicationSecurity);
+        $(".cel5 img").attr("src", this.riderImgURL[tenCardNums[5]].changingThisBreaksApplicationSecurity);
+        $(".cel6 img").attr("src", this.riderImgURL[tenCardNums[6]].changingThisBreaksApplicationSecurity);
+        $(".cel7 img").attr("src", this.riderImgURL[tenCardNums[7]].changingThisBreaksApplicationSecurity);
+        $(".cel8 img").attr("src", this.riderImgURL[tenCardNums[8]].changingThisBreaksApplicationSecurity);
+        $(".cel9 img").attr("src", this.riderImgURL[tenCardNums[9]].changingThisBreaksApplicationSecurity);
+        $(".cel10 img").attr("src", this.riderImgURL[tenCardNums[10]].changingThisBreaksApplicationSecurity);
+
+      } else {
+        $(".cel1 img").attr("src", this.celtic_imgPath[1]); 
+        $(".cel2 img").attr("src", this.celtic_imgPath[2]);
+        $(".cel3 img").attr("src", this.celtic_imgPath[3]); 
+        $(".cel4 img").attr("src", this.celtic_imgPath[4]); 
+        $(".cel5 img").attr("src", this.celtic_imgPath[5]); 
+        $(".cel6 img").attr("src", this.celtic_imgPath[6]); 
+        $(".cel7 img").attr("src", this.celtic_imgPath[7]); 
+        $(".cel8 img").attr("src", this.celtic_imgPath[8]); 
+        $(".cel9 img").attr("src", this.celtic_imgPath[9]); 
+        $(".cel10 img").attr("src", this.celtic_imgPath[10]); 
+      }
+
     } 
    
     if(this.deck_mode == 2) {
@@ -291,7 +318,32 @@ export class CelticDetailComponent implements OnInit {
         this.celtic_cardTitle[i] = this.hermeticCard_txt[tenCardNums[i]-1].title;
         this.celtic_cardContent1[i] = this.hermeticCard_txt[tenCardNums[i]-1].detail1;
         this.celtic_cardContent2[i] = this.hermeticCard_txt[tenCardNums[i]-1].detail2;
-      }      
+      } 
+      
+      if (this.hermeticImgURL = this.sunService.getHermeticImageURL()) {       
+        $(".cel1 img").attr("src", this.hermeticImgURL[tenCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".cel2 img").attr("src", this.hermeticImgURL[tenCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".cel3 img").attr("src", this.hermeticImgURL[tenCardNums[3]].changingThisBreaksApplicationSecurity);
+        $(".cel4 img").attr("src", this.hermeticImgURL[tenCardNums[4]].changingThisBreaksApplicationSecurity);
+        $(".cel5 img").attr("src", this.hermeticImgURL[tenCardNums[5]].changingThisBreaksApplicationSecurity);
+        $(".cel6 img").attr("src", this.hermeticImgURL[tenCardNums[6]].changingThisBreaksApplicationSecurity);
+        $(".cel7 img").attr("src", this.hermeticImgURL[tenCardNums[7]].changingThisBreaksApplicationSecurity);
+        $(".cel8 img").attr("src", this.hermeticImgURL[tenCardNums[8]].changingThisBreaksApplicationSecurity);
+        $(".cel9 img").attr("src", this.hermeticImgURL[tenCardNums[9]].changingThisBreaksApplicationSecurity);
+        $(".cel10 img").attr("src", this.hermeticImgURL[tenCardNums[10]].changingThisBreaksApplicationSecurity);
+
+      } else {
+        $(".cel1 img").attr("src", this.celtic_imgPath[1]); 
+        $(".cel2 img").attr("src", this.celtic_imgPath[2]);
+        $(".cel3 img").attr("src", this.celtic_imgPath[3]); 
+        $(".cel4 img").attr("src", this.celtic_imgPath[4]); 
+        $(".cel5 img").attr("src", this.celtic_imgPath[5]); 
+        $(".cel6 img").attr("src", this.celtic_imgPath[6]); 
+        $(".cel7 img").attr("src", this.celtic_imgPath[7]); 
+        $(".cel8 img").attr("src", this.celtic_imgPath[8]); 
+        $(".cel9 img").attr("src", this.celtic_imgPath[9]); 
+        $(".cel10 img").attr("src", this.celtic_imgPath[10]); 
+      }
     }
    
     this.sunService.setCelticTenCardNum(tenCardNums);

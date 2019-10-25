@@ -46,28 +46,17 @@ export class SelectCardsComponent implements OnInit {
     //image preload part 
     if (this.tarotImgURL = this.sunService.getTarotImageURL()) {
       this.tarotImgFlag = false;
-      // if(this.deck_mode == 1) {
-      //   this.tarotBackImgURL = this.tarotImgURL[6]; 
-      // }
-      // if(this.deck_mode == 2) {
-      //   this.tarotBackImgURL = this.tarotImgURL[7]; 
-      // }
-      // if(this.deck_mode == 3) {
-      //   this.tarotBackImgURL = this.tarotImgURL[10];
-      // }
-      
       if(this.deck_mode == 1) {
-        this.backImg = this.tarotImgURL[6];
-        
+        this.tarotBackImgURL = this.tarotImgURL[6]; 
       }
       if(this.deck_mode == 2) {
-        this.backImg = this.tarotImgURL[7];
-
+        this.tarotBackImgURL = this.tarotImgURL[7]; 
       }
       if(this.deck_mode == 3) {
-        this.backImg = this.tarotImgURL[10];
+        this.tarotBackImgURL = this.tarotImgURL[10];
       }
-      $(".sel-cards-imgs img").attr("src", this.backImg.changingThisBreaksApplicationSecurity);
+
+      $(".sel-cards-imgs img").attr("src", this.tarotBackImgURL.changingThisBreaksApplicationSecurity);
     } else {
       this.tarotImgFlag = true;
       if(this.deck_mode == 1) {

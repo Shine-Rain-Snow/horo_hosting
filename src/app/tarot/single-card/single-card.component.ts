@@ -27,6 +27,9 @@ export class SingleCardComponent implements OnInit {
   yesNo;
   notLenormand = true;
   
+  riderImgURL;
+  hermeticImgURL;
+  lenormandImgURL;
   //detail rider card content
   riderCard_txt = [
     {
@@ -592,6 +595,7 @@ export class SingleCardComponent implements OnInit {
     this.spread_mode = this.aRoute.snapshot.paramMap.get('spread_mode');
     console.log("deck_mode="+this.deck_mode+"spread_mode"+this.spread_mode);
 
+
     let singleCardNums;
 
     if(this.deck_mode == 1) {
@@ -599,6 +603,12 @@ export class SingleCardComponent implements OnInit {
       this.notLenormand = true;
       singleCardNums = Math.floor((Math.random() * 22) + 1);
       this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".png";
+
+      if (this.riderImgURL = this.sunService.getRiderImageURL()) {
+        $(".single-img img").attr("src", this.riderImgURL[singleCardNums].changingThisBreaksApplicationSecurity);
+      } else {
+        $(".single-img img").attr("src", this.singleImagePath);
+      }
 
       this.single_deck_title = this.riderCard_txt[singleCardNums-1].title;
       this.single_deck_detail1 = this.riderCard_txt[singleCardNums-1].detail1;
@@ -612,6 +622,12 @@ export class SingleCardComponent implements OnInit {
       singleCardNums = Math.floor((Math.random() * 22) + 1);
       this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
 
+      if (this.hermeticImgURL = this.sunService.getHermeticImageURL()) {
+        $(".single-img img").attr("src", this.hermeticImgURL[singleCardNums].changingThisBreaksApplicationSecurity);
+      } else {
+        $(".single-img img").attr("src", this.singleImagePath);
+      }
+
       this.single_deck_title = this.hermeticCard_txt[singleCardNums-1].title;
       this.single_deck_detail1 = this.hermeticCard_txt[singleCardNums-1].detail1;
       this.single_deck_detail2 = this.hermeticCard_txt[singleCardNums-1].detail2;
@@ -622,6 +638,12 @@ export class SingleCardComponent implements OnInit {
       this.notLenormand = false;
       singleCardNums = Math.floor((Math.random() * 36) + 1);
       this.singleImagePath = "assets/img/tarot/"+this.deck_folder+"/"+singleCardNums+".jpg";
+
+      if (this.lenormandImgURL = this.sunService.getLenormandImageURL()) {
+        $(".single-img img").attr("src", this.lenormandImgURL[singleCardNums].changingThisBreaksApplicationSecurity);
+      } else {
+        $(".single-img img").attr("src", this.singleImagePath);
+      }
 
       this.single_deck_title = this.lenormandCard_txt[singleCardNums-1].title;
       this.single_deck_detail1 = this.lenormandCard_txt[singleCardNums-1].detail1;

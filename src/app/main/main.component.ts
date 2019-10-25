@@ -38,6 +38,9 @@ export class MainComponent implements OnInit {
     // this.imageHistoryDownload(self);
     //this.imageCounselingDownload(self);
     this.imageTarotDownload(self);
+    // this.imageRiderDownload(self);
+    // this.imageHermeticDownload(self);
+    // this.imageLenormandDownload(self);
 
     this.sunService.setProgressShow(false);
     this.sunService.setShowMenu(false);
@@ -437,5 +440,109 @@ export class MainComponent implements OnInit {
         pressReqTarot[i].send();
     }
   }
+
+  imageRiderDownload(self) {
+    let riderReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<=22; i++) {
+        riderReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://ofercohen.net/assets/img/tarot/ridercard/'+i+'.png';
+        riderReq[i].open('GET', imgStr[i], true);
+        riderReq[i].responseType = 'blob';
+       
+        riderReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setRiderImageURL(url); 
+              //console.log(url);
+          }
+        }
+        riderReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        riderReq[i].send();
+    }
+  }
+
+  imageHermeticDownload(self) {
+    let hermeticReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<=22; i++) {
+        hermeticReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://ofercohen.net/assets/img/tarot/hermetic/'+i+'.jpg';
+        hermeticReq[i].open('GET', imgStr[i], true);
+        hermeticReq[i].responseType = 'blob';
+       
+        hermeticReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setHermeticImageURL(url); 
+              //
+              //console.log(url);
+          }
+        }
+        hermeticReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        hermeticReq[i].send();
+    }
+  }
+
+  imageLenormandDownload(self) {
+    let lenormandReq = [];
+    let pressCount = 0;
+    let videoBlob = [];
+    let vid = [];
+    let url = [];
+    let imgStr = [];
+    let imgArray;
+    for(let i=1; i<=36; i++) {
+        lenormandReq[i] = new XMLHttpRequest();
+        imgStr[i] = 'https://ofercohen.net/assets/img/tarot/lenormand/'+i+'.jpg';
+        lenormandReq[i].open('GET', imgStr[i], true);
+        lenormandReq[i].responseType = 'blob';
+       
+        lenormandReq[i].onload = function() {
+          
+          if (this.status === 200) {
+            
+              videoBlob[i] = this.response;
+              vid[i] = URL.createObjectURL(videoBlob[i]); 
+              url[i] = self.dom.bypassSecurityTrustUrl(vid[i]);                
+              self.sunService.setLenormandImageURL(url); 
+              //console.log(url);
+          }
+        }
+        lenormandReq[i].onerror = function() {
+          // Error
+          console.log("error");
+        }
+
+        lenormandReq[i].send();
+    }
+  }
+
 
 }

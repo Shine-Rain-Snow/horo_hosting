@@ -92,9 +92,10 @@
 			</div>
 		</div>
 		<div class="black_raven">
-			<div *ngIf="tarotImgFlag; then thenBlock4 else elseBlock4"></div>
+			<!-- <div *ngIf="tarotImgFlag; then thenBlock4 else elseBlock4"></div>
 			<ng-template #thenBlock4><img src="assets/img/tarot/tarot4.png" (click)="flyRaven()" /></ng-template>
-			<ng-template #elseBlock4><img [attr.src]="getTarotImagePath(4)" (click)="flyRaven()"/></ng-template>
+			<ng-template #elseBlock4><img [attr.src]="getTarotImagePath(4)" (click)="flyRaven()"/></ng-template> -->
+			<img src="assets/img/tarot/tarot4.png" (click)="flyRaven()" />
 			<img src="assets/img/tarot/tarot15.gif">
 			<div class="raven_text" >To Get Your Reading! Click on the Crow</div>
 		</div>

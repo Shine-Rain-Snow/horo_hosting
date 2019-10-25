@@ -34,6 +34,9 @@ export class SunProgressService {
   mCelticTenCardNum;
   mCounselingImageURL;
   mTarotImageURL;
+  mRiderImageURL;
+  mHermeticImageURL;
+  mLenormandImageURL;
 
   setCelticTenCardNum(value) {
     this.mCelticTenCardNum = value;
@@ -49,6 +52,30 @@ export class SunProgressService {
 
   setShowMenu(value) {
     this.mShowMenu = value;
+  }
+
+  setRiderImageURL(value) {
+    this.mRiderImageURL = value;
+  }
+
+  getRiderImageURL() {
+    return this.mRiderImageURL;
+  }
+
+  setHermeticImageURL(value) {
+    this.mHermeticImageURL = value;
+  }
+
+  getHermeticImageURL() {
+    return this.mHermeticImageURL;
+  }
+
+  setLenormandImageURL(value) {
+    this.mLenormandImageURL = value;
+  }
+
+  getLenormandImageURL() {
+    return this.mLenormandImageURL;
   }
 
   setTarotImageURL(value) {

@@ -74,16 +74,6 @@ export class LenormandSelectComponent implements OnInit {
       self.router.navigate(['/tarot']);
     });
 
-    if(this.deck_mode == 1) {
-      this.backImg = "assets/img/tarot/tarot6.jpg";
-    }
-    if(this.deck_mode == 2) {
-      this.backImg = "assets/img/tarot/tarot7.png";
-    }
-    if(this.deck_mode == 3) {
-      this.backImg = "assets/img/tarot/tarot10.png";
-    }
-
 
     // single card mode
     

@@ -34,6 +34,10 @@ export class ShowCardsComponent implements OnInit {
   deck_three2;
   notLenormand = true;
 
+  riderImgURL;
+  hermeticImgURL;
+  lenormandImgURL;
+
   //detail rider card content
   riderCard_txt = [
     {
@@ -618,10 +622,19 @@ export class ShowCardsComponent implements OnInit {
         nums1.splice(j, 1);
       }
 
-      for(let i=1; i<=3; i++) {    
-        
-        this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".png";
+      if (this.riderImgURL = this.sunService.getRiderImageURL()) {       
+        $(".first-img").attr("src", this.riderImgURL[threeCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".second-img").attr("src", this.riderImgURL[threeCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".third-img").attr("src", this.riderImgURL[threeCardNums[3]].changingThisBreaksApplicationSecurity);
+      } else {
+        for(let i=1; i<=3; i++) {     
+          this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".png";          
+        }
+        $(".first-img").attr("src", this.imagePath[1]); 
+        $(".second-img").attr("src", this.imagePath[2]);
+        $(".third-img").attr("src", this.imagePath[3]); 
       }
+
       this.notLenormand = true;
     }
 
@@ -639,10 +652,20 @@ export class ShowCardsComponent implements OnInit {
         threeCardNums[countLimit] = nums1[j];
         nums1.splice(j, 1);
       }
-      for(let i=1; i<=3; i++) {        
-        
+      for(let i=1; i<=3; i++) { 
         this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
       }
+
+      if (this.hermeticImgURL = this.sunService.getHermeticImageURL()) {       
+        $(".first-img").attr("src", this.hermeticImgURL[threeCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".second-img").attr("src", this.hermeticImgURL[threeCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".third-img").attr("src", this.hermeticImgURL[threeCardNums[3]].changingThisBreaksApplicationSecurity);
+      } else {
+        $(".first-img").attr("src", this.imagePath[1]); 
+        $(".second-img").attr("src", this.imagePath[2]);
+        $(".third-img").attr("src", this.imagePath[3]); 
+      }
+
       this.notLenormand = true;
     }
     if(this.deck_mode == 3) {
@@ -660,10 +683,20 @@ export class ShowCardsComponent implements OnInit {
         nums2.splice(j, 1);
       }
 
-      for(let i=1; i<=3; i++) {        
-        
+      for(let i=1; i<=3; i++) {         
         this.imagePath[i] = "assets/img/tarot/"+this.deck_folder+"/"+threeCardNums[i]+".jpg";
       }
+
+      if (this.lenormandImgURL = this.sunService.getLenormandImageURL()) {       
+        $(".first-img").attr("src", this.lenormandImgURL[threeCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".second-img").attr("src", this.lenormandImgURL[threeCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".third-img").attr("src", this.lenormandImgURL[threeCardNums[3]].changingThisBreaksApplicationSecurity);
+      } else {
+        $(".first-img").attr("src", this.imagePath[1]); 
+        $(".second-img").attr("src", this.imagePath[2]);
+        $(".third-img").attr("src", this.imagePath[3]); 
+      }
+
       this.notLenormand = false;
     }
       

@@ -30,12 +30,28 @@ export class TarotComponent implements OnInit {
 
     //image preload part 
     if (this.tarotImgURL = this.sunService.getTarotImageURL()) {
-      // let tri_img = this.tarotImgURL[11];
-      // console.log(tri_img);
-      // $(".tri-layer").css({background: "url('"+tri_img+"') no-repeat"});
+      let tri_img = this.tarotImgURL[11].changingThisBreaksApplicationSecurity;
+      
+      $(".tri-layer").css({background: "url('"+tri_img+"') no-repeat"});
+      $(".tri-layer").css({
+        position: "absolute",
+        width: "20%",
+        height: "70%",
+        top: "14%",
+        "background-size": "100% 100%",
+    	  opacity: "0.8"
+      });
       this.tarotImgFlag = false;
     } else {
-      //$(".tri-layer").css({background: "url('../../assets/img/tarot/tarot11.png') no-repeat"});
+      $(".tri-layer").css({background: "url('../../assets/img/tarot/tarot11.png') no-repeat"});
+      $(".tri-layer").css({
+        position: "absolute",
+        width: "20%",
+        height: "70%",
+        top: "14%",
+        "background-size": "100% 100%",
+    	  opacity: "0.8"
+      });
       this.tarotImgFlag = true;
     }
     //hover effting jquery

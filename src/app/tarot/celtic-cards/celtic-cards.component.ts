@@ -25,6 +25,8 @@ export class CelticCardsComponent implements OnInit {
   celtic_cardTitle = [];
   celtic_cardContent = [];
   deck_folder;
+  riderImgURL;
+  hermeticImgURL;
   //detail rider card content
   riderCard_txt = [
     {
@@ -294,7 +296,31 @@ export class CelticCardsComponent implements OnInit {
       for(let i=1; i<=10; i++) {        
         this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".png";
       }
-      
+
+      if (this.riderImgURL = this.sunService.getRiderImageURL()) {       
+        $(".one-img img").attr("src", this.riderImgURL[tenCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".two-img img").attr("src", this.riderImgURL[tenCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".three-img img").attr("src", this.riderImgURL[tenCardNums[3]].changingThisBreaksApplicationSecurity);
+        $(".four-img img").attr("src", this.riderImgURL[tenCardNums[4]].changingThisBreaksApplicationSecurity);
+        $(".five-img img").attr("src", this.riderImgURL[tenCardNums[5]].changingThisBreaksApplicationSecurity);
+        $(".six-img img").attr("src", this.riderImgURL[tenCardNums[6]].changingThisBreaksApplicationSecurity);
+        $(".seven-img img").attr("src", this.riderImgURL[tenCardNums[7]].changingThisBreaksApplicationSecurity);
+        $(".eight-img img").attr("src", this.riderImgURL[tenCardNums[8]].changingThisBreaksApplicationSecurity);
+        $(".nine-img img").attr("src", this.riderImgURL[tenCardNums[9]].changingThisBreaksApplicationSecurity);
+        $(".ten-img img").attr("src", this.riderImgURL[tenCardNums[10]].changingThisBreaksApplicationSecurity);
+
+      } else {
+        $(".one-img img").attr("src", this.celtic_imgPath[1]); 
+        $(".two-img img").attr("src", this.celtic_imgPath[2]);
+        $(".three-img img").attr("src", this.celtic_imgPath[3]); 
+        $(".four-img img").attr("src", this.celtic_imgPath[4]); 
+        $(".five-img img").attr("src", this.celtic_imgPath[5]); 
+        $(".six-img img").attr("src", this.celtic_imgPath[6]); 
+        $(".seven-img img").attr("src", this.celtic_imgPath[7]); 
+        $(".eight-img img").attr("src", this.celtic_imgPath[8]); 
+        $(".nine-img img").attr("src", this.celtic_imgPath[9]); 
+        $(".ten-img img").attr("src", this.celtic_imgPath[10]); 
+      }
     } 
    
     if(this.deck_mode == 2) {
@@ -302,6 +328,32 @@ export class CelticCardsComponent implements OnInit {
       for(let i=1; i<=10; i++) {        
         this.celtic_imgPath[i] = "assets/img/tarot/"+this.deck_folder+"/"+tenCardNums[i]+".jpg";
       }
+
+      if (this.hermeticImgURL = this.sunService.getHermeticImageURL()) {       
+        $(".one-img img").attr("src", this.hermeticImgURL[tenCardNums[1]].changingThisBreaksApplicationSecurity);  
+        $(".two-img img").attr("src", this.hermeticImgURL[tenCardNums[2]].changingThisBreaksApplicationSecurity);    
+        $(".three-img img").attr("src", this.hermeticImgURL[tenCardNums[3]].changingThisBreaksApplicationSecurity);
+        $(".four-img img").attr("src", this.hermeticImgURL[tenCardNums[4]].changingThisBreaksApplicationSecurity);
+        $(".five-img img").attr("src", this.hermeticImgURL[tenCardNums[5]].changingThisBreaksApplicationSecurity);
+        $(".six-img img").attr("src", this.hermeticImgURL[tenCardNums[6]].changingThisBreaksApplicationSecurity);
+        $(".seven-img img").attr("src", this.hermeticImgURL[tenCardNums[7]].changingThisBreaksApplicationSecurity);
+        $(".eight-img img").attr("src", this.hermeticImgURL[tenCardNums[8]].changingThisBreaksApplicationSecurity);
+        $(".nine-img img").attr("src", this.hermeticImgURL[tenCardNums[9]].changingThisBreaksApplicationSecurity);
+        $(".ten-img img").attr("src", this.hermeticImgURL[tenCardNums[10]].changingThisBreaksApplicationSecurity);
+
+      } else {
+        $(".one-img img").attr("src", this.celtic_imgPath[1]); 
+        $(".two-img img").attr("src", this.celtic_imgPath[2]);
+        $(".three-img img").attr("src", this.celtic_imgPath[3]); 
+        $(".four-img img").attr("src", this.celtic_imgPath[4]); 
+        $(".five-img img").attr("src", this.celtic_imgPath[5]); 
+        $(".six-img img").attr("src", this.celtic_imgPath[6]); 
+        $(".seven-img img").attr("src", this.celtic_imgPath[7]); 
+        $(".eight-img img").attr("src", this.celtic_imgPath[8]); 
+        $(".nine-img img").attr("src", this.celtic_imgPath[9]); 
+        $(".ten-img img").attr("src", this.celtic_imgPath[10]); 
+      }
+
     }
    
     //title hovering effect section
