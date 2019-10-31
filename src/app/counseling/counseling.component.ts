@@ -23,6 +23,14 @@ export class CounselingComponent implements OnInit {
   counselingImgURL;
   // user info data
   preventSpamNum = "";
+  firstName;
+  lastName;
+  phone;
+  email;
+  city;
+  country;
+  zipcode;
+  verifyCode;
   ngOnInit() {
     let self = this;
     this.sunService.setProgressShow(false);

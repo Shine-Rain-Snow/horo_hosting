@@ -19,7 +19,8 @@ export class AdminLoginComponent implements OnInit {
     private sunService: SunProgressService,
     private authService: AuthService,
     private backendService: BackendService) { }
-
+    adminName;
+    adminPass;
   ngOnInit() {
   	
   }

@@ -1,7 +1,8 @@
 {
   "/api/*":{
-    "target":"http://localhost:8080",
+    "target":"https://ofercohen.net",
     "secure":false,
     "logLevel":"debug"
   }
 }
+

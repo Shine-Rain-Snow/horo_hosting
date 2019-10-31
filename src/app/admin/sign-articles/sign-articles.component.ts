@@ -21,6 +21,7 @@ export class SignArticlesComponent implements OnInit {
   careerStr;
   loveStr;
   mSunSignID = 0;
+  selectedStatusId;
   ngOnInit() {
 
   }
@@ -35,8 +36,7 @@ export class SignArticlesComponent implements OnInit {
   	
   	this.backendService.saveSunSignText(saveData).subscribe((data: any[]) => {
    
-      $("#editor1").txtEditor();
-      $("#editor2").txtEditor();
+      console.log("saved");
     });  
   }
 
