@@ -1,0 +1,34 @@
+.date-search {
+	float: right;
+	.example-full-width {
+		margin-right: 30px;
+	}
+	.example-full-month {
+		margin-right: 30px;
+	}
+}
+
+.mat-elevation {
+	font-family: Oswald;
+
+}
+
+::ng-deep .mat-header-cell {
+	font-size: 20px;
+	font-weight: bold;
+	color: black;
+	font-family: Oswald light;
+	text-align: center !important;
+	vertical-align: middle !important;
+}
+
+::ng-deep .mat-cell {
+	font-size: 20px;
+	font-family: Oswald light;
+	text-align: center;
+	vertical-align: middle !important;
+}
+
+::ng-deep .mat-paginator-container{
+	
+}

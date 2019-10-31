@@ -25,8 +25,11 @@ export class AstrologyComponent implements OnInit {
   nUpScrollling = 0;
   astURL;
   imgFlag = true;
+  astYear;
   ngOnInit() {
-    
+    //set Year
+   
+    this.astYear = (new Date()).getFullYear();
 
     if (this.astURL = this.sunService.getAstVideoURL()) {
       this.imgFlag = false;

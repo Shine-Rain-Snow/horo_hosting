@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule }   from '@angular/forms';
 import { CounselingRoutingModule } from './counseling-routing.module';
 import { CounselingComponent } from './counseling.component'
 
@@ -8,7 +8,8 @@ import { CounselingComponent } from './counseling.component'
   declarations: [CounselingComponent],
   imports: [
     CommonModule,
-    CounselingRoutingModule
+    CounselingRoutingModule,
+    FormsModule
   ]
 })
 export class CounselingModule { }

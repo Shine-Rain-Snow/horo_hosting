@@ -1,0 +1,18 @@
+<div class="admin-login">
+	<div class="login-form">
+		<form #fAdmin="ngForm" (ngSubmit)="onAdminLogin(fAdmin)">
+		 <div class="title"> 
+		 	<label>Please enter admin account</label>
+		 </div>
+		  <div class="form-group">
+		    <label for="exampleInputUser1">Admin Name</label>
+		    <input type="text" [(ngModel)]="adminName" name="adminName" class="form-control" id="exampleInputUser1" aria-describedby="userHelp" placeholder="Enter UserName">
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputPassword1">Password</label>
+		    <input type="password" [(ngModel)]="adminPass" name="adminPass" class="form-control" id="exampleInputPassword1" placeholder="Password">
+		  </div>
+		  <button type="submit" class="btn btn-primary">Login</button>
+		</form>
+	</div>
+</div>

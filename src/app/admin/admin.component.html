@@ -1,0 +1,34 @@
+<div class="admin-portal">
+    <nav class="navbar navbar-expand navbar-dark bg-dark">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Main Page </a>
+                </li>
+                <li class="nav-item session-portal">
+                    <a class="nav-link active">Admin Portal </a>
+                </li>
+                <li class="nav-item article-manager">
+                    <a class="nav-link">Article Manger</a>
+                </li>
+                <li class="nav-item admin-setting">
+                    <a class="nav-link">Admin Setting</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="data-table">
+        <!-- <div *ngIf="adminFlag; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock><app-session-portal></app-session-portal></ng-template>
+        <ng-template #elseBlock><app-sign-articles></app-sign-articles></ng-template> -->
+        
+        <div [ngSwitch]="adminFlag">
+           <div *ngSwitchCase="0"> <app-session-portal></app-session-portal> </div>
+           <div *ngSwitchCase="1"> <app-sign-articles></app-sign-articles> </div>
+           <div *ngSwitchCase="2"> <app-admin-setting></app-admin-setting> </div>
+           <div *ngSwitchDefault></div>
+        </div>
+    </div>
+
+</div>

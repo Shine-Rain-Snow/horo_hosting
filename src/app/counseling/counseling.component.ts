@@ -2,8 +2,10 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppConstants } from '../shared/constants';
 import { SunProgressService } from '../services/sun-progress.service';
+import { BackendService } from '../services/backend.service';
 import { Globals } from '../shared/globals';
 import * as $ from 'jquery'; 
+import {NgForm} from '@angular/forms';
 @Component({
   selector: 'app-counseling',
   templateUrl: './counseling.component.html',
@@ -13,11 +15,14 @@ export class CounselingComponent implements OnInit {
 
   constructor(private router: Router, 
     public stateData: Globals, 
-    private sunService: SunProgressService) { }
+    private sunService: SunProgressService,
+    private backendService: BackendService) { }
 
   watch_clock;
   counselingImgFlag = true;
   counselingImgURL;
+  // user info data
+  preventSpamNum = "";
   ngOnInit() {
     let self = this;
     this.sunService.setProgressShow(false);
@@ -34,6 +39,12 @@ export class CounselingComponent implements OnInit {
 
     this.displayTime();
     this.watch_clock = setInterval(this.displayTime, 1000);
+
+    
+    for(let i=0; i<6; i++) {
+     this.preventSpamNum += String(Math.floor(Math.random() * 10));
+    }
+
   }
 
   ngOnDestroy() {
@@ -105,7 +116,43 @@ export class CounselingComponent implements OnInit {
     //console.log(bangkok_clockDiv);
     $(".bangkok-time-img").text(bangkok_hr + ":" + utc_min + ":" + utc_sec + " " + bangkok_meridiem);
     $(".newyork-time-img").text(newyork_hr + ":" + utc_min + ":" + utc_sec + " " + newyork_meridiem);
-}
+  }
+
+  onSendPayPal(f: NgForm) {
+    let firstName = f.value.firstName;
+    let lastName = f.value.lastName;
+    let phone = f.value.phone;
+    let email = f.value.email;
+    let city = f.value.city;
+    let zipeCode =  f.value.zipcode;
+    let country = f.value.country;
+    let verifyNum = f.value.verifyCode;
+
+    if(typeof firstName!='undefined' && firstName && firstName.trim()) {
+      if(typeof lastName!='undefined' && lastName && lastName.trim()) {
+        if(typeof phone!='undefined' && phone && phone.trim()) {
+        if(typeof email!='undefined' && email && email.trim()) {
+          if(typeof city!='undefined' && city && city.trim()) {
+            if(typeof zipeCode!='undefined' && zipeCode && zipeCode.trim()) {
+              if(typeof country!='undefined' && country && country.trim()) {
+                if(typeof verifyNum!='undefined' && verifyNum && verifyNum.trim()) {
+                  if(Number(this.preventSpamNum) == verifyNum) {
+                    console.log("send request to backend");
+                    this.backendService.insertBookOrder(f.value).subscribe((data: any[]) => {
+                      console.log(data);
+                    });  
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      }
+    }
+    
+    
+  }
 
   getCounselingImagePath() {
     return this.counselingImgURL;

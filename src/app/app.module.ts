@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,10 @@ import { SidenavListComponent } from './shared/sidenav-list/sidenav-list.compone
 import { ProgressbarComponent } from './shared/progressbar/progressbar.component';
 import { Globals } from './shared/globals';
 import { BlackmenuComponent } from './shared/blackmenu/blackmenu.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AuthService } from './services/auth.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +25,7 @@ import { BlackmenuComponent } from './shared/blackmenu/blackmenu.component';
     SidenavListComponent,
     ProgressbarComponent,
     BlackmenuComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,9 +35,10 @@ import { BlackmenuComponent } from './shared/blackmenu/blackmenu.component';
     AppRoutingModule,
     MaterialModule,
     FlexLayoutModule,
+    HttpClientModule
   ],
   exports: [],
-  providers: [Globals],
+  providers: [Globals, AuthGuardService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

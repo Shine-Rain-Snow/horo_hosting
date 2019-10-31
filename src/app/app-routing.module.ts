@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './services/auth-guard.service';
+import { AdminLoginComponent } from './admin-login/admin-login.component';
+// Lazy loading routing
 const routes: Routes = [
   {
     path: 'main',
@@ -37,6 +40,15 @@ const routes: Routes = [
   {
     path: 'books',
     loadChildren: () => import('./books/books.module').then(mod => mod.BooksModule)
+  },
+  {
+    path: 'admin', 
+    canActivate: [AuthGuardService],
+    loadChildren: () => import('./admin/admin.module').then(mod => mod.AdminModule)
+  },
+  {
+    path: 'admin-login',
+    component: AdminLoginComponent,
   },
   {
     path: '',

@@ -53,40 +53,47 @@
         <p>Book your session</p>
         <p>40 Min online Session : 125 USD</p>
         <div class="pay-form-content">
-            <div class="first-name form-group">
-                <label>First Name*</label>
-                <input type="text" class="form-control" placeholder="First Name" >
-            </div>
-            <div class="last-name form-group">
-                <label >Last Name*</label>
-                <input type="text" class="form-control"  placeholder="Last Name" >
-            </div>
-            <div class="email-name form-group">
-                <label for="exampleInputEmail1">E-mail*</label>
-                <input type="email" 
-                 class="form-control" 
-                 id="exampleInputEmail1"
-                 placeholder="E-mail" />
-            </div>
-            <div class="city-name form-group">
-                <label>City</label>
-                <input type="text" class="form-control"  placeholder="City" >
-            </div>
-            <div class="zip-name form-group">
-                <label>Postal/ZIP Code</label>
-                <input type="text" class="form-control" placeholder="Zip code" >
-            </div>
-            <div class="country-name form-group">
-                <label>Country*</label>
-                <input type="text" class="form-control" placeholder="Country name" >
-            </div>
-            <div class="verification-name form-group">
-                <label>Enter verification number below: like 033121</label>
-                <input type="text" class="form-control" placeholder="Verification code" >
-            </div>
-            <div class="pay-btn">
-                <input type="button" class="btn btn-primary btn-lg sendPay" value="PayPal" >
-            </div>
+            <form #f="ngForm" (ngSubmit)="onSendPayPal(f)" data-toggle="validator" role="form" >
+                <div class="first-name form-group">
+                    <label>First Name*</label>
+                    <input type="text" [(ngModel)]="firstName" name="firstName"  class="form-control" placeholder="First Name"  required>
+                </div>
+                <div class="last-name form-group">
+                    <label >Last Name*</label>
+                    <input type="text" [(ngModel)]="lastName" name="lastName" class="form-control"  placeholder="Last Name" required >
+                </div>
+                <div class="phone form-group">
+                    <label >Phone*</label>
+                    <input type="text" [(ngModel)]="phone" name="phone" class="form-control"  placeholder="Phone Number" required >
+                </div>
+                <div class="email-name form-group">
+                    <label for="exampleInputEmail1">E-mail*</label>
+                    <input type="email" 
+                     [(ngModel)]="email" name="email"
+                     class="form-control" 
+                     id="exampleInputEmail1"
+                     placeholder="E-mail" required />
+                </div>
+                <div class="city-name form-group">
+                    <label>City</label>
+                    <input type="text" [(ngModel)]="city" name="city" class="form-control"  placeholder="City" >
+                </div>
+                <div class="zip-name form-group">
+                    <label>Postal/ZIP Code</label>
+                    <input type="text" [(ngModel)]="zipcode" name="zipcode" class="form-control" placeholder="Zip code" >
+                </div>
+                <div class="country-name form-group">
+                    <label>Country*</label>
+                    <input type="text" [(ngModel)]="country" name="country" class="form-control" placeholder="Country name" required >
+                </div>
+                <div class="verification-name form-group">
+                    <label>Enter verification number below: {{preventSpamNum}}</label>
+                    <input type="text" [(ngModel)]="verifyCode" name="verifyCode" class="form-control" placeholder="Verification code" required>
+                </div>
+                <div class="pay-btn form-group">
+                    <button type="submit" class="btn btn-primary btn-lg sendPay" value="PayPal" >PayPal</button>
+                </div>
+            </form>
         </div>
     </div> 
     <div class="time-watch">

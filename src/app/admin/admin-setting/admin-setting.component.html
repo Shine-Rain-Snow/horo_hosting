@@ -1,0 +1,27 @@
+<div class="admin-setting">
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	    <span class="input-group-text" id="basic-addon3">Enter your current admin password</span>
+	  </div>
+	  <input type="password" class="form-control" [(ngModel)]="old_pass" name="old_pass" 
+	   id="old_pass" aria-describedby="basic-addon3">
+	</div>
+
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	    <span class="input-group-text" id="basic-addon3">Enter your new admin password  &nbsp;&nbsp;&nbsp;&nbsp;</span>
+	  </div>
+	  <input type="password" class="form-control" [(ngModel)]="new_pass" name="new_pass" 
+	   id="new_pass" aria-describedby="basic-addon3">
+	</div>
+
+	<div class="input-group mb-3">
+	  <div class="input-group-prepend">
+	    <span class="input-group-text" id="basic-addon3">Confirm your new admin password</span>
+	  </div>
+	  <input type="password" class="form-control" [(ngModel)]="confirm_new_pass" name="confirm_new_pass" 
+	  id="confirm_new_pass" aria-describedby="basic-addon3">
+	</div>
+
+	<button type="button" class="btn btn-success" (click)="saveNewPass()" >Save</button>
+</div>

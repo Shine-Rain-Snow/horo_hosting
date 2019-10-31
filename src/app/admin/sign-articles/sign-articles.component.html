@@ -1,0 +1,35 @@
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <label class="input-group-text" for="inputGroupSelect01">SunSign</label>
+    </div>
+    <select class="custom-select" id="inputGroupSelect01" 
+    [(ngModel)]="selectedStatusId" (change)="setSelectedStatus(selectedStatusId)">
+        <option selected>Choose...</option>
+        <option value="1">1 - Aries</option>
+        <option value="2">2 - Taurus</option>
+        <option value="3">3 - Gemini</option>
+        <option value="4">4 - Cancer</option>
+        <option value="5">5 - Leo</option>
+        <option value="6">6 - Virgo</option>
+        <option value="7">7 - Libra</option>
+        <option value="8">8 - Scorpio</option>
+        <option value="9">9 - Sagittarius</option>
+        <option value="10">10 - Capricorn</option>
+        <option value="11">11 - Aquarius</option>
+        <option value="12">12 - Pisces</option>
+    </select>
+</div>
+
+<div class="form-group">
+    <label for="CareerInput1">Career and finance:</label>
+    <angular-editor  class="career" [config]="config" [placeholder]="'Enter text here...'" [(ngModel)]="careerStr" id="editor1" ></angular-editor>
+    <!-- <textarea class="form-control career" rows="9" [(ngModel)]="careerStr" aria-label="Career and finance" id="editor1"></textarea> -->
+</div>
+
+<div class="form-group">
+    <label for="loveInput1">Love and relationships:</label>
+    <!-- <textarea class="form-control love" rows="9" [(ngModel)]="loveStr" aria-label="Love and relationships" id="editor2"></textarea> -->
+    <angular-editor  class="love" [config]="config"  [(ngModel)]="loveStr" [placeholder]="'Enter text here...'"  id="editor2"></angular-editor>
+</div>
+
+<button type="button" class="btn btn-success btn-lg" (click)="onSaveText()" >Save</button>
