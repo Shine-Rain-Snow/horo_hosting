@@ -35,8 +35,7 @@ export class SignArticlesComponent implements OnInit {
   	};
   	
   	this.backendService.saveSunSignText(saveData).subscribe((data: any[]) => {
-   
-      console.log("saved");
+      alert("saved seccessfully");
     });  
   }
 
